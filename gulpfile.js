@@ -82,7 +82,7 @@ gulp.task('watch', function () {
     });
 
     gulp.watch('./src/js/*.js', ['js', 'reload']);
-    gulp.watch('./src/scss/*.scss', ['sass']);
+    gulp.watch('./src/scss/**/*.scss', ['sass']);
     gulp.watch('./src/templates/**/*.html', ['html', 'reload']);
 
     // gulp.watch('./src/favicon/**/*.*', ['favicon', 'reload']);

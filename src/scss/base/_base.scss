@@ -1,0 +1,163 @@
+body {
+  width: 100%;
+  height: 100%;
+  font-weight: 400;
+  @include font($gotham, rem(16px), 1.25, $black);
+}
+
+html {
+  height: 100%;
+  &.no-scroll{
+    overflow: hidden;
+    body{
+      overflow: hidden;
+    }
+  }
+}
+
+//------------ preloader --------------
+
+//#preloader{
+//  position: fixed;
+//  left: 0;
+//  top: 0;
+//  right: 0;
+//  bottom: 0;
+//  background: $white;
+//  z-index: 100500;
+//  .spinner{
+//    width: 138px;
+//    height: 138px;
+//    position: absolute;
+//    left: 50%;
+//    top: 50%;
+//    transform: translate(-50%, -50%);
+//    background: $white url('../images/spinner.gif') no-repeat;
+//  }
+//}
+
+//----------------end preloader  -----------
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+strong,b{
+  font-weight: bold!important;
+}
+
+//input[placeholder].form-input               {font-family: $light;}
+//.form-input::-webkit-input-placeholder      {font-family: $light;}
+//.form-input:-moz-placeholder                {font-family: $light;}
+//.form-input::-moz-placeholder               {font-family: $light;}
+//.form-input:-ms-input-placeholder           {font-family: $light;}
+//.form-input::-moz-placeholder               {font-family: $light;}
+//input:-moz-placeholder.form-input.fail      {font-family: $light;}
+
+
+h1,h2,h3,h4,h5,h6{
+  font-weight: 900;
+}
+
+a{
+
+  &[href^=tel] {
+    font-size: rem(14px);
+    font-weight: 700;
+    color: $white;
+  }
+
+}
+
+ul{
+  li{
+    color: $white;
+  }
+}
+
+h1{
+  font-size: rem(36px);
+  color: $white;
+}
+
+h2{
+  font-size: rem(28px);
+  color: $white;
+}
+h3{
+  font-size: rem(24px);
+  color: $white;
+}
+h4 {
+  font-size: rem(22px);
+  color: $white;
+}
+
+h5 {
+  font-size: rem(18px);
+  color: $white;
+}
+h6{
+
+}
+p{
+  color: $white;
+}
+
+pre{
+  white-space: pre-wrap;
+}
+
+.center{
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+.left{
+  text-align: left;
+}
+.upper {
+  text-transform: uppercase;
+}
+.table{
+  display: table;
+  table-layout: fixed;
+  width:100%;
+}
+.table-cell{
+  display: table-cell;
+  height: 100%;
+}
+
+.other-elements{
+  display: none;
+  transform: none;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+video {
+  width: 100%    !important;
+  height: auto   !important;
+}
+.wrap-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+}
+.wrap-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

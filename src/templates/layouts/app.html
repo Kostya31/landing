@@ -5,15 +5,114 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title></title>
-
-    <!-- Scripts -->
-    <script src="./js/app.js" defer></script>
+    <title>Landing</title>
 
     <!-- Styles -->
     <link href="./css/app.css" rel="stylesheet">
 </head>
 <body>
-    {% block content %}{% endblock %}
+
+<div class="wrapper">
+    <header class="header">
+        <div class="container">
+            <div class="header-wrap">
+                <a href="#" class="header-logo">
+                    <img src="images/svg/stangher-logo-main.svg" alt="logo">
+                </a>
+                <div class="switch-lang">
+                    <div class="switch-lang__item active">
+                        <img src="../images/svg/ru.svg" class="switch-lang__flag" alt="lang">
+                        <span class="switch-lang__name upper">рус</span>
+                    </div>
+                    <div class="switch-lang__item">
+                        <img src="" class="switch-lang__flag" alt="lang">
+                        <span class="switch-lang__name upper">укр</span>
+                    </div>
+                </div>
+                <nav class="header-nav">
+                    <a href="#our-projects">Наши проекты</a>
+                    <a href="#locations">Локации</a>
+                    <a href="#about-us">О нас</a>
+                    <a href="#contact-us">Связаться с нами</a>
+                    <a href="#blog">Блог</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="col-logo">
+                    <div class="footer-logo">
+                        <a class="footer-logo" href="#"><img src="../images/svg/stangher-footer-logo.svg" alt="logo"></a>
+                    </div>
+                    <div class="footer-copyright">
+                        © 2018 StanGher <br>
+                        Все права защищены
+                    </div>
+                </div>
+                <nav class="footer-nav">
+                    <a href="#">наши обьекты</a>
+                    <a href="#">Локации</a>
+                    <a href="#">О проекте</a>
+                    <a href="#">Обратная связь</a>
+                    <a href="#">Акселератор и венчурный фонд</a>
+                </nav>
+                <div class="subscribe">
+                    <div class="subscribe-item subscribe-social">
+                        <p>Мы в социальных сетях</p>
+                        <div class="social-link">
+                            <a href="#">
+                                <img src="../images/svg/Facebook.svg" alt="Facebook">
+                            </a>
+                            <a href="#">
+                                <img src="../images/svg/VK.svg" alt="vkontakte">
+                            </a>
+                            <a href="#">
+                                <img src="../images/svg/Instagram.svg" alt="instagram">
+                            </a>
+                            <a href="#">
+                                <img src="../images/svg/Twitter.svg" alt="twitter">
+                            </a>
+                            <a href="#">
+                                <img src="../images/svg/Flickr.svg" alt="Flickr">
+                            </a>
+                            <a href="#">
+                                <img src="../images/svg/Foursquare.svg" alt="Foursquare">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subscribe-item subscribe-form">
+                        <p>Подпишись на наши новости!</p>
+                        <form action="#" method="#">
+                            <div class="form-group">
+                                <input type="email" placeholder="Ваш email…" class="form-control" name="subscribe">
+                            </div>
+                            <button type="submit"><img src="../images/svg/paper-plane.svg" alt="#"></button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <nav>
+                    <a href="#">Карта сайта</a>
+                    <a href="#">Согласие на обработку данных</a>
+                    <a href="#">Политика конфиденциальности</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<!-- Scripts -->
+<script src="./js/app.js" defer></script>
 </body>
 </html>

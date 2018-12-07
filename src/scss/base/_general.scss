@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  box-sizing: border-box!important;
+  outline: 0;
+}
+html {
+  height: 100%;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  display: block;
+}
+img{
+  max-width:100%;
+  height:auto;
+}
+a,a:hover,a:active,a:focus,a:visited{
+  text-decoration: none;
+  outline:none;
+}
+input,button,textarea{
+  margin:0;
+  border:0;
+  outline:0;
+  padding:0;
+  background: none;
+}
+textarea{
+  resize: vertical;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  //border-top: 1px solid $silver_light;
+}
+
+.border-dashed {
+  border-style: dashed!important;;
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="51px" height="51px" viewBox="0 0 51 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>clock</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M10.9057143,0 C4.89230612,0 0,4.89230612 0,10.9057143 C0,16.9191224 4.89230612,21.8114286 10.9057143,21.8114286 C16.9191224,21.8114286 21.8114286,16.9191224 21.8114286,10.9057143 C21.8114286,4.89230612 16.9191224,0 10.9057143,0 Z M10.9057143,19.4908776 C6.17189796,19.4908776 2.32032653,15.6397551 2.32032653,10.9057143 C2.32032653,6.17167347 6.17189796,2.32055102 10.9057143,2.32055102 C15.6395306,2.32055102 19.491102,6.17167347 19.491102,10.9057143 C19.491102,15.6397551 15.6395306,19.4908776 10.9057143,19.4908776 Z" id="path-1"></path>
+        <filter x="-126.1%" y="-80.2%" width="352.2%" height="352.2%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.792156863   0 0 0 0 0.0156862745  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M16.5893469,10.5689796 L11.6882857,10.5689796 L11.6882857,4.67612245 C11.6882857,4.18022449 11.2862245,3.77816327 10.7903265,3.77816327 C10.2944286,3.77816327 9.89236735,4.18022449 9.89236735,4.67612245 L9.89236735,11.4669388 C9.89236735,11.9628367 10.2944286,12.364898 10.7903265,12.364898 L16.5893469,12.364898 C17.0852449,12.364898 17.4873061,11.9628367 17.4873061,11.4669388 C17.4873061,10.9710408 17.0852449,10.5689796 16.5893469,10.5689796 Z" id="path-3"></path>
+        <filter x="-362.1%" y="-203.8%" width="824.2%" height="740.5%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="0" dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0.792156863   0 0 0 0 0.0156862745  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="3-1-apartments-main-1170" transform="translate(-136.000000, -493.000000)" fill-rule="nonzero">
+            <g id="clock" transform="translate(151.000000, 498.000000)">
+                <g id="Shape">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#F58121" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="Shape">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                    <use fill="#F58121" fill-rule="evenodd" xlink:href="#path-3"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

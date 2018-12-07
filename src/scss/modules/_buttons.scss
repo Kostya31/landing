@@ -1,0 +1,35 @@
+.btn {
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: rem(30px);
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  border: none;
+  color: $white;
+  white-space: nowrap;
+  background-clip: padding-box;
+  &--lg{
+    padding: rem(16px 68px);
+  }
+  &--sm {
+    padding: rem(8px 18px);
+  }
+  &.btn-silver{
+    background:rgba(255,255,255,0.50);
+  }
+  &.btn-violet{
+    background: $violet-gradient;
+    background-clip: padding-box;
+    &:hover{
+      background: $violet;
+    }
+  }
+  &.btn-orange {
+    background: $orange-gradient;
+    background-clip: padding-box;
+    &:hover{
+      background: $orange;
+    }
+  }
+}

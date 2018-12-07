@@ -1,0 +1,48 @@
+
+.header {
+  background: $white;
+  &-wrap {
+    height: 55px;
+    display: flex;
+    align-items: center;
+  }
+  &-logo {
+    margin-right: 75px;
+  }
+  &-nav {
+    display: inline-block;
+    a {
+      font-size: rem(13px);
+      display: inline-block;
+      margin-right: 50px;
+      color: $black-header;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+.switch-lang {
+  display: inline-block;
+  margin-right: rem(80px);
+  &:after {
+    content: '';
+    border: rem(4px) solid transparent;
+    border-top: rem(6px) solid $black  ;
+    display: inline-block;
+    width: 0;
+    height: 0;
+  }
+  &__item{
+    display: none;
+    font-size: rem(13px);
+    font-weight: 900;
+    &.active{
+      display: inline-flex;
+      align-items: center;
+    }
+  }
+  &__name {
+    margin-left: 10px;
+  }
+}

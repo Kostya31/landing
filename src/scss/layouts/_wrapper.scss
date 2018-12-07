@@ -1,0 +1,213 @@
+
+.wrapper{
+  background-color: $black;
+}
+
+.text-gradient{
+  //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#000000'); /* for IE */
+  //background: -webkit-gradient($violet-gradient); /* for webkit browsers */
+  //background: -moz-linear-gradient($violet-gradient); /* for firefox 3.6+ */
+  background: $violet-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+// -------------- hero top -------------
+
+.section-hero-top {
+  .hero-logo{
+    margin-right: rem(160px);
+  }
+  .text-gradient {
+    font-weight: 700;
+    margin-bottom: rem(30px);
+  }
+  h1{
+    margin-bottom: rem(40px);
+  }
+  .description{
+    margin-bottom: rem(40px);
+    padding-right: rem(440px);
+  }
+  .btn-violet{
+    margin-right: rem(15px);
+  }
+}
+.hero-info {
+  display: flex;
+}
+.contacts-item{
+  color: $white;
+  margin-right: rem(128px);
+  &:last-child{
+    margin-right: 0;
+  }
+  .contacts-label {
+    font-size: rem(14px);
+    margin-bottom: 5px;
+    font-weight: 300;
+    padding-left: rem(24px);
+  }
+  .contacts-text{
+    img{
+      margin-right: rem(8px);
+    }
+  }
+}
+
+
+//---------------- about coworking --------
+
+.our-coworking {
+  position: relative;
+  margin-bottom: rem(170px);
+  h2 {
+    margin-bottom: rem(26px);
+  }
+  .description {
+    width: 46%;
+  }
+  &__img{
+    position: absolute;
+    right: rem(60px);
+    top: rem(-50px);
+  }
+}
+
+
+// --------------- offer ----------
+
+.offer-wrap{
+  margin-top: rem(80px);
+  margin-bottom: rem(50px);
+}
+
+.offer-item {
+  &.offer-odd {
+    .offer-img {
+      background-position: right;
+      justify-content: flex-start;
+      background-size: calc(50vw - 16px);
+    }
+    .offer-content {
+      width: calc(100vw / 2);
+      padding-left: calc((100vw - 1170px) / 2);
+      padding-right: rem(80px);
+    }
+  }
+}
+
+.offer-img {
+  background-position: left;
+  background-size: 50vw;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: rem(50px);
+  padding-bottom: rem(70px);
+}
+
+.offer-content {
+  width: calc(100vw / 2 - 16px);
+  display: inline-block;
+  padding-right: calc((100vw - 1170px) / 2);
+  padding-left: rem(80px);
+}
+
+.workplace {
+  span{
+    width: 66px;
+    height: 66px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin-right: rem(20px);
+    font-size: rem(32px);
+    color: $white;
+    border-radius: 50%;
+    background-image: $violet-gradient;
+    background-clip: content-box;
+    box-shadow: 0 10px 15px 0 rgba(226,82,189,0.30);
+  }
+  strong{
+    font-size: rem(20px);
+    font-weight: 700;
+    color: $white;
+    position: relative;
+    top: -5px;
+  }
+  p{
+    padding-left: rem(86px);
+    margin-bottom: rem(35px);
+  }
+}
+
+
+.offer-info-list{
+  li{
+    margin-bottom: rem(22px);
+    position: relative;
+    padding-left: rem(86px);
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: url(../images/svg/checked.svg);
+      background-repeat: no-repeat;
+      display: inline-block;
+      height: 25px;
+      width: 25px;
+      margin-left: rem(18px);
+
+    }
+  }
+}
+
+
+// coworking item
+
+.coworking-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.coworking-item {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: rem(50px);
+  h5{
+    line-height: rem(24px);
+    margin-bottom: rem(15px);
+  }
+  p{
+    margin-bottom: rem(50px);
+    font-size: 14px;
+  }
+}
+
+// ------------ location map -------------
+
+.location-map {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+// hero bottom
+
+.section-hero-bottom {
+  .hero-logo {
+    margin-bottom: rem(40px);
+  }
+  h2 {
+    color: $black;
+    margin-bottom: rem(40px);
+  }
+  .btn-orange {
+    padding-right: rem(30px);
+    padding-left: rem(30px);
+  }
+}

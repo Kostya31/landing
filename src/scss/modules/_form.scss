@@ -1,0 +1,11 @@
+
+textarea, input{
+  &.form-control{
+    padding: rem(14px 20px);
+    background-color: $white;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.20);
+    border-radius: 30px;
+    font-size: rem(14px);
+  }
+}
+

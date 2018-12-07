@@ -1,0 +1,10 @@
+@import "../tools/mixin";
+
+@include font-face(GothamPro, "../fonts/GothamProLight/GothamProLight", 300, normal, eot woff ttf svg);
+@include font-face(GothamPro, "../fonts/GothamProRegular/GothamProRegular", 400, normal, eot woff ttf svg);
+@include font-face(GothamPro, "../fonts/GothamProMedium/GothamProMedium", 500, normal, eot woff ttf svg);
+@include font-face(GothamPro, "../fonts/GothamProBold/GothamProBold", 700, normal, eot woff ttf svg);
+@include font-face(GothamPro, "../fonts/GothamProBlack/GothamProBlack", 900, normal, eot woff ttf svg);
+
+
+

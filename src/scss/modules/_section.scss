@@ -1,0 +1,22 @@
+
+.section{
+  &-bg {
+    background-size: cover;
+    background-position: center;
+  }
+  &-hero-top {
+    padding: rem(74px 0 140px);
+  }
+  &-hero-bottom {
+    padding: rem(40px 0 80px);
+  }
+  &-coworking {
+    padding-top: rem(120px);
+    padding-bottom: rem(76px);
+  }
+  &-map{
+    position: relative;
+    height: 0;
+    padding-bottom: 42%;
+  }
+}

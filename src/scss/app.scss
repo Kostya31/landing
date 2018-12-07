@@ -1,5 +1,22 @@
-@import "~bootstrap/scss/bootstrap";
 
-body {
+@import "tools/variables";
+@import "tools/mixin";
 
-}
+@import "fonts/fonts";
+
+@import "base/normalize";
+@import "base/general";
+@import "base/base";
+
+@import "~slick-carousel/slick/slick.scss";
+
+@import "layouts/grid";
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/wrapper";
+
+@import "modules/section";
+@import "modules/buttons";
+@import "modules/form";
+
+
