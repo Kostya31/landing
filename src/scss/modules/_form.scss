@@ -9,3 +9,114 @@ textarea, input{
   }
 }
 
+// custom input type radio
+.radio-group {
+  margin: rem(15px 0) ;
+}
+
+input[type=radio] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  &:checked {
+    & + .radio-text {
+      &:after {
+        opacity: 1;
+      }
+      &:before {
+        border: 1px solid #a020bc;
+        box-shadow: none;
+      }
+    }
+  }
+}
+.radio-text {
+  position: relative;
+  padding: rem(0 0 0 35px);
+  cursor: pointer;
+  font-size: rem(18px);
+  font-weight: 700;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $white;
+    border: 1px solid #d8d8d8;
+    box-shadow:0 2px 6px 0 rgba(0,0,0,0.10);
+    width: rem(18px);
+    height: rem(18px);
+    border-radius: 100%;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    opacity: 0;
+    transition: .2s;
+    background: linear-gradient(-90deg, #9d1ebb 0%, #e756bd 100%);
+    background-clip: border-box;
+    width: rem(12px);
+    height: rem(12px);
+    border-radius: 100%;
+  }
+}
+
+// custom input type checkbox
+.checkbox-group {
+  margin: rem(15px 0) ;
+}
+input[type=checkbox] {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  &:checked {
+    & + .checkbox-text {
+      &:after {
+        opacity: 1;
+      }
+      &:before {
+        border: 1px solid #a020bc;
+        background: $violet-gradient;
+        background-clip: border-box;
+        box-shadow: none;
+      }
+    }
+  }
+}
+.checkbox-text {
+  position: relative;
+  padding: rem(0 0 0 35px);
+  cursor: pointer;
+  font-size: rem(18px);
+  font-weight: 400;
+  font-size: rem(14px);
+  &:before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    background: $white;
+    border: 1px solid #d8d8d8;
+    box-shadow:0 2px 6px 0 rgba(0,0,0,0.10);
+    width: rem(18px);
+    height: rem(18px);
+    border-radius: 3px;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    opacity: 0;
+    transition: .2s;
+    display: block;
+    background-image: url("../images/svg/apply.svg");
+    background-clip: border-box;
+    background-repeat: no-repeat;
+    width: rem(12px);
+    height: rem(9px);
+    border-radius: 100%;
+  }
+}

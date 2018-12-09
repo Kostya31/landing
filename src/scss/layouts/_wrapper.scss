@@ -1,9 +1,9 @@
 
-.wrapper{
+.wrapper {
   background-color: $black;
 }
 
-.text-gradient{
+.text-gradient {
   //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#000000'); /* for IE */
   //background: -webkit-gradient($violet-gradient); /* for webkit browsers */
   //background: -moz-linear-gradient($violet-gradient); /* for firefox 3.6+ */
@@ -15,46 +15,50 @@
 // -------------- hero top -------------
 
 .section-hero-top {
-  .hero-logo{
+  .hero-logo {
     margin-right: rem(160px);
   }
   .text-gradient {
     font-weight: 700;
     margin-bottom: rem(30px);
   }
-  h1{
+  .hero-info {
     margin-bottom: rem(40px);
   }
-  .description{
+  h1 {
+    margin-bottom: rem(40px);
+  }
+  .description {
     margin-bottom: rem(40px);
     padding-right: rem(440px);
   }
-  .btn-violet{
+  .btn-violet {
     margin-right: rem(15px);
   }
 }
+
 .hero-info {
   display: flex;
 }
-.contacts-item{
+
+.contacts-item {
   color: $white;
   margin-right: rem(128px);
-  &:last-child{
+  &:last-child {
     margin-right: 0;
   }
   .contacts-label {
-    font-size: rem(14px);
+    font-size: rem(12px);
     margin-bottom: 5px;
     font-weight: 300;
     padding-left: rem(24px);
   }
-  .contacts-text{
-    img{
+  .contacts-text {
+    img {
       margin-right: rem(8px);
     }
   }
 }
-
 
 //---------------- about coworking --------
 
@@ -67,55 +71,48 @@
   .description {
     width: 46%;
   }
-  &__img{
+  &__img {
     position: absolute;
     right: rem(60px);
     top: rem(-50px);
+    svg {
+
+    }
   }
 }
 
-
 // --------------- offer ----------
 
-.offer-wrap{
+.offer-wrap {
   margin-top: rem(80px);
   margin-bottom: rem(50px);
 }
 
 .offer-item {
-  &.offer-odd {
-    .offer-img {
-      background-position: right;
-      justify-content: flex-start;
-      background-size: calc(50vw - 16px);
-    }
-    .offer-content {
-      width: calc(100vw / 2);
-      padding-left: calc((100vw - 1170px) / 2);
-      padding-right: rem(80px);
-    }
+  display: flex;
+  &:nth-child(even) {
+    flex-direction: row-reverse;
   }
 }
 
 .offer-img {
-  background-position: left;
-  background-size: 50vw;
+  background-position: center;
+  background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  justify-content: flex-end;
+  width: 50%;
+}
+
+.offer-content {
+  width: 50%;
+  display: inline-block;
+  padding-right: calc((100vw - 1170px) / 2 + 15px);
+  padding-left: rem(80px);
   padding-top: rem(50px);
   padding-bottom: rem(70px);
 }
 
-.offer-content {
-  width: calc(100vw / 2 - 16px);
-  display: inline-block;
-  padding-right: calc((100vw - 1170px) / 2);
-  padding-left: rem(80px);
-}
-
 .workplace {
-  span{
+  span {
     width: 66px;
     height: 66px;
     display: inline-flex;
@@ -128,28 +125,27 @@
     border-radius: 50%;
     background-image: $violet-gradient;
     background-clip: content-box;
-    box-shadow: 0 10px 15px 0 rgba(226,82,189,0.30);
+    box-shadow: 0 10px 15px 0 rgba(226, 82, 189, 0.30);
   }
-  strong{
+  strong {
     font-size: rem(20px);
     font-weight: 700;
     color: $white;
     position: relative;
     top: -5px;
   }
-  p{
+  p {
     padding-left: rem(86px);
     margin-bottom: rem(35px);
   }
 }
 
-
-.offer-info-list{
-  li{
+.offer-info-list {
+  li {
     margin-bottom: rem(22px);
     position: relative;
     padding-left: rem(86px);
-    &:before{
+    &:before {
       content: '';
       position: absolute;
       top: 0;
@@ -165,24 +161,24 @@
   }
 }
 
-
 // coworking item
 
 .coworking-wrap {
   display: flex;
   flex-wrap: wrap;
 }
+
 .coworking-item {
   flex-basis: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-top: rem(50px);
-  h5{
+  h5 {
     line-height: rem(24px);
     margin-bottom: rem(15px);
   }
-  p{
+  p {
     margin-bottom: rem(50px);
     font-size: 14px;
   }
@@ -194,6 +190,121 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.location-contacts {
+  background-color: $black;
+  padding: rem(30px 30px 70px 30px);
+  width: rem(400px);
+  position: relative;
+  h2 {
+    margin-bottom: rem(25px);
+  }
+  .contacts-item {
+    margin-bottom: rem(30px);
+  }
+  p {
+    font-size: 14px;
+    margin-bottom: rem(30px);
+  }
+  .btn-violet {
+    margin-bottom: rem(30px);
+  }
+}
+
+// slider
+
+.section-slider{
+  .container {
+    &.position-absolute {
+      position: absolute;
+      bottom: rem(60px);
+      left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.working-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h2 {
+    background-color: $black;
+    padding: rem(10px 30px);
+  }
+}
+
+// office room
+
+.office-room {
+  padding: rem(86px 100px);
+  .wrap-form {
+    width: rem(560px);
+    margin: 0 auto;
+  }
+  h2{
+    margin-bottom: rem(30px);
+    &.top-line {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      &:before{
+        content: '';
+        width: rem(200px);
+        height: 6px;
+        display: inline-block;
+        background: $violet-gradient;
+        background-clip: content-box;
+        position: absolute;
+        top: rem(-30px);
+      }
+    }
+  }
+  .booking-banner {
+    max-width: rem(730px);
+    margin: rem(0 auto 40px auto);
+  }
+}
+
+.wrap-form {
+  padding: rem(30px 100px);
+  background: $white;
+  box-shadow: 0 10px 15px 0 rgba(241, 241, 241, 0.30);
+  border-radius: 12px;
+  h4, p {
+    color: $black;
+  }
+  h4{
+    margin-bottom: rem(15px);
+  }
+}
+
+.jobs-price{
+  font-size: 20px;
+  font-weight: 700;
+  min-width: rem(120px);
+  display: inline-block;
+  float: right;
+}
+
+
+// banner
+
+.booking-banner{
+  padding: rem(30px);
+  background-image: linear-gradient(-180deg, #9d1ebb 0%, #e756bd 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h5{
+    font-size: rem(18px);
+    margin-bottom: rem(10px);
+  }
+  p {
+    font-size: rem(14px);
+  }
 }
 
 // hero bottom

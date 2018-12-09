@@ -1,0 +1,29 @@
+
+.slider-dots{
+  display: flex;
+}
+.dots-items{
+  display: flex;
+  li{
+    margin: rem(0 5px);
+    &.slick-active{
+      .dot{
+        background: $violet-gradient;
+        background-clip: content-box;
+      }
+    }
+    .dot{
+      display: inline-block;
+      width: rem(16px);
+      height: rem(16px);
+      border-radius: 50%;
+      background-color: $grey;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba($grey, 0.6);
+      }
+    }
+  }
+}
+
+

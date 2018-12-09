@@ -1,5 +1,6 @@
 
 .section{
+  position: relative;
   &-bg {
     background-size: cover;
     background-position: center;
@@ -16,7 +17,6 @@
   }
   &-map{
     position: relative;
-    height: 0;
-    padding-bottom: 42%;
+    padding: rem(80px 0 120px);
   }
 }

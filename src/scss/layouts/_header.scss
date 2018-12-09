@@ -16,6 +16,10 @@
       display: inline-block;
       margin-right: 50px;
       color: $black-header;
+      transition: color .2s linear;
+      &:hover{
+        color: $violet;
+      }
       &:last-child {
         margin-right: 0;
       }
