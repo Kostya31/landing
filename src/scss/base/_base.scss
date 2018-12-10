@@ -157,10 +157,13 @@ h1,h2,h3,h4,h5,h6{
   }
 }
 
+.text-white {
+  color: $white!important;
+}
 
-
-
-
+.text-black {
+  color: $black!important;
+}
 
 pre{
   white-space: pre-wrap;

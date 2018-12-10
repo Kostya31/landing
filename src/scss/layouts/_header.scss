@@ -10,7 +10,7 @@
     margin-right: 75px;
   }
   &-nav {
-    display: inline-block;
+    display: inline-flex;
     a {
       font-size: rem(13px);
       display: inline-block;
@@ -27,8 +27,11 @@
   }
 }
 .switch-lang {
-  display: inline-block;
+  display: inline-flex;
   margin-right: rem(80px);
+  cursor: pointer;
+  position: relative;
+  padding-right: rem(15px);
   &:after {
     content: '';
     border: rem(4px) solid transparent;
@@ -36,17 +39,32 @@
     display: inline-block;
     width: 0;
     height: 0;
+    position: absolute;
+    top: 5px;
+    right: 0;
+  }
+  &__drop {
+    display: none;
+  }
+  &.open {
+      .switch-lang__drop{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: inline-flex;
+      }
   }
   &__item{
-    display: none;
     font-size: rem(13px);
     font-weight: 900;
-    &.active{
-      display: inline-flex;
-      align-items: center;
-    }
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+
   }
   &__name {
     margin-left: 10px;
+    position: relative;
+    top: 1px;
   }
 }

@@ -67,7 +67,7 @@
     font-size: rem(12px);
     margin-bottom: 3px;
     display: block;
-    font-weight: 300;
+    font-weight: 400;
     padding-left: rem(24px);
   }
   .contacts-text {
@@ -348,7 +348,7 @@
     font-size: 14px;
     margin-bottom: rem(30px);
   }
-  .btn-violet {
+  .btn {
     margin-bottom: rem(30px);
   }
   .contacts-label {
@@ -512,7 +512,9 @@
     .slider-arrows {
       padding: 0 30px;
     }
-
+    .slider-dots{
+      bottom: 30px;
+    }
   }
   .slider-item {
     position: relative;
@@ -560,7 +562,6 @@
     margin-bottom: rem(40px);
   }
   h2 {
-    color: $black;
     margin-bottom: rem(40px);
   }
   .btn-orange {
