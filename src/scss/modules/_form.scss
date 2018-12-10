@@ -120,3 +120,38 @@ input[type=checkbox] {
     border-radius: 100%;
   }
 }
+
+
+//quantity-nav
+
+.quantity-nav {
+
+}
+
+.quantity-button{
+  width: 35px;
+  height: 35px;
+  background-color: #e2e2e2;
+  border-radius: 50%;
+  cursor: pointer;
+  color: $black;
+  font-weight: 900;
+  font-size: 16px;
+  &.disabled {
+    background-color: #f2f2f2;
+    color: #c6c6c6;
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+// custom select
+
+select {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  background-color: $white;
+  height: 46px;
+  padding: rem(15px 30px 15px 15px);
+  border:  none;
+}

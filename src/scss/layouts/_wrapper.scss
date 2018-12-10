@@ -1,13 +1,27 @@
 
 .wrapper {
+  //background-color: $black;
+}
+
+.bg-black {
   background-color: $black;
 }
 
-.text-gradient {
+.bg-silver {
+  background-color: $bg-silver;
+}
+
+.text-gradient-violet {
   //filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#000000'); /* for IE */
   //background: -webkit-gradient($violet-gradient); /* for webkit browsers */
   //background: -moz-linear-gradient($violet-gradient); /* for firefox 3.6+ */
   background: $violet-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-orange {
+  background: $orange-gradient;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -18,8 +32,9 @@
   .hero-logo {
     margin-right: rem(160px);
   }
-  .text-gradient {
+  .text-gradient-violet {
     font-weight: 700;
+    font-size: rem(20px);
     margin-bottom: rem(30px);
   }
   .hero-info {
@@ -32,7 +47,8 @@
     margin-bottom: rem(40px);
     padding-right: rem(440px);
   }
-  .btn-violet {
+  .btn-violet,
+  .btn-orange {
     margin-right: rem(15px);
   }
 }
@@ -49,13 +65,16 @@
   }
   .contacts-label {
     font-size: rem(12px);
-    margin-bottom: 5px;
+    margin-bottom: 3px;
+    display: block;
     font-weight: 300;
     padding-left: rem(24px);
   }
   .contacts-text {
     img {
       margin-right: rem(8px);
+      position: relative;
+      top: 2px;
     }
   }
 }
@@ -73,11 +92,23 @@
   }
   &__img {
     position: absolute;
-    right: rem(60px);
+    right: rem(128px);
     top: rem(-50px);
     svg {
 
     }
+  }
+}
+
+
+//  about apart
+
+.our-apart {
+  .description{
+    display: inline-block;
+  }
+  &__img {
+    float: right;
   }
 }
 
@@ -86,12 +117,63 @@
 .offer-wrap {
   margin-top: rem(80px);
   margin-bottom: rem(50px);
+  &-apart {
+    margin-bottom: 0;
+  }
 }
 
 .offer-item {
   display: flex;
+
+  //custom offer apart
+
+  &.offer-item-apart {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:nth-child(even) {
+      flex-direction: row;
+      .offer-content {
+        padding-right: calc((100vw - 1170px) / 2 + 15px);
+        padding-left: rem(80px);
+      }
+    }
+    .offer-content {
+      background-color: $white;
+    }
+  }
+  //----------- end custom
+
   &:nth-child(even) {
     flex-direction: row-reverse;
+    .offer-content {
+      padding-left: calc((100vw - 1170px) / 2 + 15px);
+      padding-right: rem(80px);
+    }
+  }
+}
+
+.offer-item-apart {
+  .slider-wrap {
+    width: 50%;
+  }
+  .slider-arrows {
+    .slick-arrow {
+      background: $orange-gradient;
+      &:hover{
+        background: #322f31;
+      }
+    }
+  }
+  .dots-items {
+    li {
+      &.slick-active {
+        .dot {
+          background: $orange-gradient;
+        }
+      }
+    }
   }
 }
 
@@ -108,7 +190,67 @@
   padding-right: calc((100vw - 1170px) / 2 + 15px);
   padding-left: rem(80px);
   padding-top: rem(50px);
-  padding-bottom: rem(70px);
+  padding-bottom: rem(50px);
+  h5 {
+    margin-bottom: rem(20px);
+  }
+  .offer-price {
+    margin-right: rem(50px);
+  }
+}
+
+.offer-title {
+  font-size: rem(24px);
+  font-weight: 700;
+  margin-bottom: rem(40px);
+}
+
+.offer-info-rooms {
+  margin-bottom: rem(20px);
+  .badge {
+    margin-bottom: rem(20px);
+    margin-right: rem(6px);
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.offer-price {
+  text-shadow: 0 10px 15px rgba(255, 202, 4, 0.2);
+  color: #322f31;
+  font-size: rem(20px);
+  font-weight: 900;
+  display: inline-block;
+}
+
+.offer-comfort {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: rem(40px);
+  &__item {
+    display: inline-flex;
+    align-items: center;
+    margin: rem(10px 0);
+    width: 50%;
+    img {
+      margin-right: 10px;
+    }
+  }
+}
+
+//badge
+
+.badge {
+  padding: rem(6px 15px);
+  font-size: rem(14px);
+  font-weight: 500;
+  display: inline-block;
+  &-white {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    background-color: $white;
+  }
 }
 
 .workplace {
@@ -193,7 +335,6 @@
 }
 
 .location-contacts {
-  background-color: $black;
   padding: rem(30px 30px 70px 30px);
   width: rem(400px);
   position: relative;
@@ -210,17 +351,49 @@
   .btn-violet {
     margin-bottom: rem(30px);
   }
+  .contacts-label {
+    padding-left: 0;
+  }
 }
 
 // slider
 
-.section-slider{
+.section-slider {
   .container {
-    &.position-absolute {
+    &.slider-content {
       position: absolute;
-      bottom: rem(60px);
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+  }
+}
+
+.slider-coworking-room {
+  .slider-dots {
+    bottom: 55px;
+  }
+  .slider-item {
+    position: relative;
+    &:before {
+      content: '';
+      padding-bottom: 48.6%;
+      display: block;
+      height: 0;
+      top: 0;
+      left: 0;
+    }
+    img {
+      position: absolute;
+      top: 0;
       left: 0;
       width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
@@ -229,6 +402,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  width: 100%;
+  margin-bottom: rem(40px);
   h2 {
     background-color: $black;
     padding: rem(10px 30px);
@@ -242,14 +418,17 @@
   .wrap-form {
     width: rem(560px);
     margin: 0 auto;
+    .btn-violet {
+      width: 100%;
+    }
   }
-  h2{
+  h2 {
     margin-bottom: rem(30px);
     &.top-line {
       position: relative;
       display: flex;
       justify-content: center;
-      &:before{
+      &:before {
         content: '';
         width: rem(200px);
         height: 6px;
@@ -275,12 +454,38 @@
   h4, p {
     color: $black;
   }
-  h4{
+  h4 {
     margin-bottom: rem(15px);
+  }
+  .select-period {
+    padding: rem(15px 0 30px);
+    border-bottom: 1px solid $light-grey;
+  }
+  .general-price {
+    margin-bottom: rem(40px);
+    padding-top: rem(15px);
+    display: flex;
+    justify-content: space-between;
   }
 }
 
-.jobs-price{
+.includes-list {
+  border-bottom: 1px solid $light-grey;
+  p {
+    font-weight: 500;
+    margin-bottom: rem(15px);
+  }
+  ul {
+    margin-bottom: rem(36px);
+    li {
+      color: $black;
+      font-size: rem(14px);
+      line-height: rem(24px);
+    }
+  }
+}
+
+.jobs-price {
   font-size: 20px;
   font-weight: 700;
   min-width: rem(120px);
@@ -288,17 +493,58 @@
   float: right;
 }
 
+// offer-slider
+
+.slider-wrap {
+  position: relative;
+  .slider-dots {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .slider-arrows {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.slider-apart{
+    .slider-arrows {
+      padding: 0 30px;
+    }
+
+  }
+  .slider-item {
+    position: relative;
+    height: 100%;
+  }
+
+  .offer-slider {
+    width: 100%;
+    position: relative;
+    height: 100%;
+  }
+
+  .slick-list, .slick-track {
+    height: 100%;
+  }
+  .slick-slide {
+    >div {
+      height: 100%;
+    }
+  }
+}
 
 // banner
 
-.booking-banner{
+.booking-banner {
   padding: rem(30px);
   background-image: linear-gradient(-180deg, #9d1ebb 0%, #e756bd 100%);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  h5{
+  h5 {
     font-size: rem(18px);
     margin-bottom: rem(10px);
   }

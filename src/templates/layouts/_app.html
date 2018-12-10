@@ -44,7 +44,7 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="footer">
+    <footer class="footer bg-black">
         <div class="container">
             <div class="footer-top">
                 <div class="col-logo">
@@ -87,11 +87,11 @@
                             </a>
                         </div>
                     </div>
-                    <div class="subscribe-item subscribe-form">
+                    <div class="subscribe-item">
                         <p>Подпишись на наши новости!</p>
-                        <form action="#" method="#">
+                        <form action="#" method="#" class="form-subscribe">
                             <div class="form-group">
-                                <input type="email" placeholder="Ваш email…" class="form-control" name="subscribe">
+                                <input type="email" autocomplete="off" placeholder="Ваш email…" class="form-control" name="subscribe">
                             </div>
                             <button type="submit"><img src="../images/svg/paper-plane.svg" alt="#"></button>
                         </form>
@@ -112,7 +112,7 @@
     </footer>
 </div>
 
-<!-- Scripts -->
 <script src="./js/app.js" defer></script>
+<!-- Scripts -->
 </body>
 </html>

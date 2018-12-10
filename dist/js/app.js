@@ -16898,23 +16898,36 @@ require('bootstrap/js/dist/modal');
 
 var app = {
     questionSlider: function questionSlider() {
-        var sliderCoworking = $('.js-slider');
-        if (sliderCoworking.length) {
-            sliderCoworking.slick({
-                slidesToShow: 1,
-                appendDots: $('.slider-dots'),
-                dotsClass: 'dots-items',
-                customPaging: function customPaging(slider, i) {
-                    return '<span class="dot"></span>';
-                },
-                arrows: false,
-                infinite: true,
-                dots: true,
-                useTransform: false
+        var sliderImg = $('.js-slider');
+        if (sliderImg.length) {
+            sliderImg.each(function () {
+                var prevArrow = $(this).next().find('.slick-prev');
+                var nextArrow = $(this).next().find('.slick-next');
+
+                console.log($(this));
+                $(this).slick({
+                    slidesToShow: 1,
+                    appendDots: $(this).parent().find('.slider-dots'),
+                    dotsClass: 'dots-items',
+                    customPaging: function customPaging(slider, i) {
+                        console.log(i);
+                        return '<span class="dot"></span>';
+                    },
+                    arrows: true,
+                    appendArrows: $('.slider-arrows'),
+                    prevArrow: prevArrow,
+                    nextArrow: nextArrow,
+                    infinite: true,
+                    dots: true,
+                    useTransform: false
+                });
             });
         }
     },
-    tabs: function tabs() {},
+
+    tabs: function tabs() {
+        setTaggedTabActive();
+    },
 
     init: function init() {
         app.questionSlider();
@@ -17016,8 +17029,6 @@ var setTaggedTabActive = function setTaggedTabActive() {
         }
     }
 };
-
-setTaggedTabActive();
 
 },{"bootstrap/js/dist/modal":1,"bootstrap/js/dist/tab":2,"bootstrap/js/dist/util":3,"jquery":4,"popper.js":5,"slick-carousel":6}]},{},[7]);
 

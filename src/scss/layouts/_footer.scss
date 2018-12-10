@@ -6,8 +6,8 @@
     nav {
       display: flex;
       flex-direction: column;
-      flex-basis: 40%;
-      a{
+      padding-left: rem(150px);
+      a {
         font-size: rem(13px);
         color: $white;
         margin-bottom: rem(20px);
@@ -16,9 +16,9 @@
     }
 
   }
-  &-logo{
+  &-logo {
     text-align: center;
-    a{
+    a {
       display: inline-block;
     }
   }
@@ -33,7 +33,7 @@
   &-bottom {
     padding: rem(20px 0);
     nav {
-      a{
+      a {
         font-size: rem(13px);
         color: #909090;
         margin: rem(0 0 0 80px);
@@ -43,16 +43,16 @@
 }
 
 .col-logo {
-  flex-basis: 20%;
+  padding-left: rem(75px);
 }
-.subscribe{
-  flex-basis: 40%;
+
+.subscribe {
+  padding-left: rem(120px);
   &-social {
     margin-bottom: rem(25px);
   }
-
   &-item {
-    p{
+    p {
       font-size: 16px;
       line-height: rem(24px);
       color: #989898;
@@ -62,10 +62,33 @@
   }
 }
 
-.social-link{
+.form-subscribe {
+  width: rem(350px);
+  position: relative;
+  .form-control {
+    width: 100%;
+    height: 46px;
+  }
+  button {
+    width: 46px;
+    height: 46px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    background-color: $grey;
+    cursor: pointer;
+  }
+}
+
+.social-link {
   display: flex;
-  a{
+  a {
     display: block;
     margin-right: rem(15px);
   }
 }
+

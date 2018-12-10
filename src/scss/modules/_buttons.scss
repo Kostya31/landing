@@ -10,7 +10,7 @@
   white-space: nowrap;
   background-clip: padding-box;
   &--lg{
-    padding: rem(16px 68px);
+    padding: rem(16px 50px);
   }
   &--sm {
     padding: rem(8px 18px);
@@ -18,18 +18,25 @@
   &.btn-silver{
     background:rgba(255,255,255,0.50);
   }
+  &.btn-silver-2 {
+    background-color: rgba(40, 38, 39, 0.4);
+  }
   &.btn-violet{
     background: $violet-gradient;
     background-clip: padding-box;
+    box-shadow:0 10px 15px 0 rgba(226,82,189,0.30);
     &:hover{
       background: $violet;
+      box-shadow: none;
     }
   }
   &.btn-orange {
     background: $orange-gradient;
     background-clip: padding-box;
+    box-shadow: 0 10px 15px rgba(255, 202, 4, 0.2);
     &:hover{
       background: $orange;
+      box-shadow: none;
     }
   }
   &.btn-white {

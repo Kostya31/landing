@@ -1,48 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends "layouts/_app.html" %}
 
-    <title>Landing</title>
 
-    <!-- Styles -->
-    <link href="./css/app.css" rel="stylesheet">
-</head>
-<body>
-
-<div class="wrapper">
-    <header class="header">
-        <div class="container">
-            <div class="header-wrap">
-                <a href="#" class="header-logo">
-                    <img src="images/svg/stangher-logo-main.svg" alt="logo">
-                </a>
-                <div class="switch-lang">
-                    <div class="switch-lang__item active">
-                        <img src="../images/svg/ru.svg" class="switch-lang__flag" alt="lang">
-                        <span class="switch-lang__name upper">рус</span>
-                    </div>
-                    <div class="switch-lang__item">
-                        <img src="" class="switch-lang__flag" alt="lang">
-                        <span class="switch-lang__name upper">укр</span>
-                    </div>
-                </div>
-                <nav class="header-nav">
-                    <a href="#our-projects">Наши проекты</a>
-                    <a href="#locations">Локации</a>
-                    <a href="#about-us">О нас</a>
-                    <a href="#contact-us">Связаться с нами</a>
-                    <a href="#blog">Блог</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        
-<div class="section section-hero-top section-bg" style="background-image: url(../images/cowork-hero-bg.jpg)">
+{% block content %}
+<div class="section section-hero-top section-bg bg-black" style="background-image: url(../images/cowork-hero-bg.jpg)">
     <div class="container">
         <div class="hero-info">
             <div class="hero-logo"><img src="../images/svg/stangher-coworking-logo.svg" alt="logo"></div>
@@ -67,15 +27,15 @@
             <p>Смените обстановку на приятную и комфортную рабочую атмосферу! Здесь вы сможете обзавестись полезными знакомствами, обменяться профессиональным опытом, найти отличные возможности для сотрудничества, а так же приятно и продуктивно провести ваше рабочее время</p>
             <br>
 
-                <p>Приходите к нам и убедитесь в этом сами!</p>
+            <p>Приходите к нам и убедитесь в этом сами!</p>
         </div>
-        <p class="text-gradient upper">Первый тестовый день Бесплатный!</p>
+        <p class="text-gradient-violet">Первый тестовый день Бесплатный!</p>
         <a href="#" class="btn btn--lg btn-violet">Забронировать</a>
         <a href="#" class="btn btn--lg btn-silver">Подробнее</a>
     </div>
 </div>
 
-<div class="section section-coworking">
+<div class="section bg-black section-coworking">
     <div class="container">
         <div class="our-coworking">
             <h2>О нашем коворкинге</h2>
@@ -152,7 +112,7 @@
                 </svg>
             </div>
         </div>
-        <p class="center"><span class="text-gradient upper">МЫ ПРЕДЛАГАЕМ</span></p>
+        <p class="center"><span class="text-gradient-violet upper">МЫ ПРЕДЛАГАЕМ</span></p>
         <h2 class="center">Отличную замену тесным и скучным офисам</h2>
     </div>
     <div class="offer-wrap">
@@ -160,7 +120,8 @@
             <div class="offer-img" style="background-image: url(../images/1.jpg);"></div>
             <div class="offer-content">
                 <div class="workplace">
-                    <span>24</span><strong>рабочих места</strong>
+                    <span class="">24</span>
+                    <strong>рабочих места</strong>
                     <p>в опэнспэйсе разделенных на
                         несколько рабочих зон</p>
                 </div>
@@ -287,16 +248,24 @@
 </div>
 
 <!--section slider-->
-<div class="section section-slider">
-    <div class="slider-items js-slider">
-        <div class="slider-item"><img src="../images/slide-1.jpg" alt="slider-item"></div>
-        <div class="slider-item"><img src="../images/slide-1.jpg" alt="slider-item"></div>
-        <div class="slider-item"><img src="../images/slide-1.jpg" alt="slider-item"></div>
+<div class="section bg-black section-slider">
+    <div class="slider-wrap slider-coworking-room">
+        <div class="slider-items js-slider">
+            <div class="slider-item"><img src="../images/slide-1.jpg" alt="slider-item"></div>
+            <div class="slider-item"><img src="../images/1.jpg" alt="slider-item"></div>
+            <div class="slider-item"><img src="../images/2.jpg" alt="slider-item"></div>
+            <div class="slider-item"><img src="../images/3.jpg" alt="slider-item"></div>
+        </div>
+        <div class="slider-arrows">
+            <button class="slick-prev slick-arrow"></button>
+            <button class="slick-next slick-arrow"></button>
+        </div>
+        <div class="slider-dots"></div>
     </div>
-    <div class="container position-absolute">
+
+    <div class="container slider-content">
         <div class="working-area">
             <h2>@Робочии зоны</h2>
-            <div class="slider-dots"></div>
             <a href="#" class="btn btn--lg btn-violet">Забронировать</a>
         </div>
     </div>
@@ -305,28 +274,29 @@
 <div class="section section-map">
     <iframe class="location-map" src="https://yandex.ua/map-widget/v1/-/CBFcj4r7xD" width="100%" height="100%" frameborder="1" allowfullscreen="true"></iframe>
     <div class="container">
-        <div class="location-contacts">
+        <div class="location-contacts bg-black">
             <h2>Мы находимся</h2>
             <div class="contacts-item">
-                <span>
+                <div class="contacts-text">
                     <img src="../images/svg/phone-pink.svg" alt="phone">
                     <a href="tel:+7 (495) 987-65-43">+7 (495) 987-65-43</a>
-                </span>
+                </div>
             </div>
             <p>Приятный инфраструктурно развитый район.
                 На территории самого комплекса торговый центр Ривердейл, в котором и кафешки и магазины, супер-маркеты.</p>
             <a href="#" class="btn btn--sm btn-violet">Забронировать место</a>
+
             <div class="contacts-item">
-                <span>инфо-лайн:</span>
-                <span>
+                <span class="contacts-label">инфо-лайн:</span>
+                <div class="contacts-text">
                     <a href="tel:+7 (495) 987-65-43">+7 (495) 987-65-43</a>
-                </span>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="section">
+<div class="section bg-black">
     <div class="container">
         <div class="office-room">
             <h2 class="center top-line">Наши предложения</h2>
@@ -357,28 +327,28 @@
                                         <input type="radio" class="form-control" name="booking-type" checked>
                                         <span class="radio-text">Почасово</span>
                                     </label>
-                                    <span class="text-gradient jobs-price">60 руб.</span>
+                                    <span class="text-gradient-violet jobs-price">60 руб.</span>
                                 </div>
                                 <div class="radio-group clearfix">
                                     <label >
                                         <input class="form-control" type="radio" name="booking-type">
                                         <span class="radio-text">День работы</span>
                                     </label>
-                                    <span class="text-gradient jobs-price">400 руб.</span>
+                                    <span class="text-gradient-violet jobs-price">400 руб.</span>
                                 </div>
                                 <div class="radio-group clearfix">
                                     <label>
                                         <input class="form-control" type="radio" name="booking-type">
                                         <span class="radio-text">Неделя</span>
                                     </label>
-                                    <span class="text-gradient jobs-price">2000 руб.</span>
+                                    <span class="text-gradient-violet jobs-price">2000 руб.</span>
                                 </div>
                                 <div class="radio-group clearfix">
                                     <label >
                                         <input class="form-control" type="radio" name="booking-type">
                                         <span class="radio-text">Месяц</span>
                                     </label>
-                                    <span class="text-gradient jobs-price">7000 руб.</span>
+                                    <span class="text-gradient-violet jobs-price">7000 руб.</span>
                                 </div>
 
                                 <div class="checkbox-group">
@@ -386,7 +356,7 @@
                                         <input class="form-control" type="checkbox" name="booking-type">
                                         <span class="checkbox-text">С фиксированным местом</span>
                                     </label>
-                                    <span class="text-gradient">(+500 руб.)</span>
+                                    <span class="text-gradient-violet">(+500 руб.)</span>
                                 </div>
                                 <div class="includes-list">
                                     <p>Сюда входит:</p>
@@ -410,12 +380,16 @@
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <input type="number" name="place" max="50" min="1" class="form-control">
+                                        <input type="text" name="place" value="1-место" readonly class="form-control">
+                                        <div class="quantity-nav">
+                                            <button type="button" class="quantity-button quantity-up disabled">+</button>
+                                            <button type="button" class="quantity-button quantity-down">-</button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="count">
+                                <div class="general-price">
                                     <span>Итого:</span>
-                                    <span>7500 руб</span>
+                                    <span class="text-gradient-violet">7500 руб</span>
                                 </div>
                                 <button class="btn btn--lg btn-violet">Забронировать</button>
                             </form>
@@ -435,7 +409,7 @@
 
 <!--section hero-bottom-->
 
-<div class="section section-hero-bottom section-bg" style="background-image: url(../images/loft-hero-img.jpg)">
+<div class="section section-hero-bottom bg-black section-bg" style="background-image: url(../images/loft-hero-img.jpg)">
     <div class="container">
         <div class="hero-logo"><img src="../images/svg/stangher-aparts-riverdale-logo.svg" alt="logo"></div>
         <h2>Также предлагаем комфортабельные <br>
@@ -444,78 +418,6 @@
         <a href="#" class="btn btn--lg btn-orange">Перейти к апартаментам</a>
     </div>
 </div>
+{% endblock %}
 
-    </main>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-top">
-                <div class="col-logo">
-                    <div class="footer-logo">
-                        <a class="footer-logo" href="#"><img src="../images/svg/stangher-footer-logo.svg" alt="logo"></a>
-                    </div>
-                    <div class="footer-copyright">
-                        © 2018 StanGher <br>
-                        Все права защищены
-                    </div>
-                </div>
-                <nav class="footer-nav">
-                    <a href="#">наши обьекты</a>
-                    <a href="#">Локации</a>
-                    <a href="#">О проекте</a>
-                    <a href="#">Обратная связь</a>
-                    <a href="#">Акселератор и венчурный фонд</a>
-                </nav>
-                <div class="subscribe">
-                    <div class="subscribe-item subscribe-social">
-                        <p>Мы в социальных сетях</p>
-                        <div class="social-link">
-                            <a href="#">
-                                <img src="../images/svg/Facebook.svg" alt="Facebook">
-                            </a>
-                            <a href="#">
-                                <img src="../images/svg/VK.svg" alt="vkontakte">
-                            </a>
-                            <a href="#">
-                                <img src="../images/svg/Instagram.svg" alt="instagram">
-                            </a>
-                            <a href="#">
-                                <img src="../images/svg/Twitter.svg" alt="twitter">
-                            </a>
-                            <a href="#">
-                                <img src="../images/svg/Flickr.svg" alt="Flickr">
-                            </a>
-                            <a href="#">
-                                <img src="../images/svg/Foursquare.svg" alt="Foursquare">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="subscribe-item subscribe-form">
-                        <p>Подпишись на наши новости!</p>
-                        <form action="#" method="#">
-                            <div class="form-group">
-                                <input type="email" placeholder="Ваш email…" class="form-control" name="subscribe">
-                            </div>
-                            <button type="submit"><img src="../images/svg/paper-plane.svg" alt="#"></button>
-                        </form>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-                <nav>
-                    <a href="#">Карта сайта</a>
-                    <a href="#">Согласие на обработку данных</a>
-                    <a href="#">Политика конфиденциальности</a>
-                </nav>
-            </div>
-        </div>
-    </footer>
-</div>
-
-<!-- Scripts -->
-<script src="./js/app.js" defer></script>
-</body>
-</html>

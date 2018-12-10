@@ -8,22 +8,35 @@ require('bootstrap/js/dist/modal');
 
 let app = {
     questionSlider: function () {
-        let sliderCoworking = $('.js-slider');
-        if (sliderCoworking.length) {
-            sliderCoworking.slick({
-                slidesToShow: 1,
-                appendDots: $('.slider-dots'),
-                dotsClass: 'dots-items',
-                customPaging: function(slider, i) {
-                    return '<span class="dot"></span>';
-                },
-                arrows: false,
-                infinite: true,
-                dots: true,
-                useTransform: false,
-            });
+        let sliderImg = $('.js-slider');
+        if (sliderImg.length) {
+            sliderImg.each(function () {
+                let prevArrow = $(this).next().find('.slick-prev');
+                let nextArrow = $(this).next().find('.slick-next');
+
+                console.log($(this));
+                $(this).slick({
+                    slidesToShow: 1,
+                    appendDots: $(this).parent().find('.slider-dots'),
+                    dotsClass: 'dots-items',
+                    customPaging: function(slider, i) {
+                        console.log(i);
+                        return '<span class="dot"></span>';
+                    },
+                    arrows: true,
+                    appendArrows: $('.slider-arrows'),
+                    prevArrow: prevArrow,
+                    nextArrow: nextArrow,
+                    infinite: true,
+                    dots: true,
+                    useTransform: false,
+                });
+
+            })
+
         }
     },
+
     tabs: function () {
         setTaggedTabActive();
     },
@@ -64,5 +77,4 @@ let setTaggedTabActive = () => {
         })
     }
 };
-
 
