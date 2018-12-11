@@ -66,39 +66,8 @@ h1,h2,h3,h4,h5,h6{
 
 
 .bg-silver{
-  color: $black;
-  ul{
-    li{
-      color: $black;
-    }
-  }
-
-  h1{
-    font-size: rem(36px);
-    color: $black;
-  }
-
-  h2{
-    font-size: rem(28px);
-    color: $black;
-  }
-  h3{
-    font-size: rem(24px);
-    color: $black;
-  }
-  h4 {
-    font-size: rem(22px);
-    color: $black;
-  }
-
-  h5 {
-    font-size: rem(18px);
-    color: $black;
-  }
-  h6{
-
-  }
-  p{
+  color: $white;
+  p,h1,h2,h3,h4,h5,h6 {
     color: $black;
   }
   a{
@@ -107,44 +76,17 @@ h1,h2,h3,h4,h5,h6{
       font-weight: 700;
       color: $black;
     }
-
+  }
+  ul{
+    li{
+      color: $black;
+    }
   }
 }
 
 .bg-black{
-  color: $white;
-  ul{
-    li{
-      color: $white;
-    }
-  }
-
-  h1{
-    font-size: rem(36px);
-    color: $white;
-  }
-
-  h2{
-    font-size: rem(28px);
-    color: $white;
-  }
-  h3{
-    font-size: rem(24px);
-    color: $white;
-  }
-  h4 {
-    font-size: rem(22px);
-    color: $white;
-  }
-
-  h5 {
-    font-size: rem(18px);
-    color: $white;
-  }
-  h6{
-
-  }
-  p{
+  color: $black;
+  p,h1,h2,h3,h4,h5,h6{
     color: $white;
   }
   a{
@@ -153,7 +95,47 @@ h1,h2,h3,h4,h5,h6{
       font-weight: 700;
       color: $white;
     }
+  }
+  ul{
+    li{
+      color: $white;
+    }
+  }
+}
 
+
+ul{
+  li{
+    color: $black;
+  }
+}
+
+h1{
+  font-size: rem(36px);
+}
+
+h2{
+  font-size: rem(28px);
+}
+h3{
+  font-size: rem(24px);
+}
+h4 {
+  font-size: rem(22px);
+}
+
+h5 {
+  font-size: rem(18px);
+}
+h6{
+
+}
+
+a{
+  &[href^=tel] {
+    font-size: rem(14px);
+    font-weight: 700;
+    color: $black;
   }
 }
 

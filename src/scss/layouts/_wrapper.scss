@@ -1,6 +1,22 @@
 
 .wrapper {
-  //background-color: $black;
+
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+main {
+  &.content {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
 }
 
 .bg-black {
@@ -9,6 +25,11 @@
 
 .bg-silver {
   background-color: $bg-silver;
+}
+
+.sub-title {
+  font-weight: 900;
+  margin-bottom: rem(10px);
 }
 
 .text-gradient-violet {
@@ -28,9 +49,23 @@
 
 // -------------- hero top -------------
 
-.section-hero-top {
+.hero-top {
   .hero-logo {
     margin-right: rem(160px);
+    @include respond-to(md) {
+      margin-right: rem(120px);
+    }
+    @include respond-to(sm) {
+      margin-right: rem(50px);
+      max-width: 220px;
+    }
+    @include respond-to(xs) {
+      margin-bottom: rem(30px);
+      max-width: 100%;
+    }
+    @include respond-to(es) {
+      margin-bottom: rem(15px);
+    }
   }
   .text-gradient-violet {
     font-weight: 700;
@@ -39,27 +74,69 @@
   }
   .hero-info {
     margin-bottom: rem(40px);
+    @include respond-to(xs) {
+      margin-bottom: rem(20px);
+    }
+    @include respond-to(es) {
+      margin-bottom: rem(10px);
+    }
   }
   h1 {
     margin-bottom: rem(40px);
+    @include respond-to(es) {
+      margin-bottom: rem(20px);
+    }
   }
   .description {
     margin-bottom: rem(40px);
     padding-right: rem(440px);
+    @include respond-to(md) {
+      padding-right: rem(420px);
+    }
+    @include respond-to(sm) {
+      padding-right: rem(200px);
+    }
+    @include respond-to(xs) {
+      padding-right: 0;
+    }
   }
   .btn-violet,
   .btn-orange {
     margin-right: rem(15px);
   }
+  .btn {
+    @include respond-to(es) {
+      width: 100%;
+      text-align: center;
+      margin-bottom: rem(20px);
+    }
+  }
 }
 
 .hero-info {
   display: flex;
+  @include respond-to(xs) {
+    flex-direction: column;
+  }
+  .contacts-item {
+    margin-right: rem(128px);
+    @include respond-to(md){
+      margin-right: rem(60px);
+    }
+    @include respond-to(sm) {
+      margin-right: rem(30px);
+    }
+    @include respond-to(xs) {
+      margin-bottom: rem(30px);
+    }
+    @include respond-to(es) {
+      margin-bottom: rem(15px);
+    }
+  }
 }
 
 .contacts-item {
   color: $white;
-  margin-right: rem(128px);
   &:last-child {
     margin-right: 0;
   }
@@ -71,31 +148,96 @@
     padding-left: rem(24px);
   }
   .contacts-text {
+    position: relative;
+    &.has-icon {
+      padding-left: rem(24px);
+    }
     img {
       margin-right: rem(8px);
-      position: relative;
-      top: 2px;
+      position: absolute;
+      top: 1px;
+      left: 0;
     }
   }
 }
+.contacts-address,
+.contacts-telephone{
+  font-size: rem(14px);
+  font-weight: 700;
+}
+
+
+// hero bottom
+
+.hero-bottom {
+  .hero-logo {
+    margin-bottom: rem(40px);
+  }
+  h2 {
+    margin-bottom: rem(40px);
+  }
+  .btn-orange {
+    padding-right: rem(30px);
+    padding-left: rem(30px);
+  }
+}
+
+.hero-bottom--loft {
+  display: flex;
+
+}
+.hero-apart,
+.hero-coworking {
+  width: 50%;
+  padding: rem(40px 70px 80px);
+}
+.hero-apart {
+  //padding-left: calc((100vw - 1170px) / 2 );
+  //padding-left: rem(70px);
+}
+
+.hero-coworking {
+  //padding-right: calc((100vw - 1170px) / 2 + 15px);
+  //padding-left: rem(70px);
+}
+
 
 //---------------- about coworking --------
 
 .our-coworking {
   position: relative;
   margin-bottom: rem(170px);
+  @include respond-to(es) {
+    margin-bottom: rem(80px);
+  }
   h2 {
     margin-bottom: rem(26px);
+    @include respond-to(xs) {
+      position: relative;
+      z-index: 10;
+    }
   }
   .description {
     width: 46%;
+    @include respond-to(es) {
+      width: 100%;
+      position: relative;
+      z-index: 10;
+    }
   }
   &__img {
     position: absolute;
     right: rem(128px);
     top: rem(-50px);
+    @include respond-to(es) {
+      top: 0;
+      left: 0;
+      right: inherit;
+    }
     svg {
-
+      @include respond-to(es) {
+        opacity: 0.3;
+      }
     }
   }
 }
@@ -117,6 +259,9 @@
 .offer-wrap {
   margin-top: rem(80px);
   margin-bottom: rem(50px);
+  @include respond-to(es) {
+    margin-top: rem(40px);
+  }
   &-apart {
     margin-bottom: 0;
   }
@@ -124,6 +269,11 @@
 
 .offer-item {
   display: flex;
+
+  @include respond-to(es) {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
 
   //custom offer apart
 
@@ -136,21 +286,49 @@
       flex-direction: row;
       .offer-content {
         padding-right: calc((100vw - 1170px) / 2 + 15px);
-        padding-left: rem(80px);
+        padding-left: rem(40px);
       }
     }
     .offer-content {
       background-color: $white;
+      padding-left: rem(40px);
     }
   }
   //----------- end custom
 
   &:nth-child(even) {
     flex-direction: row-reverse;
+    @include respond-to(es) {
+      flex-direction: row;
+    }
     .offer-content {
       padding-left: calc((100vw - 1170px) / 2 + 15px);
       padding-right: rem(80px);
+      @include respond-to(es) {
+        padding-left: rem(15px);
+        padding-right: rem(15px);
+      }
     }
+  }
+}
+
+.sale-label{
+  font-size: 14px;
+  position: relative;
+  display: inline-block;
+  color: $black;
+  font-weight: 900;
+  padding-left: rem(30px);
+  &:before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    top: -5px;
+    left: -10px;
+    width: 46px;
+    height: 46px;
+    background-image: url("../images/svg/money.svg");
+    background-size: contain;
   }
 }
 
@@ -182,6 +360,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 50%;
+  @include respond-to(es) {
+    height: 30vh;
+    width: 100%;
+  }
 }
 
 .offer-content {
@@ -191,6 +373,13 @@
   padding-left: rem(80px);
   padding-top: rem(50px);
   padding-bottom: rem(50px);
+  @include respond-to(es) {
+    width: 100%;
+    padding-right: rem(15px);
+    padding-left: rem(15px);
+    padding-top: rem(20px);
+    padding-bottom: rem(20px);
+  }
   h5 {
     margin-bottom: rem(20px);
   }
@@ -203,6 +392,7 @@
   font-size: rem(24px);
   font-weight: 700;
   margin-bottom: rem(40px);
+  color: $black;
 }
 
 .offer-info-rooms {
@@ -213,6 +403,14 @@
     &:last-child {
       margin-right: 0;
     }
+  }
+}
+.offer-price-wrap {
+  display: inline-flex;
+  flex-direction: column;
+  .offer-price {
+    margin-bottom: rem(10px);
+    font-size: rem(18px);
   }
 }
 
@@ -249,6 +447,7 @@
   &-white {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     border-radius: 25px;
+    color: $black;
     background-color: $white;
   }
 }
@@ -308,6 +507,9 @@
 .coworking-wrap {
   display: flex;
   flex-wrap: wrap;
+  @include respond-to(es) {
+    flex-wrap: wrap;
+  }
 }
 
 .coworking-item {
@@ -316,6 +518,10 @@
   flex-direction: column;
   justify-content: space-between;
   margin-top: rem(50px);
+  @include respond-to(es) {
+    flex-basis: 100%;
+    margin-top: rem(30px);
+  }
   h5 {
     line-height: rem(24px);
     margin-bottom: rem(15px);
@@ -323,6 +529,9 @@
   p {
     margin-bottom: rem(50px);
     font-size: 14px;
+    @include respond-to(es) {
+      margin-bottom: rem(15px);
+    }
   }
 }
 
@@ -338,6 +547,10 @@
   padding: rem(30px 30px 70px 30px);
   width: rem(400px);
   position: relative;
+  @include respond-to(es) {
+    width: 100%;
+    padding: rem(20px);
+  }
   h2 {
     margin-bottom: rem(25px);
   }
@@ -415,9 +628,16 @@
 
 .office-room {
   padding: rem(86px 100px);
+  @include respond-to(es) {
+    padding: rem(80px 0);
+  }
   .wrap-form {
     width: rem(560px);
     margin: 0 auto;
+    @include respond-to(es) {
+      width: 100%;
+      padding: rem(15px 15px 25px 15px);
+    }
     .btn-violet {
       width: 100%;
     }
@@ -443,6 +663,12 @@
   .booking-banner {
     max-width: rem(730px);
     margin: rem(0 auto 40px auto);
+    @include respond-to(es){
+      flex-direction: column;
+      .banner-text {
+        margin-bottom: rem(20px);
+      }
+    }
   }
 }
 
@@ -555,17 +781,75 @@
   }
 }
 
-// hero bottom
 
-.section-hero-bottom {
-  .hero-logo {
-    margin-bottom: rem(40px);
-  }
-  h2 {
-    margin-bottom: rem(40px);
-  }
-  .btn-orange {
-    padding-right: rem(30px);
-    padding-left: rem(30px);
+
+// loft
+
+//   about-complex
+
+.about-complex {
+  display: flex;
+  margin-bottom: rem(100px);
+  h2{
+    margin-bottom: rem(25px);
   }
 }
+.complex-description,
+.complex-img{
+  flex-basis: 50%;
+}
+
+.complex-description{
+  padding-right: rem(80px);
+}
+
+.feature-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.feature-title{
+  margin-bottom: rem(60px);
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(60px);
+  width: 40%;
+  &__img{
+    width: 30%;
+    text-align: center;
+    margin-right: rem(40px);
+    position: relative;
+    top: rem(10px);
+  }
+  &__text {
+    font-weight: 900;
+    width: 60%;
+    color: $black;
+  }
+}
+
+//   feature loft
+
+.feature-loft {
+  display: flex;
+  margin: rem(70px 0 90px);
+  .feature-item{
+    flex-direction: column;
+    &__img {
+      margin-right: 0;
+      height: 90px;
+      margin-bottom: rem(5px);
+    }
+    &__text {
+      text-align: center;
+      width: 50%;
+    }
+  }
+}
+
+
+
+// modals

@@ -3,3 +3,16 @@
   padding: 0 15px;
   margin: 0 auto;
 }
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  &.align-items-start{
+    align-items: flex-start;
+  }
+  &.align-items-end{
+    align-items: flex-end;
+  }
+  &.align-items-center{
+    align-items: center;
+  }
+}

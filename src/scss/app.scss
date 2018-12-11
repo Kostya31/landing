@@ -1,5 +1,9 @@
 
 @import "tools/variables";
+
+
+@import "~slick-carousel/slick/slick.scss";
+
 @import "tools/mixin";
 
 @import "fonts/fonts";
@@ -8,7 +12,6 @@
 @import "base/general";
 @import "base/base";
 
-@import "~slick-carousel/slick/slick.scss";
 
 @import "layouts/grid";
 @import "layouts/header";
@@ -20,5 +23,6 @@
 @import "modules/form";
 @import "modules/tabs";
 @import "modules/slider";
+@import "modules/modals";
 
 

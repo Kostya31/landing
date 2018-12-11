@@ -17,9 +17,15 @@
   }
   &.btn-silver{
     background:rgba(255,255,255,0.50);
+    &:hover{
+      background: rgba(255,255,255,0.3);
+    }
   }
   &.btn-silver-2 {
     background-color: rgba(40, 38, 39, 0.4);
+    &:hover {
+      background: rgba(40, 38, 39, 0.6);
+  }
   }
   &.btn-violet{
     background: $violet-gradient;

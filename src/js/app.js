@@ -2,9 +2,9 @@ window.$ = window.jQuery = require('jquery');
 window.Popper = require('popper.js').default;
 
 import slick from 'slick-carousel';
-require('bootstrap/js/dist/util');
-require('bootstrap/js/dist/tab');
-require('bootstrap/js/dist/modal');
+
+// import 'bootstrap/js/dist/util';
+// import 'bootstrap/js/dist/modal';
 
 let app = {
     questionSlider: function () {

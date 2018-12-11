@@ -1,6 +1,7 @@
 
 .header {
   background: $white;
+  flex: 0 0 auto;
   &-wrap {
     height: 55px;
     display: flex;
@@ -8,15 +9,24 @@
   }
   &-logo {
     margin-right: 75px;
+    @include respond-to(sm) {
+      margin-right: rem(40px);
+    }
   }
   &-nav {
     display: inline-flex;
+    @include respond-to(xs) {
+      display: none;
+    }
     a {
       font-size: rem(13px);
       display: inline-block;
       margin-right: 50px;
       color: $black-header;
       transition: color .2s linear;
+      @include respond-to(sm) {
+        margin-right: rem(30px);
+      }
       &:hover{
         color: $violet;
       }
@@ -32,6 +42,9 @@
   cursor: pointer;
   position: relative;
   padding-right: rem(15px);
+  @include respond-to(sm) {
+    margin-right: rem(30px);
+  }
   &:after {
     content: '';
     border: rem(4px) solid transparent;

@@ -1,10 +1,443 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "layouts/_app.html" %}
 
-</body>
-</html>
+
+{% block content %}
+<div class="section hero-top section-bg bg-silver" style="background-image: url(../images/loft-hero-img.jpg)">
+    <div class="container">
+        <div class="hero-info">
+            <div class="hero-logo"><img src="../images/svg/stangher-aparts-loftclub-logo.svg" alt="logo"></div>
+            <div class="contacts-item">
+                <span class="contacts-label text-black">инфо-лайн:</span>
+                <div class="contacts-text has-icon">
+                    <img src="../images/svg/phone-orange.svg" alt="phone">
+                    <a class="contacts-telephone" href="tel:+7 (495) 120-25-42">+7 (495) 120-25-42</a>
+                </div>
+            </div>
+            <div class="contacts-item">
+                <span class="contacts-label text-black">мы находимся на:</span>
+                <div class="contacts-text has-icon">
+                    <img src="../images/svg/pin-orange.svg" alt="location">
+                    <p class="text-black contacts-address">Москва, Духовской Переулок, д.17</p>
+                </div>
+            </div>
+        </div>
+        <h1>Аренда и продажа лофтов <br>
+            в комплексе “The Loft Club”</h1>
+        <div class="description">
+            <p>Наши лофты – это комфорт, приятная атмосфера в стильном комплексе с архитектурой в духе классических
+                лофтов Нью-Йорка середины прошлого века или английских арт-кварталов.</p>
+            <br>
+            <p>Мы предлагаем наши аппартаменты в:</p>
+            <br>
+        </div>
+        <div class="btn-row">
+            <a href="#" class="btn btn--lg btn-orange">Выбрать лофт</a>
+            <a href="#" class="btn btn--lg btn-silver-2">Подробнее</a>
+        </div>
+    </div>
+</div>
+
+<div class="section section-apart bg-silver">
+    <div class="container">
+        <div class="our-coworking our-apart">
+            <h2>О наших лофтах</h2>
+            <div class="description">
+                <p>У нас вы можете арендовать посуточно или выкупить в полное личное пользование настоящие лофты,
+                    расположенные в здании бывшего кожевенного завода.</p>
+                <br>
+                <p>Сейчас внутри лофтов сделан современный ремонт с использованием оригинальных дизайнерских находок.
+                    Интерьер помещений со светлыми панорамными окнами и высокими потолками дополняет новая стильная
+                    мебель и все необходимое для комфортного проживания, включая кухонную и бытовую технику и
+                    высокоскоростной интернет.</p>
+            </div>
+            <div class="our-apart__img">
+                <img src="../images/svg/loft-vector.svg" alt="apartments-loft">
+            </div>
+        </div>
+        <h2 class="center">В наших лофтах</h2>
+
+        <div class="our-loft">
+            <div class="feature-loft">
+                <div class="feature-item">
+                    <div class="feature-item__img">
+                        <img src="../images/svg/loft-feature-1.svg" alt="feature-loft">
+                    </div>
+                    <div class="feature-item__text">
+                        Просторные и
+                        удобные
+                        планировки
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item__img">
+                        <img src="../images/svg/loft-feature-2.svg" alt="feature-loft">
+                    </div>
+                    <div class="feature-item__text">
+                        Большие окна и
+                        высокие потолки
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-item__img">
+                        <img src="../images/svg/loft-feature-3.svg" alt="feature-loft">
+                    </div>
+                    <div class="feature-item__text">
+                        Красивый дизайн
+                        интерьера и стильная
+                        отделка помещений
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="center sub-title"><span class="text-gradient-orange upper">МЫ ПРЕДЛАГАЕМ</span></p>
+        <h2 class="center">Отличные и Лофт апартаменты</h2>
+    </div>
+    <div class="offer-wrap offer-wrap-apart">
+        <div class="offer-item offer-item-apart">
+            <div class="slider-wrap slider-apart">
+                <div class="offer-slider js-slider">
+                    <div class="offer-img slider-item" style="background-image: url(../images/3.jpg)"></div>
+                    <div class="offer-img slider-item" style="background-image: url(../images/2.jpg)"></div>
+                    <div class="offer-img slider-item" style="background-image: url(../images/1.jpg)"></div>
+                    <div class="offer-img slider-item" style="background-image: url(../images/3.jpg)"></div>
+                </div>
+                <div class="slider-arrows">
+                    <button class="slick-prev slick-arrow  "></button>
+                    <button class="slick-next slick-arrow  "></button>
+                </div>
+                <div class="slider-dots slider-dots--orange"></div>
+            </div>
+            <div class="offer-content">
+                <div class="offer-title">Лофт №1</div>
+                <div class="offer-info-rooms">
+                    <span class="badge badge-white">Квартира-студия</span>
+                    <span class="badge badge-white">52 м<sup><i>2</i></sup></span>
+                    <span class="badge badge-white">2 этаж</span>
+                    <span class="badge badge-white">Балкон</span>
+                </div>
+                <h5>Удобства</h5>
+                <ul class="offer-comfort">
+                    <li class="offer-comfort__item"><img src="../images/svg/kitchen.svg" alt="кухня">Кухня и техника
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/mebel.svg" alt="мебель">Приятная мебель</li>
+                    <li class="offer-comfort__item"><img src="../images/svg/conditioner.svg" alt="Кондиционер">Кондиционер
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/tv.svg" alt="телевизор">Большой телевизор
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/wifi.svg" alt="wi-fi">Wi-Fi</li>
+                    <li class="offer-comfort__item"><img src="../images/svg/parking-sign.svg" alt="ванна">Парковочное
+                        место
+                    </li>
+                </ul>
+
+                <div class="row align-items-start">
+                    <div class="offer-price-wrap">
+                        <div class="offer-price text-gradient-orange">100 000 руб. / мес</div>
+                        <div class="offer-price text-gradient-orange">6 000 руб. / сутки</div>
+                        <span class="sale-label">Возможна продажа</span>
+                    </div>
+                    <a href="#" class="btn btn--lg btn-orange">Перейти к объекту</a>
+                </div>
+            </div>
+        </div>
+        <div class="offer-item offer-item-apart">
+            <div class="slider-wrap slider-apart">
+                <div class="offer-slider js-slider">
+                    <div class="offer-img slider-item" style="background-image: url(../images/3.jpg)"></div>
+                    <div class="offer-img slider-item" style="background-image: url(../images/2.jpg)"></div>
+                    <div class="offer-img slider-item" style="background-image: url(../images/1.jpg)"></div>
+                    <div class="offer-img slider-item" style="background-image: url(../images/3.jpg)"></div>
+
+                </div>
+                <div class="slider-arrows">
+                    <button class="slick-prev slick-arrow  "></button>
+                    <button class="slick-next slick-arrow  "></button>
+                </div>
+                <div class="slider-dots slider-dots--orange"></div>
+            </div>
+            <div class="offer-content">
+
+                <div class="offer-title">Лофт №2</div>
+                <div class="offer-info-rooms">
+                    <span class="badge badge-white">Квартира-студия</span>
+                    <span class="badge badge-white">66 м<sup><i>2</i></sup></span>
+                    <span class="badge badge-white">2 этаж</span>
+                    <span class="badge badge-white">Балкон</span>
+                </div>
+                <h5>Удобства</h5>
+                <ul class="offer-comfort">
+                    <li class="offer-comfort__item"><img src="../images/svg/kitchen.svg" alt="кухня">Кухня и техника
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/mebel.svg" alt="мебель">Приятная мебель</li>
+                    <li class="offer-comfort__item"><img src="../images/svg/conditioner.svg" alt="Кондиционер">Кондиционер
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/tv.svg" alt="телевизор">Большой телевизор
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/wifi.svg" alt="wi-fi">Wi-Fi</li>
+                    <li class="offer-comfort__item"><img src="../images/svg/parking-sign.svg" alt="ванна">Парковочное
+                        место
+                    </li>
+                </ul>
+                <div class="row align-items-start">
+                    <div class="offer-price-wrap">
+                        <div class="offer-price text-gradient-orange">100 000 руб. / мес</div>
+                        <div class="offer-price text-gradient-orange">6 000 руб. / сутки</div>
+                        <span class="sale-label">Возможна продажа</span>
+                    </div>
+                    <a href="#" class="btn btn--lg btn-orange">Перейти к объекту</a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="offer-item offer-item-apart">
+            <div class="slider-wrap slider-apart">
+                <div class="offer-slider js-slider">
+                    <div class="offer-img slider-item" style="background-image: url(../images/3.jpg)"></div>
+                    <div class="offer-img slider-item" style="background-image: url(../images/2.jpg)"></div>
+                    <div class="offer-img slider-item" style="background-image: url(../images/1.jpg)"></div>
+                </div>
+                <div class="slider-arrows">
+                    <button class="slick-prev slick-arrow  "></button>
+                    <button class="slick-next slick-arrow  "></button>
+                </div>
+                <div class="slider-dots slider-dots--orange"></div>
+            </div>
+            <div class="offer-content">
+                <div class="offer-title">Лофт №3</div>
+                <div class="offer-info-rooms">
+                    <span class="badge badge-white">Квартира-студия</span>
+                    <span class="badge badge-white">67 м<sup><i>2</i></sup></span>
+                    <span class="badge badge-white">2 этаж</span>
+                    <span class="badge badge-white">Балкон</span>
+                </div>
+                <h5>Удобства</h5>
+                <ul class="offer-comfort">
+                    <li class="offer-comfort__item"><img src="../images/svg/kitchen.svg" alt="кухня">Кухня и техника
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/mebel.svg" alt="мебель">Приятная мебель</li>
+                    <li class="offer-comfort__item"><img src="../images/svg/conditioner.svg" alt="Кондиционер">Кондиционер
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/tv.svg" alt="телевизор">Большой телевизор
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/wifi.svg" alt="wi-fi">Wi-Fi</li>
+                    <li class="offer-comfort__item"><img src="../images/svg/parking-sign.svg" alt="ванна">Парковочное
+                        место
+                    </li>
+                </ul>
+
+                <div class="row align-items-start">
+                    <div class="offer-price-wrap">
+                        <div class="offer-price text-gradient-orange">100 000 руб. / мес</div>
+                        <div class="offer-price text-gradient-orange">6 000 руб. / сутки</div>
+                        <span class="sale-label">Возможна продажа</span>
+                    </div>
+                    <a href="#" class="btn btn--lg btn-orange">Перейти к объекту</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="offer-item offer-item-apart">
+            <div class="slider-wrap slider-apart">
+                <div class="offer-slider js-slider">
+                    <div class="offer-img slider-item" style="background-image: url(../images/3.jpg)"></div>
+                    <div class="offer-img slider-item" style="background-image: url(../images/2.jpg)"></div>
+
+                </div>
+                <div class="slider-arrows">
+                    <button class="slick-prev slick-arrow  "></button>
+                    <button class="slick-next slick-arrow  "></button>
+                </div>
+                <div class="slider-dots slider-dots--orange"></div>
+            </div>
+            <div class="offer-content">
+
+                <div class="offer-title">Лофт №4</div>
+                <div class="offer-info-rooms">
+                    <span class="badge badge-white">Квартира-студия</span>
+                    <span class="badge badge-white">53 м<sup><i>2</i></sup></span>
+                    <span class="badge badge-white">2 этаж</span>
+                    <span class="badge badge-white">Балкон</span>
+                </div>
+                <h5>Удобства</h5>
+                <ul class="offer-comfort">
+                    <li class="offer-comfort__item"><img src="../images/svg/kitchen.svg" alt="кухня">Кухня и техника
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/mebel.svg" alt="мебель">Приятная мебель</li>
+                    <li class="offer-comfort__item"><img src="../images/svg/conditioner.svg" alt="Кондиционер">Кондиционер
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/tv.svg" alt="телевизор">Большой телевизор
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/wifi.svg" alt="wi-fi">Wi-Fi</li>
+                    <li class="offer-comfort__item"><img src="../images/svg/parking-sign.svg" alt="ванна">Парковочное
+                        место
+                    </li>
+                </ul>
+
+                <div class="row align-items-start">
+                    <div class="offer-price-wrap">
+                        <div class="offer-price text-gradient-orange">100 000 руб. / мес</div>
+                        <div class="offer-price text-gradient-orange">6 000 руб. / сутки</div>
+                        <span class="sale-label">Возможна продажа</span>
+                    </div>
+                    <a href="#" class="btn btn--lg btn-orange">Перейти к объекту</a>
+                </div>
+            </div>
+        </div>
+        <div class="offer-item offer-item-apart">
+            <div class="slider-wrap slider-apart">
+                <div class="offer-slider js-slider">
+                    <div class="offer-img slider-item" style="background-image: url(../images/3.jpg)"></div>
+                    <div class="offer-img slider-item" style="background-image: url(../images/2.jpg)"></div>
+
+                </div>
+                <div class="slider-arrows">
+                    <button class="slick-prev slick-arrow  "></button>
+                    <button class="slick-next slick-arrow  "></button>
+                </div>
+                <div class="slider-dots slider-dots--orange"></div>
+            </div>
+            <div class="offer-content">
+
+                <div class="offer-title">VIP Лофт c террасой</div>
+                <div class="offer-info-rooms">
+                    <span class="badge badge-white">Квартира-студия</span>
+                    <span class="badge badge-white">58 м<sup><i>2</i></sup></span>
+                    <span class="badge badge-white">3 этаж</span>
+                    <span class="badge badge-white">Балкон и терраса</span>
+                </div>
+                <h5>Удобства</h5>
+                <ul class="offer-comfort">
+                    <li class="offer-comfort__item"><img src="../images/svg/kitchen.svg" alt="кухня">Кухня и техника
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/mebel.svg" alt="мебель">Приятная мебель</li>
+                    <li class="offer-comfort__item"><img src="../images/svg/conditioner.svg" alt="Кондиционер">Кондиционер
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/tv.svg" alt="телевизор">Большой телевизор
+                    </li>
+                    <li class="offer-comfort__item"><img src="../images/svg/wifi.svg" alt="wi-fi">Wi-Fi</li>
+                    <li class="offer-comfort__item"><img src="../images/svg/parking-sign.svg" alt="ванна">Парковочное
+                        место
+                    </li>
+                </ul>
+
+                <div class="row align-items-start">
+
+                    <div class="offer-price-wrap">
+                        <div class="offer-price text-gradient-orange">100 000 руб. / мес</div>
+                        <div class="offer-price text-gradient-orange">6 000 руб. / сутки</div>
+                        <span class="sale-label">Возможна продажа</span>
+                    </div>
+                    <a href="#" class="btn btn--lg btn-orange">Перейти к объекту</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-about-complex">
+    <div class="container">
+        <div class="about-complex">
+            <div class="complex-description">
+                <h2>О комплексе</h2>
+                <p>«The Loft Club» - это уютный двор и архитектура в духе классических лофтов Нью-Йорка середины
+                    прошлого века или английских арт-кварталов, удобная парковка и возможность организовывать уютные
+                    вечеринки для небольших компаний. В лофте можно отмечать дни рождения и веселиться до утра, не
+                    заботясь о громкой музыке и необходимости устраивать после отдыха генеральную уборку.</p>
+                <br>
+                <p>Снять лофт на сутки в комплексе «The Loft Club» - значит провести незабываемые выходные в кругу семьи
+                    или в компании друзей и насладиться незабываемой творческой атмосферой.</p>
+            </div>
+            <div class="complex-img">
+                <img src="../images/complex-main-photo.jpg" alt="complex">
+            </div>
+        </div>
+
+        <h2 class="feature-title">Преимущества комплекса</h2>
+        <div class="feature-list">
+            <div class="feature-item">
+                <div class="feature-item__img"><img src="../images/svg/complex-feature-1.svg" alt="feature-img"></div>
+                <div class="feature-item__text">Удобная транспортная
+                    доступность
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-item__img"><img src="../images/svg/complex-feature-2.svg" alt="feature-img"></div>
+                <div class="feature-item__text">Близость к историческому
+                    центру Москвы
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-item__img"><img src="../images/svg/complex-feature-3.svg" alt="feature-img"></div>
+                <div class="feature-item__text">Отличная инфраструктура
+                    комплекса
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-item__img"><img src="../images/svg/complex-feature-4.svg" alt="feature-img"></div>
+                <div class="feature-item__text">Круглосуточная
+                    охрана и видеонаблюдение
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn btn--lg btn-orange">Выбрать лофт</a>
+    </div>
+</div>
+
+
+<div class="section section-map ">
+    <iframe class="location-map" src="https://yandex.ua/map-widget/v1/-/CBFcj4r7xD" width="100%" height="100%"
+            frameborder="1" allowfullscreen="true"></iframe>
+    <div class="container">
+        <div class="location-contacts bg-silver">
+            <h2>Мы находимся</h2>
+
+            <div class="contacts-item">
+                <div class="contacts-text has-icon">
+                    <img src="../images/svg/pin-orange.svg" alt="location">
+                    <p class="text-black contacts-address">Москва, Духовской Переулок, д.17</p>
+                </div>
+            </div>
+            <p>Комплекс лофтов «The Loft Club» расположен неподалеку от центра Москвы, добраться от него пешком до станции Тульская не займет более 10 минут.</p>
+
+                <p>Рядом с ним расположено множество остановок наземного транспорта и крупные дорожные развязки. Неподалеку находится Даниловский рынок, культурные, развлекательные и спортивные центры.</p>
+            <a href="#" class="btn btn--sm btn-orange">Забронировать место</a>
+
+            <div class="contacts-item">
+                <span class="contacts-label text-black">инфо-лайн:</span>
+                <div class="contacts-text">
+                    <a class="contacts-telephone" href="tel:+7 (495) 120-25-42">+7 (495) 120-25-42</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--section hero-bottom-->
+
+<div class="section hero-bottom--loft  bg-black">
+
+    <div class="hero-apart hero-bottom section-bg" style="background-image: url(../images/loft-hero-img.jpg)">
+        <div class="container">
+        <div class="hero-logo"><img src="../images/svg/stangher-aparts-riverdale-logo.svg" alt="logo"></div>
+        <h2 class="text-black">Компактные и комфортабельные
+            апартаменты в комплексе
+            @ Riverdale</h2>
+        <a href="#" class="btn btn--lg btn-orange">Перейти к апартаментам</a>
+        </div>
+    </div>
+    <div class="hero-coworking hero-bottom section-bg" style="background-image: url(../images/cowork-hero-bg.jpg)">
+        <div class="container">
+        <div class="hero-logo"><img src="../images/svg/stangher-coworking-logo.svg" alt="logo"></div>
+        <h2 class="text-white">Также предлагаем удобные
+            рабочие места в нашем
+            коворкинге в комплексе @ Riverdale</h2>
+        <a href="#" class="btn btn--lg btn-violet">Перейти к коворкингу</a>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+

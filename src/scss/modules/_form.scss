@@ -9,6 +9,18 @@ textarea, input{
   }
 }
 
+
+.form-group {
+  margin-bottom: rem(20px);
+  &__label {
+    display: block;
+    font-size: rem(13px);
+    margin-bottom: rem(8px);
+    padding-left: rem(20px);
+  }
+}
+
+
 // custom input type radio
 .radio-group {
   margin: rem(15px 0) ;
