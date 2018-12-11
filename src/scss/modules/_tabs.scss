@@ -21,6 +21,7 @@
     transition: .2s ;
     text-align: center;
     width: calc(100% / 3);
+    cursor: pointer;
     @include respond-to(es) {
       width: 100%;
       margin-bottom: rem(10px);

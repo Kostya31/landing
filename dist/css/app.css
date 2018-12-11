@@ -344,7 +344,30 @@ video {
     display: inline-flex; }
     @media only screen and (max-width: 767px) {
       .header-nav {
-        display: none; } }
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        padding: 3.125rem 1.25rem;
+        height: 100vh;
+        background-color: #ffffff;
+        transform: translateX(60vw);
+        transition: transform .4s ease-in-out; } }
+    .header-nav.open {
+      top: 0;
+      opacity: 1;
+      width: 60vw;
+      transform: translateX(0);
+      visibility: visible;
+      right: 0;
+      z-index: 10;
+      transition: transform .4s ease-in-out; }
+      .header-nav.open a {
+        font-size: 1.25rem;
+        font-weight: 700;
+        display: block;
+        margin: 0.625rem 0; }
     .header-nav a {
       font-size: 0.8125rem;
       display: inline-block;
@@ -395,6 +418,39 @@ video {
     margin-left: 10px;
     position: relative;
     top: 1px; }
+
+.hamburger {
+  display: none; }
+  @media only screen and (max-width: 767px) {
+    .hamburger {
+      display: inline-block;
+      margin-left: auto;
+      position: relative;
+      z-index: 20; } }
+  .hamburger .line {
+    display: block;
+    width: 36px;
+    height: 4px;
+    background-color: #989898;
+    margin: 6px 0;
+    transition: all 0.3s ease-in-out; }
+    .hamburger .line:nth-child(1) {
+      background-color: #e77f1f; }
+  .hamburger:hover {
+    cursor: pointer; }
+    .hamburger:hover .line:nth-child(1) {
+      transform: translateX(10px);
+      width: 30px; }
+  .hamburger.is-active .line:nth-child(1) {
+    transform: translate(3px, 2px) rotate(45deg);
+    width: 14px; }
+  .hamburger.is-active .line:nth-child(2) {
+    transform: rotate(-45deg);
+    width: 36px; }
+  .hamburger.is-active .line:nth-child(3) {
+    transform: translate(12px, 2px) rotate(45deg);
+    width: 18px;
+    transform-origin: bottom right; }
 
 .footer {
   flex: 0 0 auto; }
@@ -1371,7 +1427,8 @@ select {
   position: relative;
   transition: .2s;
   text-align: center;
-  width: calc(100% / 3); }
+  width: calc(100% / 3);
+  cursor: pointer; }
   @media only screen and (max-width: 575px) {
     .tabs__link {
       width: 100%;

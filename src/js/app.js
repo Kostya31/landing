@@ -37,6 +37,13 @@ let app = {
         }
     },
 
+    mobileNav: function () {
+      let hamburger = document.querySelector('.hamburger');
+
+      hamburger.addEventListener('click', toggleButton)
+
+    },
+
     tabs: function () {
         setTaggedTabActive();
     },
@@ -44,6 +51,7 @@ let app = {
     init: function () {
         app.questionSlider();
         app.tabs();
+        app.mobileNav();
     }
 };
 
@@ -60,6 +68,8 @@ let setTaggedTabActive = () => {
 
         elem.addEventListener('click', function (e) {
             e.preventDefault();
+            e.stopPropagation();
+            console.log('sds');
             let _this = e.currentTarget;
             let tabId = _this.getAttribute('data-tab');
 
@@ -77,4 +87,9 @@ let setTaggedTabActive = () => {
         })
     }
 };
+
+function toggleButton() {
+    document.querySelector('.hamburger').classList.toggle('is-active');
+    document.querySelector('.header-nav').classList.toggle('open');
+}
 

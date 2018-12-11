@@ -15953,6 +15953,12 @@ var app = {
         }
     },
 
+    mobileNav: function mobileNav() {
+        var hamburger = document.querySelector('.hamburger');
+
+        hamburger.addEventListener('click', toggleButton);
+    },
+
     tabs: function tabs() {
         setTaggedTabActive();
     },
@@ -15960,6 +15966,7 @@ var app = {
     init: function init() {
         app.questionSlider();
         app.tabs();
+        app.mobileNav();
     }
 };
 
@@ -15983,6 +15990,8 @@ var setTaggedTabActive = function setTaggedTabActive() {
 
             elem.addEventListener('click', function (e) {
                 e.preventDefault();
+                e.stopPropagation();
+                console.log('sds');
                 var _this = e.currentTarget;
                 var tabId = _this.getAttribute('data-tab');
 
@@ -16057,6 +16066,11 @@ var setTaggedTabActive = function setTaggedTabActive() {
         }
     }
 };
+
+function toggleButton() {
+    document.querySelector('.hamburger').classList.toggle('is-active');
+    document.querySelector('.header-nav').classList.toggle('open');
+}
 
 },{"jquery":1,"popper.js":2,"slick-carousel":3}]},{},[4]);
 

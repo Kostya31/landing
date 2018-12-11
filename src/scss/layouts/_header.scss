@@ -2,6 +2,7 @@
 .header {
   background: $white;
   flex: 0 0 auto;
+
   &-wrap {
     height: 55px;
     display: flex;
@@ -16,7 +17,33 @@
   &-nav {
     display: inline-flex;
     @include respond-to(xs) {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      padding: rem(50px 20px);
+
+      height: 100vh;
+      background-color: $white;
+      transform: translateX(60vw);
+      transition: transform .4s ease-in-out;
+    }
+    &.open {
+      top: 0;
+      opacity: 1;
+      width: 60vw;
+      transform: translateX(0);
+      visibility: visible;
+      right: 0;
+      z-index: 10;
+      transition: transform .4s ease-in-out;
+      a{
+        font-size: rem(20px);
+        font-weight: 700;
+        display: block;
+        margin: rem(10px 0);
+      }
     }
     a {
       font-size: rem(13px);
@@ -81,3 +108,50 @@
     top: 1px;
   }
 }
+
+// hamurger
+
+
+.hamburger {
+  display: none;
+  @include respond-to(xs) {
+    display: inline-block;
+    margin-left: auto;
+    position: relative;
+    z-index: 20;
+  }
+  .line {
+    display: block;
+    width: 36px;
+    height: 4px;
+    background-color: $grey;
+    margin: 6px 0;
+    transition: all 0.3s ease-in-out;
+    &:nth-child(1) {
+      background-color: $orange;
+    }
+  }
+  &:hover {
+    cursor: pointer;
+    .line:nth-child(1) {
+      transform: translateX(10px);
+      width: 30px;
+    }
+  }
+  &.is-active {
+    .line:nth-child(1) {
+      transform: translate(3px, 2px) rotate(45deg);
+      width: 14px;
+    }
+    .line:nth-child(2) {
+      transform: rotate(-45deg);
+      width: 36px;
+    }
+    .line:nth-child(3) {
+      transform: translate(12px, 2px) rotate(45deg);
+      width: 18px;
+      transform-origin: bottom right;
+    }
+  }
+}
+
