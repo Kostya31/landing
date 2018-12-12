@@ -9,6 +9,14 @@ textarea, input{
   }
 }
 
+textarea{
+  font-size: rem(14px);
+  font-family: $gotham;
+  &.form-control{
+    height: 135px;
+    border-radius: 23px;
+  }
+}
 
 .form-group {
   margin-bottom: rem(20px);
@@ -17,9 +25,9 @@ textarea, input{
     font-size: rem(13px);
     margin-bottom: rem(8px);
     padding-left: rem(20px);
+    text-align: left;
   }
 }
-
 
 // custom input type radio
 .radio-group {
@@ -132,7 +140,6 @@ input[type=checkbox] {
     border-radius: 100%;
   }
 }
-
 
 //quantity-nav
 

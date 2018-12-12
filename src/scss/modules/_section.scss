@@ -16,6 +16,9 @@
   }
   &.hero-bottom {
     padding: rem(40px 0 80px);
+    @include respond-to(es) {
+      padding: rem(40px 0 40px);
+    }
   }
   &-coworking {
     padding: rem(120px 0 76px);
@@ -36,8 +39,17 @@
 
   &-apart {
     padding-top: rem(120px);
+    @include respond-to(md) {
+      padding-top: rem(60px);
+    }
+    @include respond-to(xs) {
+      padding-top: rem(40px);
+    }
   }
   &-about-complex {
     padding: rem(120px 0 90px);
+    @include respond-to(es) {
+      padding: rem(40px 0 40px);
+    }
   }
 }

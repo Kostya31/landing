@@ -21,18 +21,55 @@ $orange-gradient: linear-gradient(-90deg, #f47c22 0%, #ffcd02 100%);
 $text-shadow: 0 0 10px;
 $shadow: 0 10px 15px 0;
 
+
+// Modals
+
+// Padding applied to the modal body
+$modal-inner-padding:               1rem !default;
+
+$modal-dialog-margin:               .5rem !default;
+$modal-dialog-margin-y-sm-up:       1.75rem !default;
+
+
+$modal-content-bg:                  $white !default;
+$modal-content-border-color:        none !default;
+$modal-content-border-width:        none !default;
+$modal-content-border-radius:       12px !default;
+$modal-content-box-shadow-xs:       0 .25rem .5rem rgba($black, .5) !default;
+$modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba($black, .5) !default;
+
+$modal-backdrop-bg:                 $black !default;
+$modal-backdrop-opacity:            .5 !default;
+$modal-header-border-color:         none !default;
+$modal-footer-border-color:         none !default;
+$modal-header-border-width:         0 !default;
+$modal-footer-border-width:         0 !default;
+$modal-header-padding-y:            1rem !default;
+$modal-header-padding-x:            1rem !default;
+$modal-header-padding:              1.5rem 1rem 1rem !default; // Keep this for backwards compatibility
+
+$modal-xl:                          1140px !default;
+$modal-lg:                          800px !default;
+$modal-md:                          560px !default;
+$modal-sm:                          300px !default;
+
+$modal-fade-transform:              translate(0, -50px) !default;
+$modal-show-transform:              none !default;
+$modal-transition:                  transform .3s ease-out !default;
+
 // bg-colors
 
 $black-bg: #282627;
+
 
 $outQuad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
 //breakpoints
 
 $breakpoints: (
-        'es': ( max-width: 575px ),
-        'xs': ( max-width: 767px ),
-        'sm': ( max-width: 991px ),
+        'es': ( max-width: 576px ),
+        'xs': ( max-width: 768px ),
+        'sm': ( max-width: 992px ),
         'md': ( max-width: 1199px ),
         'lg': ( min-width: 1200px )
 );

@@ -2,7 +2,11 @@
 .header {
   background: $white;
   flex: 0 0 auto;
-
+  position: fixed;
+  z-index: 150;
+  left: 0;
+  right: 0;
+  top: 0;
   &-wrap {
     height: 55px;
     display: flex;
@@ -10,6 +14,7 @@
   }
   &-logo {
     margin-right: 75px;
+    padding-top: 6px;
     @include respond-to(sm) {
       margin-right: rem(40px);
     }
@@ -19,30 +24,37 @@
     @include respond-to(xs) {
       opacity: 0;
       visibility: hidden;
-      position: absolute;
+      position: fixed;
       display: flex;
       flex-direction: column;
       padding: rem(50px 20px);
-
       height: 100vh;
       background-color: $white;
-      transform: translateX(60vw);
+      transform: translateX(80vw);
       transition: transform .4s ease-in-out;
+      @include respond-to(xs) {
+        transform: translateX(65vw);
+
+      }
     }
     &.open {
       top: 0;
       opacity: 1;
-      width: 60vw;
+      width: 80vw;
       transform: translateX(0);
       visibility: visible;
       right: 0;
-      z-index: 10;
+      z-index: 30;
       transition: transform .4s ease-in-out;
+      box-shadow: 0 0 15px rgba(40, 38, 39, 0.7);
       a{
         font-size: rem(20px);
         font-weight: 700;
         display: block;
         margin: rem(10px 0);
+      }
+      @include respond-to(xs) {
+        width: 65vw;
       }
     }
     a {
@@ -85,13 +97,26 @@
   }
   &__drop {
     display: none;
+    background-color: $white;
+    padding: rem(5px 10px);
   }
   &.open {
       .switch-lang__drop{
         position: absolute;
         top: 100%;
         left: 0;
+        margin-top: 10px;
+        z-index: 50;
         display: inline-flex;
+        flex-direction: column;
+        border-radius: 6px;
+        box-shadow: 0 0 10px rgba($black, 0.5);
+        .switch-lang__item{
+          margin: 5px 0;
+          &:hover {
+            color: $violet;
+          }
+        }
       }
   }
   &__item{
@@ -117,8 +142,9 @@
   @include respond-to(xs) {
     display: inline-block;
     margin-left: auto;
-    position: relative;
-    z-index: 20;
+    position: fixed;
+    right: 15px;
+    z-index: 35;
   }
   .line {
     display: block;
@@ -131,13 +157,20 @@
       background-color: $orange;
     }
   }
-  &:hover {
-    cursor: pointer;
-    .line:nth-child(1) {
-      transform: translateX(10px);
-      width: 30px;
-    }
-  }
+  //&:hover {
+  //  cursor: pointer;
+  //  .line:nth-child(1) {
+  //    transform: translateX(10px);
+  //    width: 30px;
+  //  }
+  //}
+  //&:focus {
+  //  cursor: pointer;
+  //  .line:nth-child(1) {
+  //    transform: translateX(0);
+  //    width: 36px;
+  //  }
+  //}
   &.is-active {
     .line:nth-child(1) {
       transform: translate(3px, 2px) rotate(45deg);

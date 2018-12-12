@@ -16,6 +16,7 @@ main {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    padding-top: 55px;
   }
 }
 
@@ -172,6 +173,9 @@ main {
 .hero-bottom {
   .hero-logo {
     margin-bottom: rem(40px);
+    @include respond-to(es) {
+      margin-bottom: rem(30px);
+    }
   }
   h2 {
     margin-bottom: rem(40px);
@@ -184,12 +188,19 @@ main {
 
 .hero-bottom--loft {
   display: flex;
+  @include respond-to(es) {
+    flex-direction: column;
+  }
 
 }
 .hero-apart,
 .hero-coworking {
   width: 50%;
   padding: rem(40px 70px 80px);
+  @include respond-to(es) {
+    width: 100%;
+    padding: rem(40px 15px);
+  }
 }
 .hero-apart {
   //padding-left: calc((100vw - 1170px) / 2 );
@@ -207,7 +218,7 @@ main {
 .our-coworking {
   position: relative;
   margin-bottom: rem(170px);
-  @include respond-to(es) {
+  @include respond-to(xs) {
     margin-bottom: rem(80px);
   }
   h2 {
@@ -219,7 +230,7 @@ main {
   }
   .description {
     width: 46%;
-    @include respond-to(es) {
+    @include respond-to(xs) {
       width: 100%;
       position: relative;
       z-index: 10;
@@ -251,6 +262,16 @@ main {
   }
   &__img {
     float: right;
+    @include respond-to(es){
+      position: absolute;
+      top: 50px;
+      right: 0;
+      left: 0;
+      svg {
+        opacity: 0.3;
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -270,7 +291,7 @@ main {
 .offer-item {
   display: flex;
 
-  @include respond-to(es) {
+  @include respond-to(xs) {
     flex-wrap: wrap;
     flex-direction: column;
   }
@@ -287,11 +308,18 @@ main {
       .offer-content {
         padding-right: calc((100vw - 1170px) / 2 + 15px);
         padding-left: rem(40px);
+        @include respond-to(xs) {
+          padding-left: rem(15px);
+          padding-right: rem(15px);
+        }
       }
     }
     .offer-content {
       background-color: $white;
       padding-left: rem(40px);
+      @include respond-to(xs) {
+        padding-left: rem(15px);
+      }
     }
   }
   //----------- end custom
@@ -304,7 +332,7 @@ main {
     .offer-content {
       padding-left: calc((100vw - 1170px) / 2 + 15px);
       padding-right: rem(80px);
-      @include respond-to(es) {
+      @include respond-to(xs) {
         padding-left: rem(15px);
         padding-right: rem(15px);
       }
@@ -335,6 +363,10 @@ main {
 .offer-item-apart {
   .slider-wrap {
     width: 50%;
+    @include respond-to(xs) {
+      width: 100%;
+      height: 35vh;
+    }
   }
   .slider-arrows {
     .slick-arrow {
@@ -360,8 +392,8 @@ main {
   background-size: cover;
   background-repeat: no-repeat;
   width: 50%;
-  @include respond-to(es) {
-    height: 30vh;
+  @include respond-to(xs) {
+    height: 35vh;
     width: 100%;
   }
 }
@@ -371,14 +403,20 @@ main {
   display: inline-block;
   padding-right: calc((100vw - 1170px) / 2 + 15px);
   padding-left: rem(80px);
-  padding-top: rem(50px);
+  padding-top: rem(70px);
   padding-bottom: rem(50px);
-  @include respond-to(es) {
+  @include respond-to(xs) {
     width: 100%;
     padding-right: rem(15px);
     padding-left: rem(15px);
-    padding-top: rem(20px);
-    padding-bottom: rem(20px);
+    padding-top: rem(50px);
+    padding-bottom: rem(30px);
+  }
+  @include respond-to(sm) {
+    padding-left: rem(20px);
+    padding-right: rem(15px);
+    padding-top: rem(50px);
+    padding-bottom: rem(30px);
   }
   h5 {
     margin-bottom: rem(20px);
@@ -393,6 +431,9 @@ main {
   font-weight: 700;
   margin-bottom: rem(40px);
   color: $black;
+  @include respond-to(es) {
+    margin-bottom: rem(20px);
+  }
 }
 
 .offer-info-rooms {
@@ -408,8 +449,11 @@ main {
 .offer-price-wrap {
   display: inline-flex;
   flex-direction: column;
+  @include respond-to(es) {
+    margin-bottom: rem(20px);
+  }
   .offer-price {
-    margin-bottom: rem(10px);
+    margin-bottom: rem(15px);
     font-size: rem(18px);
   }
 }
@@ -420,17 +464,26 @@ main {
   font-size: rem(20px);
   font-weight: 900;
   display: inline-block;
+  @include respond-to(es) {
+    margin-bottom: rem(20px);
+  }
 }
 
 .offer-comfort {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: rem(40px);
+  @include respond-to(es) {
+    margin-bottom: rem(30px);
+  }
   &__item {
     display: inline-flex;
     align-items: center;
     margin: rem(10px 0);
     width: 50%;
+    @include respond-to(es) {
+      width: 100%;
+    }
     img {
       margin-right: 10px;
     }
@@ -453,6 +506,15 @@ main {
 }
 
 .workplace {
+  position: relative;
+  &.has-number {
+    padding-left: rem(86px);
+    span{
+      position: absolute;
+      top: -24px;
+      left: 0;
+    }
+  }
   span {
     width: 66px;
     height: 66px;
@@ -467,6 +529,11 @@ main {
     background-image: $violet-gradient;
     background-clip: content-box;
     box-shadow: 0 10px 15px 0 rgba(226, 82, 189, 0.30);
+    @include respond-to(es) {
+      width: 46px;
+      height: 46px;
+      font-size: rem(24px);
+    }
   }
   strong {
     font-size: rem(20px);
@@ -476,7 +543,6 @@ main {
     top: -5px;
   }
   p {
-    padding-left: rem(86px);
     margin-bottom: rem(35px);
   }
 }
@@ -589,7 +655,19 @@ main {
 .slider-coworking-room {
   .slider-dots {
     bottom: 55px;
+    @include respond-to(xs) {
+      bottom: 15px;
+    }
   }
+  .slider-arrows {
+    padding-left: calc((100vw - 1170px) / 2);
+    padding-right: calc((100vw - 1170px) / 2);
+    @include respond-to(md) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
   .slider-item {
     position: relative;
     &:before {
@@ -618,6 +696,9 @@ main {
   position: relative;
   width: 100%;
   margin-bottom: rem(40px);
+  @include respond-to(xs) {
+    display: none;
+  }
   h2 {
     background-color: $black;
     padding: rem(10px 30px);
@@ -628,7 +709,7 @@ main {
 
 .office-room {
   padding: rem(86px 100px);
-  @include respond-to(es) {
+  @include respond-to(xs) {
     padding: rem(80px 0);
   }
   .wrap-form {
@@ -641,6 +722,9 @@ main {
     .btn-violet {
       width: 100%;
     }
+  }
+  .item-group{
+    border-bottom: 1px solid #e2e2e2;
   }
   h2 {
     margin-bottom: rem(30px);
@@ -736,10 +820,16 @@ main {
   }
   &.slider-apart{
     .slider-arrows {
-      padding: 0 30px;
+      padding: rem(0 30px);
+      @include respond-to(es) {
+        padding: rem(0 15px);
+      }
     }
     .slider-dots{
-      bottom: 30px;
+      bottom: rem(30px);
+      @include respond-to(es) {
+        bottom: rem(10px);
+      }
     }
   }
   .slider-item {
@@ -790,6 +880,10 @@ main {
 .about-complex {
   display: flex;
   margin-bottom: rem(100px);
+  @include respond-to(es) {
+    flex-wrap: wrap;
+    margin-bottom: rem(40px);
+  }
   h2{
     margin-bottom: rem(25px);
   }
@@ -797,10 +891,17 @@ main {
 .complex-description,
 .complex-img{
   flex-basis: 50%;
+  @include respond-to(es) {
+    flex-basis: 100%;
+  }
 }
 
 .complex-description{
   padding-right: rem(80px);
+  @include respond-to(es) {
+    padding-right: 0;
+    margin-bottom: rem(20px);
+  }
 }
 
 .feature-list {
@@ -810,6 +911,9 @@ main {
 
 .feature-title{
   margin-bottom: rem(60px);
+  @include respond-to(es) {
+    margin-bottom: rem(40px);
+  }
 }
 
 .feature-item {
@@ -817,12 +921,19 @@ main {
   align-items: center;
   margin-bottom: rem(60px);
   width: 40%;
+  @include respond-to(es) {
+    width: 100%;
+    margin-bottom: rem(40px);
+  }
   &__img{
     width: 30%;
     text-align: center;
     margin-right: rem(40px);
     position: relative;
     top: rem(10px);
+    @include respond-to(es) {
+      margin-right: rem(20px);
+    }
   }
   &__text {
     font-weight: 900;
@@ -836,8 +947,17 @@ main {
 .feature-loft {
   display: flex;
   margin: rem(70px 0 90px);
+  @include respond-to(es) {
+    flex-direction: column;
+    align-items: center;
+    margin: rem(40px 0 40px);
+  }
   .feature-item{
     flex-direction: column;
+    @include respond-to(es) {
+      width: 80%;
+      margin-bottom: rem(40px);
+    }
     &__img {
       margin-right: 0;
       height: 90px;
@@ -846,6 +966,9 @@ main {
     &__text {
       text-align: center;
       width: 50%;
+      @include respond-to(es) {
+        width: 75%;
+      }
     }
   }
 }

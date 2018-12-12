@@ -7,9 +7,14 @@
 //  bottom: 0;
 //  left: 0;
 //  z-index: 1050;
-//  display: none;
+//  //display: none;
 //  overflow: hidden;
 //  outline: 0;
+//
+//  .modal-open {
+//    overflow-x: hidden;
+//    overflow-y: auto;
+//  }
 //  &.show {
 //
 //  }
@@ -18,31 +23,104 @@
 //    box-shadow: 0 10px 15px rgba(241, 241, 241, 0.3);
 //    border-radius: 12px;
 //    width: rem(560px);
+//    margin: auto;
+//    position: relative;
 //  }
 //  &-header {
-//
+//      .close {
+//        font-size: rem(36px);
+//        position: absolute;
+//        right: 20px;
+//        top: 15px;
+//        cursor: pointer;
+//        color: #cdcdcd;
+//        line-height: rem(20px);
+//        transition: color 0.2s linear;
+//        &:hover {
+//          color: $grey;
+//        }
+//      }
 //  }
 //  &-title{
 //    margin-bottom: rem(20px);
 //  }
 //  &-description {
 //    font-size: rem(14px);
-//    margin-bottom: rem(20px);
+//    width: 80%;
+//    margin: rem(0 auto 20px auto);
+//  }
+//  &-img{
+//    text-align: center;
+//    margin-bottom: rem(40px);
 //  }
 //  &-body{
-//
 //    .btn {
 //      width: 100%;
 //      display: block;
 //      margin-top: rem(30px);
 //    }
-//
 //  }
-//
 //  .form-control{
 //    width: 100%;
 //  }
 //}
 //
+//.modal-open {
+//   overflow: hidden;
+//}
 //
-////
+
+.modal {
+  position: relative;
+  .close {
+    cursor: pointer;
+    position: absolute;
+    font-size: rem(36px);
+    line-height: rem(20px);
+    right: 15px;
+    top: 15px;
+    padding: 0;
+    color: #cdcdcd;
+    display: inline-block;
+    &:hover {
+      color: $grey;
+    }
+  }
+  &-header {
+    display: block;
+    .modal-description{
+      font-size: rem(14px);
+      width: 225px;
+      margin: auto;
+    }
+  }
+  &-title {
+    margin-bottom: rem(20px);
+  }
+  &-body {
+    padding: rem(15px 100px 67px 100px);
+    .form-control {
+      width: 100%;
+    }
+    .modal-description{
+      font-size: rem(14px);
+      width: 225px;
+      margin: rem( 0 auto 70px);
+    }
+    .btn {
+      width: 100%;
+      text-align: center;
+      margin-top: rem(10px);
+    }
+  }
+  &-img {
+    text-align: center;
+    margin-bottom: rem(45px);
+  }
+}
+
+// --------------custom bootstrap ------------
+
+.modal-header {
+  flex-wrap: wrap;
+}
