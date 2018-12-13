@@ -430,20 +430,20 @@
                                     </div>
                                 </div>
                                 <div class="item-group">
-                                    <div class="includes-list">
-                                        <p>Сюда входит:</p>
-                                        <ul>
-                                            <li>- рабочее место;</li>
-                                            <li>- wi-fi;</li>
-                                            <li>- доступ в зону отдыха;</li>
-                                            <li>- оргтехника;</li>
-                                            <li>- оборудованная кухня</li>
-                                        </ul>
-                                    </div>
+
+                                    <p class="item-group__title">Сюда входит:</p>
+                                    <ul class="includes-list">
+                                        <li>- рабочее место;</li>
+                                        <li>- wi-fi;</li>
+                                        <li>- доступ в зону отдыха;</li>
+                                        <li>- оргтехника;</li>
+                                        <li>- оборудованная кухня</li>
+                                    </ul>
+
                                 </div>
                                 <div class="item-group">
+                                    <p class="item-group__title">Сюда входит:</p>
                                     <div class="select-period">
-                                        <p>Сюда входит:</p>
                                         <div class="form-group">
                                             <select class="form-control" name="week">
                                                 <option value="#">1 неделя</option>
@@ -454,8 +454,8 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" name="place" value="1-место" readonly
-                                                   class="form-control">
+                                            <input type="hidden" name="place" value="1-место" readonly>
+                                            <div class="form-control form-control-place"><span class="form-control-place__number">1</span><span class="form-control-place__text">место</span></div>
                                             <div class="quantity-nav">
                                                 <button type="button" class="quantity-button quantity-up disabled">+
                                                 </button>
@@ -467,7 +467,7 @@
 
                                 <div class="general-price">
                                     <span class="text-black">Итого:</span>
-                                    <span class="text-gradient-violet">7500 руб</span>
+                                    <strong class="text-gradient-violet">7500 руб</strong>
                                 </div>
                                 <button class="btn btn--lg btn-violet">Забронировать</button>
                             </form>
@@ -476,25 +476,26 @@
                     <div id="tab-2" class="tabs__item">
                         <div class="wrap-form">
                             <h4 class="center">Переговорные</h4>
-                            <p class="center">Наличие флипчартов, досок и всевозможной
+                            <div class="price-title center text-gradient-violet">400 руб./час</div>
+                            <p class="form-description center">Наличие флипчартов, досок и всевозможной
                                 сопутствующей атрибутикой для общего собрания</p>
                             <form action="#" method="#" id="negotiation">
 
                                 <div class="item-group">
-                                    <div class="includes-list">
-                                        <p>Сюда входит:</p>
-                                        <ul>
+
+                                        <p class="item-group__title">Сюда входит:</p>
+                                        <ul class="includes-list">
                                             <li>- места в переговорной от 4 до 8 человек;</li>
                                             <li>- wi-fi;</li>
                                             <li>- флипчарт и доски;</li>
                                             <li>- доступ в зону отдыха;</li>
                                             <li>- доступ на кухню с чаем и кофе</li>
                                         </ul>
-                                    </div>
+
                                 </div>
                                 <div class="item-group">
+                                    <p class="item-group__title">Выберите время прибывания:</p>
                                     <div class="select-period">
-                                        <p>Выберите время прибывания:</p>
                                         <div class="form-group">
                                             <select class="form-control" name="hour">
                                                 <option value="#">1 час</option>
@@ -511,7 +512,7 @@
 
                                 <div class="general-price">
                                     <span class="text-black">Итого:</span>
-                                    <span class="text-gradient-violet">7500 руб</span>
+                                    <strong class="text-gradient-violet">400 руб</strong>
                                 </div>
                                 <button class="btn btn--lg btn-violet">Забронировать</button>
                             </form>
@@ -520,29 +521,27 @@
                     <div id="tab-3" class="tabs__item">
                         <div class="wrap-form">
                             <h4 class="center">Кабинеты</h4>
-                            <p class="center">Отдельный кабинет для вашей команды или
+                            <div class="price-title text-gradient-violet center">30 000 руб./мес.</div>
+                            <p class="form-description  center">Отдельный кабинет для вашей команды или
                                 небольшой группы людей для совместной работы</p>
                             <form action="#" method="#" id="cabinets">
-
-
-
                                 <div class="item-group">
-                                    <div class="includes-list">
-                                        <p>Сюда входит:</p>
-                                        <ul>
-                                            <li>- места в кабинете от 4 до 8 человек;</li>
-                                            <li>- wi-fi;</li>
-                                            <li>- флипчарт и доски;</li>
-                                            <li>- оргтехника;</li>
-                                            <li>- доступ в зону отдыха;</li>
-                                            <li>- сэйвбоксы для хранения ваших вещей</li>
-                                            <li>- доступ на кухню</li>
-                                        </ul>
-                                    </div>
+
+                                    <p class="item-group__title">Сюда входит:</p>
+                                    <ul class="includes-list">
+                                        <li>- места в кабинете от 4 до 8 человек;</li>
+                                        <li>- wi-fi;</li>
+                                        <li>- флипчарт и доски;</li>
+                                        <li>- оргтехника;</li>
+                                        <li>- доступ в зону отдыха;</li>
+                                        <li>- сэйвбоксы для хранения ваших вещей</li>
+                                        <li>- доступ на кухню</li>
+                                    </ul>
+
                                 </div>
                                 <div class="item-group">
+                                    <p class="item-group__title">Выберите время прибывания:</p>
                                     <div class="select-period">
-                                        <p>Выберите время прибывания:</p>
                                         <div class="form-group">
                                             <select class="form-control" name="month">
                                                 <option value="#">1 месяц</option>
@@ -556,7 +555,7 @@
 
                                 <div class="general-price">
                                     <span class="text-black">Итого:</span>
-                                    <span class="text-gradient-violet">30 000 руб.</span>
+                                    <strong class="text-gradient-violet">30 000 руб.</strong>
                                 </div>
                                 <button class="btn btn--lg btn-violet">Забронировать</button>
                             </form>

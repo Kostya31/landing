@@ -452,12 +452,7 @@ video {
 
 .header {
   background: #ffffff;
-  flex: 0 0 auto;
-  position: fixed;
-  z-index: 150;
-  left: 0;
-  right: 0;
-  top: 0; }
+  flex: 0 0 auto; }
   .header-wrap {
     height: 55px;
     display: flex;
@@ -611,6 +606,9 @@ video {
       display: flex;
       flex-direction: column;
       padding-left: 9.375rem; }
+      @media only screen and (max-width: 992px) {
+        .footer-top nav {
+          padding-left: 4.6875rem; } }
       @media only screen and (max-width: 768px) {
         .footer-top nav {
           width: 50%;
@@ -670,6 +668,9 @@ video {
 
 .col-logo {
   padding-left: 4.6875rem; }
+  @media only screen and (max-width: 992px) {
+    .col-logo {
+      padding-left: 3.75rem; } }
   @media only screen and (max-width: 768px) {
     .col-logo {
       padding-left: 0;
@@ -682,6 +683,9 @@ video {
 
 .subscribe {
   padding-left: 7.5rem; }
+  @media only screen and (max-width: 992px) {
+    .subscribe {
+      padding-left: 4.6875rem; } }
   @media only screen and (max-width: 576px) {
     .subscribe {
       padding-left: 0; } }
@@ -737,8 +741,7 @@ main.content {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  padding-top: 55px; }
+  overflow: hidden; }
 
 .bg-black {
   background-color: #282627; }
@@ -917,6 +920,10 @@ main.content {
     position: absolute;
     right: 8rem;
     top: -3.125rem; }
+    @media only screen and (max-width: 992px) {
+      .our-coworking__img {
+        top: 0;
+        right: 3.125rem; } }
     @media only screen and (max-width: 576px) {
       .our-coworking__img {
         top: 0;
@@ -984,6 +991,10 @@ main.content {
       padding-left: calc((100vw - 1170px) / 2 + 15px);
       padding-right: 5rem; }
       @media only screen and (max-width: 768px) {
+        .offer-item:nth-child(even) .offer-content {
+          padding-left: 0.9375rem;
+          padding-right: 0.9375rem; } }
+      @media only screen and (max-width: 992px) {
         .offer-item:nth-child(even) .offer-content {
           padding-left: 0.9375rem;
           padding-right: 0.9375rem; } }
@@ -1293,10 +1304,18 @@ main.content {
       .office-room .wrap-form {
         width: 100%;
         padding: 0.9375rem 0.9375rem 1.5625rem 0.9375rem; } }
+    @media only screen and (max-width: 768px) {
+      .office-room .wrap-form {
+        width: 100%;
+        padding: 1.875rem 3.125rem 2.5rem; } }
     .office-room .wrap-form .btn-violet {
       width: 100%; }
   .office-room .item-group {
     border-bottom: 1px solid #e2e2e2; }
+    .office-room .item-group__title {
+      margin: 1.25rem 0 1.25rem;
+      font-size: 0.875rem;
+      font-weight: 500; }
   .office-room h2 {
     margin-bottom: 1.875rem; }
     .office-room h2.top-line {
@@ -1322,7 +1341,7 @@ main.content {
           margin-bottom: 1.25rem; } }
 
 .wrap-form {
-  padding: 1.875rem 6.25rem;
+  padding: 1.875rem 6.25rem 3.75rem;
   background: #ffffff;
   box-shadow: 0 10px 15px 0 rgba(241, 241, 241, 0.3);
   border-radius: 12px; }
@@ -1331,25 +1350,35 @@ main.content {
   .wrap-form h4 {
     margin-bottom: 0.9375rem; }
   .wrap-form .select-period {
-    padding: 0.9375rem 0 1.875rem;
-    border-bottom: 1px solid #e2e2e2; }
+    display: flex;
+    padding: 0 0; }
+    .wrap-form .select-period .form-group {
+      display: flex;
+      align-items: center;
+      margin-right: 20px; }
+      .wrap-form .select-period .form-group:last-child {
+        margin-right: 0; }
   .wrap-form .general-price {
     margin-bottom: 2.5rem;
     padding-top: 0.9375rem;
     display: flex;
     justify-content: space-between; }
-
-.includes-list {
-  border-bottom: 1px solid #e2e2e2; }
-  .includes-list p {
-    font-weight: 500;
-    margin-bottom: 0.9375rem; }
-  .includes-list ul {
-    margin-bottom: 2.25rem; }
-    .includes-list ul li {
+  .wrap-form .includes-list {
+    margin-bottom: 1.25rem; }
+    .wrap-form .includes-list li {
       color: #282627;
       font-size: 0.875rem;
       line-height: 1.5rem; }
+
+.price-title {
+  font-size: 1.375rem;
+  font-weight: 900;
+  margin-bottom: 1.25rem; }
+
+.form-description {
+  font-size: 0.875rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #e2e2e2; }
 
 .jobs-price {
   font-size: 20px;
@@ -1601,6 +1630,15 @@ textarea {
     padding-left: 1.25rem;
     text-align: left; }
 
+.form-control-place {
+  padding: 0.875rem 1.25rem;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  font-size: 0.875rem;
+  width: 100px;
+  margin-right: 10px; }
+
 .radio-group {
   margin: 0.9375rem 0; }
 
@@ -1712,6 +1750,7 @@ select {
   border-radius: 25px;
   background-color: #ffffff;
   height: 46px;
+  font-size: 0.875rem;
   padding: 0.9375rem 1.875rem 0.9375rem 0.9375rem;
   border: none; }
 
@@ -1725,6 +1764,9 @@ select {
     .tabs__nav {
       flex-direction: column;
       border-bottom: none; } }
+  @media only screen and (max-width: 768px) {
+    .tabs__nav {
+      width: 100%; } }
 
 .tabs__link {
   display: inline-block;

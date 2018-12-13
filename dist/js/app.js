@@ -13432,8 +13432,8 @@ var app = {
     switchLang: function switchLang() {
         var switchBtn = document.querySelector('.switch-lang');
         switchBtn.addEventListener('click', function (e) {
-            console.log('ee');
-            e.currentTarget.classList.toggle('open');
+            var _this = e.currentTarget;
+            _this.classList.toggle('open');
         });
     },
     tabs: function tabs() {

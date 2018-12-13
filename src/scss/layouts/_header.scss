@@ -2,11 +2,6 @@
 .header {
   background: $white;
   flex: 0 0 auto;
-  position: fixed;
-  z-index: 150;
-  left: 0;
-  right: 0;
-  top: 0;
   &-wrap {
     height: 55px;
     display: flex;

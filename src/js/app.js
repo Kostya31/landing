@@ -46,8 +46,8 @@ let app = {
     switchLang: function () {
         let switchBtn = document.querySelector('.switch-lang');
         switchBtn.addEventListener('click', function (e) {
-            console.log('ee');
-            e.currentTarget.classList.toggle('open');
+           let _this = e.currentTarget;
+            _this.classList.toggle('open');
         })
     },
     tabs: function () {
