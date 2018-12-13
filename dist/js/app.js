@@ -13721,17 +13721,44 @@ var setTaggedTabActive = function setTaggedTabActive() {
     }
 };
 
-document.addEventListener('click', function () {
+// let num = document.querySelector('.form-control-place__number').innerText = 10;
+// console.log('--------',num);
 
-    var count = increment();
+document.querySelector('.quantity-up').addEventListener('click', function () {
+    var text = 'мест';
+    var count = increment(document.querySelector('.form-control-place__number').innerText);
+    if (count >= 2) {
+        document.querySelector('.quantity-down').classList.remove('disabled');
+    }
 
-    console.log(count);
+    document.getElementById('count-place').setAttribute('value', count);
+
+    document.querySelector('.form-control-place__number').innerText = count;
+    document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
 });
 
-function increment() {
-    var n = 0;
-    n++;
-    return n;
+document.querySelector('.quantity-down').addEventListener('click', function () {
+    var text = 'мест';
+    var count = decrement(document.querySelector('.form-control-place__number').innerText);
+    if (count == 1) {
+        document.querySelector('.quantity-down').classList.add('disabled');
+    }
+    document.getElementById('count-place').setAttribute('value', count);
+    document.querySelector('.form-control-place__number').innerText = count;
+    document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
+});
+
+function pluralizeRus(n, forms) {
+    return n % 10 == 1 && n % 100 != 11 ? forms[0] : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? forms[1] : forms[2];
+}
+
+function increment(value) {
+    value++;
+    return value;
+}
+function decrement(value) {
+    value--;
+    return value;
 }
 
 function toggleButton() {

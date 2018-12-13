@@ -35,7 +35,7 @@ textarea{
   box-shadow: 0 5px 15px 0 rgba(0,0,0,0.20);
   border-radius: 30px;
   font-size: rem(14px);
-  width: 100px;
+  width: rem(108px);
   margin-right: 10px;
   &__number {
     margin-right: 1px;
@@ -169,7 +169,7 @@ input[type=checkbox] {
   color: $black;
   font-weight: 900;
   font-size: 16px;
-  margin: rem(3px);
+  margin: rem(2px);
   transition: background-color 0.2s linear;
   &:hover {
     background-color: rgba($black, 0.4);

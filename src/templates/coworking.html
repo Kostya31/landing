@@ -393,28 +393,28 @@
                                 <div class="item-group">
                                     <div class="radio-group clearfix">
                                         <label>
-                                            <input type="radio" class="form-control" name="booking-type" checked>
+                                            <input type="radio" class="form-control" value="60" name="booking-type" checked>
                                             <span class="radio-text text-black">Почасово</span>
                                         </label>
                                         <span class="text-gradient-violet jobs-price">60 руб.</span>
                                     </div>
                                     <div class="radio-group clearfix">
                                         <label>
-                                            <input class="form-control" type="radio" name="booking-type">
+                                            <input class="form-control" type="radio" value="400" name="booking-type">
                                             <span class="radio-text text-black">День работы</span>
                                         </label>
                                         <span class="text-gradient-violet jobs-price">400 руб.</span>
                                     </div>
                                     <div class="radio-group clearfix">
                                         <label>
-                                            <input class="form-control" type="radio" name="booking-type">
+                                            <input class="form-control" type="radio" value="2000" name="booking-type">
                                             <span class="radio-text text-black">Неделя</span>
                                         </label>
                                         <span class="text-gradient-violet jobs-price">2000 руб.</span>
                                     </div>
                                     <div class="radio-group clearfix">
                                         <label>
-                                            <input class="form-control" type="radio" name="booking-type">
+                                            <input class="form-control" type="radio" value="7000" name="booking-type">
                                             <span class="radio-text text-black">Месяц</span>
                                         </label>
                                         <span class="text-gradient-violet jobs-price">7000 руб.</span>
@@ -423,7 +423,7 @@
                                 <div class="item-group">
                                     <div class="checkbox-group">
                                         <label>
-                                            <input class="form-control" type="checkbox" name="booking-type">
+                                            <input class="form-control" type="checkbox" name="booking-fixed-place">
                                             <span class="checkbox-text text-black">С фиксированным местом</span>
                                         </label>
                                         <span class="text-gradient-violet">(+500 руб.)</span>
@@ -456,14 +456,14 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <input type="hidden" name="place" value="1-место" readonly>
+                                            <input type="hidden" id="count-place" name="count-place" value="" readonly>
                                             <div class="form-control form-control-place">
                                                 <span class="form-control-place__number">1</span>
-                                                <span class="form-control-place__text">мест</span></div>
+                                                <span class="form-control-place__text">место</span>
+                                            </div>
                                             <div class="quantity-nav">
-                                                <button type="button" class="quantity-button quantity-up disabled">+
-                                                </button>
-                                                <button type="button" class="quantity-button quantity-down">⚊</button>
+                                                <button type="button" class="quantity-button quantity-down disabled">⚊</button>
+                                                <button type="button" class="quantity-button quantity-up ">+</button>
                                             </div>
                                         </div>
                                     </div>

@@ -1412,7 +1412,7 @@ main.content {
     .wrap-form .select-period .form-group {
       display: flex;
       align-items: center;
-      margin-right: 20px; }
+      margin-right: 1.125rem; }
       .wrap-form .select-period .form-group:last-child {
         margin-right: 0; }
   .wrap-form .general-price {
@@ -1699,7 +1699,7 @@ textarea {
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
   border-radius: 30px;
   font-size: 0.875rem;
-  width: 100px;
+  width: 6.75rem;
   margin-right: 10px; }
   .form-control-place__number {
     margin-right: 1px; }
@@ -1804,7 +1804,7 @@ input[type=checkbox] {
   color: #282627;
   font-weight: 900;
   font-size: 16px;
-  margin: 0.1875rem;
+  margin: 0.125rem;
   transition: background-color 0.2s linear; }
   .quantity-button:hover {
     background-color: rgba(40, 38, 39, 0.4); }

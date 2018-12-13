@@ -854,7 +854,7 @@ main {
     .form-group{
       display: flex;
       align-items: center;
-      margin-right: 20px;
+      margin-right: rem(18px);
       &:last-child {
         margin-right: 0;
       }
