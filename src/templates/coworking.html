@@ -32,8 +32,10 @@
             <p>Приходите к нам и убедитесь в этом сами!</p>
         </div>
         <p class="text-gradient-violet">Первый тестовый день Бесплатный!</p>
-        <a href="#" class="btn btn--lg btn-violet">Забронировать</a>
-        <a href="#" class="btn btn--lg btn-silver">Подробнее</a>
+        <div class="row-btn">
+            <a href="#" class="btn btn--lg btn-violet">Забронировать</a>
+            <a href="#" class="btn btn--lg btn-silver">Подробнее</a>
+        </div>
     </div>
 </div>
 
@@ -275,29 +277,27 @@
         <h2>Наш коворкинг – это также:</h2>
         <div class="coworking-wrap">
             <div class="coworking-item">
+                <h5>Высокоскоростной интернет <br>
+                    и удобное рабочее место</h5>
+                <p>Мы берем все технические моменты <br>
+                    на себя, не беспокойтесь и просто <br>
+                    сосредоточтесь на своих задачах</p>
+                <img src="../images/5.jpg" alt="coworking">
+            </div>
+            <div class="coworking-item">
+                <h5>Приятный и <br>
+                    стильный интерьер</h5>
+                <p>Удобный и красивый интерьер <br>
+                    с качественной и эргономичной <br>
+                    мебелью для комфортной работы</p>
+                <img src="../images/6.jpg" alt="coworking">
+            </div>
+            <div class="coworking-item">
                 <h5>Мини арт-галлерея <br>
                     художников</h5>
                 <p>Интерьер обставлен стильными <br>
                     работами русских художников <br>
                     современного авангарда</p>
-                <img src="../images/5.jpg" alt="coworking">
-            </div>
-            <div class="coworking-item">
-                <h5>Безопастность и охрана <br>
-                    вас и ваших вещей</h5>
-                <p>Опенспэйс оборудован видеонаблюдением <br>
-                    и хорошо охраняется. Также для ваших <br>
-                    личных вещей предлагаются сэйвбоксы <br>
-                    для безопастного хранения</p>
-                <img src="../images/6.jpg" alt="coworking">
-            </div>
-            <div class="coworking-item">
-                <h5>Безопастность и охрана <br>
-                    вас и ваших вещей</h5>
-                <p>Опенспэйс оборудован видеонаблюдением <br>
-                    и хорошо охраняется. Также для ваших <br>
-                    личных вещей предлагаются сэйвбоксы <br>
-                    для безопастного хранения</p>
                 <img src="../images/7.jpg" alt="coworking">
             </div>
             <div class="coworking-item">
@@ -445,21 +445,25 @@
                                     <p class="item-group__title">Сюда входит:</p>
                                     <div class="select-period">
                                         <div class="form-group">
-                                            <select class="form-control" name="week">
-                                                <option value="#">1 неделя</option>
-                                                <option value="#">1 неделя</option>
-                                                <option value="#">1 неделя</option>
-                                                <option value="#">1 неделя</option>
-                                                <option value="#">1 неделя</option>
-                                            </select>
+                                            <div class="custom-select">
+                                                <select class="form-control" name="week">
+                                                    <option value="1">1 неделя</option>
+                                                    <option value="2">2 недели</option>
+                                                    <option value="3">3 недели</option>
+                                                    <option value="4">4 недели</option>
+                                                </select>
+                                            </div>
+
                                         </div>
                                         <div class="form-group">
                                             <input type="hidden" name="place" value="1-место" readonly>
-                                            <div class="form-control form-control-place"><span class="form-control-place__number">1</span><span class="form-control-place__text">место</span></div>
+                                            <div class="form-control form-control-place">
+                                                <span class="form-control-place__number">1</span>
+                                                <span class="form-control-place__text">мест</span></div>
                                             <div class="quantity-nav">
                                                 <button type="button" class="quantity-button quantity-up disabled">+
                                                 </button>
-                                                <button type="button" class="quantity-button quantity-down">-</button>
+                                                <button type="button" class="quantity-button quantity-down">⚊</button>
                                             </div>
                                         </div>
                                     </div>
@@ -497,15 +501,21 @@
                                     <p class="item-group__title">Выберите время прибывания:</p>
                                     <div class="select-period">
                                         <div class="form-group">
-                                            <select class="form-control" name="hour">
-                                                <option value="#">1 час</option>
-                                                <option value="#">1 час</option>
-                                                <option value="#">1 час</option>
-                                                <option value="#">1 час</option>
-                                                <option value="#">1 час</option>
-                                                <option value="#">1 час</option>
-                                                <option value="#">1 час</option>
-                                            </select>
+
+                                            <div class="custom-select">
+
+                                                <select class="form-control" name="hour">
+                                                    <option value="1">1 час</option>
+                                                    <option value="2">2 часа</option>
+                                                    <option value="3">3 часа</option>
+                                                    <option value="4">4 часа</option>
+                                                    <option value="5">5 часов</option>
+                                                    <option value="6">6 часов</option>
+                                                    <option value="7">7 часов</option>
+                                                </select>
+
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -543,12 +553,16 @@
                                     <p class="item-group__title">Выберите время прибывания:</p>
                                     <div class="select-period">
                                         <div class="form-group">
-                                            <select class="form-control" name="month">
-                                                <option value="#">1 месяц</option>
-                                                <option value="#">1 месяц</option>
-                                                <option value="#">1 месяц</option>
-                                                <option value="#">1 месяц</option>
-                                            </select>
+
+                                            <div class="custom-select">
+                                                <select class="form-control" name="month">
+                                                    <option value="1">1 месяц</option>
+                                                    <option value="2">2 месяца</option>
+                                                    <option value="3">3 месяца</option>
+                                                    <option value="4">4 месяца</option>
+                                                </select>
+                                            </div>
+
                                         </div>
                                     </div>
                                 </div>

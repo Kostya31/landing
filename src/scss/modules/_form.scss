@@ -37,6 +37,9 @@ textarea{
   font-size: rem(14px);
   width: 100px;
   margin-right: 10px;
+  &__number {
+    margin-right: 1px;
+  }
 }
 
 // custom input type radio
@@ -166,6 +169,11 @@ input[type=checkbox] {
   color: $black;
   font-weight: 900;
   font-size: 16px;
+  margin: rem(3px);
+  transition: background-color 0.2s linear;
+  &:hover {
+    background-color: rgba($black, 0.4);
+  }
   &.disabled {
     background-color: #f2f2f2;
     color: #c6c6c6;
@@ -184,4 +192,87 @@ select {
   font-size: rem(14px);
   padding: rem(15px 30px 15px 15px);
   border:  none;
+}
+
+.custom-select {
+  position: relative;
+}
+
+.custom-select {
+  select {
+    display: none; /*hide original SELECT element:*/
+  }
+}
+
+.select-selected {
+  background-color: $white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
+  height: 46px;
+  line-height: 46px;
+  font-size: rem(14px);
+  padding: rem(0 40px 0 20px);
+  cursor: pointer;
+  &.select-arrow-active {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    &:after {
+      transform: rotate(180deg);
+      top: 37%;
+    }
+  }
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  content: '';
+  position: absolute;
+  color: $black;
+  background-image: url("../images/svg/down-arrow.svg");
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-weight: 700;
+  line-height: normal;
+  font-size: rem(16px);
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+
+
+/*style the items (options), including the selected item:*/
+.select-items div{
+  color: $black;
+  padding: 8px 20px;
+  cursor: pointer;
+  user-select: none;
+  font-size: rem(14px);
+}
+
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: $white;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  z-index: 99;
+  border-top: 1px solid $light-grey;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba($grey, 0.2);
 }

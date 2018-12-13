@@ -4,6 +4,149 @@
 {% block content %}
 
 
+
+    <button type="button" class="btn text-black btn-primary js-open-modal" data-toggle="modal" data-target="contactsModal">
+        contactsModal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="contactsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title center text-black">Ваши контакты</h4>
+                    <p class="modal-description center text-black">Оставьте ваши контакты и наш
+                        менеджер свяжется с вами</p>
+                        <button type="button" class="close js-close-modal" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <form method="#" action="#" id="contacts-form">
+                        <div class="form-group">
+                            <label class="form-group__label">Ваше имя:</label>
+                            <input type="text" placeholder="Укажите ваше имя…" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-group__label">Контактный телефон:</label>
+                            <input type="tel" placeholder="+7…" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-group__label">Ваш email:</label>
+                            <input type="email" placeholder="Укажите ваш email…" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-violet btn--lg">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn text-black btn-primary js-open-modal" data-toggle="modal" data-target="successModal">
+        successModal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title center text-black">Готово!</h4>
+                    <button type="button" class="close js-close-modal" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-img">
+                        <img src="../images/svg/like.svg" alt="like">
+                    </div>
+                    <p class="modal-description center text-black">Спасибо, ваша заявка принята.
+                        В ближайшее время наш менеджер
+                        свяжется с вами.</p>
+
+                    <button type="submit" class="btn js-close-modal btn-violet btn--lg">ОК</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn text-black btn-primary js-open-modal" data-toggle="modal" data-target="feedbackModal">
+        feedbackModal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title center text-black">Обратная свзяь</h4>
+                    <p class="modal-description center text-black">Вам нужна дополнительная информация?
+                        Хотите нам что-то сообщить или предложить?
+                        Напишите нам, мы будем рады с вами связаться!</p>
+                        <button type="button" class="close js-close-modal" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                </div>
+                <div class="modal-body">
+                    <form method="#" action="#" id="feedback-form">
+                        <div class="form-group">
+                            <label class="form-group__label">Ваше имя:</label>
+                            <input type="text" placeholder="Укажите ваше имя…" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-group__label">Контактный телефон:</label>
+                            <input type="tel" placeholder="+7…" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-group__label">Ваш email:</label>
+                            <input type="email" placeholder="Укажите ваш email…" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-group__label">Ваше сообщение:</label>
+                            <textarea placeholder="Ваше сообщение…" class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-violet btn--lg">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <button type="button" class="btn text-black btn-primary js-open-modal" data-toggle="modal" data-target="thankModal">
+        thankModal
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="thankModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title center text-black">Готово!</h4>
+                    <button type="button" class="close js-close-modal" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-img">
+                        <img src="../images/svg/done.svg" alt="like">
+                    </div>
+                    <p class="modal-description center text-black">Спасибо вам за ваше сообщение, мы с радостью ответим вам и будем рады поддержать диалог</p>
+
+                    <button type="submit" class="btn btn-violet js-close-modal btn--lg">ОК</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
 
 

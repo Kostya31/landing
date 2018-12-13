@@ -46,7 +46,7 @@ let app = {
     switchLang: function () {
         let switchBtn = document.querySelector('.switch-lang');
         switchBtn.addEventListener('click', function (e) {
-           let _this = e.currentTarget;
+            let _this = e.currentTarget;
             _this.classList.toggle('open');
         })
     },
@@ -54,26 +54,139 @@ let app = {
         setTaggedTabActive();
     },
 
+
+    customSelect: function () {
+
+        let x, i, j, selElmnt, a, b, c;
+        /*look for any elements with the class "custom-select":*/
+        x = document.getElementsByClassName("custom-select");
+        for (i = 0; i < x.length; i++) {
+            selElmnt = x[i].getElementsByTagName("select")[0];
+            /*for each element, create a new DIV that will act as the selected item:*/
+            a = document.createElement("DIV");
+            a.setAttribute("class", "select-selected");
+            a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+            x[i].appendChild(a);
+            /*for each element, create a new DIV that will contain the option list:*/
+            b = document.createElement("DIV");
+            b.setAttribute("class", "select-items select-hide");
+            for (j = 1; j < selElmnt.length; j++) {
+                /*for each option in the original select element,
+                create a new DIV that will act as an option item:*/
+                c = document.createElement("DIV");
+                c.innerHTML = selElmnt.options[j].innerHTML;
+                c.addEventListener("click", function (e) {
+                    /*when an item is clicked, update the original select box,
+                    and the selected item:*/
+                    let y, i, k, s, h;
+                    s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                    h = this.parentNode.previousSibling;
+                    for (i = 0; i < s.length; i++) {
+                        if (s.options[i].innerHTML == this.innerHTML) {
+                            s.selectedIndex = i;
+                            h.innerHTML = this.innerHTML;
+                            y = this.parentNode.getElementsByClassName("same-as-selected");
+                            for (k = 0; k < y.length; k++) {
+                                y[k].removeAttribute("class");
+                            }
+                            this.setAttribute("class", "same-as-selected");
+                            break;
+                        }
+                    }
+                    h.click();
+                });
+                b.appendChild(c);
+            }
+            x[i].appendChild(b);
+            a.addEventListener("click", function (e) {
+                /*when the select box is clicked, close any other select boxes,
+                and open/close the current select box:*/
+                e.stopPropagation();
+                closeAllSelect(this);
+                this.nextSibling.classList.toggle("select-hide");
+                this.classList.toggle("select-arrow-active");
+            });
+        }
+
+        function closeAllSelect(elmnt) {
+            /*a function that will close all select boxes in the document,
+            except the current select box:*/
+            let x, y, i, arrNo = [];
+            x = document.getElementsByClassName("select-items");
+            y = document.getElementsByClassName("select-selected");
+            for (i = 0; i < y.length; i++) {
+                if (elmnt == y[i]) {
+                    arrNo.push(i)
+                } else {
+                    y[i].classList.remove("select-arrow-active");
+                }
+            }
+            for (i = 0; i < x.length; i++) {
+                if (arrNo.indexOf(i)) {
+                    x[i].classList.add("select-hide");
+                }
+            }
+        }
+
+        /*if the user clicks anywhere outside the select box,
+        then close all select boxes:*/
+        document.addEventListener("click", closeAllSelect);
+
+    },
     modal: function () {
-        let openBtn = document.querySelector('.js-open-modal');
-        let closeBtn = document.querySelector('.js-close-modal');
+        let openModal = document.querySelectorAll('.js-open-modal');
+        let closeModal = document.querySelectorAll('.js-close-modal');
+        let overlay = '<div class="modal-backdrop fade show"></div>';
 
-        openBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            openModal();
-        });
 
-        closeBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            closeModal(e);
-        })
+
+        for (let elem of openModal) {
+            if (elem.addEventListener) {
+                elem.addEventListener('click', function (e) {
+                    showModal(e)
+                });
+            } else if (elem.attachEvent) {
+                console.log('true');
+                elem.attachEvent('onclick', function (e) {
+                    showModal(e)
+                });
+            }
+        }
+
+        for (let elem of closeModal) {
+            elem.addEventListener('click', function (e) {
+                hideModal(e)
+            });
+        }
+
+        function showModal(e) {
+            let targetElem = e.currentTarget;
+
+            let currentId = targetElem.getAttribute('data-target');
+
+            document.body.classList.add('modal-open');
+            document.body.insertAdjacentHTML("beforeEnd", overlay);
+            document.getElementById(currentId).classList.add('show');
+
+        }
+
+        function hideModal(e) {
+
+            document.body.classList.remove('modal-open');
+            document.querySelector('.modal-backdrop').remove();
+
+            e.target.closest('.modal').classList.remove('show');
+
+
+        }
     },
 
     init: function () {
         app.questionSlider();
         app.tabs();
         app.switchLang();
-        // app.modal();
+        app.customSelect();
+        app.modal();
         app.mobileNav();
     }
 };
@@ -111,17 +224,21 @@ let setTaggedTabActive = () => {
 };
 
 
-// function openModal() {
-//     document.querySelector('.modal').classList.add('show');
-//     document.querySelector('body').classList.add('modal-open');
-// }
-//
-// function closeModal(e) {
-//
-//     console.log(e);
-//     document.querySelector('.modal').classList.remove('show');
-//     document.querySelector('body').classList.remove('modal-open');
-// }
+document.addEventListener('click',function () {
+
+    let count = increment();
+
+    console.log(count);
+});
+
+
+
+function increment(){
+    let n = 0;
+    n++;
+    return n;
+}
+
 
 function toggleButton() {
     document.querySelector('.hamburger').classList.toggle('is-active');

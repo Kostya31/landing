@@ -32,6 +32,10 @@
         color: $white;
         margin-bottom: rem(20px);
         display: inline-block;
+        transition: color 0.2s linear;
+        &:hover {
+          color: $violet-2;
+        }
         @include respond-to(es) {
           text-align: center;
         }
@@ -152,6 +156,10 @@
     border-radius: 50%;
     background-color: $grey;
     cursor: pointer;
+    transition: background-color 0.2s linear;
+    &:hover {
+      background-color: rgba($black, 0.7);
+    }
   }
 }
 

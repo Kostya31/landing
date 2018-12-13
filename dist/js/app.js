@@ -13440,26 +13440,187 @@ var app = {
         setTaggedTabActive();
     },
 
+    customSelect: function customSelect() {
+
+        var x = void 0,
+            i = void 0,
+            j = void 0,
+            selElmnt = void 0,
+            a = void 0,
+            b = void 0,
+            c = void 0;
+        /*look for any elements with the class "custom-select":*/
+        x = document.getElementsByClassName("custom-select");
+        for (i = 0; i < x.length; i++) {
+            selElmnt = x[i].getElementsByTagName("select")[0];
+            /*for each element, create a new DIV that will act as the selected item:*/
+            a = document.createElement("DIV");
+            a.setAttribute("class", "select-selected");
+            a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+            x[i].appendChild(a);
+            /*for each element, create a new DIV that will contain the option list:*/
+            b = document.createElement("DIV");
+            b.setAttribute("class", "select-items select-hide");
+            for (j = 1; j < selElmnt.length; j++) {
+                /*for each option in the original select element,
+                create a new DIV that will act as an option item:*/
+                c = document.createElement("DIV");
+                c.innerHTML = selElmnt.options[j].innerHTML;
+                c.addEventListener("click", function (e) {
+                    /*when an item is clicked, update the original select box,
+                    and the selected item:*/
+                    var y = void 0,
+                        i = void 0,
+                        k = void 0,
+                        s = void 0,
+                        h = void 0;
+                    s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                    h = this.parentNode.previousSibling;
+                    for (i = 0; i < s.length; i++) {
+                        if (s.options[i].innerHTML == this.innerHTML) {
+                            s.selectedIndex = i;
+                            h.innerHTML = this.innerHTML;
+                            y = this.parentNode.getElementsByClassName("same-as-selected");
+                            for (k = 0; k < y.length; k++) {
+                                y[k].removeAttribute("class");
+                            }
+                            this.setAttribute("class", "same-as-selected");
+                            break;
+                        }
+                    }
+                    h.click();
+                });
+                b.appendChild(c);
+            }
+            x[i].appendChild(b);
+            a.addEventListener("click", function (e) {
+                /*when the select box is clicked, close any other select boxes,
+                and open/close the current select box:*/
+                e.stopPropagation();
+                closeAllSelect(this);
+                this.nextSibling.classList.toggle("select-hide");
+                this.classList.toggle("select-arrow-active");
+            });
+        }
+
+        function closeAllSelect(elmnt) {
+            /*a function that will close all select boxes in the document,
+            except the current select box:*/
+            var x = void 0,
+                y = void 0,
+                i = void 0,
+                arrNo = [];
+            x = document.getElementsByClassName("select-items");
+            y = document.getElementsByClassName("select-selected");
+            for (i = 0; i < y.length; i++) {
+                if (elmnt == y[i]) {
+                    arrNo.push(i);
+                } else {
+                    y[i].classList.remove("select-arrow-active");
+                }
+            }
+            for (i = 0; i < x.length; i++) {
+                if (arrNo.indexOf(i)) {
+                    x[i].classList.add("select-hide");
+                }
+            }
+        }
+
+        /*if the user clicks anywhere outside the select box,
+        then close all select boxes:*/
+        document.addEventListener("click", closeAllSelect);
+    },
     modal: function modal() {
-        var openBtn = document.querySelector('.js-open-modal');
-        var closeBtn = document.querySelector('.js-close-modal');
+        var openModal = document.querySelectorAll('.js-open-modal');
+        var closeModal = document.querySelectorAll('.js-close-modal');
+        var overlay = '<div class="modal-backdrop fade show"></div>';
 
-        openBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            openModal();
-        });
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
 
-        closeBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            closeModal(e);
-        });
+        try {
+            for (var _iterator = openModal[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                var elem = _step.value;
+
+                if (elem.addEventListener) {
+                    elem.addEventListener('click', function (e) {
+                        showModal(e);
+                    });
+                } else if (elem.attachEvent) {
+                    console.log('true');
+                    elem.attachEvent('onclick', function (e) {
+                        showModal(e);
+                    });
+                }
+            }
+        } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion && _iterator.return) {
+                    _iterator.return();
+                }
+            } finally {
+                if (_didIteratorError) {
+                    throw _iteratorError;
+                }
+            }
+        }
+
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
+
+        try {
+            for (var _iterator2 = closeModal[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                var _elem = _step2.value;
+
+                _elem.addEventListener('click', function (e) {
+                    hideModal(e);
+                });
+            }
+        } catch (err) {
+            _didIteratorError2 = true;
+            _iteratorError2 = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                    _iterator2.return();
+                }
+            } finally {
+                if (_didIteratorError2) {
+                    throw _iteratorError2;
+                }
+            }
+        }
+
+        function showModal(e) {
+            var targetElem = e.currentTarget;
+
+            var currentId = targetElem.getAttribute('data-target');
+
+            document.body.classList.add('modal-open');
+            document.body.insertAdjacentHTML("beforeEnd", overlay);
+            document.getElementById(currentId).classList.add('show');
+        }
+
+        function hideModal(e) {
+
+            document.body.classList.remove('modal-open');
+            document.querySelector('.modal-backdrop').remove();
+
+            e.target.closest('.modal').classList.remove('show');
+        }
     },
 
     init: function init() {
         app.questionSlider();
         app.tabs();
         app.switchLang();
-        // app.modal();
+        app.customSelect();
+        app.modal();
         app.mobileNav();
     }
 };
@@ -13473,13 +13634,13 @@ var setTaggedTabActive = function setTaggedTabActive() {
     var tabLinks = document.querySelectorAll('.tabs .tabs__link');
     var tabContent = document.querySelectorAll('.tabs .tabs__item');
 
-    var _iteratorNormalCompletion = true;
-    var _didIteratorError = false;
-    var _iteratorError = undefined;
+    var _iteratorNormalCompletion3 = true;
+    var _didIteratorError3 = false;
+    var _iteratorError3 = undefined;
 
     try {
-        for (var _iterator = tabLinks[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-            var elem = _step.value;
+        for (var _iterator3 = tabLinks[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+            var elem = _step3.value;
 
 
             elem.addEventListener('click', function (e) {
@@ -13488,40 +13649,40 @@ var setTaggedTabActive = function setTaggedTabActive() {
                 var _this = e.currentTarget;
                 var tabId = _this.getAttribute('data-tab');
 
-                var _iteratorNormalCompletion2 = true;
-                var _didIteratorError2 = false;
-                var _iteratorError2 = undefined;
+                var _iteratorNormalCompletion4 = true;
+                var _didIteratorError4 = false;
+                var _iteratorError4 = undefined;
 
                 try {
-                    for (var _iterator2 = tabLinks[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                        var i = _step2.value;
+                    for (var _iterator4 = tabLinks[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+                        var i = _step4.value;
 
                         i.classList.remove('active');
                     }
                 } catch (err) {
-                    _didIteratorError2 = true;
-                    _iteratorError2 = err;
+                    _didIteratorError4 = true;
+                    _iteratorError4 = err;
                 } finally {
                     try {
-                        if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                            _iterator2.return();
+                        if (!_iteratorNormalCompletion4 && _iterator4.return) {
+                            _iterator4.return();
                         }
                     } finally {
-                        if (_didIteratorError2) {
-                            throw _iteratorError2;
+                        if (_didIteratorError4) {
+                            throw _iteratorError4;
                         }
                     }
                 }
 
                 _this.classList.add('active');
 
-                var _iteratorNormalCompletion3 = true;
-                var _didIteratorError3 = false;
-                var _iteratorError3 = undefined;
+                var _iteratorNormalCompletion5 = true;
+                var _didIteratorError5 = false;
+                var _iteratorError5 = undefined;
 
                 try {
-                    for (var _iterator3 = tabContent[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-                        var item = _step3.value;
+                    for (var _iterator5 = tabContent[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+                        var item = _step5.value;
 
                         item.classList.remove('active');
                         if (item.getAttribute('id') === tabId) {
@@ -13529,48 +13690,49 @@ var setTaggedTabActive = function setTaggedTabActive() {
                         }
                     }
                 } catch (err) {
-                    _didIteratorError3 = true;
-                    _iteratorError3 = err;
+                    _didIteratorError5 = true;
+                    _iteratorError5 = err;
                 } finally {
                     try {
-                        if (!_iteratorNormalCompletion3 && _iterator3.return) {
-                            _iterator3.return();
+                        if (!_iteratorNormalCompletion5 && _iterator5.return) {
+                            _iterator5.return();
                         }
                     } finally {
-                        if (_didIteratorError3) {
-                            throw _iteratorError3;
+                        if (_didIteratorError5) {
+                            throw _iteratorError5;
                         }
                     }
                 }
             });
         }
     } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
+        _didIteratorError3 = true;
+        _iteratorError3 = err;
     } finally {
         try {
-            if (!_iteratorNormalCompletion && _iterator.return) {
-                _iterator.return();
+            if (!_iteratorNormalCompletion3 && _iterator3.return) {
+                _iterator3.return();
             }
         } finally {
-            if (_didIteratorError) {
-                throw _iteratorError;
+            if (_didIteratorError3) {
+                throw _iteratorError3;
             }
         }
     }
 };
 
-// function openModal() {
-//     document.querySelector('.modal').classList.add('show');
-//     document.querySelector('body').classList.add('modal-open');
-// }
-//
-// function closeModal(e) {
-//
-//     console.log(e);
-//     document.querySelector('.modal').classList.remove('show');
-//     document.querySelector('body').classList.remove('modal-open');
-// }
+document.addEventListener('click', function () {
+
+    var count = increment();
+
+    console.log(count);
+});
+
+function increment() {
+    var n = 0;
+    n++;
+    return n;
+}
 
 function toggleButton() {
     document.querySelector('.hamburger').classList.toggle('is-active');

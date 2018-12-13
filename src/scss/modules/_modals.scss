@@ -71,7 +71,8 @@
 //
 
 .modal {
-  position: relative;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
   .close {
     cursor: pointer;
     position: absolute;
@@ -88,7 +89,7 @@
   }
   &-header {
     display: block;
-    .modal-description{
+    .modal-description {
       font-size: rem(14px);
       width: 225px;
       margin: auto;
@@ -99,13 +100,19 @@
   }
   &-body {
     padding: rem(15px 100px 67px 100px);
+    @include respond-to(es) {
+      padding: rem(15px 15px 25px 15px);
+    }
     .form-control {
       width: 100%;
     }
-    .modal-description{
+    .modal-description {
       font-size: rem(14px);
       width: 225px;
-      margin: rem( 0 auto 70px);
+      margin: rem(0 auto 70px);
+      @include respond-to(xs) {
+        margin: rem(0 auto 20px);
+      }
     }
     .btn {
       width: 100%;
@@ -116,6 +123,12 @@
   &-img {
     text-align: center;
     margin-bottom: rem(45px);
+    @include respond-to(xs) {
+      margin-bottom: rem(20px);
+    }
+  }
+  &.show {
+    display: block;
   }
 }
 
@@ -123,4 +136,35 @@
 
 .modal-header {
   flex-wrap: wrap;
+}
+//.modal-content{
+//  position: fixed;
+//}
+#successModal,
+#thankModal {
+  @include respond-to(xs) {
+    .modal-title {
+      margin-bottom: 0;
+    }
+    .modal-header {
+      padding-bottom: rem(10px);
+    }
+    .modal-img {
+        img {
+          width: 20%;
+        }
+    }
+    .modal-body {
+      .btn {
+        display: block;
+        margin: 0 auto;
+        width: 40%;
+      }
+    }
+  }
+}
+
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
 }
