@@ -12,6 +12,7 @@
     }
     @include respond-to(xs){
       width: 100%;
+      margin-bottom: rem(30px);
     }
   }
   &__link {
@@ -25,9 +26,9 @@
     text-align: center;
     width: calc(100% / 3);
     cursor: pointer;
-    @include respond-to(es) {
-      width: 100%;
-      margin-bottom: rem(10px);
+    @include respond-to(xs) {
+      width: 60%;
+      margin: auto;
     }
     &:hover {
       color: $violet;
@@ -42,6 +43,9 @@
         left: 0;
         width: 100%;
         height: 5px;
+        //@include respond-to(xs) {
+        //  position: relative;
+        //}
       }
     }
   }

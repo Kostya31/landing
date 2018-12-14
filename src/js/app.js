@@ -39,8 +39,17 @@ let app = {
     mobileNav: function () {
         let hamburger = document.querySelector('.hamburger');
 
-        hamburger.addEventListener('click', toggleButton)
+        hamburger.addEventListener('click', toggleButton);
 
+        let navLink = document.querySelectorAll('.header-nav a');
+
+        for (let el of navLink) {
+            el.addEventListener('click', function (e) {
+                document.querySelector('.hamburger').classList.remove('is-active');
+                document.querySelector('.header-nav').classList.remove('open');
+                document.querySelector('html').classList.remove('no-scroll');
+            })
+        }
     },
 
     switchLang: function () {
@@ -160,6 +169,7 @@ let app = {
         }
 
         function showModal(e) {
+            e.preventDefault();
             let targetElem = e.currentTarget;
 
             let currentId = targetElem.getAttribute('data-target');
@@ -171,7 +181,7 @@ let app = {
         }
 
         function hideModal(e) {
-
+            e.preventDefault();
             document.body.classList.remove('modal-open');
             document.querySelector('.modal-backdrop').remove();
 
@@ -223,6 +233,7 @@ let setTaggedTabActive = () => {
     }
 };
 
+
 // let num = document.querySelector('.form-control-place__number').innerText = 10;
 // console.log('--------',num);
 
@@ -231,6 +242,9 @@ document.querySelector('.quantity-up').addEventListener('click',function () {
     let count = increment(document.querySelector('.form-control-place__number').innerText);
     if(count >= 2 ) {
         document.querySelector('.quantity-down').classList.remove('disabled')
+    }
+    if (count >= 40) {
+        document.querySelector('.quantity-up').classList.add('disabled')
     }
 
     document.getElementById('count-place').setAttribute('value', count);
@@ -244,6 +258,9 @@ document.querySelector('.quantity-down').addEventListener('click',function () {
     let count = decrement(document.querySelector('.form-control-place__number').innerText);
     if (count == 1 ) {
         document.querySelector('.quantity-down').classList.add('disabled')
+    }
+    if (count <= 39 ) {
+        document.querySelector('.quantity-up').classList.remove('disabled')
     }
     document.getElementById('count-place').setAttribute('value', count);
     document.querySelector('.form-control-place__number').innerText = count;
@@ -268,10 +285,58 @@ function decrement(value){
     return value;
 }
 
-function toggleButton() {
+
+function toggleButton(e) {
+    e.preventDefault();
     document.querySelector('.hamburger').classList.toggle('is-active');
     document.querySelector('.header-nav').classList.toggle('open');
     document.querySelector('html').classList.toggle('no-scroll');
 }
 
+document.addEventListener('touchmove', function(event) {
+    event = event.originalEvent || event;
+    if(event.scale > 1) {
+        event.preventDefault();
+    }
+}, false);
+
+
+
+let justValidate = false;
+
+function submitForm(){
+    console.log('leleka');
+}
+
+function formValidate(form){
+
+    let thisForm = form;
+    let formControl = thisForm.querySelectorAll('.form-control');
+
+
+
+
+    for (let el of formControl) {
+        if (el.hasAttribute('required')){
+            validFormElement(el);
+        }
+    }
+
+}
+
+function validFormElement (elem) {
+    console.log(elem);
+    if(elem.value === ""){
+        elem.classList.add('is-invalid');
+    } else {
+        elem.classList.remove('is-invalid');
+    }
+};
+
+
+document.getElementById('sendForm').addEventListener('click', function () {
+
+   formValidate(document.getElementById('contacts-form'));
+
+});
 

@@ -93,6 +93,9 @@
       font-size: rem(14px);
       width: 225px;
       margin: auto;
+      @include respond-to(xs) {
+        width: 90%;
+      }
     }
   }
   &-title {

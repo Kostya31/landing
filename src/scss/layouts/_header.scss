@@ -2,6 +2,13 @@
 .header {
   background: $white;
   flex: 0 0 auto;
+  @include respond-to(xs) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    right: 0;
+  }
   &-wrap {
     height: 55px;
     display: flex;
@@ -39,11 +46,12 @@
       transform: translateX(0);
       visibility: visible;
       right: 0;
-      z-index: 30;
+      z-index: 300;
       transition: transform .4s ease-in-out;
       box-shadow: 0 0 15px rgba(40, 38, 39, 0.7);
+      padding-left: rem(30px);
       a{
-        font-size: rem(20px);
+        font-size: rem(16px);
         font-weight: 700;
         display: block;
         margin: rem(10px 0);
@@ -139,7 +147,7 @@
     margin-left: auto;
     position: absolute;
     right: 15px;
-    z-index: 35;
+    z-index: 320;
   }
   .line {
     display: block;
@@ -152,21 +160,8 @@
       background-color: $orange;
     }
   }
-  //&:hover {
-  //  cursor: pointer;
-  //  .line:nth-child(1) {
-  //    transform: translateX(10px);
-  //    width: 30px;
-  //  }
-  //}
-  //&:focus {
-  //  cursor: pointer;
-  //  .line:nth-child(1) {
-  //    transform: translateX(0);
-  //    width: 36px;
-  //  }
-  //}
   &.is-active {
+    position: fixed;
     .line:nth-child(1) {
       transform: translate(3px, 2px) rotate(45deg);
       width: 14px;

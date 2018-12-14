@@ -13427,6 +13427,37 @@ var app = {
         var hamburger = document.querySelector('.hamburger');
 
         hamburger.addEventListener('click', toggleButton);
+
+        var navLink = document.querySelectorAll('.header-nav a');
+
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+            for (var _iterator = navLink[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                var el = _step.value;
+
+                el.addEventListener('click', function (e) {
+                    document.querySelector('.hamburger').classList.remove('is-active');
+                    document.querySelector('.header-nav').classList.remove('open');
+                    document.querySelector('html').classList.remove('no-scroll');
+                });
+            }
+        } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion && _iterator.return) {
+                    _iterator.return();
+                }
+            } finally {
+                if (_didIteratorError) {
+                    throw _iteratorError;
+                }
+            }
+        }
     },
 
     switchLang: function switchLang() {
@@ -13535,13 +13566,13 @@ var app = {
         var closeModal = document.querySelectorAll('.js-close-modal');
         var overlay = '<div class="modal-backdrop fade show"></div>';
 
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
 
         try {
-            for (var _iterator = openModal[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var elem = _step.value;
+            for (var _iterator2 = openModal[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                var elem = _step2.value;
 
                 if (elem.addEventListener) {
                     elem.addEventListener('click', function (e) {
@@ -13553,33 +13584,6 @@ var app = {
                         showModal(e);
                     });
                 }
-            }
-        } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion && _iterator.return) {
-                    _iterator.return();
-                }
-            } finally {
-                if (_didIteratorError) {
-                    throw _iteratorError;
-                }
-            }
-        }
-
-        var _iteratorNormalCompletion2 = true;
-        var _didIteratorError2 = false;
-        var _iteratorError2 = undefined;
-
-        try {
-            for (var _iterator2 = closeModal[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                var _elem = _step2.value;
-
-                _elem.addEventListener('click', function (e) {
-                    hideModal(e);
-                });
             }
         } catch (err) {
             _didIteratorError2 = true;
@@ -13596,7 +13600,35 @@ var app = {
             }
         }
 
+        var _iteratorNormalCompletion3 = true;
+        var _didIteratorError3 = false;
+        var _iteratorError3 = undefined;
+
+        try {
+            for (var _iterator3 = closeModal[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                var _elem = _step3.value;
+
+                _elem.addEventListener('click', function (e) {
+                    hideModal(e);
+                });
+            }
+        } catch (err) {
+            _didIteratorError3 = true;
+            _iteratorError3 = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion3 && _iterator3.return) {
+                    _iterator3.return();
+                }
+            } finally {
+                if (_didIteratorError3) {
+                    throw _iteratorError3;
+                }
+            }
+        }
+
         function showModal(e) {
+            e.preventDefault();
             var targetElem = e.currentTarget;
 
             var currentId = targetElem.getAttribute('data-target');
@@ -13607,7 +13639,7 @@ var app = {
         }
 
         function hideModal(e) {
-
+            e.preventDefault();
             document.body.classList.remove('modal-open');
             document.querySelector('.modal-backdrop').remove();
 
@@ -13634,13 +13666,13 @@ var setTaggedTabActive = function setTaggedTabActive() {
     var tabLinks = document.querySelectorAll('.tabs .tabs__link');
     var tabContent = document.querySelectorAll('.tabs .tabs__item');
 
-    var _iteratorNormalCompletion3 = true;
-    var _didIteratorError3 = false;
-    var _iteratorError3 = undefined;
+    var _iteratorNormalCompletion4 = true;
+    var _didIteratorError4 = false;
+    var _iteratorError4 = undefined;
 
     try {
-        for (var _iterator3 = tabLinks[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-            var elem = _step3.value;
+        for (var _iterator4 = tabLinks[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+            var elem = _step4.value;
 
 
             elem.addEventListener('click', function (e) {
@@ -13649,45 +13681,15 @@ var setTaggedTabActive = function setTaggedTabActive() {
                 var _this = e.currentTarget;
                 var tabId = _this.getAttribute('data-tab');
 
-                var _iteratorNormalCompletion4 = true;
-                var _didIteratorError4 = false;
-                var _iteratorError4 = undefined;
-
-                try {
-                    for (var _iterator4 = tabLinks[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-                        var i = _step4.value;
-
-                        i.classList.remove('active');
-                    }
-                } catch (err) {
-                    _didIteratorError4 = true;
-                    _iteratorError4 = err;
-                } finally {
-                    try {
-                        if (!_iteratorNormalCompletion4 && _iterator4.return) {
-                            _iterator4.return();
-                        }
-                    } finally {
-                        if (_didIteratorError4) {
-                            throw _iteratorError4;
-                        }
-                    }
-                }
-
-                _this.classList.add('active');
-
                 var _iteratorNormalCompletion5 = true;
                 var _didIteratorError5 = false;
                 var _iteratorError5 = undefined;
 
                 try {
-                    for (var _iterator5 = tabContent[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-                        var item = _step5.value;
+                    for (var _iterator5 = tabLinks[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+                        var i = _step5.value;
 
-                        item.classList.remove('active');
-                        if (item.getAttribute('id') === tabId) {
-                            item.classList.add('active');
-                        }
+                        i.classList.remove('active');
                     }
                 } catch (err) {
                     _didIteratorError5 = true;
@@ -13703,19 +13705,49 @@ var setTaggedTabActive = function setTaggedTabActive() {
                         }
                     }
                 }
+
+                _this.classList.add('active');
+
+                var _iteratorNormalCompletion6 = true;
+                var _didIteratorError6 = false;
+                var _iteratorError6 = undefined;
+
+                try {
+                    for (var _iterator6 = tabContent[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+                        var item = _step6.value;
+
+                        item.classList.remove('active');
+                        if (item.getAttribute('id') === tabId) {
+                            item.classList.add('active');
+                        }
+                    }
+                } catch (err) {
+                    _didIteratorError6 = true;
+                    _iteratorError6 = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion6 && _iterator6.return) {
+                            _iterator6.return();
+                        }
+                    } finally {
+                        if (_didIteratorError6) {
+                            throw _iteratorError6;
+                        }
+                    }
+                }
             });
         }
     } catch (err) {
-        _didIteratorError3 = true;
-        _iteratorError3 = err;
+        _didIteratorError4 = true;
+        _iteratorError4 = err;
     } finally {
         try {
-            if (!_iteratorNormalCompletion3 && _iterator3.return) {
-                _iterator3.return();
+            if (!_iteratorNormalCompletion4 && _iterator4.return) {
+                _iterator4.return();
             }
         } finally {
-            if (_didIteratorError3) {
-                throw _iteratorError3;
+            if (_didIteratorError4) {
+                throw _iteratorError4;
             }
         }
     }
@@ -13730,6 +13762,9 @@ document.querySelector('.quantity-up').addEventListener('click', function () {
     if (count >= 2) {
         document.querySelector('.quantity-down').classList.remove('disabled');
     }
+    if (count >= 40) {
+        document.querySelector('.quantity-up').classList.add('disabled');
+    }
 
     document.getElementById('count-place').setAttribute('value', count);
 
@@ -13742,6 +13777,9 @@ document.querySelector('.quantity-down').addEventListener('click', function () {
     var count = decrement(document.querySelector('.form-control-place__number').innerText);
     if (count == 1) {
         document.querySelector('.quantity-down').classList.add('disabled');
+    }
+    if (count <= 39) {
+        document.querySelector('.quantity-up').classList.remove('disabled');
     }
     document.getElementById('count-place').setAttribute('value', count);
     document.querySelector('.form-control-place__number').innerText = count;
@@ -13761,11 +13799,72 @@ function decrement(value) {
     return value;
 }
 
-function toggleButton() {
+function toggleButton(e) {
+    e.preventDefault();
     document.querySelector('.hamburger').classList.toggle('is-active');
     document.querySelector('.header-nav').classList.toggle('open');
     document.querySelector('html').classList.toggle('no-scroll');
 }
+
+document.addEventListener('touchmove', function (event) {
+    event = event.originalEvent || event;
+    if (event.scale > 1) {
+        event.preventDefault();
+    }
+}, false);
+
+var justValidate = false;
+
+function submitForm() {
+    console.log('leleka');
+}
+
+function formValidate(form) {
+
+    var thisForm = form;
+    var formControl = thisForm.querySelectorAll('.form-control');
+
+    var _iteratorNormalCompletion7 = true;
+    var _didIteratorError7 = false;
+    var _iteratorError7 = undefined;
+
+    try {
+        for (var _iterator7 = formControl[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+            var el = _step7.value;
+
+            if (el.hasAttribute('required')) {
+                validFormElement(el);
+            }
+        }
+    } catch (err) {
+        _didIteratorError7 = true;
+        _iteratorError7 = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion7 && _iterator7.return) {
+                _iterator7.return();
+            }
+        } finally {
+            if (_didIteratorError7) {
+                throw _iteratorError7;
+            }
+        }
+    }
+}
+
+function validFormElement(elem) {
+    console.log(elem);
+    if (elem.value === "") {
+        elem.classList.add('is-invalid');
+    } else {
+        elem.classList.remove('is-invalid');
+    }
+};
+
+document.getElementById('sendForm').addEventListener('click', function () {
+
+    formValidate(document.getElementById('contacts-form'));
+});
 
 },{"jquery":1,"slick-carousel":2}]},{},[3]);
 

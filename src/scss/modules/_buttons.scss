@@ -6,14 +6,15 @@
   display: inline-block;
   position: relative;
   border: none;
+  line-height: 1;
   color: $white;
   white-space: nowrap;
   background-clip: padding-box;
   &--lg{
-    padding: rem(16px 50px);
+    padding: rem(19px 50px);
   }
   &--sm {
-    padding: rem(8px 18px);
+    padding: rem(9px 18px);
   }
   &.btn-silver{
     background:rgba(255,255,255,0.50);
@@ -54,4 +55,8 @@
       box-shadow: none;
     }
   }
+}
+
+.row-btn {
+
 }

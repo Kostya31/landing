@@ -6,7 +6,21 @@ textarea, input{
     box-shadow: 0 5px 15px 0 rgba(0,0,0,0.20);
     border-radius: 30px;
     font-size: rem(14px);
+    border: 1px solid transparent;
+    transition: border 0.2s linear;
+    &:focus {
+      border: 1px solid $grey;
+    }
+    &.is-invalid {
+      border: 1px solid $red;
+      .invalid-feedback{
+        display: block;
+      }
+    }
   }
+}
+.invalid-feedback{
+  display: none;
 }
 
 textarea{
@@ -69,6 +83,8 @@ input[type=radio] {
   cursor: pointer;
   font-size: rem(18px);
   font-weight: 700;
+  display: inline-flex;
+  align-items: center;
   &:before {
     content: '';
     position: absolute;
@@ -122,9 +138,10 @@ input[type=checkbox] {
   position: relative;
   padding: rem(0 0 0 35px);
   cursor: pointer;
-  font-size: rem(18px);
   font-weight: 400;
   font-size: rem(14px);
+  display: inline-flex;
+  align-items: center;
   &:before {
     content: '';
     position: absolute;
@@ -176,7 +193,7 @@ input[type=checkbox] {
   }
   &.disabled {
     background-color: #f2f2f2;
-    color: #c6c6c6;
+    opacity: .6;
     pointer-events: none;
     cursor: default;
   }

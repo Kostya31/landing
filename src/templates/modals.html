@@ -26,15 +26,15 @@
                     <form method="#" action="#" id="contacts-form">
                         <div class="form-group">
                             <label class="form-group__label">Ваше имя:</label>
-                            <input type="text" placeholder="Укажите ваше имя…" class="form-control">
+                            <input type="text" required re placeholder="Укажите ваше имя…" class="form-control">
                         </div>
                         <div class="form-group">
                             <label class="form-group__label">Контактный телефон:</label>
-                            <input type="tel" placeholder="+7…" class="form-control">
+                            <input type="tel" required re placeholder="+7…" class="form-control">
                         </div>
                         <div class="form-group">
                             <label class="form-group__label">Ваш email:</label>
-                            <input type="email" placeholder="Укажите ваш email…" class="form-control">
+                            <input type="email" required placeholder="Укажите ваш email…" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-violet btn--lg">Отправить</button>
                     </form>
@@ -97,15 +97,15 @@
                     <form method="#" action="#" id="feedback-form">
                         <div class="form-group">
                             <label class="form-group__label">Ваше имя:</label>
-                            <input type="text" placeholder="Укажите ваше имя…" class="form-control">
+                            <input type="text" required placeholder="Укажите ваше имя…" class="form-control">
                         </div>
                         <div class="form-group">
                             <label class="form-group__label">Контактный телефон:</label>
-                            <input type="tel" placeholder="+7…" class="form-control">
+                            <input type="tel" required placeholder="+7…" class="form-control">
                         </div>
                         <div class="form-group">
                             <label class="form-group__label">Ваш email:</label>
-                            <input type="email" placeholder="Укажите ваш email…" class="form-control">
+                            <input type="email" required placeholder="Укажите ваш email…" class="form-control">
                         </div>
                         <div class="form-group">
                             <label class="form-group__label">Ваше сообщение:</label>
@@ -117,8 +117,6 @@
             </div>
         </div>
     </div>
-
-
 
     <button type="button" class="btn text-black btn-primary js-open-modal" data-toggle="modal" data-target="thankModal">
         thankModal

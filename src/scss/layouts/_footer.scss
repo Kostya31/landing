@@ -4,9 +4,9 @@
     padding: rem(60px 0 32px 0);
     border-bottom: 1px solid #4a4a4a;
     display: flex;
-    @include respond-to(es) {
+    @include respond-to(xs) {
       flex-direction: column;
-      padding: rem(30px 0 20px 0);
+      padding: rem(30px 0 5px 0);
     }
     @include respond-to(xs) {
       flex-wrap: wrap;
@@ -21,7 +21,7 @@
       @include respond-to(xs) {
         width: 50%;
         padding-left: 0;
-        margin-bottom: rem(30px);
+        margin-bottom: rem(15px);
       }
       @include respond-to(es) {
         padding-left: rem(0);
@@ -35,9 +35,6 @@
         transition: color 0.2s linear;
         &:hover {
           color: $violet-2;
-        }
-        @include respond-to(es) {
-          text-align: center;
         }
       }
     }
@@ -83,6 +80,10 @@
         color: #909090;
         display: inline-block;
         margin: rem(0 0 0 80px);
+        @include respond-to(xs) {
+          margin: rem( 0 20px 0 0);
+
+        }
         @include respond-to(es) {
           margin-left: 0;
           margin-bottom: rem(15px);
