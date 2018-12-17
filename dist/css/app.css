@@ -1740,10 +1740,6 @@ textarea.form-control, input.form-control {
   transition: border 0.2s linear; }
   textarea.form-control:focus, input.form-control:focus {
     border: 1px solid #989898; }
-  textarea.form-control:invalid, input.form-control:invalid {
-    border: 1px solid #ff1a53; }
-  textarea.form-control:valid, input.form-control:valid {
-    border: 1px solid green; }
   textarea.form-control.is-invalid, input.form-control.is-invalid {
     border: 1px solid #ff1a53; }
     textarea.form-control.is-invalid .invalid-feedback, input.form-control.is-invalid .invalid-feedback {

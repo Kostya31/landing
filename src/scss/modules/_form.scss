@@ -11,12 +11,6 @@ textarea, input{
     &:focus {
       border: 1px solid $grey;
     }
-    &:invalid {
-      border: 1px solid $red;
-    }
-    &:valid {
-      border: 1px solid green;
-    }
     &.is-invalid {
       border: 1px solid $red;
       .invalid-feedback{
