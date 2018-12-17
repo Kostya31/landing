@@ -922,7 +922,15 @@ main {
       &:last-child {
         margin-right: 0;
       }
+
+      .custom-select {
+        display: none;
+        &:first-child{
+          display: block;
+        }
+      }
     }
+
   }
   .general-price {
     margin-bottom: rem(40px);

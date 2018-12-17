@@ -11,6 +11,12 @@ textarea, input{
     &:focus {
       border: 1px solid $grey;
     }
+    &:invalid {
+      border: 1px solid $red;
+    }
+    &:valid {
+      border: 1px solid green;
+    }
     &.is-invalid {
       border: 1px solid $red;
       .invalid-feedback{
@@ -283,6 +289,8 @@ select {
   border-top: 1px solid $light-grey;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  max-height: 240px;
+  overflow-y: scroll;
 }
 
 /*hide the items when the select box is closed:*/

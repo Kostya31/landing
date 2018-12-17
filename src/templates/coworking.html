@@ -394,7 +394,7 @@
                                 <div class="item-group">
                                     <div class="radio-group">
                                         <label>
-                                            <input type="radio" class="form-control" value="60" name="booking-type"
+                                            <input type="radio" class="form-control" value="60" data-name="hour"  name="booking-type"
                                                    checked>
                                             <span class="radio-text text-black">Почасово</span>
                                         </label>
@@ -402,21 +402,21 @@
                                     </div>
                                     <div class="radio-group">
                                         <label>
-                                            <input class="form-control" type="radio" value="400" name="booking-type">
+                                            <input class="form-control" type="radio" value="400" data-name="day" name="booking-type">
                                             <span class="radio-text text-black">День работы</span>
                                         </label>
                                         <span class="text-gradient-violet jobs-price">400 руб</span>
                                     </div>
                                     <div class="radio-group">
                                         <label>
-                                            <input class="form-control" type="radio" value="2000" name="booking-type">
+                                            <input class="form-control" type="radio" value="2000" data-name="week" name="booking-type">
                                             <span class="radio-text text-black">Неделя</span>
                                         </label>
                                         <span class="text-gradient-violet jobs-price">2000 руб</span>
                                     </div>
                                     <div class="radio-group">
                                         <label>
-                                            <input class="form-control" type="radio" value="7000" name="booking-type">
+                                            <input class="form-control" type="radio" value="7000" data-name="month" name="booking-type">
                                             <span class="radio-text text-black">Месяц</span>
                                         </label>
                                         <span class="text-gradient-violet jobs-price">7000 руб</span>
@@ -447,15 +447,80 @@
                                     <p class="item-group__title">Сюда входит:</p>
                                     <div class="select-period">
                                         <div class="form-group">
-                                            <div class="custom-select">
+                                            <div class="custom-select" id="select-hour">
+                                                <select class="form-control" name="hour">
+                                                    <option value="1">1 час</option>
+                                                    <option value="1">1 час</option>
+                                                    <option value="2">2 часа</option>
+                                                    <option value="3">3 часа</option>
+                                                    <option value="4">4 часа</option>
+                                                    <option value="5">5 часов</option>
+                                                    <option value="6">6 часов</option>
+                                                    <option value="7">7 часов</option>
+                                                    <option value="8">8 часов</option>
+                                                    <option value="9">9 часов</option>
+                                                    <option value="10">10 часов</option>
+                                                    <option value="11">11 часов</option>
+                                                    <option value="12">12 часов</option>
+                                                    <option value="13">13 часов</option>
+                                                    <option value="14">14 часов</option>
+                                                    <option value="15">15 часов</option>
+                                                    <option value="16">16 часов</option>
+                                                    <option value="17">17 часов</option>
+                                                    <option value="18">18 часов</option>
+                                                    <option value="19">19 часов</option>
+                                                    <option value="20">20 часов</option>
+                                                    <option value="21">21 час</option>
+                                                    <option value="22">22 часа</option>
+                                                    <option value="23">23 часа</option>
+                                                    <option value="24">24 часа</option>
+                                                </select>
+                                            </div>
+                                            <div class="custom-select" id="select-day">
+                                                <select class="form-control" name="day">
+                                                    <option value="1">1 день</option>
+                                                    <option value="1">1 день</option>
+                                                    <option value="2">2 деня</option>
+                                                    <option value="3">3 деня</option>
+                                                    <option value="4">4 деня</option>
+                                                    <option value="5">5 деней</option>
+                                                    <option value="6">6 деней</option>
+                                                    <option value="7">7 деней</option>
+                                                    <option value="8">8 деней</option>
+                                                    <option value="9">9 деней</option>
+                                                    <option value="10">10 деней</option>
+                                                    <option value="11">11 деней</option>
+                                                    <option value="12">12 деней</option>
+                                                    <option value="13">13 деней</option>
+                                                    <option value="14">14 деней</option>
+                                                </select>
+                                            </div>
+                                            <div class="custom-select" id="select-week">
                                                 <select class="form-control" name="week">
+                                                    <option value="1">1 неделя</option>
                                                     <option value="1">1 неделя</option>
                                                     <option value="2">2 недели</option>
                                                     <option value="3">3 недели</option>
                                                     <option value="4">4 недели</option>
                                                 </select>
                                             </div>
-
+                                            <div class="custom-select" id="select-month">
+                                                <select class="form-control" name="month">
+                                                    <option value="1">1 месяц</option>
+                                                    <option value="1">1 месяц</option>
+                                                    <option value="2">2 месяца</option>
+                                                    <option value="3">3 месяца</option>
+                                                    <option value="4">4 месяца</option>
+                                                    <option value="5">5 месяцев</option>
+                                                    <option value="6">6 месяцев</option>
+                                                    <option value="7">7 месяцев</option>
+                                                    <option value="8">8 месяцев</option>
+                                                    <option value="9">9 месяцев</option>
+                                                    <option value="10">10 месяцев</option>
+                                                    <option value="11">11 месяцев</option>
+                                                    <option value="12">12 месяцев</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <input type="hidden" id="count-place" name="count-place" value="" readonly>
@@ -485,7 +550,7 @@
 
                                 <div class="general-price">
                                     <span class="text-black">Итого:</span>
-                                    <strong class="text-gradient-violet">7500 руб</strong>
+                                    <strong class="text-gradient-violet"><span>7500</span> руб</strong>
                                 </div>
                                 <button class="btn btn--lg btn-violet js-open-modal" data-target="contactsModal">
                                     Забронировать

@@ -13397,6 +13397,9 @@ window.$ = _jquery2.default;
 // require('bootstrap/js/src/modal');
 
 
+// import {Modals} from "./modules/_modal";
+//
+// new Modals();
 var app = {
     questionSlider: function questionSlider() {
         var sliderImg = (0, _jquery2.default)('.js-slider');
@@ -13563,8 +13566,8 @@ var app = {
     },
     modal: function modal() {
         var openModal = document.querySelectorAll('.js-open-modal');
-        var closeModal = document.querySelectorAll('.js-close-modal');
-        var overlay = '<div class="modal-backdrop fade show"></div>';
+        var closeModal = Array.from(document.querySelectorAll('.js-close-modal'));
+        var overlay = '<div class="modal-backdrop fade show js-close-modal"></div>';
 
         var _iteratorNormalCompletion2 = true;
         var _didIteratorError2 = false;
@@ -13636,6 +13639,12 @@ var app = {
             document.body.classList.add('modal-open');
             document.body.insertAdjacentHTML("beforeEnd", overlay);
             document.getElementById(currentId).classList.add('show');
+
+            document.querySelector('.modal.show').addEventListener('click', function (e) {
+                if (e.target.classList.contains('modal')) {
+                    hideModal(e);
+                }
+            });
         }
 
         function hideModal(e) {
@@ -13770,6 +13779,7 @@ document.querySelector('.quantity-up').addEventListener('click', function () {
 
     document.querySelector('.form-control-place__number').innerText = count;
     document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
+    calculate();
 });
 
 document.querySelector('.quantity-down').addEventListener('click', function () {
@@ -13784,6 +13794,7 @@ document.querySelector('.quantity-down').addEventListener('click', function () {
     document.getElementById('count-place').setAttribute('value', count);
     document.querySelector('.form-control-place__number').innerText = count;
     document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
+    calculate();
 });
 
 function pluralizeRus(n, forms) {
@@ -13794,6 +13805,7 @@ function increment(value) {
     value++;
     return value;
 }
+
 function decrement(value) {
     value--;
     return value;
@@ -13852,8 +13864,143 @@ function formValidate(form) {
     }
 }
 
+function calculate() {
+    var periodVal = getRadioValue();
+    var totalContainer = document.querySelector('.general-price strong span');
+    var result = void 0;
+    var select = getSelectVal();
+    var place = document.querySelector('.form-control-place__number').innerText;
+
+    if (document.querySelector('.checkbox-group .form-control').checked) {
+        result = place * select * periodVal + place * 500;
+    } else {
+        result = periodVal * select * place;
+    }
+    totalContainer.innerText = result;
+}
+calculate();
+
+function getSelectVal() {
+    var select = document.querySelector('.select-period .form-control');
+    var value = select.value;
+    return value;
+}
+function changeSelect() {
+    var select = document.querySelector('.custom-select');
+    select.addEventListener('click', function () {
+
+        calculate();
+        // value = this.this.querySelector('.select-selected').innerText.split('')[0];
+    });
+}
+
+changeSelect();
+
+function registerCheckEventListener() {
+    var btnChecked = document.querySelector('.checkbox-group .form-control');
+    btnChecked.addEventListener('change', function () {
+        calculate();
+    });
+}
+registerCheckEventListener();
+
+function registerRadioEventListener() {
+    var btnRadio = document.querySelectorAll('.radio-group .form-control');
+    var _iteratorNormalCompletion8 = true;
+    var _didIteratorError8 = false;
+    var _iteratorError8 = undefined;
+
+    try {
+        for (var _iterator8 = btnRadio[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
+            var el = _step8.value;
+
+            el.addEventListener('change', function () {
+                var name = this.getAttribute('data-name');
+                var selectAll = document.querySelectorAll('.select-period .custom-select');
+                var _iteratorNormalCompletion9 = true;
+                var _didIteratorError9 = false;
+                var _iteratorError9 = undefined;
+
+                try {
+                    for (var _iterator9 = selectAll[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
+                        var _el = _step9.value;
+
+                        _el.style.display = 'none';
+                    }
+                } catch (err) {
+                    _didIteratorError9 = true;
+                    _iteratorError9 = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion9 && _iterator9.return) {
+                            _iterator9.return();
+                        }
+                    } finally {
+                        if (_didIteratorError9) {
+                            throw _iteratorError9;
+                        }
+                    }
+                }
+
+                document.getElementById('select-' + name).style.display = 'block';
+                calculate();
+            });
+        }
+    } catch (err) {
+        _didIteratorError8 = true;
+        _iteratorError8 = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion8 && _iterator8.return) {
+                _iterator8.return();
+            }
+        } finally {
+            if (_didIteratorError8) {
+                throw _iteratorError8;
+            }
+        }
+    }
+}
+
+registerRadioEventListener();
+
+function getRadioValue() {
+    var btnRadio = document.querySelectorAll('.radio-group .form-control');
+    var val = void 0;
+    var _iteratorNormalCompletion10 = true;
+    var _didIteratorError10 = false;
+    var _iteratorError10 = undefined;
+
+    try {
+        for (var _iterator10 = btnRadio[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+            var el = _step10.value;
+
+            if (el.checked) {
+                val = el.value;
+            }
+            // changeRadio(el);
+        }
+    } catch (err) {
+        _didIteratorError10 = true;
+        _iteratorError10 = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion10 && _iterator10.return) {
+                _iterator10.return();
+            }
+        } finally {
+            if (_didIteratorError10) {
+                throw _iteratorError10;
+            }
+        }
+    }
+
+    return val;
+}
+
+// changeBooking();
+
 function validFormElement(elem) {
-    console.log(elem);
     if (elem.value === "") {
         elem.classList.add('is-invalid');
     } else {

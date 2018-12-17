@@ -1471,6 +1471,10 @@ main.content {
       margin-right: 1.125rem; }
       .wrap-form .select-period .form-group:last-child {
         margin-right: 0; }
+      .wrap-form .select-period .form-group .custom-select {
+        display: none; }
+        .wrap-form .select-period .form-group .custom-select:first-child {
+          display: block; }
   .wrap-form .general-price {
     margin-bottom: 2.5rem;
     padding-top: 0.9375rem;
@@ -1736,6 +1740,10 @@ textarea.form-control, input.form-control {
   transition: border 0.2s linear; }
   textarea.form-control:focus, input.form-control:focus {
     border: 1px solid #989898; }
+  textarea.form-control:invalid, input.form-control:invalid {
+    border: 1px solid #ff1a53; }
+  textarea.form-control:valid, input.form-control:valid {
+    border: 1px solid green; }
   textarea.form-control.is-invalid, input.form-control.is-invalid {
     border: 1px solid #ff1a53; }
     textarea.form-control.is-invalid .invalid-feedback, input.form-control.is-invalid .invalid-feedback {
@@ -1953,7 +1961,9 @@ select {
   z-index: 99;
   border-top: 1px solid #e2e2e2;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden; }
+  overflow: hidden;
+  max-height: 240px;
+  overflow-y: scroll; }
 
 /*hide the items when the select box is closed:*/
 .select-hide {

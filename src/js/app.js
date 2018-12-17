@@ -3,13 +3,15 @@ import $ from 'jquery';
 window.jQuery = $;
 window.$ = $;
 
+
 // require('bootstrap/js/src/util');
 // require('bootstrap/js/src/modal');
 
 
 import slick from 'slick-carousel';
-
-
+// import {Modals} from "./modules/_modal";
+//
+// new Modals();
 let app = {
     questionSlider: function () {
         let sliderImg = $('.js-slider');
@@ -51,6 +53,7 @@ let app = {
             })
         }
     },
+
 
     switchLang: function () {
         let switchBtn = document.querySelector('.switch-lang');
@@ -144,9 +147,8 @@ let app = {
     },
     modal: function () {
         let openModal = document.querySelectorAll('.js-open-modal');
-        let closeModal = document.querySelectorAll('.js-close-modal');
-        let overlay = '<div class="modal-backdrop fade show"></div>';
-
+        let closeModal = Array.from(document.querySelectorAll('.js-close-modal'));
+        let overlay = '<div class="modal-backdrop fade show js-close-modal"></div>';
 
 
         for (let elem of openModal) {
@@ -164,9 +166,10 @@ let app = {
 
         for (let elem of closeModal) {
             elem.addEventListener('click', function (e) {
-                hideModal(e)
+                hideModal(e);
             });
         }
+
 
         function showModal(e) {
             e.preventDefault();
@@ -177,6 +180,12 @@ let app = {
             document.body.classList.add('modal-open');
             document.body.insertAdjacentHTML("beforeEnd", overlay);
             document.getElementById(currentId).classList.add('show');
+
+            document.querySelector('.modal.show').addEventListener('click', e => {
+                if (e.target.classList.contains('modal')) {
+                    hideModal(e);
+                }
+            });
 
         }
 
@@ -237,10 +246,10 @@ let setTaggedTabActive = () => {
 // let num = document.querySelector('.form-control-place__number').innerText = 10;
 // console.log('--------',num);
 
-document.querySelector('.quantity-up').addEventListener('click',function () {
+document.querySelector('.quantity-up').addEventListener('click', function () {
     let text = 'мест';
     let count = increment(document.querySelector('.form-control-place__number').innerText);
-    if(count >= 2 ) {
+    if (count >= 2) {
         document.querySelector('.quantity-down').classList.remove('disabled')
     }
     if (count >= 40) {
@@ -251,20 +260,22 @@ document.querySelector('.quantity-up').addEventListener('click',function () {
 
     document.querySelector('.form-control-place__number').innerText = count;
     document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
+    calculate();
 });
 
-document.querySelector('.quantity-down').addEventListener('click',function () {
+document.querySelector('.quantity-down').addEventListener('click', function () {
     let text = 'мест';
     let count = decrement(document.querySelector('.form-control-place__number').innerText);
-    if (count == 1 ) {
+    if (count == 1) {
         document.querySelector('.quantity-down').classList.add('disabled')
     }
-    if (count <= 39 ) {
+    if (count <= 39) {
         document.querySelector('.quantity-up').classList.remove('disabled')
     }
     document.getElementById('count-place').setAttribute('value', count);
     document.querySelector('.form-control-place__number').innerText = count;
     document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
+    calculate();
 });
 
 
@@ -276,11 +287,12 @@ function pluralizeRus(n, forms) {
             || n % 100 >= 20) ? forms[1] : forms[2]);
 }
 
-function increment(value){
+function increment(value) {
     value++;
     return value;
 }
-function decrement(value){
+
+function decrement(value) {
     value--;
     return value;
 }
@@ -293,40 +305,106 @@ function toggleButton(e) {
     document.querySelector('html').classList.toggle('no-scroll');
 }
 
-document.addEventListener('touchmove', function(event) {
+document.addEventListener('touchmove', function (event) {
     event = event.originalEvent || event;
-    if(event.scale > 1) {
+    if (event.scale > 1) {
         event.preventDefault();
     }
 }, false);
 
 
-
 let justValidate = false;
 
-function submitForm(){
+function submitForm() {
     console.log('leleka');
 }
 
-function formValidate(form){
+function formValidate(form) {
 
     let thisForm = form;
     let formControl = thisForm.querySelectorAll('.form-control');
 
 
-
-
     for (let el of formControl) {
-        if (el.hasAttribute('required')){
+        if (el.hasAttribute('required')) {
             validFormElement(el);
         }
     }
-
 }
 
-function validFormElement (elem) {
-    console.log(elem);
-    if(elem.value === ""){
+function calculate() {
+    let periodVal = getRadioValue();
+    let totalContainer = document.querySelector('.general-price strong span');
+    let result;
+    let select = getSelectVal();
+    let place = document.querySelector('.form-control-place__number').innerText;
+
+    if (document.querySelector('.checkbox-group .form-control').checked) {
+        result = (place * select * periodVal + (place * 500))
+    } else {
+        result = (periodVal * select * place );
+    }
+    totalContainer.innerText = result;
+}
+calculate();
+
+function getSelectVal() {
+    let select = document.querySelector('.select-period .form-control');
+    let value = select.value;
+    return value;
+}
+function changeSelect() {
+    let select = document.querySelector('.custom-select');
+    select.addEventListener('click', function () {
+
+        calculate();
+        // value = this.this.querySelector('.select-selected').innerText.split('')[0];
+    });
+}
+
+changeSelect();
+
+function registerCheckEventListener() {
+    let btnChecked = document.querySelector('.checkbox-group .form-control');
+    btnChecked.addEventListener('change', function () {
+        calculate();
+    })
+}
+registerCheckEventListener();
+
+function registerRadioEventListener() {
+    let btnRadio = document.querySelectorAll('.radio-group .form-control');
+    for (let el of btnRadio) {
+        el.addEventListener('change', function () {
+            let name = this.getAttribute('data-name');
+            let selectAll = document.querySelectorAll('.select-period .custom-select');
+            for (let el of selectAll) {
+                el.style.display = 'none';
+            }
+            document.getElementById('select-' + name).style.display = 'block';
+            calculate();
+        })
+    }
+}
+
+registerRadioEventListener();
+
+function getRadioValue() {
+    let btnRadio = document.querySelectorAll('.radio-group .form-control');
+    let val;
+    for (let el of btnRadio) {
+        if (el.checked) {
+            val = el.value;
+        }
+        // changeRadio(el);
+    }
+    return val;
+}
+
+// changeBooking();
+
+function validFormElement(elem) {
+    if (elem.value === "") {
         elem.classList.add('is-invalid');
     } else {
         elem.classList.remove('is-invalid');
@@ -336,7 +414,7 @@ function validFormElement (elem) {
 
 document.getElementById('sendForm').addEventListener('click', function () {
 
-   formValidate(document.getElementById('contacts-form'));
+    formValidate(document.getElementById('contacts-form'));
 
 });
 
