@@ -306,11 +306,12 @@ body {
   color: #282627; }
 
 html {
-  height: 100%; }
+  height: 100vh; }
   html.no-scroll {
     overflow: hidden; }
     html.no-scroll body {
-      overflow: hidden; }
+      overflow: hidden;
+      height: 100vh; }
       html.no-scroll body:before {
         content: '';
         background: rgba(40, 38, 39, 0.7);
@@ -465,7 +466,12 @@ video {
       top: 0;
       left: 0;
       z-index: 100;
-      right: 0; } }
+      right: 0;
+      box-shadow: 0 0 6px rgba(40, 38, 39, 0.7); }
+      .header.no-fixed {
+        position: absolute;
+        z-index: inherit;
+        box-shadow: none; } }
   .header-wrap {
     height: 55px;
     display: flex;
@@ -486,22 +492,19 @@ video {
         display: flex;
         flex-direction: column;
         padding: 3.125rem 1.25rem;
+        transform: translateX(100vw);
         height: 100vh;
+        width: 0;
         background-color: #ffffff;
-        transform: translateX(80vw);
         transition: transform .4s ease-in-out; } }
-  @media only screen and (max-width: 768px) and (max-width: 768px) {
-    .header-nav {
-      transform: translateX(65vw); } }
     .header-nav.open {
       top: 0;
       opacity: 1;
       width: 80vw;
-      transform: translateX(0);
+      transform: translateX(0vw);
       visibility: visible;
       right: 0;
       z-index: 300;
-      transition: transform .4s ease-in-out;
       box-shadow: 0 0 15px rgba(40, 38, 39, 0.7);
       padding-left: 1.875rem; }
       .header-nav.open a {
@@ -509,9 +512,6 @@ video {
         font-weight: 700;
         display: block;
         margin: 0.625rem 0; }
-      @media only screen and (max-width: 768px) {
-        .header-nav.open {
-          width: 65vw; } }
     .header-nav a {
       font-size: 0.8125rem;
       display: inline-block;
@@ -1471,10 +1471,6 @@ main.content {
       margin-right: 1.125rem; }
       .wrap-form .select-period .form-group:last-child {
         margin-right: 0; }
-      .wrap-form .select-period .form-group .custom-select {
-        display: none; }
-        .wrap-form .select-period .form-group .custom-select:first-child {
-          display: block; }
   .wrap-form .general-price {
     margin-bottom: 2.5rem;
     padding-top: 0.9375rem;
@@ -1491,6 +1487,11 @@ main.content {
   font-size: 1.375rem;
   font-weight: 900;
   margin-bottom: 1.25rem; }
+
+#jobs .select-period .form-group .custom-select {
+  display: none; }
+  #jobs .select-period .form-group .custom-select:first-child {
+    display: block; }
 
 .form-description {
   font-size: 0.875rem;

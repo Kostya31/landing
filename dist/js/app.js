@@ -13429,8 +13429,17 @@ var app = {
     mobileNav: function mobileNav() {
         var hamburger = document.querySelector('.hamburger');
 
-        hamburger.addEventListener('click', toggleButton);
+        hamburger.addEventListener('click', function (e) {
+            e.preventDefault();
+            toggleMenu();
+        });
 
+        function toggleMenu() {
+            document.querySelector('.header').classList.toggle('no-fixed');
+            document.querySelector('.hamburger').classList.toggle('is-active');
+            document.querySelector('.header-nav').classList.toggle('open');
+            document.querySelector('html').classList.toggle('no-scroll');
+        }
         var navLink = document.querySelectorAll('.header-nav a');
 
         var _iteratorNormalCompletion = true;
@@ -13441,11 +13450,7 @@ var app = {
             for (var _iterator = navLink[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
                 var el = _step.value;
 
-                el.addEventListener('click', function (e) {
-                    document.querySelector('.hamburger').classList.remove('is-active');
-                    document.querySelector('.header-nav').classList.remove('open');
-                    document.querySelector('html').classList.remove('no-scroll');
-                });
+                el.addEventListener('click', toggleMenu);
             }
         } catch (err) {
             _didIteratorError = true;
@@ -13480,8 +13485,6 @@ var app = {
     },
 
     customSelect: function customSelect() {
-        console.log(isMobile());
-
         if (isMobile() === false) {
             var x = void 0,
                 i = void 0,
@@ -13813,7 +13816,7 @@ document.querySelector('.quantity-up').addEventListener('click', function () {
 
     document.querySelector('.form-control-place__number').innerText = count;
     document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
-    calculate();
+    // calculate();
 });
 
 document.querySelector('.quantity-down').addEventListener('click', function () {
@@ -13828,7 +13831,7 @@ document.querySelector('.quantity-down').addEventListener('click', function () {
     document.getElementById('count-place').setAttribute('value', count);
     document.querySelector('.form-control-place__number').innerText = count;
     document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
-    calculate();
+    // calculate();
 });
 
 function pluralizeRus(n, forms) {
@@ -13843,13 +13846,6 @@ function increment(value) {
 function decrement(value) {
     value--;
     return value;
-}
-
-function toggleButton(e) {
-    e.preventDefault();
-    document.querySelector('.hamburger').classList.toggle('is-active');
-    document.querySelector('.header-nav').classList.toggle('open');
-    document.querySelector('html').classList.toggle('no-scroll');
 }
 
 document.addEventListener('touchmove', function (event) {
@@ -13896,38 +13892,108 @@ function formValidate(form) {
     }
 }
 
-function calculate() {
-    var periodVal = getRadioValue();
-    var totalContainer = document.querySelector('.general-price strong span');
-    var result = void 0;
-    var select = getSelectVal();
-    console.log('select:', select);
-    var place = document.querySelector('.form-control-place__number').innerText;
+var jobCalculator = function () {
+    var periodVal = void 0,
+        placeCount = void 0,
+        fixPlace = void 0,
+        periodCount = void 0;
+    updateValues();
 
-    if (document.querySelector('.checkbox-group .form-control').checked) {
-        result = place * select * periodVal + place * 500;
-    } else {
-        result = periodVal * select * place;
+    function updateValues() {
+        var periodRadio = document.querySelector('.radio-group input[name="booking-type"]:checked');
+        periodVal = periodRadio.value;
+        placeCount = document.querySelector('.form-control-place__number').innerText;
+        fixPlace = document.querySelector('.checkbox-group .form-control').checked;
+        periodCount = document.querySelector('#select-' + periodRadio.getAttribute('data-name') + ' select').value;
+        calculate();
     }
-    totalContainer.innerText = result;
-}
-calculate();
 
-function getSelectVal() {
-    var select = document.querySelectorAll('.custom-select');
-    var value = void 0;
+    function calculate() {
+        var res = periodVal * placeCount * periodCount;
+        if (fixPlace) {
+            res = res + 500 * placeCount;
+        }
+        console.log(res);
+        document.querySelector('#jobs .general-price strong span').innerText = res;
+    }
+
+    document.querySelector('#jobs').addEventListener('click', updateValues);
+    document.querySelector('#jobs').addEventListener('change', updateValues);
+}();
+
+var negotiationCalculator = function () {
+    var periodCount = void 0;
+    function updateValues() {
+        periodCount = document.querySelector('#negotiation select').value;
+        calculate();
+    }
+    updateValues();
+
+    function calculate() {
+        var res = periodCount * 400;
+
+        document.querySelector('#negotiation .general-price strong span').innerText = res;
+    }
+
+    document.querySelector('#negotiation').addEventListener('click', updateValues);
+}();
+
+var cabinetCalculator = function () {
+    var periodCount = void 0;
+    function updateValues() {
+        periodCount = document.querySelector('#cabinets select').value;
+        calculate();
+    }
+    updateValues();
+
+    function calculate() {
+        var res = periodCount * 30000;
+
+        document.querySelector('#cabinets .general-price strong span').innerText = res;
+    }
+
+    document.querySelector('#cabinets').addEventListener('click', updateValues);
+}();
+
+function registerRadioEventListener() {
+    var btnRadio = document.querySelectorAll('.radio-group .form-control');
     var _iteratorNormalCompletion9 = true;
     var _didIteratorError9 = false;
     var _iteratorError9 = undefined;
 
     try {
-        for (var _iterator9 = select[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
-            var elem = _step9.value;
+        for (var _iterator9 = btnRadio[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
+            var el = _step9.value;
 
-            value = elem.children[0].value;
-            elem.addEventListener('click', function () {
-                console.log(this.children[0].value);
-                value = this.children[0].value;
+            el.addEventListener('change', function () {
+                var name = this.getAttribute('data-name');
+                var selectAll = document.querySelectorAll('#jobs .select-period .custom-select');
+                var _iteratorNormalCompletion10 = true;
+                var _didIteratorError10 = false;
+                var _iteratorError10 = undefined;
+
+                try {
+                    for (var _iterator10 = selectAll[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+                        var _el = _step10.value;
+
+                        _el.style.display = 'none';
+                    }
+                } catch (err) {
+                    _didIteratorError10 = true;
+                    _iteratorError10 = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion10 && _iterator10.return) {
+                            _iterator10.return();
+                        }
+                    } finally {
+                        if (_didIteratorError10) {
+                            throw _iteratorError10;
+                        }
+                    }
+                }
+
+                document.getElementById('select-' + name).style.display = 'block';
             });
         }
     } catch (err) {
@@ -13944,144 +14010,9 @@ function getSelectVal() {
             }
         }
     }
-
-    return value;
-}
-
-function changeSelect() {
-    var selectWrap = document.querySelectorAll('.custom-select');
-
-    var _iteratorNormalCompletion10 = true;
-    var _didIteratorError10 = false;
-    var _iteratorError10 = undefined;
-
-    try {
-        for (var _iterator10 = selectWrap[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
-            var el = _step10.value;
-
-            el.addEventListener('click', function () {
-                // getSelectVal();
-                calculate();
-            });
-        }
-    } catch (err) {
-        _didIteratorError10 = true;
-        _iteratorError10 = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion10 && _iterator10.return) {
-                _iterator10.return();
-            }
-        } finally {
-            if (_didIteratorError10) {
-                throw _iteratorError10;
-            }
-        }
-    }
-}
-
-changeSelect();
-
-function registerCheckEventListener() {
-    var btnChecked = document.querySelector('.checkbox-group .form-control');
-    btnChecked.addEventListener('change', function () {
-        calculate();
-    });
-}
-registerCheckEventListener();
-
-function registerRadioEventListener() {
-    var btnRadio = document.querySelectorAll('.radio-group .form-control');
-    var _iteratorNormalCompletion11 = true;
-    var _didIteratorError11 = false;
-    var _iteratorError11 = undefined;
-
-    try {
-        for (var _iterator11 = btnRadio[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
-            var el = _step11.value;
-
-            el.addEventListener('change', function () {
-                var name = this.getAttribute('data-name');
-                var selectAll = document.querySelectorAll('.select-period .custom-select');
-                var _iteratorNormalCompletion12 = true;
-                var _didIteratorError12 = false;
-                var _iteratorError12 = undefined;
-
-                try {
-                    for (var _iterator12 = selectAll[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
-                        var _el = _step12.value;
-
-                        _el.style.display = 'none';
-                    }
-                } catch (err) {
-                    _didIteratorError12 = true;
-                    _iteratorError12 = err;
-                } finally {
-                    try {
-                        if (!_iteratorNormalCompletion12 && _iterator12.return) {
-                            _iterator12.return();
-                        }
-                    } finally {
-                        if (_didIteratorError12) {
-                            throw _iteratorError12;
-                        }
-                    }
-                }
-
-                document.getElementById('select-' + name).style.display = 'block';
-                calculate();
-            });
-        }
-    } catch (err) {
-        _didIteratorError11 = true;
-        _iteratorError11 = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion11 && _iterator11.return) {
-                _iterator11.return();
-            }
-        } finally {
-            if (_didIteratorError11) {
-                throw _iteratorError11;
-            }
-        }
-    }
 }
 
 registerRadioEventListener();
-
-function getRadioValue() {
-    var btnRadio = document.querySelectorAll('.radio-group .form-control');
-    var val = void 0;
-    var _iteratorNormalCompletion13 = true;
-    var _didIteratorError13 = false;
-    var _iteratorError13 = undefined;
-
-    try {
-        for (var _iterator13 = btnRadio[Symbol.iterator](), _step13; !(_iteratorNormalCompletion13 = (_step13 = _iterator13.next()).done); _iteratorNormalCompletion13 = true) {
-            var el = _step13.value;
-
-            if (el.checked) {
-                val = el.value;
-            }
-        }
-    } catch (err) {
-        _didIteratorError13 = true;
-        _iteratorError13 = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion13 && _iterator13.return) {
-                _iterator13.return();
-            }
-        } finally {
-            if (_didIteratorError13) {
-                throw _iteratorError13;
-            }
-        }
-    }
-
-    return val;
-}
 
 function validFormElement(elem) {
     if (elem.value === "") {

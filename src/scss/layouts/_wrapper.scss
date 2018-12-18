@@ -923,12 +923,6 @@ main {
         margin-right: 0;
       }
 
-      .custom-select {
-        display: none;
-        &:first-child{
-          display: block;
-        }
-      }
     }
 
   }
@@ -951,6 +945,19 @@ main {
   font-size: rem(22px);
   font-weight: 900;
   margin-bottom: rem(20px);
+}
+
+#jobs {
+  .select-period{
+    .form-group{
+      .custom-select{
+        display: none;
+        &:first-child{
+          display: block;
+        }
+      }
+    }
+  }
 }
 
 .form-description{

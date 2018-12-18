@@ -41,16 +41,21 @@ let app = {
     mobileNav: function () {
         let hamburger = document.querySelector('.hamburger');
 
-        hamburger.addEventListener('click', toggleButton);
+        hamburger.addEventListener('click', function (e) {
+            e.preventDefault();
+            toggleMenu();
+        });
 
+        function toggleMenu() {
+            document.querySelector('.header').classList.toggle('no-fixed');
+            document.querySelector('.hamburger').classList.toggle('is-active');
+            document.querySelector('.header-nav').classList.toggle('open');
+            document.querySelector('html').classList.toggle('no-scroll');
+        }
         let navLink = document.querySelectorAll('.header-nav a');
 
         for (let el of navLink) {
-            el.addEventListener('click', function (e) {
-                document.querySelector('.hamburger').classList.remove('is-active');
-                document.querySelector('.header-nav').classList.remove('open');
-                document.querySelector('html').classList.remove('no-scroll');
-            })
+            el.addEventListener('click', toggleMenu)
         }
     },
 
@@ -73,9 +78,7 @@ let app = {
 
 
     customSelect: function () {
-        console.log(isMobile());
-
-        if(isMobile() === false) {
+        if (isMobile() === false) {
             let x, i, j, selElmnt, a, b, c;
             /*look for any elements with the class "custom-select":*/
             x = document.getElementsByClassName("custom-select");
@@ -132,7 +135,6 @@ let app = {
                 el.style.display = 'block';
             }
         }
-
 
 
         function closeAllSelect(elmnt) {
@@ -275,7 +277,7 @@ document.querySelector('.quantity-up').addEventListener('click', function () {
 
     document.querySelector('.form-control-place__number').innerText = count;
     document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
-    calculate();
+    // calculate();
 });
 
 document.querySelector('.quantity-down').addEventListener('click', function () {
@@ -290,7 +292,7 @@ document.querySelector('.quantity-down').addEventListener('click', function () {
     document.getElementById('count-place').setAttribute('value', count);
     document.querySelector('.form-control-place__number').innerText = count;
     document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
-    calculate();
+    // calculate();
 });
 
 
@@ -312,13 +314,6 @@ function decrement(value) {
     return value;
 }
 
-
-function toggleButton(e) {
-    e.preventDefault();
-    document.querySelector('.hamburger').classList.toggle('is-active');
-    document.querySelector('.header-nav').classList.toggle('open');
-    document.querySelector('html').classList.toggle('no-scroll');
-}
 
 document.addEventListener('touchmove', function (event) {
     event = event.originalEvent || event;
@@ -345,84 +340,89 @@ function formValidate(form) {
     }
 }
 
-function calculate() {
-    let periodVal = getRadioValue();
-    let totalContainer = document.querySelector('.general-price strong span');
-    let result;
-    let select = getSelectVal();
-    console.log('select:',select);
-    let place = document.querySelector('.form-control-place__number').innerText;
 
-    if (document.querySelector('.checkbox-group .form-control').checked) {
-        result = (place * select * periodVal + (place * 500))
-    } else {
-        result = (periodVal * select * place );
-    }
-    totalContainer.innerText = result;
-}
-calculate();
+let jobCalculator = (function () {
+    let periodVal,
+        placeCount,
+        fixPlace,
+        periodCount;
+    updateValues();
 
-function getSelectVal() {
-    let select = document.querySelectorAll('.custom-select');
-    let value;
-    for(let elem of select) {
-        value = elem.children[0].value;
-        elem.addEventListener('click', function () {
-            console.log(this.children[0].value);
-            value = this.children[0].value;
-        });
-    }
-    return value;
-}
-
-function changeSelect() {
-    let selectWrap = document.querySelectorAll('.custom-select');
-
-    for (let el of selectWrap) {
-        el.addEventListener('click', function () {
-            // getSelectVal();
-            calculate();
-        })
-    }
-}
-
-changeSelect();
-
-function registerCheckEventListener() {
-    let btnChecked = document.querySelector('.checkbox-group .form-control');
-    btnChecked.addEventListener('change', function () {
+    function updateValues() {
+        let periodRadio = document.querySelector('.radio-group input[name="booking-type"]:checked');
+        periodVal = periodRadio.value;
+        placeCount = document.querySelector('.form-control-place__number').innerText;
+        fixPlace = document.querySelector('.checkbox-group .form-control').checked;
+        periodCount = document.querySelector('#select-' + periodRadio.getAttribute('data-name') + ' select').value;
         calculate();
-    })
-}
-registerCheckEventListener();
+    }
+
+    function calculate() {
+        let res = periodVal * placeCount * periodCount;
+        if (fixPlace) {
+            res = res + 500 * placeCount;
+        }
+        console.log(res);
+        document.querySelector('#jobs .general-price strong span').innerText = res;
+    }
+
+    document.querySelector('#jobs').addEventListener('click', updateValues);
+    document.querySelector('#jobs').addEventListener('change', updateValues);
+
+})();
+
+let negotiationCalculator = (function () {
+    let periodCount;
+    function updateValues() {
+        periodCount = document.querySelector('#negotiation select').value;
+        calculate();
+    }
+    updateValues();
+
+    function calculate() {
+        let res = periodCount * 400;
+
+        document.querySelector('#negotiation .general-price strong span').innerText = res;
+    }
+
+    document.querySelector('#negotiation').addEventListener('click', updateValues);
+
+})();
+
+let cabinetCalculator = (function () {
+    let periodCount;
+    function updateValues() {
+        periodCount = document.querySelector('#cabinets select').value;
+        calculate();
+    }
+    updateValues();
+
+    function calculate() {
+        let res = periodCount * 30000;
+
+        document.querySelector('#cabinets .general-price strong span').innerText = res;
+    }
+
+    document.querySelector('#cabinets').addEventListener('click', updateValues);
+
+})();
+
 
 function registerRadioEventListener() {
     let btnRadio = document.querySelectorAll('.radio-group .form-control');
     for (let el of btnRadio) {
         el.addEventListener('change', function () {
             let name = this.getAttribute('data-name');
-            let selectAll = document.querySelectorAll('.select-period .custom-select');
+            let selectAll = document.querySelectorAll('#jobs .select-period .custom-select');
             for (let el of selectAll) {
                 el.style.display = 'none';
             }
             document.getElementById('select-' + name).style.display = 'block';
-            calculate();
         })
     }
 }
 
 registerRadioEventListener();
-
-function getRadioValue() {
-    let btnRadio = document.querySelectorAll('.radio-group .form-control');
-    let val;
-    for (let el of btnRadio) {
-        if (el.checked) {
-            val = el.value;
-        }
-    }
-    return val;
-}
 
 
 function validFormElement(elem) {
