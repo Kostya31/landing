@@ -46,6 +46,7 @@ let app = {
             toggleMenu();
         });
 
+
         function toggleMenu() {
             document.querySelector('.header').classList.toggle('no-fixed');
             document.querySelector('.hamburger').classList.toggle('is-active');
@@ -54,9 +55,13 @@ let app = {
         }
         let navLink = document.querySelectorAll('.header-nav a');
 
-        for (let el of navLink) {
-            el.addEventListener('click', toggleMenu)
+        if(isMobile()){
+            for (let el of navLink) {
+                el.addEventListener('click', toggleMenu)
+            }
         }
+
+
     },
 
 
@@ -315,17 +320,15 @@ function decrement(value) {
 }
 
 
-document.addEventListener('touchmove', function (event) {
+
+
+document.addEventListener('touchmove', function(event) {
     event = event.originalEvent || event;
-    if (event.scale > 1) {
+    if (event.scale !== 1) {
         event.preventDefault();
     }
 }, false);
 
-
-function submitForm() {
-    console.log('www');
-}
 
 function formValidate(form) {
 

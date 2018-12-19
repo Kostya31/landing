@@ -7,6 +7,8 @@ body {
 
 html {
   height: 100vh;
+  -webkit-text-size-adjust: none;
+  touch-action: manipulation;
   &.no-scroll{
     overflow: hidden;
     body{

@@ -13442,27 +13442,29 @@ var app = {
         }
         var navLink = document.querySelectorAll('.header-nav a');
 
-        var _iteratorNormalCompletion = true;
-        var _didIteratorError = false;
-        var _iteratorError = undefined;
+        if (isMobile()) {
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = undefined;
 
-        try {
-            for (var _iterator = navLink[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                var el = _step.value;
-
-                el.addEventListener('click', toggleMenu);
-            }
-        } catch (err) {
-            _didIteratorError = true;
-            _iteratorError = err;
-        } finally {
             try {
-                if (!_iteratorNormalCompletion && _iterator.return) {
-                    _iterator.return();
+                for (var _iterator = navLink[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                    var el = _step.value;
+
+                    el.addEventListener('click', toggleMenu);
                 }
+            } catch (err) {
+                _didIteratorError = true;
+                _iteratorError = err;
             } finally {
-                if (_didIteratorError) {
-                    throw _iteratorError;
+                try {
+                    if (!_iteratorNormalCompletion && _iterator.return) {
+                        _iterator.return();
+                    }
+                } finally {
+                    if (_didIteratorError) {
+                        throw _iteratorError;
+                    }
                 }
             }
         }
@@ -13850,14 +13852,10 @@ function decrement(value) {
 
 document.addEventListener('touchmove', function (event) {
     event = event.originalEvent || event;
-    if (event.scale > 1) {
+    if (event.scale !== 1) {
         event.preventDefault();
     }
 }, false);
-
-function submitForm() {
-    console.log('www');
-}
 
 function formValidate(form) {
 

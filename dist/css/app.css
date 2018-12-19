@@ -306,7 +306,9 @@ body {
   color: #282627; }
 
 html {
-  height: 100vh; }
+  height: 100vh;
+  -webkit-text-size-adjust: none;
+  touch-action: manipulation; }
   html.no-scroll {
     overflow: hidden; }
     html.no-scroll body {
@@ -2129,8 +2131,14 @@ select {
     @media only screen and (max-width: 768px) {
       .modal-img {
         margin-bottom: 1.25rem; } }
+  .modal-open {
+    position: fixed;
+    height: 100vh; }
   .modal.show {
     display: block; }
+  .modal-backdrop.show {
+    overflow: hidden;
+    height: 100vh; }
 
 .modal-header {
   flex-wrap: wrap; }

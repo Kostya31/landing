@@ -130,8 +130,18 @@
       margin-bottom: rem(20px);
     }
   }
+  &-open{
+    position: fixed;
+    height: 100vh;
+  }
   &.show {
     display: block;
+  }
+  &-backdrop {
+    &.show {
+      overflow: hidden;
+      height: 100vh;
+    }
   }
 }
 
