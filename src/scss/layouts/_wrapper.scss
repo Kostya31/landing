@@ -26,8 +26,33 @@ main {
   background-color: $black;
 }
 
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+}
+
 .bg-silver {
   background-color: $bg-silver;
+}
+
+.overlay {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#322f31, 0.8);
+    transition: background-color 0.2s ease-in-out;
+  }
+  &:hover {
+    &:before {
+      content: '';
+      background-color: rgba(#322f31, 0.45);
+    }
+  }
 }
 
 .sub-title {
@@ -114,14 +139,14 @@ main {
       margin-bottom: rem(20px);
     }
   }
-  .row-sale{
+  .row-sale {
     margin-bottom: rem(30px);
   }
   .sale-label {
     margin-right: rem(34px);
     margin-bottom: rem(15px);
   }
-  .row-btn{
+  .row-btn {
     @include respond-to(es) {
       width: 70%;
     }
@@ -140,7 +165,7 @@ main {
   }
   .contacts-item {
     margin-right: rem(128px);
-    @include respond-to(md){
+    @include respond-to(md) {
       margin-right: rem(60px);
     }
     @include respond-to(sm) {
@@ -180,12 +205,12 @@ main {
     }
   }
 }
+
 .contacts-address,
-.contacts-telephone{
+.contacts-telephone {
   font-size: rem(14px);
   font-weight: 700;
 }
-
 
 // hero bottom
 
@@ -211,13 +236,14 @@ main {
   @include respond-to(xs) {
     flex-direction: column;
   }
-  .container{
+  .container {
     width: 100%;
   }
   .title-section {
     padding: rem(40px 0);
   }
 }
+
 .hero-apart,
 .hero-coworking {
   width: 50%;
@@ -230,6 +256,7 @@ main {
     padding: rem(40px 15px);
   }
 }
+
 .hero-apart {
   //padding-left: calc((100vw - 1170px) / 2 );
   //padding-left: rem(70px);
@@ -239,7 +266,6 @@ main {
   //padding-right: calc((100vw - 1170px) / 2 + 15px);
   //padding-left: rem(70px);
 }
-
 
 //---------------- about coworking --------
 
@@ -278,7 +304,7 @@ main {
       right: 0;
       top: 0;
       text-align: right;
-      svg{
+      svg {
         width: 100%;
       }
     }
@@ -305,11 +331,10 @@ main {
   }
 }
 
-
 //  about apart
 
 .our-apart {
-  .description{
+  .description {
     display: inline-block;
   }
   &__img {
@@ -329,8 +354,8 @@ main {
       text-align: center;
       margin-top: rem(30px);
     }
-    svg{
-      @include respond-to(xs){
+    svg {
+      @include respond-to(xs) {
         width: 100%;
       }
     }
@@ -413,14 +438,14 @@ main {
         padding-right: rem(60px);
       }
 
-      @include respond-to(sm){
+      @include respond-to(sm) {
         padding-right: rem(15px);
       }
     }
   }
 }
 
-.sale-label{
+.sale-label {
   font-size: 14px;
   position: relative;
   display: inline-block;
@@ -448,7 +473,7 @@ main {
   .slider-arrows {
     .slick-arrow {
       background: $orange-gradient;
-      &:hover{
+      &:hover {
         background: #322f31;
       }
     }
@@ -530,6 +555,7 @@ main {
     }
   }
 }
+
 .offer-price-wrap {
   display: inline-flex;
   flex-direction: column;
@@ -540,7 +566,7 @@ main {
     margin-bottom: rem(15px);
     font-size: rem(18px);
   }
-  .sale-label{
+  .sale-label {
     margin-bottom: rem(15px);
   }
 }
@@ -599,7 +625,7 @@ main {
     @include respond-to(es) {
       padding-left: rem(70px);
     }
-    span{
+    span {
       position: absolute;
       top: -24px;
       left: 0;
@@ -835,8 +861,8 @@ main {
       padding: rem(30px 50px 40px);
     }
     @include respond-from-to(410px, 510px) {
-       padding: rem(15px 30px 25px 30px);
-     }
+      padding: rem(15px 30px 25px 30px);
+    }
 
     @include respond-from-to(320px, 410px) {
       padding: rem(15px 15px 25px 15px);
@@ -845,13 +871,13 @@ main {
     .btn-violet {
       width: 100%;
     }
-    .custom-select{
+    .custom-select {
       width: 140px;
     }
   }
-  .item-group{
+  .item-group {
     border-bottom: 1px solid #e2e2e2;
-    &__title{
+    &__title {
       margin: rem(20px 0 20px);
       font-size: rem(14px);
       font-weight: 500;
@@ -878,7 +904,7 @@ main {
   .booking-banner {
     max-width: rem(730px);
     margin: rem(0 auto 40px auto);
-    @include respond-to(xs){
+    @include respond-to(xs) {
       flex-direction: column;
       margin-bottom: rem(20px);
       .banner-text {
@@ -915,7 +941,7 @@ main {
     padding: rem(0 0);
     flex-wrap: wrap;
 
-    .form-group{
+    .form-group {
       display: flex;
       align-items: center;
       margin-right: rem(18px);
@@ -941,18 +967,19 @@ main {
     }
   }
 }
-.price-title{
+
+.price-title {
   font-size: rem(22px);
   font-weight: 900;
   margin-bottom: rem(20px);
 }
 
 #jobs {
-  .select-period{
-    .form-group{
-      .custom-select{
+  .select-period {
+    .form-group {
+      .custom-select {
         display: none;
-        &:first-child{
+        &:first-child {
           display: block;
         }
       }
@@ -960,12 +987,11 @@ main {
   }
 }
 
-.form-description{
+.form-description {
   font-size: rem(14px);
   padding-bottom: rem(20px);
   border-bottom: 1px solid $light-grey;
 }
-
 
 .jobs-price {
   font-size: 20px;
@@ -989,14 +1015,14 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  &.slider-apart{
+  &.slider-apart {
     .slider-arrows {
       padding: rem(0 30px);
       @include respond-to(xs) {
         padding: rem(0 15px);
       }
     }
-    .slider-dots{
+    .slider-dots {
       bottom: rem(30px);
       @include respond-to(es) {
         bottom: rem(10px);
@@ -1021,7 +1047,7 @@ main {
     height: 100%;
   }
   .slick-slide {
-    >div {
+    > div {
       height: 100%;
     }
   }
@@ -1060,19 +1086,20 @@ main {
     flex-wrap: wrap;
     margin-bottom: rem(40px);
   }
-  h2{
+  h2 {
     margin-bottom: rem(25px);
   }
 }
+
 .complex-description,
-.complex-img{
+.complex-img {
   flex-basis: 50%;
   @include respond-to(xs) {
     flex-basis: 100%;
   }
 }
 
-.complex-description{
+.complex-description {
   padding-right: rem(80px);
   @include respond-to(xs) {
     padding-right: 0;
@@ -1085,7 +1112,7 @@ main {
   flex-wrap: wrap;
 }
 
-.feature-title{
+.feature-title {
   margin-bottom: rem(60px);
   @include respond-to(xs) {
     margin-bottom: rem(40px);
@@ -1101,7 +1128,7 @@ main {
     width: 100%;
     margin-bottom: rem(40px);
   }
-  &__img{
+  &__img {
     width: 30%;
     text-align: center;
     margin-right: rem(40px);
@@ -1128,7 +1155,7 @@ main {
     align-items: center;
     margin: rem(40px 0 40px);
   }
-  .feature-item{
+  .feature-item {
     flex-direction: column;
     @include respond-to(xs) {
       width: 80%;
@@ -1149,6 +1176,133 @@ main {
   }
 }
 
+//--------------- home page --------------
 
+.home-ideas {
+  //background: url(../images/svg/home-pattern-bg.svg);
+  //background-position: bottom left;
+  //background-size: 600px 300px;
+  //background-repeat: no-repeat;
+
+  display: flex;
+  &__content{
+    width: 50%;
+    background-position: bottom left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    .title-h1{
+      margin-bottom: rem(30px);
+    }
+  }
+  &__img {
+    width: 50%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .title-h1 {
+    //margin-top: rem(180px);
+    //margin-bottom: rem(30px);
+  }
+  .btn.btn-silver-2{
+    box-shadow: 0 10px 15px rgba(134, 134, 134, 0.3);
+    background-color: rgba(#676466, 1);
+  }
+}
+
+.stangher-ideas {
+  margin-top: rem(60px);
+  margin-bottom: rem(130px);
+  display: flex;
+  align-items: center;
+  &__img{
+    //background-size: contain;
+    //background-position: left top;
+    //background-repeat: no-repeat;
+    //padding: rem(17% 0);
+    width: 50%;
+    padding-right: 60px;
+    img {
+      width: 100%;
+    }
+  }
+  &-content {
+    padding-right: calc((100vw - 1170px - 15px) / 2);
+    .title-h2{
+      margin-bottom: rem(20px);
+    }
+  }
+  .container{
+    padding-left: 0;
+    width: 50%;
+  }
+}
+
+.ideas-path-img {
+  position: relative;
+  &:before {
+    content: '';
+    background-image: url(../images/svg/Path-1.svg);
+    width: 10%;
+    height: 40%;
+    bottom: 75%;
+    left: 45%;
+    background-size: contain;
+    background-position: left top;
+    display: inline-block;
+    position: absolute;
+    background-repeat: no-repeat;
+  }
+  &:after {
+    content: '';
+    background-image: url(../images/svg/Path-2.svg);
+    width: 10%;
+    height: 32%;
+    background-size: contain;
+    background-position: left top;
+    top: 80%;
+    right: 50%;
+    display: inline-block;
+    position: absolute;
+    background-repeat: no-repeat;
+  }
+}
+
+.our-projects {
+  margin-bottom: rem(100px);
+  .title-h2 {
+    margin-bottom: rem(45px);
+  }
+}
+
+.project-items {
+  margin-bottom: rem(50px);
+}
+
+.project-item {
+  display: flex;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  margin-top: rem(30px);
+  &__img {
+    width: 50%;
+  }
+  &__content {
+    width: 50%;
+    padding: rem(35px 45px 60px 45px);
+  }
+  .logo {
+    margin-bottom: rem(30px);
+  }
+  .title-h3 {
+    margin-bottom: rem(30px);
+  }
+  .description {
+    margin-bottom: rem(40px);
+    font-size: rem(14px);
+  }
+}
 
 // modals

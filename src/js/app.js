@@ -64,7 +64,6 @@ let app = {
 
     },
 
-
     switchLang: function () {
         let switchBtn = document.querySelector('.switch-lang');
         switchBtn.addEventListener('click', function (e) {
@@ -81,6 +80,110 @@ let app = {
         setTaggedTabActive();
     },
 
+    formCalculate: function() {
+
+        let form = document.querySelector('.form-calculate');
+
+        console.log(form);
+
+        if(form){
+            let jobCalculator = (function () {
+                let periodVal,
+                    placeCount,
+                    fixPlace,
+                    periodCount;
+                updateValues();
+
+                function updateValues() {
+                    let periodRadio = document.querySelector('.radio-group input[name="booking-type"]:checked');
+                    periodVal = periodRadio.value;
+                    placeCount = document.querySelector('.form-control-place__number').innerText;
+                    fixPlace = document.querySelector('.checkbox-group .form-control').checked;
+                    periodCount = document.querySelector('#select-' + periodRadio.getAttribute('data-name') + ' select').value;
+                    calculate();
+                }
+
+                document.querySelector('.quantity-up').addEventListener('click', function () {
+                    let text = 'мест';
+                    let count = increment(document.querySelector('.form-control-place__number').innerText);
+                    if (count >= 2) {
+                        document.querySelector('.quantity-down').classList.remove('disabled')
+                    }
+                    if (count >= 40) {
+                        document.querySelector('.quantity-up').classList.add('disabled')
+                    }
+
+                    document.getElementById('count-place').setAttribute('value', count);
+
+                    document.querySelector('.form-control-place__number').innerText = count;
+                    document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
+                });
+
+                document.querySelector('.quantity-down').addEventListener('click', function () {
+                    let text = 'мест';
+                    let count = decrement(document.querySelector('.form-control-place__number').innerText);
+                    if (count == 1) {
+                        document.querySelector('.quantity-down').classList.add('disabled')
+                    }
+                    if (count <= 39) {
+                        document.querySelector('.quantity-up').classList.remove('disabled')
+                    }
+                    document.getElementById('count-place').setAttribute('value', count);
+                    document.querySelector('.form-control-place__number').innerText = count;
+                    document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
+                });
+
+                function calculate() {
+                    let res = periodVal * placeCount * periodCount;
+                    if (fixPlace) {
+                        res = res + 500 * placeCount;
+                    }
+                    console.log(res);
+                    document.querySelector('#jobs .general-price strong span').innerText = res;
+                }
+
+                document.querySelector('#jobs').addEventListener('click', updateValues);
+                document.querySelector('#jobs').addEventListener('change', updateValues);
+
+            })();
+
+            let negotiationCalculator = (function () {
+                let periodCount;
+                function updateValues() {
+                    periodCount = document.querySelector('#negotiation select').value;
+                    calculate();
+                }
+                updateValues();
+
+                function calculate() {
+                    let res = periodCount * 400;
+
+                    document.querySelector('#negotiation .general-price strong span').innerText = res;
+                }
+
+                document.querySelector('#negotiation').addEventListener('click', updateValues);
+
+            })();
+
+            let cabinetCalculator = (function () {
+                let periodCount;
+                function updateValues() {
+                    periodCount = document.querySelector('#cabinets select').value;
+                    calculate();
+                }
+                updateValues();
+
+                function calculate() {
+                    let res = periodCount * 30000;
+
+                    document.querySelector('#cabinets .general-price strong span').innerText = res;
+                }
+
+                document.querySelector('#cabinets').addEventListener('click', updateValues);
+
+            })();
+        }
+    },
 
     customSelect: function () {
         if (isMobile() === false) {
@@ -229,6 +332,7 @@ let app = {
         app.customSelect();
         app.modal();
         app.mobileNav();
+        app.formCalculate();
     }
 };
 
@@ -236,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function () {
     app.init();
 });
 
-let setTaggedTabActive = () => {
+let setTaggedTabActive = function () {
 
     let tabLinks = document.querySelectorAll('.tabs .tabs__link');
     let tabContent = document.querySelectorAll('.tabs .tabs__item');
@@ -264,41 +368,6 @@ let setTaggedTabActive = () => {
     }
 };
 
-
-// let num = document.querySelector('.form-control-place__number').innerText = 10;
-// console.log('--------',num);
-
-document.querySelector('.quantity-up').addEventListener('click', function () {
-    let text = 'мест';
-    let count = increment(document.querySelector('.form-control-place__number').innerText);
-    if (count >= 2) {
-        document.querySelector('.quantity-down').classList.remove('disabled')
-    }
-    if (count >= 40) {
-        document.querySelector('.quantity-up').classList.add('disabled')
-    }
-
-    document.getElementById('count-place').setAttribute('value', count);
-
-    document.querySelector('.form-control-place__number').innerText = count;
-    document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
-    // calculate();
-});
-
-document.querySelector('.quantity-down').addEventListener('click', function () {
-    let text = 'мест';
-    let count = decrement(document.querySelector('.form-control-place__number').innerText);
-    if (count == 1) {
-        document.querySelector('.quantity-down').classList.add('disabled')
-    }
-    if (count <= 39) {
-        document.querySelector('.quantity-up').classList.remove('disabled')
-    }
-    document.getElementById('count-place').setAttribute('value', count);
-    document.querySelector('.form-control-place__number').innerText = count;
-    document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
-    // calculate();
-});
 
 
 function pluralizeRus(n, forms) {
@@ -344,71 +413,7 @@ function formValidate(form) {
 }
 
 
-let jobCalculator = (function () {
-    let periodVal,
-        placeCount,
-        fixPlace,
-        periodCount;
-    updateValues();
 
-    function updateValues() {
-        let periodRadio = document.querySelector('.radio-group input[name="booking-type"]:checked');
-        periodVal = periodRadio.value;
-        placeCount = document.querySelector('.form-control-place__number').innerText;
-        fixPlace = document.querySelector('.checkbox-group .form-control').checked;
-        periodCount = document.querySelector('#select-' + periodRadio.getAttribute('data-name') + ' select').value;
-        calculate();
-    }
-
-    function calculate() {
-        let res = periodVal * placeCount * periodCount;
-        if (fixPlace) {
-            res = res + 500 * placeCount;
-        }
-        console.log(res);
-        document.querySelector('#jobs .general-price strong span').innerText = res;
-    }
-
-    document.querySelector('#jobs').addEventListener('click', updateValues);
-    document.querySelector('#jobs').addEventListener('change', updateValues);
-
-})();
-
-let negotiationCalculator = (function () {
-    let periodCount;
-    function updateValues() {
-        periodCount = document.querySelector('#negotiation select').value;
-        calculate();
-    }
-    updateValues();
-
-    function calculate() {
-        let res = periodCount * 400;
-
-        document.querySelector('#negotiation .general-price strong span').innerText = res;
-    }
-
-    document.querySelector('#negotiation').addEventListener('click', updateValues);
-
-})();
-
-let cabinetCalculator = (function () {
-    let periodCount;
-    function updateValues() {
-        periodCount = document.querySelector('#cabinets select').value;
-        calculate();
-    }
-    updateValues();
-
-    function calculate() {
-        let res = periodCount * 30000;
-
-        document.querySelector('#cabinets .general-price strong span').innerText = res;
-    }
-
-    document.querySelector('#cabinets').addEventListener('click', updateValues);
-
-})();
 
 
 function registerRadioEventListener() {
@@ -437,11 +442,11 @@ function validFormElement(elem) {
 };
 
 
-document.getElementById('sendForm').addEventListener('click', function () {
-
-    formValidate(document.getElementById('contacts-form'));
-
-});
+// document.getElementById('sendForm').addEventListener('click', function () {
+//
+//     formValidate(document.getElementById('contacts-form'));
+//
+// });
 
 
 function isMobile() {
