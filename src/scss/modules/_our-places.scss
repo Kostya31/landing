@@ -7,11 +7,30 @@
     width: 40%;
     text-align: center;
     margin: 0 auto rem(45px);
+    @include respond-to(sm){
+      width: 50%;
+    }
+    @include respond-to(xs){
+      width: 80%;
+    }
+    @include respond-to(es){
+      width: 100%;
+    }
   }
   .place-icon{
     position: absolute;
     bottom: 30px;
     right: 30px;
+    @include respond-to(sm) {
+      width: 60px;
+      bottom: 20px;
+      right: 20px;
+    }
+    @include respond-to(xs) {
+      width: 50px;
+      bottom: 15px;
+      right: 15px;
+    }
   }
 }
 
@@ -30,13 +49,21 @@
   overflow: hidden;
   position: relative;
   padding: rem(90px 15px);
-  background-size: 100%;
+  //background-size: 100%;
+  background-size: cover;
   background-position: center;
   transition: box-shadow 0.2s ease-in-out,
   background-size 0.6s ease-in-out;
+  @include respond-to(sm) {
+    padding: rem(70px 15px);
+  }
+  @include respond-to(es) {
+    padding: rem(50px 15px);
+    width: 100%;
+  }
   &:hover{
     box-shadow: none;
-    background-size: 108%;
+    //background-size: 108%;
   }
 }
 .place-info{

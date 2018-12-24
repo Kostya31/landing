@@ -527,6 +527,13 @@ video {
         color: #ad3e94; }
       .header-nav a:last-child {
         margin-right: 0; }
+  .header--home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: transparent; }
 
 .switch-lang {
   display: inline-flex;
@@ -1681,7 +1688,7 @@ main.content {
 
 .stangher-ideas {
   margin-top: 3.75rem;
-  margin-bottom: 8.125rem;
+  margin-bottom: 9%;
   display: flex;
   align-items: center; }
   .stangher-ideas__img {
@@ -1715,10 +1722,10 @@ main.content {
     content: '';
     background-image: url(../images/svg/Path-2.svg);
     width: 10%;
-    height: 32%;
+    height: 35%;
     background-size: contain;
     background-position: left top;
-    top: 80%;
+    top: 85%;
     right: 50%;
     display: inline-block;
     position: absolute;
@@ -2197,10 +2204,29 @@ select {
     width: 40%;
     text-align: center;
     margin: 0 auto 2.8125rem; }
+    @media only screen and (max-width: 992px) {
+      .our-places .description {
+        width: 50%; } }
+    @media only screen and (max-width: 768px) {
+      .our-places .description {
+        width: 80%; } }
+    @media only screen and (max-width: 576px) {
+      .our-places .description {
+        width: 100%; } }
   .our-places .place-icon {
     position: absolute;
     bottom: 30px;
     right: 30px; }
+    @media only screen and (max-width: 992px) {
+      .our-places .place-icon {
+        width: 60px;
+        bottom: 20px;
+        right: 20px; } }
+    @media only screen and (max-width: 768px) {
+      .our-places .place-icon {
+        width: 50px;
+        bottom: 15px;
+        right: 15px; } }
 
 .place-items {
   display: flex;
@@ -2217,12 +2243,18 @@ select {
   overflow: hidden;
   position: relative;
   padding: 5.625rem 0.9375rem;
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   transition: box-shadow 0.2s ease-in-out, background-size 0.6s ease-in-out; }
+  @media only screen and (max-width: 992px) {
+    .place-item {
+      padding: 4.375rem 0.9375rem; } }
+  @media only screen and (max-width: 576px) {
+    .place-item {
+      padding: 3.125rem 0.9375rem;
+      width: 100%; } }
   .place-item:hover {
-    box-shadow: none;
-    background-size: 108%; }
+    box-shadow: none; }
 
 .place-info {
   position: relative;

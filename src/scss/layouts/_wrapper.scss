@@ -1215,7 +1215,7 @@ main {
 
 .stangher-ideas {
   margin-top: rem(60px);
-  margin-bottom: rem(130px);
+  margin-bottom: 9%;
   display: flex;
   align-items: center;
   &__img{
@@ -1260,10 +1260,10 @@ main {
     content: '';
     background-image: url(../images/svg/Path-2.svg);
     width: 10%;
-    height: 32%;
+    height: 35%;
     background-size: contain;
     background-position: left top;
-    top: 80%;
+    top: 85%;
     right: 50%;
     display: inline-block;
     position: absolute;
