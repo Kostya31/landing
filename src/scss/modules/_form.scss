@@ -213,11 +213,28 @@ select {
 
 .custom-select {
   position: relative;
-}
-
-.custom-select {
   select {
     display: none; /*hide original SELECT element:*/
+  }
+  &.custom-arrow{
+    &:after {
+      content: '';
+      position: absolute;
+      color: $black;
+      background-image: url("../images/svg/down-arrow.svg");
+      width: 30px;
+      height: 12px;
+      background-color: $white;
+      background-size: 12px;
+      background-repeat: no-repeat;
+      font-weight: 700;
+      line-height: normal;
+      font-size: rem(16px);
+      top: 50%;
+      right: 3px;
+      pointer-events: none;
+      transform: translateY(-50%);
+    }
   }
 }
 

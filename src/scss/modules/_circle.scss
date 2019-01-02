@@ -1,0 +1,70 @@
+$stroke-dasharray: calc(2 * 3.14 * 42.5);
+$stroke-dashoffset: calc((2 * 3.14 * 42.5) * (1 - 0.75));
+.circle-progress {
+  transform: rotate(-90deg);
+}
+
+.circle-color {
+  stroke-dasharray: $stroke-dasharray;
+  stroke-dashoffset: $stroke-dashoffset;
+}
+
+.circle-orange {
+  stroke: $orange-2;
+  &:before {
+    color: $orange-2;
+  }
+  &+.circle-box-label {
+    color: $orange-2;
+  }
+}
+
+.circle-green {
+  stroke: $green;
+  &:before {
+    color: $green;
+  }
+  &+.circle-box-label {
+    color: $green;
+  }
+}
+
+.circle-pink {
+  stroke: $pink;
+  &:before {
+    color: $pink;
+  }
+  &+.circle-box-label {
+    color: $pink;
+  }
+}
+
+
+.circle-box {
+  background: $white;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.20);
+  width: 106px;
+  height: 106px;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 100%;
+  &:before {
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: rem(26px);
+    font-weight: 900;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+  }
+  &+.circle-box-label {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    margin-top: rem(10px);
+  }
+}

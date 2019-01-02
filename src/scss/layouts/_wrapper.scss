@@ -35,6 +35,12 @@ main {
   background-color: $bg-silver;
 }
 
+.hr-dashed {
+  border: 2px dashed #e5e5e5;
+  margin: rem(40px 0);
+
+}
+
 .overlay {
   position: relative;
   &:before {
@@ -44,14 +50,9 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
+    z-index: 2;
     background-color: rgba(#322f31, 0.8);
     transition: background-color 0.2s ease-in-out;
-  }
-  &:hover {
-    &:before {
-      content: '';
-      background-color: rgba(#322f31, 0.45);
-    }
   }
 }
 
@@ -873,6 +874,9 @@ main {
     }
     .custom-select {
       width: 140px;
+      select {
+        width: 100%;
+      }
     }
   }
   .item-group {
@@ -1179,11 +1183,6 @@ main {
 //--------------- home page --------------
 
 .home-ideas {
-  //background: url(../images/svg/home-pattern-bg.svg);
-  //background-position: bottom left;
-  //background-size: 600px 300px;
-  //background-repeat: no-repeat;
-
   display: flex;
   &__content{
     width: 50%;
@@ -1192,8 +1191,16 @@ main {
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
+    padding-left: calc((100vw - 1170px - 15px ) / 2);
+    @include respond-to(sm) {
+      margin-top: 55px;
+    }
     .title-h1{
       margin-bottom: rem(30px);
+      margin-top: rem(20px);
+    }
+    .container{
+      width: 100%;
     }
   }
   &__img {
@@ -1214,8 +1221,8 @@ main {
 }
 
 .stangher-ideas {
-  margin-top: rem(60px);
-  margin-bottom: 9%;
+  margin-top: 9%;
+  margin-bottom: 10%;
   display: flex;
   align-items: center;
   &__img{
@@ -1246,10 +1253,10 @@ main {
   &:before {
     content: '';
     background-image: url(../images/svg/Path-1.svg);
-    width: 10%;
-    height: 40%;
-    bottom: 75%;
-    left: 45%;
+    width: 12%;
+    height: 47%;
+    bottom: 80%;
+    left: 43%;
     background-size: contain;
     background-position: left top;
     display: inline-block;
@@ -1260,7 +1267,7 @@ main {
     content: '';
     background-image: url(../images/svg/Path-2.svg);
     width: 10%;
-    height: 35%;
+    height: 39%;
     background-size: contain;
     background-position: left top;
     top: 85%;
@@ -1273,6 +1280,12 @@ main {
 
 .our-projects {
   margin-bottom: rem(100px);
+  @include respond-to(sm){
+    margin-bottom: rem(60px);
+  }
+  @include respond-to(xs) {
+    margin-bottom: rem(40px);
+  }
   .title-h2 {
     margin-bottom: rem(45px);
   }
@@ -1286,23 +1299,339 @@ main {
   display: flex;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
   margin-top: rem(30px);
+  @include respond-to(es) {
+    flex-wrap: wrap;
+  }
   &__img {
     width: 50%;
+    @include respond-to(es) {
+      width: 100%;
+      height: 40vh;
+    }
   }
   &__content {
     width: 50%;
     padding: rem(35px 45px 60px 45px);
+    @include respond-to(sm) {
+      padding: rem(30px);
+    }
+    @include respond-to(es) {
+      width: 100%;
+    }
   }
   .logo {
     margin-bottom: rem(30px);
+    @include respond-to(sm) {
+      margin-bottom: rem(20px);
+    }
   }
   .title-h3 {
     margin-bottom: rem(30px);
+    @include respond-to(sm) {
+      margin-bottom: rem(20px);
+    }
   }
   .description {
     margin-bottom: rem(40px);
     font-size: rem(14px);
+    @include respond-to(sm) {
+      margin-bottom: rem(20px);
+    }
   }
 }
+
+
+//--------------location ------------
+
+.location{
+  padding: rem(40px 25px 60px);
+  display: flex;
+  @include respond-to(md) {
+    padding: rem(40px 25px 40px);
+  }
+  @include respond-to(xs) {
+    padding: rem(40px 25px 40px);
+  }
+
+  &-img {
+    display: inline-block;
+    margin-right: rem(75px);
+    flex-shrink: 0;
+    @include respond-to(xs) {
+      width: 100px;
+      margin-right: rem(40px);
+    }
+  }
+  &-content {
+    .title-h1{
+      margin-bottom: rem(20px);
+    }
+    .description {
+      width: 45%;
+      @include respond-to(sm) {
+        width: 80%;
+      }
+      @include respond-to(xs) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+//-------------- projects ------------
+
+.projects{
+  padding: rem(40px 25px 60px);
+  display: flex;
+  @include respond-to(md) {
+    padding: rem(40px 25px 40px);
+  }
+  @include respond-to(xs) {
+    padding: rem(40px 25px 20px);
+  }
+  &-img {
+    display: inline-block;
+    margin-right: rem(75px);
+    flex-shrink: 0;
+    @include respond-to(xs) {
+      width: 100px;
+      margin-right: rem(40px);
+    }
+  }
+  &-content {
+    .title-h1{
+      margin-bottom: rem(20px);
+    }
+    .description {
+      width: 60%;
+      @include respond-to(sm) {
+        width: 80%;
+      }
+      @include respond-to(xs) {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+// -------------- banner top ----------------
+
+.banner-project{
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 5;
+  padding: rem(40px 0);
+  @include respond-to(xs) {
+    flex-wrap: wrap;
+  }
+  .col{
+    display: flex;
+    flex-direction: column;
+  }
+  .btn-white {
+    margin-left: auto;
+    margin-right: rem(150px);
+    box-shadow:0 10px 15px 0 rgba(0,0,0,0.20);
+    @include respond-to(xs) {
+      margin-right: 0;
+    }
+    @include respond-to(es) {
+      margin-left: rem(100px);
+      margin-top: rem(10px);
+      margin-right: 0;
+    }
+  }
+  &__city {
+    font-size: rem(42px);
+    color: $white;
+    line-height: rem(52px);
+    font-weight: 900;
+  }
+  &__country {
+    font-size: rem(24px);
+    color: $white;
+  }
+  &__icon {
+    margin-right: rem(55px);
+    margin-left: rem(15px);
+    flex-shrink: 0;
+    @include respond-to(es) {
+      margin-left: 0;
+      width: 70px;
+      margin-right: rem(30px);
+    }
+  }
+}
+
+
+
+//------------- about project -------------
+
+.about-project {
+  padding-top: rem(40px);
+  padding-bottom: rem(50px);
+  .title-h1 {
+    margin-bottom: rem(30px);
+  }
+  .description{
+    width: 75%;
+    @include respond-to(sm) {
+      width: 100%;
+    }
+  }
+}
+
+//------------ traveling -----------
+
+.traveling{
+  .title-h2{
+    margin-bottom: rem(30px);
+  }
+}
+
+.interesting-item{
+  margin-bottom: rem(70px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  @include respond-to(xs) {
+    flex-direction: column;
+    margin-bottom: rem(20px);
+  }
+  &:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  &__img {
+    width: calc(50% - 15px);
+    position: relative;
+    @include respond-to(xs) {
+      width: 100%;
+      margin-bottom: rem(20px);
+    }
+    //margin-bottom: rem(30px);
+    img{
+      display: block;
+      height: 310px;
+      width: 100%;
+      object-fit: cover;
+      @include respond-to(sm) {
+        height: 260px;
+      }
+      @include respond-to(xs) {
+        height: 200px;
+      }
+    }
+    figcaption{
+      background-color: #282627;
+      padding: rem( 16px 20px);
+      color: $white;
+      text-align: center;
+      span{
+        font-size: rem(14px);
+      }
+    }
+  }
+  &__content {
+    width: calc(50% - 15px);
+    //margin-left: rem(15px);
+    @include respond-to(xs) {
+      width: 100%;
+    }
+    .title-h3 {
+      margin-bottom: rem(30px);
+    }
+  }
+}
+
+.detailed-info {
+  margin-top: rem(60px);
+  @include respond-to(xs) {
+    margin-top: rem(40px);
+  }
+  .title-h2{
+    margin-bottom: rem(30px);
+  }
+  .description {
+    width: 75%;
+    @include respond-to(xs) {
+      width: 100%;
+    }
+  }
+}
+
+.interesting-items{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.interesting-more{
+  .interesting-item{
+    &__img {
+      margin-bottom: rem(30px);
+      @include respond-to(xs) {
+        margin-bottom: rem(15px);
+      }
+    }
+  }
+}
+
+.interesting-places {
+  .title-h3{
+    margin-bottom: rem(45px);
+  }
+}
+
+.percent-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.percent-item {
+  text-align: center;
+  margin: rem(40px 60px 40px 0);
+}
+.percent-text {
+  margin-top: rem(10px);
+}
+
+.info-list{
+  &__title{
+    font-weight: 900;
+    margin-bottom: rem(30px);
+    margin-top: rem(50px);
+    position: relative;
+    &:before{
+      content: '';
+      background-image: url(../images/svg/checked-2.svg);
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -6px;
+      left: -60px;
+    }
+  }
+  &__item{
+    padding-left: rem(80px);
+    position: relative;
+  }
+  .row{
+    .info-list__item{
+      width: 50%;
+      padding-right: rem(80px);
+      @include respond-to(xs) {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+  }
+}
+
 
 // modals

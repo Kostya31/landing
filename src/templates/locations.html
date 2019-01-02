@@ -6,11 +6,16 @@
 <div class="section">
     <div class="container">
         <div class="location">
-            <h1></h1>
-            <div class="description">We explore more and more interesting places.
-                And we want to share it you to have pleasant time with
-                nice people in nicest places around the world.
-                Check it out!</div>
+            <div class="location-img">
+                <img src="../images/svg/location.svg" alt="location">
+            </div>
+            <div class="location-content">
+                <h1 class="title-h1">Locations</h1>
+                <div class="description">We explore more and more interesting places.
+                    And we want to share it you to have pleasant time with
+                    nice people in nicest places around the world.
+                    Check it out!</div>
+            </div>
         </div>
     </div>
 </div>
@@ -18,48 +23,46 @@
 <div class="section">
     <div class="container">
         <div class="our-places">
-            <h2>Our places</h2>
-            <div class="description">We explore more and more interesting places.
-                And we want to share it you to have pleasant time with
-                nice people in nicest places around the world.
-                Check it out!</div>
+            <h2 class="center">Our places</h2>
             <div class="place-items">
-                <div class="place-item" style="background-image: url('../images/apart-1.jpg')">
+                <a href="#" class="place-item overlay" style="background-image: url('../images/moscow.jpg')">
                     <div class="place-info">
                         <div class="place-info__city">Moscow</div>
                         <div class="place-info__country">Russia</div>
                         <div class="place-info__projects">3 projects</div>
                     </div>
-                    <div class="place-icon"></div>
-                </div>
-                <div class="place-item" style="background-image: url('../images/apart-1.jpg')">
+                    <img src="../images/svg/moscow.svg" class="place-icon">
+                </a>
+                <a href="#" class="place-item overlay" style="background-image: url('../images/pattaya.jpg')">
                     <div class="place-info">
                         <div class="place-info__city">Pattaya</div>
                         <div class="place-info__country">Thailand</div>
                         <div class="place-info__projects">2 projects</div>
                     </div>
-                    <div class="place-icon"></div>
-                </div>
-                <div class="place-item" style="background-image: url('../images/apart-1.jpg')">
+                    <img src="../images/svg/pattaya.svg" class="place-icon">
+                </a>
+                <a href="#" class="place-item overlay" style="background-image: url('../images/chisinau.jpg')">
                     <div class="place-info">
                         <div class="place-info__city">Chisinau</div>
                         <div class="place-info__country">Moldova</div>
                         <div class="place-info__projects">1 project</div>
                     </div>
-                    <div class="place-icon"></div>
-                </div>
-                <div class="place-item" style="background-image: url('../images/apart-1.jpg')">
+                    <img src="../images/svg/chisinau.svg" class="place-icon">
+                </a>
+                <a href="#" class="place-item place-item--in-progress overlay" style="background-image: url('../images/alicante.jpg')">
                     <div class="place-info">
                         <div class="place-info__city">Alicante</div>
                         <div class="place-info__country">Spain</div>
                         <div class="place-info__projects">1 project</div>
+                        <div class="label-status label-red">in progress</div>
                     </div>
-                    <div class="place-icon"></div>
-                </div>
+                    <img src="../images/svg/alicante.svg" class="place-icon">
+                </a>
             </div>
         </div>
     </div>
 </div>
+
 
 
 {% endblock %}

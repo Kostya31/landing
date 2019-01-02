@@ -1,4 +1,11 @@
 .about-projects {
+  margin-bottom: rem(100px);
+  @include respond-to(sm) {
+    margin-bottom: rem(60px);
+  }
+  @include respond-to(xs) {
+    margin-bottom: rem(40px);
+  }
   .title-h2 {
     margin-bottom: rem(20px);
   }
@@ -6,8 +13,16 @@
     width: 50%;
     text-align: center;
     margin: 0 auto rem(20px);
+    @include respond-to(sm){
+      width: 70%;
+    }
+    @include respond-to(xs){
+      width: 90%;
+    }
+    @include respond-to(es){
+      width: 100%;
+    }
   }
-  margin-bottom: rem(100px);
 }
 
 .about-project {
@@ -19,8 +34,17 @@
     margin-top: rem(40px);
     display: flex;
     align-items: center;
+    @include respond-to(sm) {
+      padding: rem(0 60px);
+    }
+    @include respond-to(xs){
+      padding: 0;
+    }
     &:nth-child(even){
       flex-direction: row-reverse;
+      @include respond-to(xs) {
+        flex-direction: row;
+      }
     }
   }
   &__img {
@@ -32,11 +56,30 @@
       height: 300px;
       display: block;
       object-fit: cover;
+      @include respond-to(sm) {
+        width: 200px;
+        height: 200px;
+      }
+      @include respond-to(xs){
+        width: 140px;
+        height: 140px;
+      }
+      @include respond-to(es){
+        width: 80px;
+        height: 80px;
+      }
     }
   }
   &__content {
     margin-left: rem(60px);
     padding-right: rem(60px);
+    @include respond-to(xs){
+      margin-left: rem(30px);
+      padding-right: 0;
+    }
+    @include respond-to(es){
+      margin-left: rem(15px);
+    }
     h4 {
       margin-bottom: rem(15px);
     }

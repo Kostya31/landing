@@ -53,9 +53,10 @@ let app = {
             document.querySelector('.header-nav').classList.toggle('open');
             document.querySelector('html').classList.toggle('no-scroll');
         }
+
         let navLink = document.querySelectorAll('.header-nav a');
 
-        if(isMobile()){
+        if (isMobile()) {
             for (let el of navLink) {
                 el.addEventListener('click', toggleMenu)
             }
@@ -80,13 +81,13 @@ let app = {
         setTaggedTabActive();
     },
 
-    formCalculate: function() {
+    formCalculate: function () {
 
         let form = document.querySelector('.form-calculate');
 
         console.log(form);
 
-        if(form){
+        if (form) {
             let jobCalculator = (function () {
                 let periodVal,
                     placeCount,
@@ -149,10 +150,12 @@ let app = {
 
             let negotiationCalculator = (function () {
                 let periodCount;
+
                 function updateValues() {
                     periodCount = document.querySelector('#negotiation select').value;
                     calculate();
                 }
+
                 updateValues();
 
                 function calculate() {
@@ -167,10 +170,12 @@ let app = {
 
             let cabinetCalculator = (function () {
                 let periodCount;
+
                 function updateValues() {
                     periodCount = document.querySelector('#cabinets select').value;
                     calculate();
                 }
+
                 updateValues();
 
                 function calculate() {
@@ -240,6 +245,7 @@ let app = {
         } else {
             let select = document.querySelectorAll('.custom-select select');
             for (let el of select) {
+                el.parentElement.classList.add('custom-arrow');
                 el.style.display = 'block';
             }
         }
@@ -279,11 +285,14 @@ let app = {
         for (let elem of openModal) {
             if (elem.addEventListener) {
                 elem.addEventListener('click', function (e) {
+                    console.log(elem);
+                    e.preventDefault();
+                    e.stopPropagation();
                     showModal(e)
                 });
             } else if (elem.attachEvent) {
-                console.log('true');
                 elem.attachEvent('onclick', function (e) {
+                    e.preventDefault();
                     showModal(e)
                 });
             }
@@ -297,7 +306,6 @@ let app = {
 
 
         function showModal(e) {
-            e.preventDefault();
             let targetElem = e.currentTarget;
 
             let currentId = targetElem.getAttribute('data-target');
@@ -324,6 +332,31 @@ let app = {
 
         }
     },
+    percentSvg: function () {
+        let svgElement = document.querySelectorAll('.circle-box');
+        for (let el of svgElement) {
+            let val = el.getAttribute('data-pct');
+
+            if (isNaN(val)) {
+                val = 100;
+            }
+            else {
+                let r = 45;
+                let c = Math.PI * (r * 2);
+
+                if (val < 0) {
+                    val = 0;
+                }
+                if (val > 100) {
+                    val = 100;
+                }
+                let pct = ((100 - val) / 100) * c;
+
+                el.querySelector('.circle-color').style.strokeDashoffset = pct;
+            }
+        }
+    },
+
 
     init: function () {
         app.questionSlider();
@@ -333,6 +366,7 @@ let app = {
         app.modal();
         app.mobileNav();
         app.formCalculate();
+        app.percentSvg();
     }
 };
 
@@ -369,7 +403,6 @@ let setTaggedTabActive = function () {
 };
 
 
-
 function pluralizeRus(n, forms) {
     return n % 10 == 1 && n % 100 != 11
         ? forms[0]
@@ -389,9 +422,7 @@ function decrement(value) {
 }
 
 
-
-
-document.addEventListener('touchmove', function(event) {
+document.addEventListener('touchmove', function (event) {
     event = event.originalEvent || event;
     if (event.scale !== 1) {
         event.preventDefault();
@@ -411,9 +442,6 @@ function formValidate(form) {
         }
     }
 }
-
-
-
 
 
 function registerRadioEventListener() {
