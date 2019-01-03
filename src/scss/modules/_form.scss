@@ -8,6 +8,7 @@ textarea, input{
     font-size: rem(14px);
     border: 1px solid transparent;
     transition: border 0.2s linear;
+    -webkit-appearance: none;
     &:focus {
       border: 1px solid $grey;
     }
@@ -209,6 +210,7 @@ select {
   font-size: rem(14px);
   padding: rem(15px 30px 15px 15px);
   border:  none;
+  -webkit-appearance: none;
 }
 
 .custom-select {

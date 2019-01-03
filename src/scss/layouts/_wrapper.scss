@@ -1184,6 +1184,10 @@ main {
 
 .home-ideas {
   display: flex;
+  @include respond-to(xs) {
+    flex-direction: column-reverse;
+    margin-top: -55px;
+  }
   &__content{
     width: 50%;
     background-position: bottom left;
@@ -1195,6 +1199,9 @@ main {
     @include respond-to(sm) {
       margin-top: 55px;
     }
+    @include respond-to(xs) {
+      margin-top: rem(10px);
+    }
     .title-h1{
       margin-bottom: rem(30px);
       margin-top: rem(20px);
@@ -1202,9 +1209,16 @@ main {
     .container{
       width: 100%;
     }
+    @include respond-to(xs) {
+      width: 100%;
+    }
   }
   &__img {
     width: 50%;
+    @include respond-to(xs) {
+      width: 100%;
+      position: relative;
+    }
     img {
       width: 100%;
     }
@@ -1225,6 +1239,9 @@ main {
   margin-bottom: 10%;
   display: flex;
   align-items: center;
+  @include respond-to(xs){
+    flex-wrap: wrap;
+  }
   &__img{
     //background-size: contain;
     //background-position: left top;
@@ -1232,12 +1249,19 @@ main {
     //padding: rem(17% 0);
     width: 50%;
     padding-right: 60px;
+    @include respond-to(xs) {
+      width: 100%;
+      padding-right: 0;
+    }
     img {
       width: 100%;
     }
   }
   &-content {
     padding-right: calc((100vw - 1170px - 15px) / 2);
+    @include respond-to(xs) {
+
+    }
     .title-h2{
       margin-bottom: rem(20px);
     }
@@ -1245,6 +1269,11 @@ main {
   .container{
     padding-left: 0;
     width: 50%;
+    @include respond-to(xs) {
+      padding-left: rem(15px);
+      width: 100%;
+      margin-top: rem(20px);
+    }
   }
 }
 
@@ -1262,6 +1291,9 @@ main {
     display: inline-block;
     position: absolute;
     background-repeat: no-repeat;
+    @include respond-to(xs) {
+      display: none;
+    }
   }
   &:after {
     content: '';
@@ -1275,6 +1307,9 @@ main {
     display: inline-block;
     position: absolute;
     background-repeat: no-repeat;
+    @include respond-to(xs) {
+      display: none;
+    }
   }
 }
 
@@ -1288,6 +1323,12 @@ main {
   }
   .title-h2 {
     margin-bottom: rem(45px);
+    @include respond-to(xs) {
+      margin-bottom: rem(30px);
+    }
+  }
+  .btn-silver-2{
+    background-color: #676466;
   }
 }
 
@@ -1382,10 +1423,10 @@ main {
 //-------------- projects ------------
 
 .projects{
-  padding: rem(40px 25px 60px);
+  padding: rem(40px 25px 30px);
   display: flex;
   @include respond-to(md) {
-    padding: rem(40px 25px 40px);
+    padding: rem(40px 25px 30px);
   }
   @include respond-to(xs) {
     padding: rem(40px 25px 20px);
@@ -1435,6 +1476,7 @@ main {
     margin-left: auto;
     margin-right: rem(150px);
     box-shadow:0 10px 15px 0 rgba(0,0,0,0.20);
+    cursor: default;
     @include respond-to(xs) {
       margin-right: 0;
     }
@@ -1442,6 +1484,10 @@ main {
       margin-left: rem(100px);
       margin-top: rem(10px);
       margin-right: 0;
+    }
+    &:hover{
+      box-shadow:0 10px 15px 0 rgba(0,0,0,0.20);
+
     }
   }
   &__city {
@@ -1473,6 +1519,9 @@ main {
 .about-project {
   padding-top: rem(40px);
   padding-bottom: rem(50px);
+  @include respond-to(xs) {
+    padding-bottom: rem(40px);
+  }
   .title-h1 {
     margin-bottom: rem(30px);
   }
@@ -1500,7 +1549,7 @@ main {
   flex-wrap: wrap;
   @include respond-to(xs) {
     flex-direction: column;
-    margin-bottom: rem(20px);
+    margin-bottom: rem(30px);
   }
   &:nth-child(even) {
     flex-direction: row-reverse;
@@ -1543,6 +1592,9 @@ main {
     }
     .title-h3 {
       margin-bottom: rem(30px);
+      @include respond-to(xs) {
+        margin-bottom: rem(20px);
+      }
     }
   }
 }
@@ -1583,6 +1635,9 @@ main {
 .interesting-places {
   .title-h3{
     margin-bottom: rem(45px);
+    @include respond-to(xs){
+      margin-bottom: rem(30px);
+    }
   }
 }
 
@@ -1592,7 +1647,12 @@ main {
 }
 .percent-item {
   text-align: center;
-  margin: rem(40px 60px 40px 0);
+  margin: rem(40px 60px 0 0);
+  width: 150px;
+  @include respond-to(es) {
+    width: calc(50% - 20px);
+    margin-right: rem(20px);
+  }
 }
 .percent-text {
   margin-top: rem(10px);
@@ -1615,11 +1675,19 @@ main {
       position: absolute;
       top: -6px;
       left: -60px;
+      @include respond-to(es){
+        top: 50%;
+        transform: translateY(-50%);
+        left: -60px;
+      }
     }
   }
   &__item{
     padding-left: rem(80px);
     position: relative;
+    @include respond-to(es) {
+      padding-left: rem(60px);
+    }
   }
   .row{
     .info-list__item{

@@ -16,19 +16,19 @@
   &--sm {
     padding: rem(9px 18px);
   }
-  &.btn-silver{
+  &-silver{
     background:rgba(255,255,255,0.50);
     &:hover{
       background: rgba(255,255,255,0.3);
     }
   }
-  &.btn-silver-2 {
+  &-silver-2 {
     background-color: rgba(40, 38, 39, 0.4);
     &:hover {
       background: rgba(40, 38, 39, 0.6);
   }
   }
-  &.btn-violet{
+  &-violet{
     background: $violet-gradient;
     background-clip: padding-box;
     box-shadow:0 10px 15px 0 rgba(226,82,189,0.30);
@@ -37,7 +37,7 @@
       box-shadow: none;
     }
   }
-  &.btn-orange {
+  &-orange {
     background: $orange-gradient;
     background-clip: padding-box;
     box-shadow: 0 10px 15px rgba(255, 202, 4, 0.2);
@@ -46,15 +46,14 @@
       box-shadow: none;
     }
   }
-}
-
-.btn-white {
-  background: $white;
-  background-clip: padding-box;
-  color: $black;
-  box-shadow:0 10px 15px 0 rgba(208,208,208,0.30);
-  &:hover{
-    box-shadow: none;
+  &-white {
+    background: $white;
+    background-clip: padding-box;
+    color: $black;
+    box-shadow:0 10px 15px 0 rgba(208,208,208,0.30);
+    &:hover{
+      box-shadow: none;
+    }
   }
 }
 

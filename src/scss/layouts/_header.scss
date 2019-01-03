@@ -83,6 +83,9 @@
     right: 0;
     z-index: 10;
     background-color: transparent;
+    @include respond-to(xs) {
+      background-color: $white;
+    }
   }
 }
 .switch-lang {

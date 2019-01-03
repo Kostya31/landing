@@ -4,17 +4,17 @@
     padding: rem(60px 0 32px 0);
     border-bottom: 1px solid #4a4a4a;
     display: flex;
+    flex-wrap: wrap;
     @include respond-to(xs) {
-      flex-direction: column;
+      //flex-direction: column;
       padding: rem(30px 0 5px 0);
     }
-    @include respond-to(xs) {
-      flex-wrap: wrap;
-    }
+
     nav {
       display: flex;
       flex-direction: column;
       padding-left: rem(150px);
+      flex-shrink: 0;
       @include respond-to(sm) {
         padding-left: rem(75px);
       }
@@ -96,6 +96,7 @@
 
 .col-logo {
   padding-left: rem(75px);
+  flex-shrink: 0;
   @include respond-to(sm) {
     padding-left: rem(60px)
   }
