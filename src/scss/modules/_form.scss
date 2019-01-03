@@ -238,6 +238,11 @@ select {
       transform: translateY(-50%);
     }
   }
+  ul {
+    li {
+      color: $black;
+    }
+  }
 }
 
 .select-selected {
@@ -280,7 +285,7 @@ select {
 
 
 /*style the items (options), including the selected item:*/
-.select-items div{
+.select-items li{
   color: $black;
   padding: 8px 20px;
   cursor: pointer;
@@ -302,8 +307,10 @@ select {
   border-top: 1px solid $light-grey;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  max-height: 240px;
-  overflow-y: scroll;
+  >ul{
+    max-height: 240px;
+    overflow-y: scroll;
+  }
 }
 
 /*hide the items when the select box is closed:*/

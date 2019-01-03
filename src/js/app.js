@@ -83,7 +83,7 @@ let app = {
 
     formCalculate: function () {
 
-        let form = document.querySelector('.form-calculate');
+        let form = document.querySelector('#booking-wrap');
 
         console.log(form);
 
@@ -165,6 +165,7 @@ let app = {
                 }
 
                 document.querySelector('#negotiation').addEventListener('click', updateValues);
+                document.querySelector('#negotiation').addEventListener('change', updateValues);
 
             })();
 
@@ -185,6 +186,7 @@ let app = {
                 }
 
                 document.querySelector('#cabinets').addEventListener('click', updateValues);
+                document.querySelector('#cabinets').addEventListener('change', updateValues);
 
             })();
         }
@@ -194,22 +196,31 @@ let app = {
         if (isMobile() === false) {
             let x, i, j, selElmnt, a, b, c;
             /*look for any elements with the class "custom-select":*/
-            x = document.getElementsByClassName("custom-select");
-            for (i = 0; i < x.length; i++) {
-                selElmnt = x[i].getElementsByTagName("select")[0];
+            x = document.querySelectorAll(".custom-select");
+
+            for (i of x) {
+                selElmnt = i.getElementsByTagName("select")[0];
+                console.log(selElmnt.options);
                 /*for each element, create a new DIV that will act as the selected item:*/
-                a = document.createElement("DIV");
+                a = document.createElement("div");
+
                 a.setAttribute("class", "select-selected");
                 a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-                x[i].appendChild(a);
+                i.appendChild(a);
+
                 /*for each element, create a new DIV that will contain the option list:*/
-                b = document.createElement('div');
-                b.setAttribute("class", "select-items select-hide");
+
+                let test = document.createElement("div");
+                b = document.createElement('ul');
+                test.setAttribute("class", "select-items select-hide");
+
                 for (j = 1; j < selElmnt.length; j++) {
                     /*for each option in the original select element,
-                    create a new DIV that will act as an option item:*/
-                    c = document.createElement("div");
+                    create a new DasIV that will act as an option item:*/
+
+                    c = document.createElement("li");
                     c.innerHTML = selElmnt.options[j].innerHTML;
+
                     c.addEventListener("click", function (e) {
                         /*when an item is clicked, update the original select box,
                         and the selected item:*/
@@ -232,7 +243,8 @@ let app = {
                     });
                     b.appendChild(c);
                 }
-                x[i].appendChild(b);
+                test.appendChild(b);
+                i.appendChild(test);
                 a.addEventListener("click", function (e) {
                     /*when the select box is clicked, close any other select boxes,
                     and open/close the current select box:*/

@@ -2366,6 +2366,8 @@ select {
     right: 3px;
     pointer-events: none;
     transform: translateY(-50%); }
+  .custom-select ul li {
+    color: #282627; }
 
 .select-selected {
   background-color: #ffffff;
@@ -2401,7 +2403,7 @@ select {
   transform: translateY(-50%); }
 
 /*style the items (options), including the selected item:*/
-.select-items div {
+.select-items li {
   color: #282627;
   padding: 8px 20px;
   cursor: pointer;
@@ -2420,9 +2422,10 @@ select {
   z-index: 99;
   border-top: 1px solid #e2e2e2;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  max-height: 240px;
-  overflow-y: scroll; }
+  overflow: hidden; }
+  .select-items > ul {
+    max-height: 240px;
+    overflow-y: scroll; }
 
 /*hide the items when the select box is closed:*/
 .select-hide {

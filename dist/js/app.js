@@ -13489,7 +13489,7 @@ var app = {
 
     formCalculate: function formCalculate() {
 
-        var form = document.querySelector('.form-calculate');
+        var form = document.querySelector('#booking-wrap');
 
         console.log(form);
 
@@ -13570,6 +13570,7 @@ var app = {
                 }
 
                 document.querySelector('#negotiation').addEventListener('click', updateValues);
+                document.querySelector('#negotiation').addEventListener('change', updateValues);
             }();
 
             var cabinetCalculator = function () {
@@ -13589,6 +13590,7 @@ var app = {
                 }
 
                 document.querySelector('#cabinets').addEventListener('click', updateValues);
+                document.querySelector('#cabinets').addEventListener('change', updateValues);
             }();
         }
     },
@@ -13603,70 +13605,74 @@ var app = {
                 b = void 0,
                 c = void 0;
             /*look for any elements with the class "custom-select":*/
-            x = document.getElementsByClassName("custom-select");
-            for (i = 0; i < x.length; i++) {
-                selElmnt = x[i].getElementsByTagName("select")[0];
-                /*for each element, create a new DIV that will act as the selected item:*/
-                a = document.createElement("DIV");
-                a.setAttribute("class", "select-selected");
-                a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-                x[i].appendChild(a);
-                /*for each element, create a new DIV that will contain the option list:*/
-                b = document.createElement('div');
-                b.setAttribute("class", "select-items select-hide");
-                for (j = 1; j < selElmnt.length; j++) {
-                    /*for each option in the original select element,
-                    create a new DIV that will act as an option item:*/
-                    c = document.createElement("div");
-                    c.innerHTML = selElmnt.options[j].innerHTML;
-                    c.addEventListener("click", function (e) {
-                        /*when an item is clicked, update the original select box,
-                        and the selected item:*/
-                        var y = void 0,
-                            i = void 0,
-                            k = void 0,
-                            s = void 0,
-                            h = void 0;
-                        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-                        h = this.parentNode.previousSibling;
-                        for (i = 0; i < s.length; i++) {
-                            if (s.options[i].innerHTML == this.innerHTML) {
-                                s.selectedIndex = i;
-                                h.innerHTML = this.innerHTML;
-                                y = this.parentNode.getElementsByClassName("same-as-selected");
-                                for (k = 0; k < y.length; k++) {
-                                    y[k].removeAttribute("class");
-                                }
-                                this.setAttribute("class", "same-as-selected");
-                                break;
-                            }
-                        }
-                        h.click();
-                    });
-                    b.appendChild(c);
-                }
-                x[i].appendChild(b);
-                a.addEventListener("click", function (e) {
-                    /*when the select box is clicked, close any other select boxes,
-                    and open/close the current select box:*/
-                    e.stopPropagation();
-                    closeAllSelect(this);
-                    this.nextSibling.classList.toggle("select-hide");
-                    this.classList.toggle("select-arrow-active");
-                });
-            }
-        } else {
-            var select = document.querySelectorAll('.custom-select select');
+            x = document.querySelectorAll(".custom-select");
+
             var _iteratorNormalCompletion2 = true;
             var _didIteratorError2 = false;
             var _iteratorError2 = undefined;
 
             try {
-                for (var _iterator2 = select[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                    var el = _step2.value;
+                for (var _iterator2 = x[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+                    i = _step2.value;
 
-                    el.parentElement.classList.add('custom-arrow');
-                    el.style.display = 'block';
+                    selElmnt = i.getElementsByTagName("select")[0];
+                    console.log(selElmnt.options);
+                    /*for each element, create a new DIV that will act as the selected item:*/
+                    a = document.createElement("div");
+
+                    a.setAttribute("class", "select-selected");
+                    a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+                    i.appendChild(a);
+
+                    /*for each element, create a new DIV that will contain the option list:*/
+
+                    var test = document.createElement("div");
+                    b = document.createElement('ul');
+                    test.setAttribute("class", "select-items select-hide");
+
+                    for (j = 1; j < selElmnt.length; j++) {
+                        /*for each option in the original select element,
+                        create a new DasIV that will act as an option item:*/
+
+                        c = document.createElement("li");
+                        c.innerHTML = selElmnt.options[j].innerHTML;
+
+                        c.addEventListener("click", function (e) {
+                            /*when an item is clicked, update the original select box,
+                            and the selected item:*/
+                            var y = void 0,
+                                i = void 0,
+                                k = void 0,
+                                s = void 0,
+                                h = void 0;
+                            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+                            h = this.parentNode.previousSibling;
+                            for (i = 0; i < s.length; i++) {
+                                if (s.options[i].innerHTML == this.innerHTML) {
+                                    s.selectedIndex = i;
+                                    h.innerHTML = this.innerHTML;
+                                    y = this.parentNode.getElementsByClassName("same-as-selected");
+                                    for (k = 0; k < y.length; k++) {
+                                        y[k].removeAttribute("class");
+                                    }
+                                    this.setAttribute("class", "same-as-selected");
+                                    break;
+                                }
+                            }
+                            h.click();
+                        });
+                        b.appendChild(c);
+                    }
+                    test.appendChild(b);
+                    i.appendChild(test);
+                    a.addEventListener("click", function (e) {
+                        /*when the select box is clicked, close any other select boxes,
+                        and open/close the current select box:*/
+                        e.stopPropagation();
+                        closeAllSelect(this);
+                        this.nextSibling.classList.toggle("select-hide");
+                        this.classList.toggle("select-arrow-active");
+                    });
                 }
             } catch (err) {
                 _didIteratorError2 = true;
@@ -13679,6 +13685,33 @@ var app = {
                 } finally {
                     if (_didIteratorError2) {
                         throw _iteratorError2;
+                    }
+                }
+            }
+        } else {
+            var select = document.querySelectorAll('.custom-select select');
+            var _iteratorNormalCompletion3 = true;
+            var _didIteratorError3 = false;
+            var _iteratorError3 = undefined;
+
+            try {
+                for (var _iterator3 = select[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                    var el = _step3.value;
+
+                    el.parentElement.classList.add('custom-arrow');
+                    el.style.display = 'block';
+                }
+            } catch (err) {
+                _didIteratorError3 = true;
+                _iteratorError3 = err;
+            } finally {
+                try {
+                    if (!_iteratorNormalCompletion3 && _iterator3.return) {
+                        _iterator3.return();
+                    }
+                } finally {
+                    if (_didIteratorError3) {
+                        throw _iteratorError3;
                     }
                 }
             }
@@ -13716,13 +13749,13 @@ var app = {
         var closeModal = Array.from(document.querySelectorAll('.js-close-modal'));
         var overlay = '<div class="modal-backdrop fade show js-close-modal"></div>';
 
-        var _iteratorNormalCompletion3 = true;
-        var _didIteratorError3 = false;
-        var _iteratorError3 = undefined;
+        var _iteratorNormalCompletion4 = true;
+        var _didIteratorError4 = false;
+        var _iteratorError4 = undefined;
 
         try {
             var _loop = function _loop() {
-                var elem = _step3.value;
+                var elem = _step4.value;
 
                 if (elem.addEventListener) {
                     elem.addEventListener('click', function (e) {
@@ -13739,35 +13772,8 @@ var app = {
                 }
             };
 
-            for (var _iterator3 = openModal[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+            for (var _iterator4 = openModal[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
                 _loop();
-            }
-        } catch (err) {
-            _didIteratorError3 = true;
-            _iteratorError3 = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion3 && _iterator3.return) {
-                    _iterator3.return();
-                }
-            } finally {
-                if (_didIteratorError3) {
-                    throw _iteratorError3;
-                }
-            }
-        }
-
-        var _iteratorNormalCompletion4 = true;
-        var _didIteratorError4 = false;
-        var _iteratorError4 = undefined;
-
-        try {
-            for (var _iterator4 = closeModal[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-                var _elem = _step4.value;
-
-                _elem.addEventListener('click', function (e) {
-                    hideModal(e);
-                });
             }
         } catch (err) {
             _didIteratorError4 = true;
@@ -13780,6 +13786,33 @@ var app = {
             } finally {
                 if (_didIteratorError4) {
                     throw _iteratorError4;
+                }
+            }
+        }
+
+        var _iteratorNormalCompletion5 = true;
+        var _didIteratorError5 = false;
+        var _iteratorError5 = undefined;
+
+        try {
+            for (var _iterator5 = closeModal[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+                var _elem = _step5.value;
+
+                _elem.addEventListener('click', function (e) {
+                    hideModal(e);
+                });
+            }
+        } catch (err) {
+            _didIteratorError5 = true;
+            _iteratorError5 = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion5 && _iterator5.return) {
+                    _iterator5.return();
+                }
+            } finally {
+                if (_didIteratorError5) {
+                    throw _iteratorError5;
                 }
             }
         }
@@ -13810,13 +13843,13 @@ var app = {
     },
     percentSvg: function percentSvg() {
         var svgElement = document.querySelectorAll('.circle-box');
-        var _iteratorNormalCompletion5 = true;
-        var _didIteratorError5 = false;
-        var _iteratorError5 = undefined;
+        var _iteratorNormalCompletion6 = true;
+        var _didIteratorError6 = false;
+        var _iteratorError6 = undefined;
 
         try {
-            for (var _iterator5 = svgElement[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-                var el = _step5.value;
+            for (var _iterator6 = svgElement[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+                var el = _step6.value;
 
                 var val = el.getAttribute('data-pct');
 
@@ -13838,16 +13871,16 @@ var app = {
                 }
             }
         } catch (err) {
-            _didIteratorError5 = true;
-            _iteratorError5 = err;
+            _didIteratorError6 = true;
+            _iteratorError6 = err;
         } finally {
             try {
-                if (!_iteratorNormalCompletion5 && _iterator5.return) {
-                    _iterator5.return();
+                if (!_iteratorNormalCompletion6 && _iterator6.return) {
+                    _iterator6.return();
                 }
             } finally {
-                if (_didIteratorError5) {
-                    throw _iteratorError5;
+                if (_didIteratorError6) {
+                    throw _iteratorError6;
                 }
             }
         }
@@ -13874,13 +13907,13 @@ var setTaggedTabActive = function setTaggedTabActive() {
     var tabLinks = document.querySelectorAll('.tabs .tabs__link');
     var tabContent = document.querySelectorAll('.tabs .tabs__item');
 
-    var _iteratorNormalCompletion6 = true;
-    var _didIteratorError6 = false;
-    var _iteratorError6 = undefined;
+    var _iteratorNormalCompletion7 = true;
+    var _didIteratorError7 = false;
+    var _iteratorError7 = undefined;
 
     try {
-        for (var _iterator6 = tabLinks[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
-            var _elem2 = _step6.value;
+        for (var _iterator7 = tabLinks[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+            var _elem2 = _step7.value;
 
 
             _elem2.addEventListener('click', function (e) {
@@ -13889,45 +13922,15 @@ var setTaggedTabActive = function setTaggedTabActive() {
                 var _this = e.currentTarget;
                 var tabId = _this.getAttribute('data-tab');
 
-                var _iteratorNormalCompletion7 = true;
-                var _didIteratorError7 = false;
-                var _iteratorError7 = undefined;
-
-                try {
-                    for (var _iterator7 = tabLinks[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-                        var i = _step7.value;
-
-                        i.classList.remove('active');
-                    }
-                } catch (err) {
-                    _didIteratorError7 = true;
-                    _iteratorError7 = err;
-                } finally {
-                    try {
-                        if (!_iteratorNormalCompletion7 && _iterator7.return) {
-                            _iterator7.return();
-                        }
-                    } finally {
-                        if (_didIteratorError7) {
-                            throw _iteratorError7;
-                        }
-                    }
-                }
-
-                _this.classList.add('active');
-
                 var _iteratorNormalCompletion8 = true;
                 var _didIteratorError8 = false;
                 var _iteratorError8 = undefined;
 
                 try {
-                    for (var _iterator8 = tabContent[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
-                        var item = _step8.value;
+                    for (var _iterator8 = tabLinks[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
+                        var i = _step8.value;
 
-                        item.classList.remove('active');
-                        if (item.getAttribute('id') === tabId) {
-                            item.classList.add('active');
-                        }
+                        i.classList.remove('active');
                     }
                 } catch (err) {
                     _didIteratorError8 = true;
@@ -13943,19 +13946,49 @@ var setTaggedTabActive = function setTaggedTabActive() {
                         }
                     }
                 }
+
+                _this.classList.add('active');
+
+                var _iteratorNormalCompletion9 = true;
+                var _didIteratorError9 = false;
+                var _iteratorError9 = undefined;
+
+                try {
+                    for (var _iterator9 = tabContent[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
+                        var item = _step9.value;
+
+                        item.classList.remove('active');
+                        if (item.getAttribute('id') === tabId) {
+                            item.classList.add('active');
+                        }
+                    }
+                } catch (err) {
+                    _didIteratorError9 = true;
+                    _iteratorError9 = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion9 && _iterator9.return) {
+                            _iterator9.return();
+                        }
+                    } finally {
+                        if (_didIteratorError9) {
+                            throw _iteratorError9;
+                        }
+                    }
+                }
             });
         }
     } catch (err) {
-        _didIteratorError6 = true;
-        _iteratorError6 = err;
+        _didIteratorError7 = true;
+        _iteratorError7 = err;
     } finally {
         try {
-            if (!_iteratorNormalCompletion6 && _iterator6.return) {
-                _iterator6.return();
+            if (!_iteratorNormalCompletion7 && _iterator7.return) {
+                _iterator7.return();
             }
         } finally {
-            if (_didIteratorError6) {
-                throw _iteratorError6;
+            if (_didIteratorError7) {
+                throw _iteratorError7;
             }
         }
     }
@@ -13987,74 +14020,17 @@ function formValidate(form) {
     var thisForm = form;
     var formControl = thisForm.querySelectorAll('.form-control');
 
-    var _iteratorNormalCompletion9 = true;
-    var _didIteratorError9 = false;
-    var _iteratorError9 = undefined;
-
-    try {
-        for (var _iterator9 = formControl[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
-            var el = _step9.value;
-
-            if (el.hasAttribute('required')) {
-                validFormElement(el);
-            }
-        }
-    } catch (err) {
-        _didIteratorError9 = true;
-        _iteratorError9 = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion9 && _iterator9.return) {
-                _iterator9.return();
-            }
-        } finally {
-            if (_didIteratorError9) {
-                throw _iteratorError9;
-            }
-        }
-    }
-}
-
-function registerRadioEventListener() {
-    var btnRadio = document.querySelectorAll('.radio-group .form-control');
     var _iteratorNormalCompletion10 = true;
     var _didIteratorError10 = false;
     var _iteratorError10 = undefined;
 
     try {
-        for (var _iterator10 = btnRadio[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+        for (var _iterator10 = formControl[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
             var el = _step10.value;
 
-            el.addEventListener('change', function () {
-                var name = this.getAttribute('data-name');
-                var selectAll = document.querySelectorAll('#jobs .select-period .custom-select');
-                var _iteratorNormalCompletion11 = true;
-                var _didIteratorError11 = false;
-                var _iteratorError11 = undefined;
-
-                try {
-                    for (var _iterator11 = selectAll[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
-                        var _el = _step11.value;
-
-                        _el.style.display = 'none';
-                    }
-                } catch (err) {
-                    _didIteratorError11 = true;
-                    _iteratorError11 = err;
-                } finally {
-                    try {
-                        if (!_iteratorNormalCompletion11 && _iterator11.return) {
-                            _iterator11.return();
-                        }
-                    } finally {
-                        if (_didIteratorError11) {
-                            throw _iteratorError11;
-                        }
-                    }
-                }
-
-                document.getElementById('select-' + name).style.display = 'block';
-            });
+            if (el.hasAttribute('required')) {
+                validFormElement(el);
+            }
         }
     } catch (err) {
         _didIteratorError10 = true;
@@ -14067,6 +14043,63 @@ function registerRadioEventListener() {
         } finally {
             if (_didIteratorError10) {
                 throw _iteratorError10;
+            }
+        }
+    }
+}
+
+function registerRadioEventListener() {
+    var btnRadio = document.querySelectorAll('.radio-group .form-control');
+    var _iteratorNormalCompletion11 = true;
+    var _didIteratorError11 = false;
+    var _iteratorError11 = undefined;
+
+    try {
+        for (var _iterator11 = btnRadio[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
+            var el = _step11.value;
+
+            el.addEventListener('change', function () {
+                var name = this.getAttribute('data-name');
+                var selectAll = document.querySelectorAll('#jobs .select-period .custom-select');
+                var _iteratorNormalCompletion12 = true;
+                var _didIteratorError12 = false;
+                var _iteratorError12 = undefined;
+
+                try {
+                    for (var _iterator12 = selectAll[Symbol.iterator](), _step12; !(_iteratorNormalCompletion12 = (_step12 = _iterator12.next()).done); _iteratorNormalCompletion12 = true) {
+                        var _el = _step12.value;
+
+                        _el.style.display = 'none';
+                    }
+                } catch (err) {
+                    _didIteratorError12 = true;
+                    _iteratorError12 = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion12 && _iterator12.return) {
+                            _iterator12.return();
+                        }
+                    } finally {
+                        if (_didIteratorError12) {
+                            throw _iteratorError12;
+                        }
+                    }
+                }
+
+                document.getElementById('select-' + name).style.display = 'block';
+            });
+        }
+    } catch (err) {
+        _didIteratorError11 = true;
+        _iteratorError11 = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion11 && _iterator11.return) {
+                _iterator11.return();
+            }
+        } finally {
+            if (_didIteratorError11) {
+                throw _iteratorError11;
             }
         }
     }
