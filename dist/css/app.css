@@ -2496,7 +2496,8 @@ select {
     font-size: 2.25rem;
     line-height: 1.25rem;
     right: 15px;
-    top: 15px;
+    height: 26px;
+    top: 12px;
     padding: 0;
     color: #cdcdcd;
     display: inline-block; }
