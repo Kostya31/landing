@@ -104,6 +104,7 @@ let app = {
                     calculate();
                 }
 
+
                 document.querySelector('.quantity-up').addEventListener('click', function () {
                     let text = 'мест';
                     let count = increment(document.querySelector('.form-control-place__number').innerText);
@@ -118,6 +119,7 @@ let app = {
 
                     document.querySelector('.form-control-place__number').innerText = count;
                     document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
+                    updateValues();
                 });
 
                 document.querySelector('.quantity-down').addEventListener('click', function () {
@@ -132,6 +134,7 @@ let app = {
                     document.getElementById('count-place').setAttribute('value', count);
                     document.querySelector('.form-control-place__number').innerText = count;
                     document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
+                    updateValues();
                 });
 
                 function calculate() {
@@ -143,8 +146,12 @@ let app = {
                     document.querySelector('#jobs .general-price strong span').innerText = res;
                 }
 
-                document.querySelector('#jobs').addEventListener('click', updateValues);
                 document.querySelector('#jobs').addEventListener('change', updateValues);
+                document.addEventListener('click', function (e) {
+                    if(e.target.classList.contains('same-as-selected')){
+                        updateValues();
+                    }
+                });
 
             })();
 
@@ -164,8 +171,13 @@ let app = {
                     document.querySelector('#negotiation .general-price strong span').innerText = res;
                 }
 
-                document.querySelector('#negotiation').addEventListener('click', updateValues);
                 document.querySelector('#negotiation').addEventListener('change', updateValues);
+                document.addEventListener('click', function (e) {
+                    if(e.target.classList.contains('same-as-selected')){
+                        updateValues();
+                    }
+                });
+
 
             })();
 
@@ -185,10 +197,16 @@ let app = {
                     document.querySelector('#cabinets .general-price strong span').innerText = res;
                 }
 
-                document.querySelector('#cabinets').addEventListener('click', updateValues);
                 document.querySelector('#cabinets').addEventListener('change', updateValues);
 
+                document.addEventListener('click', function (e) {
+                    if(e.target.classList.contains('same-as-selected')){
+                        updateValues();
+                    }
+                });
             })();
+
+
         }
     },
 
@@ -196,18 +214,17 @@ let app = {
         if (isMobile() === false) {
             let x, i, j, selElmnt, a, b, c;
             /*look for any elements with the class "custom-select":*/
-            x = document.querySelectorAll(".custom-select");
+            x = document.getElementsByClassName("custom-select");
 
-            for (i of x) {
-                selElmnt = i.getElementsByTagName("select")[0];
-                console.log(selElmnt.options);
+
+            for (i = 0; i < x.length; i++) {
+                selElmnt = x[i].getElementsByTagName("select")[0];
                 /*for each element, create a new DIV that will act as the selected item:*/
                 a = document.createElement("div");
 
                 a.setAttribute("class", "select-selected");
                 a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-                i.appendChild(a);
-
+                x[i].appendChild(a);
                 /*for each element, create a new DIV that will contain the option list:*/
 
                 let test = document.createElement("div");
@@ -225,13 +242,14 @@ let app = {
                         /*when an item is clicked, update the original select box,
                         and the selected item:*/
                         let y, i, k, s, h;
-                        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-                        h = this.parentNode.previousSibling;
+                        s = this.parentNode.parentNode.parentNode.getElementsByTagName("select")[0];
+                        h = this.parentNode.parentNode.previousSibling;
+
                         for (i = 0; i < s.length; i++) {
                             if (s.options[i].innerHTML == this.innerHTML) {
                                 s.selectedIndex = i;
                                 h.innerHTML = this.innerHTML;
-                                y = this.parentNode.getElementsByClassName("same-as-selected");
+                                y = this.parentNode.parentNode.getElementsByClassName("same-as-selected");
                                 for (k = 0; k < y.length; k++) {
                                     y[k].removeAttribute("class");
                                 }
@@ -244,7 +262,7 @@ let app = {
                     b.appendChild(c);
                 }
                 test.appendChild(b);
-                i.appendChild(test);
+                x[i].appendChild(test);
                 a.addEventListener("click", function (e) {
                     /*when the select box is clicked, close any other select boxes,
                     and open/close the current select box:*/

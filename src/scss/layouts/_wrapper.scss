@@ -1391,7 +1391,7 @@ main {
     padding: rem(40px 25px 40px);
   }
   @include respond-to(xs) {
-    padding: rem(40px 25px 40px);
+    padding: rem(40px 0 40px);
   }
 
   &-img {
@@ -1399,8 +1399,8 @@ main {
     margin-right: rem(75px);
     flex-shrink: 0;
     @include respond-to(xs) {
-      width: 100px;
-      margin-right: rem(40px);
+      width: 35px;
+      margin-right: rem(20px);
     }
   }
   &-content {
@@ -1413,7 +1413,8 @@ main {
         width: 80%;
       }
       @include respond-to(xs) {
-        width: 100%;
+        width: calc(100% + 55px) ;
+        margin-left: rem(-55px);
       }
     }
   }
@@ -1429,15 +1430,15 @@ main {
     padding: rem(40px 25px 30px);
   }
   @include respond-to(xs) {
-    padding: rem(40px 25px 20px);
+    padding: rem(40px 0 20px);
   }
   &-img {
     display: inline-block;
     margin-right: rem(75px);
     flex-shrink: 0;
     @include respond-to(xs) {
-      width: 100px;
-      margin-right: rem(40px);
+      width: 40px;
+      margin-right: rem(20px);
     }
   }
   &-content {
@@ -1450,7 +1451,8 @@ main {
         width: 80%;
       }
       @include respond-to(xs) {
-        width: 100%;
+        width: calc(100% + 60px);
+        margin-left: rem(-60px);
       }
     }
   }

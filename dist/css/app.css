@@ -1842,15 +1842,15 @@ main.content {
       padding: 2.5rem 1.5625rem 2.5rem; } }
   @media only screen and (max-width: 768px) {
     .location {
-      padding: 2.5rem 1.5625rem 2.5rem; } }
+      padding: 2.5rem 0 2.5rem; } }
   .location-img {
     display: inline-block;
     margin-right: 4.6875rem;
     flex-shrink: 0; }
     @media only screen and (max-width: 768px) {
       .location-img {
-        width: 100px;
-        margin-right: 2.5rem; } }
+        width: 35px;
+        margin-right: 1.25rem; } }
   .location-content .title-h1 {
     margin-bottom: 1.25rem; }
   .location-content .description {
@@ -1860,7 +1860,8 @@ main.content {
         width: 80%; } }
     @media only screen and (max-width: 768px) {
       .location-content .description {
-        width: 100%; } }
+        width: calc(100% + 55px);
+        margin-left: -3.4375rem; } }
 
 .projects {
   padding: 2.5rem 1.5625rem 1.875rem;
@@ -1870,15 +1871,15 @@ main.content {
       padding: 2.5rem 1.5625rem 1.875rem; } }
   @media only screen and (max-width: 768px) {
     .projects {
-      padding: 2.5rem 1.5625rem 1.25rem; } }
+      padding: 2.5rem 0 1.25rem; } }
   .projects-img {
     display: inline-block;
     margin-right: 4.6875rem;
     flex-shrink: 0; }
     @media only screen and (max-width: 768px) {
       .projects-img {
-        width: 100px;
-        margin-right: 2.5rem; } }
+        width: 40px;
+        margin-right: 1.25rem; } }
   .projects-content .title-h1 {
     margin-bottom: 1.25rem; }
   .projects-content .description {
@@ -1888,7 +1889,8 @@ main.content {
         width: 80%; } }
     @media only screen and (max-width: 768px) {
       .projects-content .description {
-        width: 100%; } }
+        width: calc(100% + 60px);
+        margin-left: -3.75rem; } }
 
 .banner-project {
   display: flex;
@@ -2211,11 +2213,13 @@ textarea {
     text-align: left; }
 
 .form-control-place {
-  padding: 0.875rem 1.25rem;
+  padding: 0 1.25rem;
   background-color: #ffffff;
   box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2);
   border-radius: 30px;
   font-size: 0.875rem;
+  height: 46px;
+  line-height: 46px;
   width: 6.75rem;
   margin-right: 10px; }
   .form-control-place__number {
@@ -2339,9 +2343,12 @@ select {
   border-radius: 25px;
   background-color: #ffffff;
   height: 46px;
+  line-height: 46px;
   font-size: 0.875rem;
-  padding: 0.9375rem 1.875rem 0.9375rem 0.9375rem;
+  padding: 0 1.875rem 0 1.25rem;
   border: none;
+  font-family: "GothamPro";
+  font-weight: 400;
   -webkit-appearance: none; }
 
 .custom-select {
@@ -2373,10 +2380,8 @@ select {
   background-color: #ffffff;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 25px;
-  height: 46px;
-  line-height: 46px;
   font-size: 0.875rem;
-  padding: 0 2.5rem 0 1.25rem;
+  padding: 0.875rem 2.5rem 0.875rem 1.25rem;
   cursor: pointer; }
   .select-selected.select-arrow-active {
     border-bottom-right-radius: 0;
