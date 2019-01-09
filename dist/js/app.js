@@ -13474,14 +13474,17 @@ var app = {
     switchLang: function switchLang() {
         var switchBtn = document.querySelector('.switch-lang');
         switchBtn.addEventListener('click', function (e) {
-            var _this = e.currentTarget;
-            _this.classList.toggle('open');
+            var $this = e.currentTarget;
+            $this.classList.add('open');
+            e.stopPropagation();
         });
-        // document.addEventListener('click', function (e) {
-        //     if (!e.target.closest('.switch-lang').children[1]) {
-        //        document.querySelector('.switch-lang').classList.remove('open')
-        //     }
-        // })
+        document.addEventListener('click', function (e) {
+            // console.log(e.target);
+            if (!e.target.classList.contains('switch-lang__item')) {
+                console.log('sss');
+                document.querySelector('.switch-lang').classList.remove('open');
+            }
+        });
     },
     tabs: function tabs() {
         setTaggedTabActive();

@@ -52,7 +52,7 @@
       z-index: 300;
       box-shadow: 0 0 15px rgba(40, 38, 39, 0.7);
       padding-left: rem(30px);
-      a{
+      a {
         font-size: rem(16px);
         font-weight: 700;
         display: block;
@@ -68,7 +68,7 @@
       @include respond-to(sm) {
         margin-right: rem(30px);
       }
-      &:hover{
+      &:hover {
         color: $violet;
       }
       &:last-child {
@@ -76,7 +76,7 @@
       }
     }
   }
-  &--home{
+  &--home {
     position: absolute;
     top: 0;
     left: 0;
@@ -88,51 +88,54 @@
     }
   }
 }
+
 .switch-lang {
   display: inline-flex;
   margin-right: rem(80px);
   cursor: pointer;
   position: relative;
   padding-right: rem(15px);
+  height: 100%;
   @include respond-to(sm) {
     margin-right: rem(30px);
   }
   &:after {
     content: '';
     border: rem(4px) solid transparent;
-    border-top: rem(6px) solid $black  ;
+    border-top: rem(6px) solid $black;
     display: inline-block;
     width: 0;
     height: 0;
     position: absolute;
-    top: 5px;
+    top: calc(50% - 2px);
     right: 0;
   }
   &__drop {
     display: none;
     background-color: $white;
-    padding: rem(5px 10px);
+    padding: rem(8px 12px);
   }
   &.open {
-      .switch-lang__drop{
-        position: absolute;
-        top: 100%;
-        left: 0;
-        margin-top: 10px;
-        z-index: 50;
-        display: inline-flex;
-        flex-direction: column;
-        border-radius: 6px;
-        box-shadow: 0 0 10px rgba($black, 0.5);
-        .switch-lang__item{
-          margin: 5px 0;
-          &:hover {
-            color: $violet;
-          }
+    .switch-lang__drop {
+      position: absolute;
+      top: calc(100% - 3px);
+      left: -12px;
+      z-index: 50;
+      display: inline-flex;
+      flex-direction: column;
+      background: $white;
+      box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.10);
+      width: 90px;
+      border-top: 3px solid $black;
+      .switch-lang__item {
+        margin: 5px 0;
+        &:hover {
+          color: $violet;
         }
       }
+    }
   }
-  &__item{
+  &__item {
     font-size: rem(13px);
     font-weight: 900;
     cursor: pointer;
@@ -148,7 +151,6 @@
 }
 
 // hamurger
-
 
 .hamburger {
   display: none;
@@ -166,15 +168,15 @@
     background-color: $grey;
     margin: 6px 0;
     transition: all 0.3s ease-in-out;
-    &:nth-child(1) {
-      background-color: $orange;
-    }
+    //&:nth-child(1) {
+    //  background-color: $orange;
+    //}
   }
   &.is-active {
     position: fixed;
     .line:nth-child(1) {
-      transform: translate(3px, 2px) rotate(45deg);
-      width: 14px;
+      transform: translate(4px, 4px) rotate(45deg);
+      width: 18px;
     }
     .line:nth-child(2) {
       transform: rotate(-45deg);

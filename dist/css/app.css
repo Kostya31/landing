@@ -543,7 +543,8 @@ video {
   margin-right: 5rem;
   cursor: pointer;
   position: relative;
-  padding-right: 0.9375rem; }
+  padding-right: 0.9375rem;
+  height: 100%; }
   @media only screen and (max-width: 992px) {
     .switch-lang {
       margin-right: 1.875rem; } }
@@ -555,22 +556,23 @@ video {
     width: 0;
     height: 0;
     position: absolute;
-    top: 5px;
+    top: calc(50% - 2px);
     right: 0; }
   .switch-lang__drop {
     display: none;
     background-color: #ffffff;
-    padding: 0.3125rem 0.625rem; }
+    padding: 0.5rem 0.75rem; }
   .switch-lang.open .switch-lang__drop {
     position: absolute;
-    top: 100%;
-    left: 0;
-    margin-top: 10px;
+    top: calc(100% - 3px);
+    left: -12px;
     z-index: 50;
     display: inline-flex;
     flex-direction: column;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(40, 38, 39, 0.5); }
+    background: #ffffff;
+    box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+    width: 90px;
+    border-top: 3px solid #282627; }
     .switch-lang.open .switch-lang__drop .switch-lang__item {
       margin: 5px 0; }
       .switch-lang.open .switch-lang__drop .switch-lang__item:hover {
@@ -602,13 +604,11 @@ video {
     background-color: #989898;
     margin: 6px 0;
     transition: all 0.3s ease-in-out; }
-    .hamburger .line:nth-child(1) {
-      background-color: #e77f1f; }
   .hamburger.is-active {
     position: fixed; }
     .hamburger.is-active .line:nth-child(1) {
-      transform: translate(3px, 2px) rotate(45deg);
-      width: 14px; }
+      transform: translate(4px, 4px) rotate(45deg);
+      width: 18px; }
     .hamburger.is-active .line:nth-child(2) {
       transform: rotate(-45deg);
       width: 36px; }

@@ -68,14 +68,19 @@ let app = {
     switchLang: function () {
         let switchBtn = document.querySelector('.switch-lang');
         switchBtn.addEventListener('click', function (e) {
-            let _this = e.currentTarget;
-            _this.classList.toggle('open');
+            let $this = e.currentTarget;
+            $this.classList.add('open');
+            e.stopPropagation();
         });
-        // document.addEventListener('click', function (e) {
-        //     if (!e.target.closest('.switch-lang').children[1]) {
-        //        document.querySelector('.switch-lang').classList.remove('open')
-        //     }
-        // })
+        document.addEventListener('click', function (e) {
+            // console.log(e.target);
+            if (!e.target.classList.contains('switch-lang__item')) {
+                console.log('sss');
+               document.querySelector('.switch-lang').classList.remove('open')
+            }
+        })
+
+
     },
     tabs: function () {
         setTaggedTabActive();
@@ -148,7 +153,7 @@ let app = {
 
                 document.querySelector('#jobs').addEventListener('change', updateValues);
                 document.addEventListener('click', function (e) {
-                    if(e.target.classList.contains('same-as-selected')){
+                    if (e.target.classList.contains('same-as-selected')) {
                         updateValues();
                     }
                 });
@@ -173,7 +178,7 @@ let app = {
 
                 document.querySelector('#negotiation').addEventListener('change', updateValues);
                 document.addEventListener('click', function (e) {
-                    if(e.target.classList.contains('same-as-selected')){
+                    if (e.target.classList.contains('same-as-selected')) {
                         updateValues();
                     }
                 });
@@ -200,7 +205,7 @@ let app = {
                 document.querySelector('#cabinets').addEventListener('change', updateValues);
 
                 document.addEventListener('click', function (e) {
-                    if(e.target.classList.contains('same-as-selected')){
+                    if (e.target.classList.contains('same-as-selected')) {
                         updateValues();
                     }
                 });
