@@ -318,7 +318,7 @@ html {
         content: '';
         background: rgba(40, 38, 39, 0.7);
         position: fixed;
-        top: 0;
+        top: 55px;
         left: 0;
         right: 0;
         bottom: 0;
@@ -493,27 +493,27 @@ video {
         position: fixed;
         display: flex;
         flex-direction: column;
-        padding: 3.125rem 1.25rem;
+        padding: 1.5625rem;
         transform: translateX(100vw);
-        height: 100vh;
+        height: calc(100vh - 55px);
         width: 0;
         background-color: #ffffff;
         transition: transform .4s ease-in-out; } }
     .header-nav.open {
-      top: 0;
+      top: 55px;
       opacity: 1;
-      width: 80vw;
+      width: 60vw;
       transform: translateX(0vw);
       visibility: visible;
       right: 0;
       z-index: 300;
-      box-shadow: 0 0 15px rgba(40, 38, 39, 0.7);
       padding-left: 1.875rem; }
       .header-nav.open a {
-        font-size: 1rem;
-        font-weight: 700;
+        font-size: 0.875rem;
+        font-weight: 400;
         display: block;
-        margin: 0.625rem 0; }
+        margin-bottom: 1.5625rem;
+        color: #322f31; }
     .header-nav a {
       font-size: 0.8125rem;
       display: inline-block;
@@ -583,6 +583,9 @@ video {
     cursor: pointer;
     display: inline-flex;
     align-items: center; }
+    .switch-lang__item img {
+      width: 23px;
+      height: 15px; }
   .switch-lang__name {
     margin-left: 10px;
     position: relative;

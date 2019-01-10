@@ -69,13 +69,12 @@ let app = {
         let switchBtn = document.querySelector('.switch-lang');
         switchBtn.addEventListener('click', function (e) {
             let $this = e.currentTarget;
-            $this.classList.add('open');
+            $this.classList.toggle('open');
             e.stopPropagation();
         });
         document.addEventListener('click', function (e) {
             // console.log(e.target);
             if (!e.target.classList.contains('switch-lang__item')) {
-                console.log('sss');
                document.querySelector('.switch-lang').classList.remove('open')
             }
         })
