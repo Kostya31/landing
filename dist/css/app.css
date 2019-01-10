@@ -543,15 +543,14 @@ video {
   margin-right: 5rem;
   cursor: pointer;
   position: relative;
-  padding-right: 0.9375rem;
-  height: 100%; }
+  padding-right: 0.9375rem; }
   @media only screen and (max-width: 992px) {
     .switch-lang {
       margin-right: 1.875rem; } }
   .switch-lang:after {
     content: '';
     border: 0.25rem solid transparent;
-    border-top: 0.375rem solid #282627;
+    border-top: 0.3125rem solid #282627;
     display: inline-block;
     width: 0;
     height: 0;
@@ -564,7 +563,7 @@ video {
     padding: 0.5rem 0.75rem; }
   .switch-lang.open .switch-lang__drop {
     position: absolute;
-    top: calc(100% - 3px);
+    top: 33px;
     left: -12px;
     z-index: 50;
     display: inline-flex;
