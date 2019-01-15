@@ -14,15 +14,19 @@ html {
     body{
       overflow: hidden;
       height: 100vh;
+      z-index: 150;
       &:before{
         content: '';
         background: rgba($black, 0.7);
         position: fixed;
+        display: block;
         top: 55px;
         left: 0;
         right: 0;
+        height: 100vh;
         bottom: 0;
-        z-index: 5;
+        z-index: 15;
+        cursor: pointer;
       }
     }
   }

@@ -13380,50 +13380,67 @@ return jQuery;
 },{"jquery":1}],3:[function(require,module,exports){
 'use strict';
 
-var _jquery = require('jquery');
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
 var _slickCarousel = require('slick-carousel');
 
 var _slickCarousel2 = _interopRequireDefault(_slickCarousel);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-window.jQuery = _jquery2.default;
-window.$ = _jquery2.default;
-
-// require('bootstrap/js/src/util');
-// require('bootstrap/js/src/modal');
-
-
-// import {Modals} from "./modules/_modal";
-//
-// new Modals();
 var app = {
+    //slick-slider
+    // questionSlider: function () {
+    //     let sliderImg = $('.js-slider');
+    //     if (sliderImg.length) {
+    //         sliderImg.each(function () {
+    //             let prevArrow = $(this).next().find('.slick-prev');
+    //             let nextArrow = $(this).next().find('.slick-next');
+    //             $(this).slick({
+    //                 slidesToShow: 1,
+    //                 appendDots: $(this).parent().find('.slider-dots'),
+    //                 dotsClass: 'dots-items',
+    //                 customPaging: function (slider, i) {
+    //                     return '<span class="dot"></span>';
+    //                 },
+    //                 arrows: true,
+    //                 appendArrows: $('.slider-arrows'),
+    //                 prevArrow: prevArrow,
+    //                 nextArrow: nextArrow,
+    //                 infinite: true,
+    //                 dots: true,
+    //                 useTransform: false,
+    //             });
+    //         })
+    //     }
+    // },
+
+
+    //tiny-slider
+
+
     questionSlider: function questionSlider() {
-        var sliderImg = (0, _jquery2.default)('.js-slider');
-        if (sliderImg.length) {
-            sliderImg.each(function () {
-                var prevArrow = (0, _jquery2.default)(this).next().find('.slick-prev');
-                var nextArrow = (0, _jquery2.default)(this).next().find('.slick-next');
-                (0, _jquery2.default)(this).slick({
-                    slidesToShow: 1,
-                    appendDots: (0, _jquery2.default)(this).parent().find('.slider-dots'),
-                    dotsClass: 'dots-items',
-                    customPaging: function customPaging(slider, i) {
-                        return '<span class="dot"></span>';
-                    },
-                    arrows: true,
-                    appendArrows: (0, _jquery2.default)('.slider-arrows'),
-                    prevArrow: prevArrow,
-                    nextArrow: nextArrow,
-                    infinite: true,
-                    dots: true,
-                    useTransform: false
-                });
+
+        // tiny-slider initialisation
+        var sliders = document.querySelectorAll('.js-slider');
+
+        sliders.forEach(function (slide, i) {
+
+            var slider = tns({
+                container: slide,
+                items: 1,
+                slideBy: 'page',
+                autoplay: false,
+                mouseDrag: true,
+                touch: true,
+                controlsContainer: ".slider-arrows",
+                navAsThumbnails: true,
+                navContainer: document.querySelector('.dots-items')
             });
-        }
+            var info = slider.getInfo();
+
+            console.log('ooo------', info);
+
+            // total.textContent = info.slideCount;
+        });
     },
 
     mobileNav: function mobileNav() {
@@ -13431,43 +13448,15 @@ var app = {
 
         hamburger.addEventListener('click', function (e) {
             e.preventDefault();
+            e.stopPropagation();
             toggleMenu();
+            document.querySelector('.switch-lang').classList.remove('open');
         });
 
         function toggleMenu() {
-            document.querySelector('.header').classList.toggle('no-fixed');
             document.querySelector('.hamburger').classList.toggle('is-active');
             document.querySelector('.header-nav').classList.toggle('open');
             document.querySelector('html').classList.toggle('no-scroll');
-        }
-
-        var navLink = document.querySelectorAll('.header-nav a');
-
-        if (isMobile()) {
-            var _iteratorNormalCompletion = true;
-            var _didIteratorError = false;
-            var _iteratorError = undefined;
-
-            try {
-                for (var _iterator = navLink[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                    var el = _step.value;
-
-                    el.addEventListener('click', toggleMenu);
-                }
-            } catch (err) {
-                _didIteratorError = true;
-                _iteratorError = err;
-            } finally {
-                try {
-                    if (!_iteratorNormalCompletion && _iterator.return) {
-                        _iterator.return();
-                    }
-                } finally {
-                    if (_didIteratorError) {
-                        throw _iteratorError;
-                    }
-                }
-            }
         }
     },
 
@@ -13477,13 +13466,14 @@ var app = {
             var $this = e.currentTarget;
             $this.classList.toggle('open');
             e.stopPropagation();
+
+            document.querySelector('.hamburger').classList.remove('is-active');
+            document.querySelector('.header-nav').classList.remove('open');
+            document.querySelector('html').classList.remove('no-scroll');
         });
-        document.addEventListener('click', function (e) {
-            // console.log(e.target);
-            if (!e.target.classList.contains('switch-lang__item')) {
-                document.querySelector('.switch-lang').classList.remove('open');
-            }
-        });
+        if (isMobile()) {
+            document.querySelector('body').style.cursor = 'pointer';
+        }
     },
     tabs: function tabs() {
         setTaggedTabActive();
@@ -13685,28 +13675,28 @@ var app = {
             }
         } else {
             var select = document.querySelectorAll('.custom-select select');
-            var _iteratorNormalCompletion2 = true;
-            var _didIteratorError2 = false;
-            var _iteratorError2 = undefined;
+            var _iteratorNormalCompletion = true;
+            var _didIteratorError = false;
+            var _iteratorError = undefined;
 
             try {
-                for (var _iterator2 = select[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                    var el = _step2.value;
+                for (var _iterator = select[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                    var el = _step.value;
 
                     el.parentElement.classList.add('custom-arrow');
                     el.style.display = 'block';
                 }
             } catch (err) {
-                _didIteratorError2 = true;
-                _iteratorError2 = err;
+                _didIteratorError = true;
+                _iteratorError = err;
             } finally {
                 try {
-                    if (!_iteratorNormalCompletion2 && _iterator2.return) {
-                        _iterator2.return();
+                    if (!_iteratorNormalCompletion && _iterator.return) {
+                        _iterator.return();
                     }
                 } finally {
-                    if (_didIteratorError2) {
-                        throw _iteratorError2;
+                    if (_didIteratorError) {
+                        throw _iteratorError;
                     }
                 }
             }
@@ -13744,13 +13734,13 @@ var app = {
         var closeModal = Array.from(document.querySelectorAll('.js-close-modal'));
         var overlay = '<div class="modal-backdrop fade show js-close-modal"></div>';
 
-        var _iteratorNormalCompletion3 = true;
-        var _didIteratorError3 = false;
-        var _iteratorError3 = undefined;
+        var _iteratorNormalCompletion2 = true;
+        var _didIteratorError2 = false;
+        var _iteratorError2 = undefined;
 
         try {
             var _loop = function _loop() {
-                var elem = _step3.value;
+                var elem = _step2.value;
 
                 if (elem.addEventListener) {
                     elem.addEventListener('click', function (e) {
@@ -13767,8 +13757,35 @@ var app = {
                 }
             };
 
-            for (var _iterator3 = openModal[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+            for (var _iterator2 = openModal[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
                 _loop();
+            }
+        } catch (err) {
+            _didIteratorError2 = true;
+            _iteratorError2 = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion2 && _iterator2.return) {
+                    _iterator2.return();
+                }
+            } finally {
+                if (_didIteratorError2) {
+                    throw _iteratorError2;
+                }
+            }
+        }
+
+        var _iteratorNormalCompletion3 = true;
+        var _didIteratorError3 = false;
+        var _iteratorError3 = undefined;
+
+        try {
+            for (var _iterator3 = closeModal[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+                var _elem = _step3.value;
+
+                _elem.addEventListener('click', function (e) {
+                    hideModal(e);
+                });
             }
         } catch (err) {
             _didIteratorError3 = true;
@@ -13781,33 +13798,6 @@ var app = {
             } finally {
                 if (_didIteratorError3) {
                     throw _iteratorError3;
-                }
-            }
-        }
-
-        var _iteratorNormalCompletion4 = true;
-        var _didIteratorError4 = false;
-        var _iteratorError4 = undefined;
-
-        try {
-            for (var _iterator4 = closeModal[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-                var _elem = _step4.value;
-
-                _elem.addEventListener('click', function (e) {
-                    hideModal(e);
-                });
-            }
-        } catch (err) {
-            _didIteratorError4 = true;
-            _iteratorError4 = err;
-        } finally {
-            try {
-                if (!_iteratorNormalCompletion4 && _iterator4.return) {
-                    _iterator4.return();
-                }
-            } finally {
-                if (_didIteratorError4) {
-                    throw _iteratorError4;
                 }
             }
         }
@@ -13838,13 +13828,13 @@ var app = {
     },
     percentSvg: function percentSvg() {
         var svgElement = document.querySelectorAll('.circle-box');
-        var _iteratorNormalCompletion5 = true;
-        var _didIteratorError5 = false;
-        var _iteratorError5 = undefined;
+        var _iteratorNormalCompletion4 = true;
+        var _didIteratorError4 = false;
+        var _iteratorError4 = undefined;
 
         try {
-            for (var _iterator5 = svgElement[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-                var el = _step5.value;
+            for (var _iterator4 = svgElement[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+                var el = _step4.value;
 
                 var val = el.getAttribute('data-pct');
 
@@ -13866,16 +13856,16 @@ var app = {
                 }
             }
         } catch (err) {
-            _didIteratorError5 = true;
-            _iteratorError5 = err;
+            _didIteratorError4 = true;
+            _iteratorError4 = err;
         } finally {
             try {
-                if (!_iteratorNormalCompletion5 && _iterator5.return) {
-                    _iterator5.return();
+                if (!_iteratorNormalCompletion4 && _iterator4.return) {
+                    _iterator4.return();
                 }
             } finally {
-                if (_didIteratorError5) {
-                    throw _iteratorError5;
+                if (_didIteratorError4) {
+                    throw _iteratorError4;
                 }
             }
         }
@@ -13891,24 +13881,82 @@ var app = {
         app.formCalculate();
         app.percentSvg();
     }
-};
+}; // import $ from 'jquery';
+//
+// window.jQuery = $;
+// window.$ = $;
+
+// import { tns } from "./node_modules/tiny-slider/src/tiny-slider"
 
 document.addEventListener('DOMContentLoaded', function () {
     app.init();
+
+    document.addEventListener('click', function (e) {
+
+        console.log(e.target);
+        if (!e.target.closest('.switch-lang')) {
+            document.querySelector('.switch-lang').classList.remove('open');
+        }
+
+        if (!e.target.closest('.hamburger')) {
+            document.querySelector('.hamburger').classList.remove('is-active');
+            document.querySelector('.header-nav').classList.remove('open');
+            document.querySelector('html').classList.remove('no-scroll');
+        }
+
+        // alert('ccc')
+    });
 });
+
+// function touchHandler(event) {
+//     var touches = event.changedTouches,
+//         first = touches[0],
+//         type = "";
+//
+//     switch (event.type) {
+//         case "touchstart":
+//             type = "mousedown";
+//             break;
+//         case "touchmove":
+//             type = "mousemove";
+//             break;
+//         case "touchend":
+//             type = "click";
+//             break;
+//         default:
+//             return;
+//     }
+//
+//     var simulatedEvent = document.createEvent("MouseEvent");
+//     simulatedEvent.initMouseEvent(type, true, true, window, 1,
+//         first.screenX, first.screenY,
+//         first.clientX, first.clientY, false,
+//         false, false, false, 0/*left*/, null);
+//
+//     first.target.dispatchEvent(simulatedEvent);
+//     event.preventDefault();
+// }
+//
+// function fire(e) { alert('hi'); }
+// function initTouch()
+// {
+//     document.addEventListener("click", touchHandler, true);
+//     document.addEventListener("touchmove", touchHandler, true);
+//     document.addEventListener("touchcancel", touchHandler, true);
+// }
 
 var setTaggedTabActive = function setTaggedTabActive() {
 
     var tabLinks = document.querySelectorAll('.tabs .tabs__link');
     var tabContent = document.querySelectorAll('.tabs .tabs__item');
 
-    var _iteratorNormalCompletion6 = true;
-    var _didIteratorError6 = false;
-    var _iteratorError6 = undefined;
+    var _iteratorNormalCompletion5 = true;
+    var _didIteratorError5 = false;
+    var _iteratorError5 = undefined;
 
     try {
-        for (var _iterator6 = tabLinks[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
-            var _elem2 = _step6.value;
+        for (var _iterator5 = tabLinks[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
+            var _elem2 = _step5.value;
 
 
             _elem2.addEventListener('click', function (e) {
@@ -13917,15 +13965,45 @@ var setTaggedTabActive = function setTaggedTabActive() {
                 var _this = e.currentTarget;
                 var tabId = _this.getAttribute('data-tab');
 
+                var _iteratorNormalCompletion6 = true;
+                var _didIteratorError6 = false;
+                var _iteratorError6 = undefined;
+
+                try {
+                    for (var _iterator6 = tabLinks[Symbol.iterator](), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
+                        var i = _step6.value;
+
+                        i.classList.remove('active');
+                    }
+                } catch (err) {
+                    _didIteratorError6 = true;
+                    _iteratorError6 = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion6 && _iterator6.return) {
+                            _iterator6.return();
+                        }
+                    } finally {
+                        if (_didIteratorError6) {
+                            throw _iteratorError6;
+                        }
+                    }
+                }
+
+                _this.classList.add('active');
+
                 var _iteratorNormalCompletion7 = true;
                 var _didIteratorError7 = false;
                 var _iteratorError7 = undefined;
 
                 try {
-                    for (var _iterator7 = tabLinks[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-                        var i = _step7.value;
+                    for (var _iterator7 = tabContent[Symbol.iterator](), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
+                        var item = _step7.value;
 
-                        i.classList.remove('active');
+                        item.classList.remove('active');
+                        if (item.getAttribute('id') === tabId) {
+                            item.classList.add('active');
+                        }
                     }
                 } catch (err) {
                     _didIteratorError7 = true;
@@ -13941,49 +14019,19 @@ var setTaggedTabActive = function setTaggedTabActive() {
                         }
                     }
                 }
-
-                _this.classList.add('active');
-
-                var _iteratorNormalCompletion8 = true;
-                var _didIteratorError8 = false;
-                var _iteratorError8 = undefined;
-
-                try {
-                    for (var _iterator8 = tabContent[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
-                        var item = _step8.value;
-
-                        item.classList.remove('active');
-                        if (item.getAttribute('id') === tabId) {
-                            item.classList.add('active');
-                        }
-                    }
-                } catch (err) {
-                    _didIteratorError8 = true;
-                    _iteratorError8 = err;
-                } finally {
-                    try {
-                        if (!_iteratorNormalCompletion8 && _iterator8.return) {
-                            _iterator8.return();
-                        }
-                    } finally {
-                        if (_didIteratorError8) {
-                            throw _iteratorError8;
-                        }
-                    }
-                }
             });
         }
     } catch (err) {
-        _didIteratorError6 = true;
-        _iteratorError6 = err;
+        _didIteratorError5 = true;
+        _iteratorError5 = err;
     } finally {
         try {
-            if (!_iteratorNormalCompletion6 && _iterator6.return) {
-                _iterator6.return();
+            if (!_iteratorNormalCompletion5 && _iterator5.return) {
+                _iterator5.return();
             }
         } finally {
-            if (_didIteratorError6) {
-                throw _iteratorError6;
+            if (_didIteratorError5) {
+                throw _iteratorError5;
             }
         }
     }
@@ -14015,17 +14063,74 @@ function formValidate(form) {
     var thisForm = form;
     var formControl = thisForm.querySelectorAll('.form-control');
 
+    var _iteratorNormalCompletion8 = true;
+    var _didIteratorError8 = false;
+    var _iteratorError8 = undefined;
+
+    try {
+        for (var _iterator8 = formControl[Symbol.iterator](), _step8; !(_iteratorNormalCompletion8 = (_step8 = _iterator8.next()).done); _iteratorNormalCompletion8 = true) {
+            var el = _step8.value;
+
+            if (el.hasAttribute('required')) {
+                validFormElement(el);
+            }
+        }
+    } catch (err) {
+        _didIteratorError8 = true;
+        _iteratorError8 = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion8 && _iterator8.return) {
+                _iterator8.return();
+            }
+        } finally {
+            if (_didIteratorError8) {
+                throw _iteratorError8;
+            }
+        }
+    }
+}
+
+function registerRadioEventListener() {
+    var btnRadio = document.querySelectorAll('.radio-group .form-control');
     var _iteratorNormalCompletion9 = true;
     var _didIteratorError9 = false;
     var _iteratorError9 = undefined;
 
     try {
-        for (var _iterator9 = formControl[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
+        for (var _iterator9 = btnRadio[Symbol.iterator](), _step9; !(_iteratorNormalCompletion9 = (_step9 = _iterator9.next()).done); _iteratorNormalCompletion9 = true) {
             var el = _step9.value;
 
-            if (el.hasAttribute('required')) {
-                validFormElement(el);
-            }
+            el.addEventListener('change', function () {
+                var name = this.getAttribute('data-name');
+                var selectAll = document.querySelectorAll('#jobs .select-period .custom-select');
+                var _iteratorNormalCompletion10 = true;
+                var _didIteratorError10 = false;
+                var _iteratorError10 = undefined;
+
+                try {
+                    for (var _iterator10 = selectAll[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
+                        var _el = _step10.value;
+
+                        _el.style.display = 'none';
+                    }
+                } catch (err) {
+                    _didIteratorError10 = true;
+                    _iteratorError10 = err;
+                } finally {
+                    try {
+                        if (!_iteratorNormalCompletion10 && _iterator10.return) {
+                            _iterator10.return();
+                        }
+                    } finally {
+                        if (_didIteratorError10) {
+                            throw _iteratorError10;
+                        }
+                    }
+                }
+
+                document.getElementById('select-' + name).style.display = 'block';
+            });
         }
     } catch (err) {
         _didIteratorError9 = true;
@@ -14038,63 +14143,6 @@ function formValidate(form) {
         } finally {
             if (_didIteratorError9) {
                 throw _iteratorError9;
-            }
-        }
-    }
-}
-
-function registerRadioEventListener() {
-    var btnRadio = document.querySelectorAll('.radio-group .form-control');
-    var _iteratorNormalCompletion10 = true;
-    var _didIteratorError10 = false;
-    var _iteratorError10 = undefined;
-
-    try {
-        for (var _iterator10 = btnRadio[Symbol.iterator](), _step10; !(_iteratorNormalCompletion10 = (_step10 = _iterator10.next()).done); _iteratorNormalCompletion10 = true) {
-            var el = _step10.value;
-
-            el.addEventListener('change', function () {
-                var name = this.getAttribute('data-name');
-                var selectAll = document.querySelectorAll('#jobs .select-period .custom-select');
-                var _iteratorNormalCompletion11 = true;
-                var _didIteratorError11 = false;
-                var _iteratorError11 = undefined;
-
-                try {
-                    for (var _iterator11 = selectAll[Symbol.iterator](), _step11; !(_iteratorNormalCompletion11 = (_step11 = _iterator11.next()).done); _iteratorNormalCompletion11 = true) {
-                        var _el = _step11.value;
-
-                        _el.style.display = 'none';
-                    }
-                } catch (err) {
-                    _didIteratorError11 = true;
-                    _iteratorError11 = err;
-                } finally {
-                    try {
-                        if (!_iteratorNormalCompletion11 && _iterator11.return) {
-                            _iterator11.return();
-                        }
-                    } finally {
-                        if (_didIteratorError11) {
-                            throw _iteratorError11;
-                        }
-                    }
-                }
-
-                document.getElementById('select-' + name).style.display = 'block';
-            });
-        }
-    } catch (err) {
-        _didIteratorError10 = true;
-        _iteratorError10 = err;
-    } finally {
-        try {
-            if (!_iteratorNormalCompletion10 && _iterator10.return) {
-                _iterator10.return();
-            }
-        } finally {
-            if (_didIteratorError10) {
-                throw _iteratorError10;
             }
         }
     }
@@ -14124,6 +14172,6 @@ function isMobile() {
     return false;
 }
 
-},{"jquery":1,"slick-carousel":2}]},{},[3]);
+},{"slick-carousel":2}]},{},[3]);
 
 //# sourceMappingURL=app.js.map

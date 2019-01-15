@@ -1,68 +1,89 @@
-import $ from 'jquery';
+// import $ from 'jquery';
+//
+// window.jQuery = $;
+// window.$ = $;
 
-window.jQuery = $;
-window.$ = $;
-
-
-// require('bootstrap/js/src/util');
-// require('bootstrap/js/src/modal');
-
+// import { tns } from "./node_modules/tiny-slider/src/tiny-slider"
 
 import slick from 'slick-carousel';
-// import {Modals} from "./modules/_modal";
-//
-// new Modals();
+
 let app = {
+    //slick-slider
+    // questionSlider: function () {
+    //     let sliderImg = $('.js-slider');
+    //     if (sliderImg.length) {
+    //         sliderImg.each(function () {
+    //             let prevArrow = $(this).next().find('.slick-prev');
+    //             let nextArrow = $(this).next().find('.slick-next');
+    //             $(this).slick({
+    //                 slidesToShow: 1,
+    //                 appendDots: $(this).parent().find('.slider-dots'),
+    //                 dotsClass: 'dots-items',
+    //                 customPaging: function (slider, i) {
+    //                     return '<span class="dot"></span>';
+    //                 },
+    //                 arrows: true,
+    //                 appendArrows: $('.slider-arrows'),
+    //                 prevArrow: prevArrow,
+    //                 nextArrow: nextArrow,
+    //                 infinite: true,
+    //                 dots: true,
+    //                 useTransform: false,
+    //             });
+    //         })
+    //     }
+    // },
+
+
+    //tiny-slider
+
+
     questionSlider: function () {
-        let sliderImg = $('.js-slider');
-        if (sliderImg.length) {
-            sliderImg.each(function () {
-                let prevArrow = $(this).next().find('.slick-prev');
-                let nextArrow = $(this).next().find('.slick-next');
-                $(this).slick({
-                    slidesToShow: 1,
-                    appendDots: $(this).parent().find('.slider-dots'),
-                    dotsClass: 'dots-items',
-                    customPaging: function (slider, i) {
-                        return '<span class="dot"></span>';
-                    },
-                    arrows: true,
-                    appendArrows: $('.slider-arrows'),
-                    prevArrow: prevArrow,
-                    nextArrow: nextArrow,
-                    infinite: true,
-                    dots: true,
-                    useTransform: false,
-                });
-            })
-        }
+
+        // tiny-slider initialisation
+        let sliders = document.querySelectorAll('.js-slider');
+
+        sliders.forEach(function (slide, i) {
+
+            let slider = tns({
+                container: slide,
+                items: 1,
+                slideBy: 'page',
+                autoplay: false,
+                mouseDrag: true,
+                touch: true,
+                controlsContainer: ".slider-arrows",
+                navAsThumbnails: true,
+                navContainer: document.querySelector('.dots-items'),
+            });
+            var info = slider.getInfo();
+
+            console.log('ooo------',info);
+
+            // total.textContent = info.slideCount;
+        });
+
+
+
     },
+
 
     mobileNav: function () {
         let hamburger = document.querySelector('.hamburger');
 
         hamburger.addEventListener('click', function (e) {
             e.preventDefault();
+            e.stopPropagation();
             toggleMenu();
+            document.querySelector('.switch-lang').classList.remove('open');
         });
 
 
         function toggleMenu() {
-            document.querySelector('.header').classList.toggle('no-fixed');
             document.querySelector('.hamburger').classList.toggle('is-active');
             document.querySelector('.header-nav').classList.toggle('open');
             document.querySelector('html').classList.toggle('no-scroll');
         }
-
-        let navLink = document.querySelectorAll('.header-nav a');
-
-        if (isMobile()) {
-            for (let el of navLink) {
-                el.addEventListener('click', toggleMenu)
-            }
-        }
-
-
     },
 
     switchLang: function () {
@@ -71,14 +92,14 @@ let app = {
             let $this = e.currentTarget;
             $this.classList.toggle('open');
             e.stopPropagation();
-        });
-        document.addEventListener('click', function (e) {
-            // console.log(e.target);
-            if (!e.target.classList.contains('switch-lang__item')) {
-               document.querySelector('.switch-lang').classList.remove('open')
-            }
-        })
 
+            document.querySelector('.hamburger').classList.remove('is-active');
+            document.querySelector('.header-nav').classList.remove('open');
+            document.querySelector('html').classList.remove('no-scroll');
+        });
+        if (isMobile()) {
+            document.querySelector('body').style.cursor = 'pointer'
+        }
 
     },
     tabs: function () {
@@ -406,7 +427,62 @@ let app = {
 
 document.addEventListener('DOMContentLoaded', function () {
     app.init();
+
+    document.addEventListener('click', function (e) {
+
+        console.log(e.target);
+        if (!e.target.closest('.switch-lang')) {
+            document.querySelector('.switch-lang').classList.remove('open');
+        }
+
+        if (!e.target.closest('.hamburger')) {
+            document.querySelector('.hamburger').classList.remove('is-active');
+            document.querySelector('.header-nav').classList.remove('open');
+            document.querySelector('html').classList.remove('no-scroll');
+        }
+
+        // alert('ccc')
+    });
+
+
 });
+
+// function touchHandler(event) {
+//     var touches = event.changedTouches,
+//         first = touches[0],
+//         type = "";
+//
+//     switch (event.type) {
+//         case "touchstart":
+//             type = "mousedown";
+//             break;
+//         case "touchmove":
+//             type = "mousemove";
+//             break;
+//         case "touchend":
+//             type = "click";
+//             break;
+//         default:
+//             return;
+//     }
+//
+//     var simulatedEvent = document.createEvent("MouseEvent");
+//     simulatedEvent.initMouseEvent(type, true, true, window, 1,
+//         first.screenX, first.screenY,
+//         first.clientX, first.clientY, false,
+//         false, false, false, 0/*left*/, null);
+//
+//     first.target.dispatchEvent(simulatedEvent);
+//     event.preventDefault();
+// }
+//
+// function fire(e) { alert('hi'); }
+// function initTouch()
+// {
+//     document.addEventListener("click", touchHandler, true);
+//     document.addEventListener("touchmove", touchHandler, true);
+//     document.addEventListener("touchcancel", touchHandler, true);
+// }
 
 let setTaggedTabActive = function () {
 
