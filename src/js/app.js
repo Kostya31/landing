@@ -1,72 +1,28 @@
-// import $ from 'jquery';
-//
-// window.jQuery = $;
-// window.$ = $;
-
 // import { tns } from "./node_modules/tiny-slider/src/tiny-slider"
 
-import slick from 'slick-carousel';
-
 let app = {
-    //slick-slider
-    // questionSlider: function () {
-    //     let sliderImg = $('.js-slider');
-    //     if (sliderImg.length) {
-    //         sliderImg.each(function () {
-    //             let prevArrow = $(this).next().find('.slick-prev');
-    //             let nextArrow = $(this).next().find('.slick-next');
-    //             $(this).slick({
-    //                 slidesToShow: 1,
-    //                 appendDots: $(this).parent().find('.slider-dots'),
-    //                 dotsClass: 'dots-items',
-    //                 customPaging: function (slider, i) {
-    //                     return '<span class="dot"></span>';
-    //                 },
-    //                 arrows: true,
-    //                 appendArrows: $('.slider-arrows'),
-    //                 prevArrow: prevArrow,
-    //                 nextArrow: nextArrow,
-    //                 infinite: true,
-    //                 dots: true,
-    //                 useTransform: false,
-    //             });
-    //         })
-    //     }
-    // },
-
-
-    //tiny-slider
-
 
     questionSlider: function () {
-
         // tiny-slider initialisation
-        let sliders = document.querySelectorAll('.js-slider');
+        let wrapSlider = document.querySelectorAll('.slider-wrap');
+        wrapSlider.forEach(function (el) {
+            let slider = el.querySelector('.js-slider');
+            let controlArrow = el.querySelector('.slider-arrows');
 
-        sliders.forEach(function (slide, i) {
-
-            let slider = tns({
-                container: slide,
+            let slider2 = tns({
+                container: slider,
                 items: 1,
                 slideBy: 'page',
                 autoplay: false,
-                mouseDrag: true,
-                touch: true,
-                controlsContainer: ".slider-arrows",
+                "mouseDrag": true,
+                "swipeAngle": false,
+                "speed": 400,
+                nav: true,
+                controlsContainer: controlArrow,
                 navAsThumbnails: true,
-                navContainer: document.querySelector('.dots-items'),
             });
-            var info = slider.getInfo();
-
-            console.log('ooo------',info);
-
-            // total.textContent = info.slideCount;
         });
-
-
-
     },
-
 
     mobileNav: function () {
         let hamburger = document.querySelector('.hamburger');
@@ -77,7 +33,6 @@ let app = {
             toggleMenu();
             document.querySelector('.switch-lang').classList.remove('open');
         });
-
 
         function toggleMenu() {
             document.querySelector('.hamburger').classList.toggle('is-active');
@@ -91,6 +46,7 @@ let app = {
         switchBtn.addEventListener('click', function (e) {
             let $this = e.currentTarget;
             $this.classList.toggle('open');
+            alert('dddd');
             e.stopPropagation();
 
             document.querySelector('.hamburger').classList.remove('is-active');
@@ -107,11 +63,7 @@ let app = {
     },
 
     formCalculate: function () {
-
         let form = document.querySelector('#booking-wrap');
-
-        console.log(form);
-
         if (form) {
             let jobCalculator = (function () {
                 let periodVal,
@@ -429,8 +381,10 @@ document.addEventListener('DOMContentLoaded', function () {
     app.init();
 
     document.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
 
-        console.log(e.target);
+       alert('fdsfsd');
         if (!e.target.closest('.switch-lang')) {
             document.querySelector('.switch-lang').classList.remove('open');
         }

@@ -387,6 +387,13 @@ main {
 .offer-item {
   display: flex;
   position: relative;
+  &:before{
+    //content: '';
+    display: block;
+    height: 200px;
+    width: 50px;
+    background-color: #3db39e;
+  }
   @include respond-to(xs) {
     flex-wrap: wrap;
     flex-direction: column;
@@ -487,6 +494,18 @@ main {
         }
       }
     }
+  }
+}
+
+.slider-wrap {
+  .tns-outer{
+    height: 100%;
+  }
+  .tns-ovh {
+    height: 100%;
+  }
+  .tns-inner {
+    height: 100%;
   }
 }
 
@@ -785,12 +804,19 @@ main {
 }
 
 .slider-coworking-room {
-  .slider-dots {
-    bottom: 60px;
-    @include respond-to(xs) {
-      bottom: 15px;
+  .slider-dots, .tns-nav {
+     bottom: 60px;
+     @include respond-to(xs) {
+       bottom: 15px;
+     }
+    button{
+      &.tns-nav-active {
+        background: $violet-gradient;
+        background-clip: content-box;
+      }
     }
-  }
+   }
+
   .slider-arrows {
     padding-left: calc((100vw - 1170px) / 2);
     padding-right: calc((100vw - 1170px) / 2);
@@ -1026,13 +1052,19 @@ main {
         padding: rem(0 15px);
       }
     }
-    .slider-dots {
+    .tns-nav {
       bottom: rem(30px);
+      @include respond-to(xs) {
+        bottom: rem(15px);
+      }
       @include respond-to(es) {
         bottom: rem(10px);
       }
-      @include respond-to(xs) {
-        bottom: rem(15px);
+      button {
+        &.tns-nav-active {
+          background: $orange-gradient;
+          background-clip: content-box;
+        }
       }
     }
   }

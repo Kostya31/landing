@@ -2,7 +2,31 @@
 .slider-dots{
   display: flex;
   z-index: 50;
+
 }
+
+.tns-nav {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 30px;
+  z-index: 30;
+  left: 50%;
+  transform: translateX(-50%);
+  button {
+    display: inline-block;
+    width: rem(16px);
+    height: rem(16px);
+    border-radius: 50%;
+    background-color: $light-grey;
+    cursor: pointer;
+    margin: rem(0 5px);
+    &:hover {
+      background-color: rgba($light-grey, 0.6);
+    }
+  }
+}
+
 .dots-items{
   display: flex;
   li{
