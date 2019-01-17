@@ -454,7 +454,7 @@ var app = {
     init: function init() {
         app.questionSlider();
         app.tabs();
-        app.switchLang();
+        // app.switchLang();
         app.customSelect();
         app.modal();
         app.mobileNav();

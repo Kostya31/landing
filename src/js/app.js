@@ -367,7 +367,7 @@ let app = {
     init: function () {
         app.questionSlider();
         app.tabs();
-        app.switchLang();
+        // app.switchLang();
         app.customSelect();
         app.modal();
         app.mobileNav();
