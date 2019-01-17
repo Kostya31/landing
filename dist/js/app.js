@@ -47,10 +47,9 @@ var app = {
     switchLang: function switchLang() {
         var switchBtn = document.querySelector('.switch-lang');
         switchBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
             var $this = e.currentTarget;
             $this.classList.toggle('open');
-            alert('dddd');
-            e.stopPropagation();
 
             document.querySelector('.hamburger').classList.remove('is-active');
             document.querySelector('.header-nav').classList.remove('open');
@@ -468,10 +467,7 @@ document.addEventListener('DOMContentLoaded', function () {
     app.init();
 
     document.addEventListener('click', function (e) {
-        e.preventDefault();
-        e.stopPropagation();
 
-        alert('fdsfsd');
         if (!e.target.closest('.switch-lang')) {
             document.querySelector('.switch-lang').classList.remove('open');
         }
