@@ -34,7 +34,7 @@ var app = {
             e.preventDefault();
             e.stopPropagation();
             toggleMenu();
-            document.querySelector('.switch-lang').classList.remove('open');
+            // document.querySelector('.switch-lang').classList.remove('open');
         });
 
         function toggleMenu() {
@@ -468,11 +468,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.addEventListener('click', function (e) {
 
-        if (!e.target.closest('.switch-lang')) {
-            document.querySelector('.switch-lang').classList.remove('open');
-        }
+        // if (!e.target.closest('.switch-lang')) {
+        //     document.querySelector('.switch-lang').classList.remove('open');
+        // }
 
         if (!e.target.closest('.hamburger')) {
+            console.log('ssssssss');
             document.querySelector('.hamburger').classList.remove('is-active');
             document.querySelector('.header-nav').classList.remove('open');
             document.querySelector('html').classList.remove('no-scroll');
