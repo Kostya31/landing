@@ -37,6 +37,16 @@
       box-shadow: none;
     }
   }
+
+  &-success {
+    background: $success;
+    background-clip: padding-box;
+    box-shadow: 0 10px 15px rgba(134, 134, 134, 0.3);
+    &:hover{
+      background: rgba($success, 0.8);
+      box-shadow: none;
+    }
+  }
   &-orange {
     background: $orange-gradient;
     background-clip: padding-box;

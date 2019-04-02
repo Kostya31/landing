@@ -1345,73 +1345,6 @@ main {
   }
 }
 
-.our-projects {
-  margin-bottom: rem(100px);
-  @include respond-to(sm){
-    margin-bottom: rem(60px);
-  }
-  @include respond-to(xs) {
-    margin-bottom: rem(40px);
-  }
-  .title-h2 {
-    margin-bottom: rem(45px);
-    @include respond-to(xs) {
-      margin-bottom: rem(30px);
-    }
-  }
-  .btn-silver-2{
-    background-color: #676466;
-  }
-}
-
-.project-items {
-  margin-bottom: rem(50px);
-}
-
-.project-item {
-  display: flex;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  margin-top: rem(30px);
-  @include respond-to(es) {
-    flex-wrap: wrap;
-  }
-  &__img {
-    width: 50%;
-    @include respond-to(es) {
-      width: 100%;
-      height: 40vh;
-    }
-  }
-  &__content {
-    width: 50%;
-    padding: rem(35px 45px 60px 45px);
-    @include respond-to(sm) {
-      padding: rem(30px);
-    }
-    @include respond-to(es) {
-      width: 100%;
-    }
-  }
-  .logo {
-    margin-bottom: rem(30px);
-    @include respond-to(sm) {
-      margin-bottom: rem(20px);
-    }
-  }
-  .title-h3 {
-    margin-bottom: rem(30px);
-    @include respond-to(sm) {
-      margin-bottom: rem(20px);
-    }
-  }
-  .description {
-    margin-bottom: rem(40px);
-    font-size: rem(14px);
-    @include respond-to(sm) {
-      margin-bottom: rem(20px);
-    }
-  }
-}
 
 
 //--------------location ------------
@@ -1736,4 +1669,32 @@ main {
 }
 
 
-// modals
+// ----------------------- more info projects ---------------------
+
+.more-info {
+  padding: rem(80px 0);
+  &-wrap {
+    display: flex;
+    color: $white;
+
+  }
+  &__icon {
+    padding: 0 110px;
+    flex-shrink: 0;
+    width: calc(140px + 220px);
+
+  }
+  &__title {
+    font-size: rem(28px);
+    line-height: rem(34px);
+    font-weight: 700;
+    margin-bottom: rem(15px);
+    padding-right: 30%;
+  }
+  &__description {
+    font-size: rem(16px);
+    margin-bottom: rem(30px);
+    font-weight: 400;
+    padding-right: 45%;
+  }
+}

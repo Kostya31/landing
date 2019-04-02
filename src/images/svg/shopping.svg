@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="58px" viewBox="0 0 58 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>shopping</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="2-7-1-chisinau-guest-house-crihan" transform="translate(-566.000000, -5594.000000)" fill-rule="nonzero">
+            <g id="shopping" transform="translate(566.000000, 5594.000000)">
+                <g id="Group" transform="translate(8.000000, 16.000000)">
+                    <rect id="Rectangle-path" fill="#D1D4D1" x="1" y="1.5" width="48" height="24"></rect>
+                    <path d="M50,26.5 L0,26.5 L0,0.5 L50,0.5 L50,26.5 Z M2,24.5 L48,24.5 L48,2.5 L2,2.5 L2,24.5 Z" id="Shape" fill="#556080"></path>
+                </g>
+                <path d="M9,9.5 L4,9.5 C3.448,9.5 3,9.053 3,8.5 C3,7.947 3.448,7.5 4,7.5 L9,7.5 C9.552,7.5 10,7.947 10,8.5 C10,9.053 9.552,9.5 9,9.5 Z" id="Shape" fill="#556080"></path>
+                <path d="M9,18.5 C8.448,18.5 8,18.053 8,17.5 L8,8.5 C8,7.947 8.448,7.5 9,7.5 C9.552,7.5 10,7.947 10,8.5 L10,17.5 C10,18.053 9.552,18.5 9,18.5 Z" id="Shape" fill="#556080"></path>
+                <path d="M9,49.5 C8.448,49.5 8,49.053 8,48.5 L8,41.5 C8,40.947 8.448,40.5 9,40.5 C9.552,40.5 10,40.947 10,41.5 L10,48.5 C10,49.053 9.552,49.5 9,49.5 Z" id="Shape" fill="#556080"></path>
+                <circle id="Oval" fill="#556080" cx="19" cy="53.5" r="4"></circle>
+                <circle id="Oval" fill="#556080" cx="43" cy="53.5" r="4"></circle>
+                <path d="M52,49.5 L9,49.5 C8.448,49.5 8,49.053 8,48.5 C8,47.947 8.448,47.5 9,47.5 L52,47.5 C52.552,47.5 53,47.947 53,48.5 C53,49.053 52.552,49.5 52,49.5 Z" id="Shape" fill="#556080"></path>
+                <path d="M57,26.5 L9,26.5 C8.448,26.5 8,26.053 8,25.5 C8,24.947 8.448,24.5 9,24.5 L57,24.5 C57.552,24.5 58,24.947 58,25.5 C58,26.053 57.552,26.5 57,26.5 Z" id="Shape" fill="#556080"></path>
+                <path d="M57,34.5 L9,34.5 C8.448,34.5 8,34.053 8,33.5 C8,32.947 8.448,32.5 9,32.5 L57,32.5 C57.552,32.5 58,32.947 58,33.5 C58,34.053 57.552,34.5 57,34.5 Z" id="Shape" fill="#556080"></path>
+                <path d="M17,42.5 C16.448,42.5 16,42.053 16,41.5 L16,17.5 C16,16.947 16.448,16.5 17,16.5 C17.552,16.5 18,16.947 18,17.5 L18,41.5 C18,42.053 17.552,42.5 17,42.5 Z" id="Shape" fill="#556080"></path>
+                <path d="M25,42.5 C24.448,42.5 24,42.053 24,41.5 L24,17.5 C24,16.947 24.448,16.5 25,16.5 C25.552,16.5 26,16.947 26,17.5 L26,41.5 C26,42.053 25.552,42.5 25,42.5 Z" id="Shape" fill="#556080"></path>
+                <path d="M33,42.5 C32.448,42.5 32,42.053 32,41.5 L32,17.5 C32,16.947 32.448,16.5 33,16.5 C33.552,16.5 34,16.947 34,17.5 L34,41.5 C34,42.053 33.552,42.5 33,42.5 Z" id="Shape" fill="#556080"></path>
+                <path d="M41,42.5 C40.448,42.5 40,42.053 40,41.5 L40,17.5 C40,16.947 40.448,16.5 41,16.5 C41.552,16.5 42,16.947 42,17.5 L42,41.5 C42,42.053 41.552,42.5 41,42.5 Z" id="Shape" fill="#556080"></path>
+                <path d="M49,42.5 C48.448,42.5 48,42.053 48,41.5 L48,17.5 C48,16.947 48.448,16.5 49,16.5 C49.552,16.5 50,16.947 50,17.5 L50,41.5 C50,42.053 49.552,42.5 49,42.5 Z" id="Shape" fill="#556080"></path>
+                <circle id="Oval" fill="#D8625E" cx="3" cy="8.5" r="3"></circle>
+                <rect id="Rectangle-path" fill="#F0C419" x="14" y="8.5" width="14" height="8"></rect>
+                <rect id="Rectangle-path" fill="#8697CB" x="28" y="0.5" width="16" height="16"></rect>
+                <rect id="Rectangle-path" fill="#FB7B76" x="44" y="3.5" width="10" height="13"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

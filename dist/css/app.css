@@ -1851,64 +1851,6 @@ main.content {
       .ideas-path-img:after {
         display: none; } }
 
-.our-projects {
-  margin-bottom: 6.25rem; }
-  @media only screen and (max-width: 992px) {
-    .our-projects {
-      margin-bottom: 3.75rem; } }
-  @media only screen and (max-width: 768px) {
-    .our-projects {
-      margin-bottom: 2.5rem; } }
-  .our-projects .title-h2 {
-    margin-bottom: 2.8125rem; }
-    @media only screen and (max-width: 768px) {
-      .our-projects .title-h2 {
-        margin-bottom: 1.875rem; } }
-  .our-projects .btn-silver-2 {
-    background-color: #676466; }
-
-.project-items {
-  margin-bottom: 3.125rem; }
-
-.project-item {
-  display: flex;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-  margin-top: 1.875rem; }
-  @media only screen and (max-width: 576px) {
-    .project-item {
-      flex-wrap: wrap; } }
-  .project-item__img {
-    width: 50%; }
-    @media only screen and (max-width: 576px) {
-      .project-item__img {
-        width: 100%;
-        height: 40vh; } }
-  .project-item__content {
-    width: 50%;
-    padding: 2.1875rem 2.8125rem 3.75rem 2.8125rem; }
-    @media only screen and (max-width: 992px) {
-      .project-item__content {
-        padding: 1.875rem; } }
-    @media only screen and (max-width: 576px) {
-      .project-item__content {
-        width: 100%; } }
-  .project-item .logo {
-    margin-bottom: 1.875rem; }
-    @media only screen and (max-width: 992px) {
-      .project-item .logo {
-        margin-bottom: 1.25rem; } }
-  .project-item .title-h3 {
-    margin-bottom: 1.875rem; }
-    @media only screen and (max-width: 992px) {
-      .project-item .title-h3 {
-        margin-bottom: 1.25rem; } }
-  .project-item .description {
-    margin-bottom: 2.5rem;
-    font-size: 0.875rem; }
-    @media only screen and (max-width: 992px) {
-      .project-item .description {
-        margin-bottom: 1.25rem; } }
-
 .location {
   padding: 2.5rem 1.5625rem 3.75rem;
   display: flex; }
@@ -2160,6 +2102,27 @@ main.content {
       width: 100%;
       padding-right: 0; } }
 
+.more-info {
+  padding: 5rem 0; }
+  .more-info-wrap {
+    display: flex;
+    color: #ffffff; }
+  .more-info__icon {
+    padding: 0 110px;
+    flex-shrink: 0;
+    width: calc(140px + 220px); }
+  .more-info__title {
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+    font-weight: 700;
+    margin-bottom: 0.9375rem;
+    padding-right: 30%; }
+  .more-info__description {
+    font-size: 1rem;
+    margin-bottom: 1.875rem;
+    font-weight: 400;
+    padding-right: 45%; }
+
 .section {
   position: relative; }
   .section-bg {
@@ -2236,6 +2199,13 @@ main.content {
     box-shadow: 0 10px 15px 0 rgba(226, 82, 189, 0.3); }
     .btn-violet:hover {
       background: #ad3e94;
+      box-shadow: none; }
+  .btn-success {
+    background: #6ecb74;
+    background-clip: padding-box;
+    box-shadow: 0 10px 15px rgba(134, 134, 134, 0.3); }
+    .btn-success:hover {
+      background: rgba(110, 203, 116, 0.8);
       box-shadow: none; }
   .btn-orange {
     background: linear-gradient(90deg, #f47c22 0%, #ffcd02 100%);
@@ -2856,6 +2826,140 @@ select {
   background-color: #ff5e5e;
   padding: 0.5625rem 0.625rem;
   width: 160px; }
+
+.our-projects {
+  margin-bottom: 5rem;
+  padding-top: 50px; }
+  @media only screen and (max-width: 992px) {
+    .our-projects {
+      margin-bottom: 3.75rem; } }
+  @media only screen and (max-width: 768px) {
+    .our-projects {
+      margin-bottom: 2.5rem; } }
+  .our-projects .title-h2 {
+    margin-bottom: 2.8125rem; }
+    @media only screen and (max-width: 768px) {
+      .our-projects .title-h2 {
+        margin-bottom: 1.875rem; } }
+  .our-projects .btn-silver-2 {
+    background-color: #676466; }
+
+.project-items {
+  margin-bottom: 3.125rem; }
+
+.project-item {
+  display: flex;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  margin-top: 1.875rem; }
+  @media only screen and (max-width: 576px) {
+    .project-item {
+      flex-wrap: wrap; } }
+  .project-item__img {
+    width: 50%; }
+    @media only screen and (max-width: 576px) {
+      .project-item__img {
+        width: 100%;
+        height: 40vh; } }
+  .project-item__content {
+    width: 50%;
+    padding: 2.1875rem 2.8125rem 3.75rem 2.8125rem; }
+    @media only screen and (max-width: 992px) {
+      .project-item__content {
+        padding: 1.875rem; } }
+    @media only screen and (max-width: 576px) {
+      .project-item__content {
+        width: 100%; } }
+  .project-item .logo {
+    margin-bottom: 1.875rem; }
+    @media only screen and (max-width: 992px) {
+      .project-item .logo {
+        margin-bottom: 1.25rem; } }
+  .project-item .title-h3 {
+    margin-bottom: 1.875rem; }
+    @media only screen and (max-width: 992px) {
+      .project-item .title-h3 {
+        margin-bottom: 1.25rem; } }
+  .project-item .description {
+    margin-bottom: 2.5rem;
+    font-size: 0.875rem; }
+    @media only screen and (max-width: 992px) {
+      .project-item .description {
+        margin-bottom: 1.25rem; } }
+
+.venture-projects {
+  padding: 50px 0 15px;
+  color: #322f31; }
+  .venture-projects .title-h2 {
+    margin-bottom: 3.75rem; }
+  .venture-projects-logo {
+    margin-bottom: 1.5625rem; }
+  .venture-projects-description {
+    font-size: 0.875rem;
+    padding: 0 25%;
+    text-align: center;
+    line-height: 1.5rem;
+    margin-bottom: 3.75rem; }
+  .venture-projects-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px; }
+  .venture-projects-item {
+    padding: 0 50px;
+    text-align: center;
+    margin-bottom: 20px; }
+    .venture-projects-item__logo {
+      margin-bottom: 1.875rem; }
+    .venture-projects-item__description {
+      font-size: 0.875rem;
+      line-height: 1.5rem; }
+  .venture-projects-others .sub-title {
+    margin-bottom: 1.25rem;
+    font-weight: 500; }
+  .venture-projects-others-item {
+    padding-bottom: 3.125rem;
+    margin-bottom: 3.125rem;
+    border-bottom: 2px dashed #e8e8e8; }
+    .venture-projects-others-item__logo {
+      text-align: center;
+      margin-bottom: 1.875rem; }
+    .venture-projects-others-item__description {
+      padding: 0 26%;
+      text-align: center;
+      line-height: 1.5rem;
+      font-size: 0.875rem; }
+
+.estate-projects {
+  padding-bottom: 4.375rem; }
+  .estate-projects .title-h2 {
+    margin-bottom: 3.75rem; }
+  .estate-projects-list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3.75rem; }
+  .estate-projects-item {
+    width: calc(100% / 3 - 30px);
+    padding: 5rem 0.9375rem;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center; }
+    .estate-projects-item__logo {
+      margin-bottom: 1.25rem; }
+      .estate-projects-item__logo img {
+        display: block;
+        margin: 0 auto; }
+    .estate-projects-item__title {
+      font-size: 1.75rem;
+      font-weight: 900; }
+    .estate-projects-item__description {
+      font-weight: 300;
+      margin-top: 0.3125rem;
+      font-size: 1rem;
+      padding: 0 50px; }
+  .estate-projects-wrap {
+    position: relative;
+    z-index: 5;
+    text-align: center; }
 
 .about-projects {
   margin-bottom: 6.25rem; }
