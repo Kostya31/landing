@@ -43,6 +43,7 @@ main {
 
 .overlay {
   position: relative;
+
   &:before {
     content: '';
     position: absolute;
@@ -96,11 +97,13 @@ main {
       margin-bottom: rem(15px);
     }
   }
+
   .text-gradient-violet {
     font-weight: 700;
     font-size: rem(20px);
     margin-bottom: rem(30px);
   }
+
   .hero-info {
     margin-bottom: rem(40px);
     @include respond-to(xs) {
@@ -110,12 +113,14 @@ main {
       margin-bottom: rem(10px);
     }
   }
+
   h1 {
     margin-bottom: rem(40px);
     @include respond-to(es) {
       margin-bottom: rem(20px);
     }
   }
+
   .description {
     margin-bottom: rem(40px);
     padding-right: rem(440px);
@@ -129,10 +134,12 @@ main {
       padding-right: 0;
     }
   }
+
   .btn-violet,
   .btn-orange {
     margin-right: rem(15px);
   }
+
   .btn {
     @include respond-to(es) {
       width: 100%;
@@ -140,17 +147,21 @@ main {
       margin-bottom: rem(20px);
     }
   }
+
   .row-sale {
     margin-bottom: rem(30px);
   }
+
   .sale-label {
     margin-right: rem(34px);
     margin-bottom: rem(15px);
   }
+
   .row-btn {
     @include respond-to(es) {
       width: 70%;
     }
+
     .btn {
       &:last-child {
         margin-bottom: 0;
@@ -164,6 +175,7 @@ main {
   @include respond-to(xs) {
     flex-direction: column;
   }
+
   .contacts-item {
     margin-right: rem(128px);
     @include respond-to(md) {
@@ -183,9 +195,11 @@ main {
 
 .contacts-item {
   color: $white;
+
   &:last-child {
     margin-right: 0;
   }
+
   .contacts-label {
     font-size: rem(12px);
     margin-bottom: 3px;
@@ -193,11 +207,14 @@ main {
     font-weight: 400;
     padding-left: rem(24px);
   }
+
   .contacts-text {
     position: relative;
+
     &.has-icon {
       padding-left: rem(24px);
     }
+
     img {
       margin-right: rem(8px);
       position: absolute;
@@ -222,9 +239,11 @@ main {
       margin-bottom: rem(30px);
     }
   }
+
   h2 {
     margin-bottom: rem(40px);
   }
+
   .btn-orange {
     padding-right: rem(30px);
     padding-left: rem(30px);
@@ -237,9 +256,11 @@ main {
   @include respond-to(xs) {
     flex-direction: column;
   }
+
   .container {
     width: 100%;
   }
+
   .title-section {
     padding: rem(40px 0);
   }
@@ -276,6 +297,7 @@ main {
   @include respond-to(xs) {
     margin-bottom: rem(40px);
   }
+
   h2 {
     margin-bottom: rem(26px);
     @include respond-to(xs) {
@@ -283,6 +305,7 @@ main {
       z-index: 10;
     }
   }
+
   .description {
     width: 46%;
     display: inline-block;
@@ -292,6 +315,7 @@ main {
       z-index: 10;
     }
   }
+
   &__img {
     position: absolute;
     right: rem(128px);
@@ -324,6 +348,7 @@ main {
     //  }
     //}
   }
+
   &.our-apart {
     margin-bottom: rem(70px);
     @include respond-to(xs) {
@@ -338,8 +363,10 @@ main {
   .description {
     display: inline-block;
   }
+
   &__img {
     float: right;
+    padding-right: 60px;
     //@include respond-to(es){
     //  position: absolute;
     //  top: 50px;
@@ -355,6 +382,7 @@ main {
       text-align: center;
       margin-top: rem(30px);
     }
+
     svg {
       @include respond-to(xs) {
         width: 100%;
@@ -372,9 +400,21 @@ main {
     margin-top: rem(40px);
     margin-bottom: rem(0);
   }
+
   &-apart {
     margin-bottom: 0;
+    &--col {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .offer-item-apart:nth-child(even) {
+        .offer-content {
+          padding-right: 30px;
+        }
+      }
+    }
   }
+
   &-coworking {
     .btn-violet {
       position: absolute;
@@ -387,13 +427,15 @@ main {
 .offer-item {
   display: flex;
   position: relative;
-  &:before{
+
+  &:before {
     //content: '';
     display: block;
     height: 200px;
     width: 50px;
     background-color: #3db39e;
   }
+
   @include respond-to(xs) {
     flex-wrap: wrap;
     flex-direction: column;
@@ -401,19 +443,22 @@ main {
 
   //custom offer apart
 
-  &.offer-item-apart {
+  &-apart {
     margin-bottom: 30px;
     @include respond-to(xs) {
       margin-bottom: 0;
     }
-    &:last-child {
-      margin-bottom: 0;
-    }
+
+    //&:last-child {
+    //  margin-bottom: 0;
+    //}
+
     &:nth-child(even) {
       flex-direction: row;
+
       .offer-content {
         padding-right: calc((100vw - 1170px) / 2 + 15px);
-        padding-left: rem(40px);
+        padding-left: rem(50px);
         @include respond-to(md) {
           padding-right: rem(15px);
         }
@@ -422,36 +467,105 @@ main {
         }
       }
     }
+
     .offer-content {
+      width: 50%;
       background-color: $white;
-      padding-left: rem(40px);
+      padding-left: rem(50px);
+      padding-top: rem(40px);
+      padding-bottom: rem(45px);
+      padding-right: rem(30px);
       @include respond-to(xs) {
         padding-left: rem(15px);
         padding-top: rem(20px);
       }
+      h5 {
+        margin-bottom: 15px;
+      }
+    }
+
+    .offer-item-apart--col {
+      padding: 30px;
+
     }
   }
-  //----------- end custom
 
-  &:nth-child(even) {
-    flex-direction: row-reverse;
-    @include respond-to(es) {
-      flex-direction: row;
+  &--col {
+    flex-direction: column!important;
+    width: calc(50% - 15px);
+
+    .slider-wrap {
+      width: 100%!important;
+      height: 370px;
     }
+
     .offer-content {
-      padding-left: calc((100vw - 1170px) / 2 + 15px);
-      padding-right: rem(80px);
-      @include respond-to(md) {
-        padding-left: rem(15px);
-        padding-right: rem(60px);
+      width: 100%;
+    }
+  }
+
+    //----------- end custom
+
+
+  &-coworking {
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+      @include respond-to(es) {
+        flex-direction: row;
       }
 
-      @include respond-to(sm) {
-        padding-right: rem(15px);
+      .offer-content {
+        padding-left: calc((100vw - 1170px) / 2 + 15px);
+        padding-right: rem(80px);
+        @include respond-to(md) {
+          padding-left: rem(15px);
+          padding-right: rem(60px);
+        }
+
+        @include respond-to(sm) {
+          padding-right: rem(15px);
+        }
       }
     }
+
+    .offer-content {
+      width: 50%;
+      display: inline-block;
+      padding-right: calc((100vw - 1170px) / 2 + 15px);
+      padding-left: rem(80px);
+      padding-top: rem(70px);
+      padding-bottom: rem(50px);
+      @include respond-to(md) {
+        padding-right: rem(15px);
+        padding-left: rem(60px);
+      }
+      @include respond-to(xs) {
+        width: 100%;
+        padding-right: rem(15px);
+        padding-left: rem(15px);
+        padding-top: rem(50px);
+        padding-bottom: rem(30px);
+      }
+      @include respond-to(sm) {
+        padding-left: rem(20px);
+        padding-right: rem(15px);
+        padding-top: rem(50px);
+        padding-bottom: rem(30px);
+      }
+
+      h5 {
+        margin-bottom: rem(20px);
+      }
+
+      .offer-price {
+        margin-right: rem(50px);
+      }
+    }
+
   }
 }
+
+
 
 .sale-label {
   font-size: 14px;
@@ -460,6 +574,7 @@ main {
   color: $black;
   font-weight: 900;
   padding-left: rem(35px);
+
   img {
     position: absolute;
     display: block;
@@ -471,6 +586,7 @@ main {
 }
 
 .offer-item-apart {
+  background-color: $white;
   .slider-wrap {
     width: 50%;
     @include respond-to(xs) {
@@ -478,14 +594,20 @@ main {
       height: 35vh;
     }
   }
+
+  .offer-title {
+    margin-bottom: (20px);
+  }
   .slider-arrows {
     .slick-arrow {
       background: $orange-gradient;
+
       &:hover {
         background: #322f31;
       }
     }
   }
+
   .dots-items {
     li {
       &.slick-active {
@@ -498,12 +620,14 @@ main {
 }
 
 .slider-wrap {
-  .tns-outer{
+  .tns-outer {
     height: 100%;
   }
+
   .tns-ovh {
     height: 100%;
   }
+
   .tns-inner {
     height: 100%;
   }
@@ -520,38 +644,6 @@ main {
   }
 }
 
-.offer-content {
-  width: 50%;
-  display: inline-block;
-  padding-right: calc((100vw - 1170px) / 2 + 15px);
-  padding-left: rem(80px);
-  padding-top: rem(70px);
-  padding-bottom: rem(50px);
-  @include respond-to(md) {
-    padding-right: rem(15px);
-    padding-left: rem(60px);
-  }
-  @include respond-to(xs) {
-    width: 100%;
-    padding-right: rem(15px);
-    padding-left: rem(15px);
-    padding-top: rem(50px);
-    padding-bottom: rem(30px);
-  }
-  @include respond-to(sm) {
-    padding-left: rem(20px);
-    padding-right: rem(15px);
-    padding-top: rem(50px);
-    padding-bottom: rem(30px);
-  }
-  h5 {
-    margin-bottom: rem(20px);
-  }
-  .offer-price {
-    margin-right: rem(50px);
-  }
-}
-
 .offer-title {
   font-size: rem(24px);
   font-weight: 700;
@@ -563,13 +655,12 @@ main {
 }
 
 .offer-info-rooms {
-  margin-bottom: rem(20px);
-  @include respond-to(xs) {
-    margin-bottom: rem(10px);
-  }
+  margin-bottom: rem(10px);
+
   .badge {
     margin-bottom: rem(20px);
     margin-right: rem(6px);
+
     &:last-child {
       margin-right: 0;
     }
@@ -582,10 +673,12 @@ main {
   @include respond-to(es) {
     margin-bottom: rem(20px);
   }
+
   .offer-price {
     margin-bottom: rem(15px);
     font-size: rem(18px);
   }
+
   .sale-label {
     margin-bottom: rem(15px);
   }
@@ -597,6 +690,7 @@ main {
   font-size: rem(20px);
   font-weight: 900;
   display: inline-block;
+  margin-right: rem(50px);
   @include respond-to(es) {
     margin-bottom: rem(20px);
   }
@@ -609,14 +703,17 @@ main {
   @include respond-to(xs) {
     margin-bottom: rem(20px);
   }
+
   &__item {
     display: inline-flex;
     align-items: center;
     margin: rem(10px 0);
     width: 50%;
+    padding-right: 15px;
     @include respond-to(es) {
       width: 100%;
     }
+
     img {
       margin-right: 10px;
     }
@@ -630,6 +727,7 @@ main {
   font-size: rem(14px);
   font-weight: 500;
   display: inline-block;
+
   &-white {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     border-radius: 25px;
@@ -640,11 +738,13 @@ main {
 
 .workplace {
   position: relative;
+
   &.has-number {
     padding-left: rem(86px);
     @include respond-to(es) {
       padding-left: rem(70px);
     }
+
     span {
       position: absolute;
       top: -24px;
@@ -654,6 +754,7 @@ main {
       }
     }
   }
+
   span {
     width: 66px;
     height: 66px;
@@ -674,6 +775,7 @@ main {
       font-size: rem(22px);
     }
   }
+
   strong {
     font-size: rem(20px);
     font-weight: 700;
@@ -681,6 +783,7 @@ main {
     position: relative;
     top: -5px;
   }
+
   p {
     margin-bottom: rem(35px);
   }
@@ -694,6 +797,7 @@ main {
     @include respond-to(es) {
       padding-left: rem(70px);
     }
+
     &:before {
       content: '';
       position: absolute;
@@ -730,10 +834,12 @@ main {
     flex-basis: 100%;
     margin-top: rem(30px);
   }
+
   h5 {
     line-height: rem(24px);
     margin-bottom: rem(15px);
   }
+
   p {
     margin-bottom: rem(50px);
     font-size: 14px;
@@ -760,9 +866,11 @@ main {
     padding: rem(20px);
 
   }
+
   h2 {
     margin-bottom: rem(25px);
   }
+
   .contacts-item {
     margin-bottom: rem(30px);
     @include respond-to(xs) {
@@ -771,13 +879,16 @@ main {
       }
     }
   }
+
   p {
     font-size: 14px;
     margin-bottom: rem(30px);
   }
+
   .btn {
     margin-bottom: rem(30px);
   }
+
   .contacts-label {
     padding-left: 0;
   }
@@ -805,17 +916,18 @@ main {
 
 .slider-coworking-room {
   .slider-dots, .tns-nav {
-     bottom: 60px;
-     @include respond-to(xs) {
-       bottom: 15px;
-     }
-    button{
+    bottom: 60px;
+    @include respond-to(xs) {
+      bottom: 15px;
+    }
+
+    button {
       &.tns-nav-active {
         background: $violet-gradient;
         background-clip: content-box;
       }
     }
-   }
+  }
 
   .slider-arrows {
     padding-left: calc((100vw - 1170px) / 2);
@@ -828,6 +940,7 @@ main {
 
   .slider-item {
     position: relative;
+
     &:before {
       content: '';
       padding-bottom: 48.6%;
@@ -836,6 +949,7 @@ main {
       top: 0;
       left: 0;
     }
+
     img {
       position: absolute;
       top: 0;
@@ -857,6 +971,7 @@ main {
   @include respond-to(xs) {
     margin: rem(20px 0);
   }
+
   h2 {
     background-color: $black;
     padding: rem(18px 30px);
@@ -865,6 +980,7 @@ main {
       padding: rem(10px 0);
     }
   }
+
   .btn {
     @include respond-to(xs) {
       padding: rem(13px 15px);
@@ -879,6 +995,7 @@ main {
   @include respond-to(xs) {
     padding: rem(70px 0 40px);
   }
+
   .wrap-form {
     width: rem(560px);
     margin: 0 auto;
@@ -898,27 +1015,34 @@ main {
     .btn-violet {
       width: 100%;
     }
+
     .custom-select {
       width: 140px;
+
       select {
         width: 100%;
       }
     }
   }
+
   .item-group {
     border-bottom: 1px solid #e2e2e2;
+
     &__title {
       margin: rem(20px 0 20px);
       font-size: rem(14px);
       font-weight: 500;
     }
   }
+
   h2 {
     margin-bottom: rem(30px);
+
     &.top-line {
       position: relative;
       display: flex;
       justify-content: center;
+
       &:before {
         content: '';
         width: rem(200px);
@@ -931,6 +1055,7 @@ main {
       }
     }
   }
+
   .booking-banner {
     max-width: rem(730px);
     margin: rem(0 auto 40px auto);
@@ -942,11 +1067,13 @@ main {
       }
     }
   }
+
   .checkbox-group,
   .radio-group {
     display: flex;
     justify-content: space-between;
   }
+
   .checkbox-group {
     .jobs-price {
       font-size: 16px;
@@ -960,12 +1087,15 @@ main {
   background: $white;
   box-shadow: 0 10px 15px 0 rgba(241, 241, 241, 0.30);
   border-radius: 12px;
+
   h4, p {
     color: $black;
   }
+
   h4 {
     margin-bottom: rem(15px);
   }
+
   .select-period {
     display: flex;
     padding: rem(0 0);
@@ -975,6 +1105,7 @@ main {
       display: flex;
       align-items: center;
       margin-right: rem(18px);
+
       &:last-child {
         margin-right: 0;
       }
@@ -982,14 +1113,17 @@ main {
     }
 
   }
+
   .general-price {
     margin-bottom: rem(40px);
     padding-top: rem(15px);
     display: flex;
     justify-content: space-between;
   }
+
   .includes-list {
     margin-bottom: rem(20px);
+
     li {
       color: $black;
       font-size: rem(14px);
@@ -1009,6 +1143,7 @@ main {
     .form-group {
       .custom-select {
         display: none;
+
         &:first-child {
           display: block;
         }
@@ -1034,17 +1169,20 @@ main {
 
 .slider-wrap {
   position: relative;
+
   .slider-dots {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
   }
+
   .slider-arrows {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   &.slider-apart {
     .slider-arrows {
       padding: rem(0 30px);
@@ -1052,6 +1190,7 @@ main {
         padding: rem(0 15px);
       }
     }
+
     .tns-nav {
       bottom: rem(30px);
       @include respond-to(xs) {
@@ -1060,6 +1199,7 @@ main {
       @include respond-to(es) {
         bottom: rem(10px);
       }
+
       button {
         &.tns-nav-active {
           background: $orange-gradient;
@@ -1068,6 +1208,7 @@ main {
       }
     }
   }
+
   .slider-item {
     position: relative;
     height: 100%;
@@ -1082,6 +1223,7 @@ main {
   .slick-list, .slick-track {
     height: 100%;
   }
+
   .slick-slide {
     > div {
       height: 100%;
@@ -1098,10 +1240,12 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   h5 {
     font-size: rem(18px);
     margin-bottom: rem(10px);
   }
+
   p {
     font-size: rem(14px);
   }
@@ -1122,6 +1266,7 @@ main {
     flex-wrap: wrap;
     margin-bottom: rem(40px);
   }
+
   h2 {
     margin-bottom: rem(25px);
   }
@@ -1130,8 +1275,17 @@ main {
 .complex-description,
 .complex-img {
   flex-basis: 50%;
+  position: relative;
+  width: 50%;
   @include respond-to(xs) {
     flex-basis: 100%;
+    width: 100%;
+  }
+  .btn-orange {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -1146,6 +1300,20 @@ main {
 .feature-list {
   display: flex;
   flex-wrap: wrap;
+  &-location {
+    .feature-item {
+      width: calc(100% / 3);
+      padding: rem(0 15px);
+      &__img{
+        padding-right: rem(30px);
+        top: inherit;
+        margin-right: 0;
+      }
+      &__text {
+        width: auto;
+      }
+    }
+  }
 }
 
 .feature-title {
@@ -1158,22 +1326,25 @@ main {
 .feature-item {
   display: flex;
   align-items: center;
-  margin-bottom: rem(60px);
+  margin-bottom: rem(30px);
   width: 40%;
   @include respond-to(xs) {
     width: 100%;
-    margin-bottom: rem(40px);
+    margin-bottom: rem(20px);
   }
+
   &__img {
     width: 30%;
     text-align: center;
     margin-right: rem(40px);
     position: relative;
     top: rem(10px);
+    flex-shrink: 0;
     @include respond-to(xs) {
       margin-right: rem(20px);
     }
   }
+
   &__text {
     font-weight: 900;
     width: 60%;
@@ -1192,17 +1363,20 @@ main {
     align-items: center;
     margin: rem(40px 0 40px);
   }
+
   .feature-item {
     flex-direction: column;
     @include respond-to(xs) {
       width: 80%;
       margin-bottom: rem(40px);
     }
+
     &__img {
       margin-right: 0;
       height: 90px;
       margin-bottom: rem(5px);
     }
+
     &__text {
       text-align: center;
       width: 50%;
@@ -1211,12 +1385,14 @@ main {
       }
     }
   }
-  &--3-col{
+
+  &--3-col {
     .feature-item {
       width: calc(100% / 3);
     }
   }
-  &--4-col{
+
+  &--4-col {
     .feature-item {
       width: calc(100% / 4);
     }
@@ -1231,37 +1407,43 @@ main {
     flex-direction: column-reverse;
     margin-top: -55px;
   }
-  &__content{
+
+  &__content {
     width: 50%;
     background-position: bottom left;
     background-size: contain;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    padding-left: calc((100vw - 1170px - 15px ) / 2);
+    padding-left: calc((100vw - 1170px - 15px) / 2);
     @include respond-to(sm) {
       margin-top: 55px;
     }
     @include respond-to(xs) {
       margin-top: rem(10px);
     }
-    .title-h1{
+
+    .title-h1 {
       margin-bottom: rem(30px);
       margin-top: rem(20px);
     }
-    .container{
+
+    .container {
       width: 100%;
     }
+
     @include respond-to(xs) {
       width: 100%;
     }
   }
+
   &__img {
     width: 50%;
     @include respond-to(xs) {
       width: 100%;
       position: relative;
     }
+
     img {
       width: 100%;
     }
@@ -1271,7 +1453,8 @@ main {
     //margin-top: rem(180px);
     //margin-bottom: rem(30px);
   }
-  .btn.btn-silver-2{
+
+  .btn.btn-silver-2 {
     box-shadow: 0 10px 15px rgba(134, 134, 134, 0.3);
     background-color: rgba(#676466, 1);
   }
@@ -1282,10 +1465,11 @@ main {
   margin-bottom: 10%;
   display: flex;
   align-items: center;
-  @include respond-to(xs){
+  @include respond-to(xs) {
     flex-wrap: wrap;
   }
-  &__img{
+
+  &__img {
     //background-size: contain;
     //background-position: left top;
     //background-repeat: no-repeat;
@@ -1296,20 +1480,24 @@ main {
       width: 100%;
       padding-right: 0;
     }
+
     img {
       width: 100%;
     }
   }
+
   &-content {
     padding-right: calc((100vw - 1170px - 15px) / 2);
     @include respond-to(xs) {
 
     }
-    .title-h2{
+
+    .title-h2 {
       margin-bottom: rem(20px);
     }
   }
-  .container{
+
+  .container {
     padding-left: 0;
     width: 50%;
     @include respond-to(xs) {
@@ -1322,6 +1510,7 @@ main {
 
 .ideas-path-img {
   position: relative;
+
   &:before {
     content: '';
     background-image: url(../images/svg/Path-1.svg);
@@ -1338,6 +1527,7 @@ main {
       display: none;
     }
   }
+
   &:after {
     content: '';
     background-image: url(../images/svg/Path-2.svg);
@@ -1357,10 +1547,9 @@ main {
 }
 
 
-
 //--------------location ------------
 
-.location{
+.location {
   padding: rem(40px 25px 60px);
   display: flex;
   @include respond-to(md) {
@@ -1379,17 +1568,19 @@ main {
       margin-right: rem(20px);
     }
   }
+
   &-content {
-    .title-h1{
+    .title-h1 {
       margin-bottom: rem(20px);
     }
+
     .description {
       width: 45%;
       @include respond-to(sm) {
         width: 80%;
       }
       @include respond-to(xs) {
-        width: calc(100% + 55px) ;
+        width: calc(100% + 55px);
         margin-left: rem(-55px);
       }
     }
@@ -1399,7 +1590,7 @@ main {
 
 //-------------- projects ------------
 
-.projects{
+.projects {
   padding: rem(40px 25px 70px);
   display: flex;
   @include respond-to(md) {
@@ -1408,6 +1599,7 @@ main {
   @include respond-to(xs) {
     padding: rem(40px 0 20px);
   }
+
   &-img {
     display: inline-block;
     margin-right: rem(75px);
@@ -1417,10 +1609,12 @@ main {
       margin-right: rem(20px);
     }
   }
+
   &-content {
-    .title-h1{
+    .title-h1 {
       margin-bottom: rem(20px);
     }
+
     .description {
       width: 60%;
       @include respond-to(sm) {
@@ -1437,7 +1631,7 @@ main {
 
 // -------------- banner top ----------------
 
-.banner-project{
+.banner-project {
   display: flex;
   align-items: center;
   position: relative;
@@ -1446,14 +1640,16 @@ main {
   @include respond-to(xs) {
     flex-wrap: wrap;
   }
-  .col{
+
+  .col {
     display: flex;
     flex-direction: column;
   }
+
   .btn-white {
     margin-left: auto;
     margin-right: rem(150px);
-    box-shadow:0 10px 15px 0 rgba(0,0,0,0.20);
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.20);
     cursor: default;
     @include respond-to(xs) {
       margin-right: 0;
@@ -1463,21 +1659,25 @@ main {
       margin-top: rem(10px);
       margin-right: 0;
     }
-    &:hover{
-      box-shadow:0 10px 15px 0 rgba(0,0,0,0.20);
+
+    &:hover {
+      box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.20);
 
     }
   }
+
   &__city {
     font-size: rem(42px);
     color: $white;
     line-height: rem(52px);
     font-weight: 900;
   }
+
   &__country {
     font-size: rem(24px);
     color: $white;
   }
+
   &__icon {
     margin-right: rem(55px);
     margin-left: rem(15px);
@@ -1491,7 +1691,6 @@ main {
 }
 
 
-
 //------------- about project -------------
 
 .about-project {
@@ -1500,10 +1699,12 @@ main {
   @include respond-to(xs) {
     padding-bottom: rem(40px);
   }
+
   .title-h1 {
     margin-bottom: rem(30px);
   }
-  .description{
+
+  .description {
     width: 75%;
     @include respond-to(sm) {
       width: 100%;
@@ -1513,25 +1714,26 @@ main {
 
 //------------ traveling -----------
 
-.traveling{
-  .title-h2{
+.traveling {
+  .title-h2 {
     margin-bottom: rem(30px);
   }
 }
 
-.interesting-item{
+.interesting-item {
   margin-bottom: rem(70px);
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
   @include respond-to(xs) {
     flex-direction: column;
     margin-bottom: rem(30px);
   }
+
   &:nth-child(even) {
     flex-direction: row-reverse;
   }
+
   &__img {
     width: calc(50% - 15px);
     position: relative;
@@ -1540,7 +1742,14 @@ main {
       margin-bottom: rem(20px);
     }
     //margin-bottom: rem(30px);
-    img{
+
+    .badge-white {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+    }
+
+    img {
       display: block;
       height: 310px;
       width: 100%;
@@ -1552,27 +1761,52 @@ main {
         height: 200px;
       }
     }
-    figcaption{
-      background-color: #282627;
-      padding: rem( 16px 20px);
-      color: $white;
-      text-align: center;
-      span{
-        font-size: rem(14px);
-      }
+  }
+  &__description {
+    background-color: #282627;
+    padding: rem(16px 20px);
+    color: $white;
+    text-align: center;
+
+    span {
+      font-size: rem(14px);
     }
   }
+
   &__content {
     width: calc(50% - 15px);
     //margin-left: rem(15px);
     @include respond-to(xs) {
       width: 100%;
     }
+
     .title-h3 {
       margin-bottom: rem(30px);
       @include respond-to(xs) {
         margin-bottom: rem(20px);
       }
+    }
+  }
+
+  //--------------------- col -----------
+
+  &--col {
+    width: calc(50% - 30px);
+    .interesting-item {
+      &__img{
+        width: 100%;
+      }
+      &__content {
+        width: 100%;
+        padding-top: rem(30px);
+        .title-h3 {
+          margin-bottom: rem(20px);
+        }
+      }
+    }
+    .title-h4{
+      margin-bottom: rem(20px);
+      font-size: rem(20px);
     }
   }
 }
@@ -1582,9 +1816,11 @@ main {
   @include respond-to(xs) {
     margin-top: rem(40px);
   }
-  .title-h2{
+
+  .title-h2 {
     margin-bottom: rem(30px);
   }
+
   .description {
     width: 75%;
     @include respond-to(xs) {
@@ -1593,14 +1829,14 @@ main {
   }
 }
 
-.interesting-items{
+.interesting-items {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
 
-.interesting-more{
-  .interesting-item{
+.interesting-more {
+  .interesting-item {
     &__img {
       margin-bottom: rem(30px);
       @include respond-to(xs) {
@@ -1611,11 +1847,14 @@ main {
 }
 
 .interesting-places {
-  .title-h3{
+  .title-h3 {
     margin-bottom: rem(45px);
-    @include respond-to(xs){
+    @include respond-to(xs) {
       margin-bottom: rem(30px);
     }
+  }
+  .title-h2 {
+    margin-bottom: rem(40px);
   }
 }
 
@@ -1623,6 +1862,7 @@ main {
   display: flex;
   flex-wrap: wrap;
 }
+
 .percent-item {
   text-align: center;
   margin: rem(40px 60px 0 0);
@@ -1632,17 +1872,19 @@ main {
     margin-right: rem(20px);
   }
 }
+
 .percent-text {
   margin-top: rem(10px);
 }
 
-.info-list{
-  &__title{
+.info-list {
+  &__title {
     font-weight: 900;
     margin-bottom: rem(30px);
     margin-top: rem(50px);
     position: relative;
-    &:before{
+
+    &:before {
       content: '';
       background-image: url(../images/svg/checked-2.svg);
       width: 40px;
@@ -1653,22 +1895,24 @@ main {
       position: absolute;
       top: -6px;
       left: -60px;
-      @include respond-to(es){
+      @include respond-to(es) {
         top: 50%;
         transform: translateY(-50%);
         left: -60px;
       }
     }
   }
-  &__item{
+
+  &__item {
     padding-left: rem(80px);
     position: relative;
     @include respond-to(es) {
       padding-left: rem(60px);
     }
   }
-  .row{
-    .info-list__item{
+
+  .row {
+    .info-list__item {
       width: 50%;
       padding-right: rem(80px);
       @include respond-to(xs) {
@@ -1679,22 +1923,37 @@ main {
   }
 }
 
+.bottom-hero {
+  display: flex;
+  align-items: center;
+  padding: 45px 0;
+  img {
+    margin-right: rem(40px);
+  }
+  .title-h3{
+    margin-right: rem(90px);
+  }
+}
+
 
 // ----------------------- more info projects ---------------------
 
 .more-info {
   padding: rem(80px 0);
+
   &-wrap {
     display: flex;
     color: $white;
 
   }
+
   &__icon {
     padding: 0 110px;
     flex-shrink: 0;
     width: calc(140px + 220px);
 
   }
+
   &__title {
     font-size: rem(28px);
     line-height: rem(34px);
@@ -1702,6 +1961,7 @@ main {
     margin-bottom: rem(15px);
     padding-right: 30%;
   }
+
   &__description {
     font-size: rem(16px);
     margin-bottom: rem(30px);

@@ -15,8 +15,8 @@
   transform: translateX(-50%);
   button {
     display: inline-block;
-    width: rem(16px);
-    height: rem(16px);
+    width: rem(12px);
+    height: rem(12px);
     border-radius: 50%;
     background-color: $light-grey;
     cursor: pointer;
@@ -60,8 +60,8 @@
   transform: translate(-50%, -50%);
   pointer-events: none;
   .slick-arrow{
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     display: inline-flex;
     align-items: center;
     justify-content: center;

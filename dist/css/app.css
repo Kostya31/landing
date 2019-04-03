@@ -497,6 +497,10 @@ video {
   width: 100%;
   height: 100%; }
 
+.v-center {
+  display: flex;
+  align-items: center; }
+
 .container {
   max-width: 1170px;
   padding: 0 15px;
@@ -1086,7 +1090,8 @@ main.content {
   display: inline-block; }
 
 .our-apart__img {
-  float: right; }
+  float: right;
+  padding-right: 60px; }
   @media only screen and (max-width: 768px) {
     .our-apart__img {
       float: none;
@@ -1105,6 +1110,12 @@ main.content {
       margin-bottom: 0; } }
   .offer-wrap-apart {
     margin-bottom: 0; }
+    .offer-wrap-apart--col {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; }
+      .offer-wrap-apart--col .offer-item-apart:nth-child(even) .offer-content {
+        padding-right: 30px; }
   .offer-wrap-coworking .btn-violet {
     position: absolute;
     right: calc(50% - 115px);
@@ -1122,46 +1133,88 @@ main.content {
     .offer-item {
       flex-wrap: wrap;
       flex-direction: column; } }
-  .offer-item.offer-item-apart {
+  .offer-item-apart {
     margin-bottom: 30px; }
     @media only screen and (max-width: 768px) {
-      .offer-item.offer-item-apart {
+      .offer-item-apart {
         margin-bottom: 0; } }
-    .offer-item.offer-item-apart:last-child {
-      margin-bottom: 0; }
-    .offer-item.offer-item-apart:nth-child(even) {
+    .offer-item-apart:nth-child(even) {
       flex-direction: row; }
-      .offer-item.offer-item-apart:nth-child(even) .offer-content {
+      .offer-item-apart:nth-child(even) .offer-content {
         padding-right: calc((100vw - 1170px) / 2 + 15px);
-        padding-left: 2.5rem; }
+        padding-left: 3.125rem; }
         @media only screen and (max-width: 1199px) {
-          .offer-item.offer-item-apart:nth-child(even) .offer-content {
+          .offer-item-apart:nth-child(even) .offer-content {
             padding-right: 0.9375rem; } }
         @media only screen and (max-width: 768px) {
-          .offer-item.offer-item-apart:nth-child(even) .offer-content {
+          .offer-item-apart:nth-child(even) .offer-content {
             padding-left: 0.9375rem; } }
-    .offer-item.offer-item-apart .offer-content {
+    .offer-item-apart .offer-content {
+      width: 50%;
       background-color: #ffffff;
-      padding-left: 2.5rem; }
+      padding-left: 3.125rem;
+      padding-top: 2.5rem;
+      padding-bottom: 2.8125rem;
+      padding-right: 1.875rem; }
       @media only screen and (max-width: 768px) {
-        .offer-item.offer-item-apart .offer-content {
+        .offer-item-apart .offer-content {
           padding-left: 0.9375rem;
           padding-top: 1.25rem; } }
-  .offer-item:nth-child(even) {
+      .offer-item-apart .offer-content h5 {
+        margin-bottom: 15px; }
+    .offer-item-apart .offer-item-apart--col {
+      padding: 30px; }
+  .offer-item--col {
+    flex-direction: column !important;
+    width: calc(50% - 15px); }
+    .offer-item--col .slider-wrap {
+      width: 100% !important;
+      height: 370px; }
+    .offer-item--col .offer-content {
+      width: 100%; }
+  .offer-item-coworking:nth-child(even) {
     flex-direction: row-reverse; }
     @media only screen and (max-width: 576px) {
-      .offer-item:nth-child(even) {
+      .offer-item-coworking:nth-child(even) {
         flex-direction: row; } }
-    .offer-item:nth-child(even) .offer-content {
+    .offer-item-coworking:nth-child(even) .offer-content {
       padding-left: calc((100vw - 1170px) / 2 + 15px);
       padding-right: 5rem; }
       @media only screen and (max-width: 1199px) {
-        .offer-item:nth-child(even) .offer-content {
+        .offer-item-coworking:nth-child(even) .offer-content {
           padding-left: 0.9375rem;
           padding-right: 3.75rem; } }
       @media only screen and (max-width: 992px) {
-        .offer-item:nth-child(even) .offer-content {
+        .offer-item-coworking:nth-child(even) .offer-content {
           padding-right: 0.9375rem; } }
+  .offer-item-coworking .offer-content {
+    width: 50%;
+    display: inline-block;
+    padding-right: calc((100vw - 1170px) / 2 + 15px);
+    padding-left: 5rem;
+    padding-top: 4.375rem;
+    padding-bottom: 3.125rem; }
+    @media only screen and (max-width: 1199px) {
+      .offer-item-coworking .offer-content {
+        padding-right: 0.9375rem;
+        padding-left: 3.75rem; } }
+    @media only screen and (max-width: 768px) {
+      .offer-item-coworking .offer-content {
+        width: 100%;
+        padding-right: 0.9375rem;
+        padding-left: 0.9375rem;
+        padding-top: 3.125rem;
+        padding-bottom: 1.875rem; } }
+    @media only screen and (max-width: 992px) {
+      .offer-item-coworking .offer-content {
+        padding-left: 1.25rem;
+        padding-right: 0.9375rem;
+        padding-top: 3.125rem;
+        padding-bottom: 1.875rem; } }
+    .offer-item-coworking .offer-content h5 {
+      margin-bottom: 1.25rem; }
+    .offer-item-coworking .offer-content .offer-price {
+      margin-right: 3.125rem; }
 
 .sale-label {
   font-size: 14px;
@@ -1178,20 +1231,22 @@ main.content {
     width: 46px;
     height: 46px; }
 
-.offer-item-apart .slider-wrap {
-  width: 50%; }
-  @media only screen and (max-width: 768px) {
-    .offer-item-apart .slider-wrap {
-      width: 100%;
-      height: 35vh; } }
-
-.offer-item-apart .slider-arrows .slick-arrow {
-  background: linear-gradient(90deg, #f47c22 0%, #ffcd02 100%); }
-  .offer-item-apart .slider-arrows .slick-arrow:hover {
-    background: #322f31; }
-
-.offer-item-apart .dots-items li.slick-active .dot {
-  background: linear-gradient(90deg, #f47c22 0%, #ffcd02 100%); }
+.offer-item-apart {
+  background-color: #ffffff; }
+  .offer-item-apart .slider-wrap {
+    width: 50%; }
+    @media only screen and (max-width: 768px) {
+      .offer-item-apart .slider-wrap {
+        width: 100%;
+        height: 35vh; } }
+  .offer-item-apart .offer-title {
+    margin-bottom: 20px; }
+  .offer-item-apart .slider-arrows .slick-arrow {
+    background: linear-gradient(90deg, #f47c22 0%, #ffcd02 100%); }
+    .offer-item-apart .slider-arrows .slick-arrow:hover {
+      background: #322f31; }
+  .offer-item-apart .dots-items li.slick-active .dot {
+    background: linear-gradient(90deg, #f47c22 0%, #ffcd02 100%); }
 
 .slider-wrap .tns-outer {
   height: 100%; }
@@ -1212,35 +1267,6 @@ main.content {
       height: 35vh;
       width: 100%; } }
 
-.offer-content {
-  width: 50%;
-  display: inline-block;
-  padding-right: calc((100vw - 1170px) / 2 + 15px);
-  padding-left: 5rem;
-  padding-top: 4.375rem;
-  padding-bottom: 3.125rem; }
-  @media only screen and (max-width: 1199px) {
-    .offer-content {
-      padding-right: 0.9375rem;
-      padding-left: 3.75rem; } }
-  @media only screen and (max-width: 768px) {
-    .offer-content {
-      width: 100%;
-      padding-right: 0.9375rem;
-      padding-left: 0.9375rem;
-      padding-top: 3.125rem;
-      padding-bottom: 1.875rem; } }
-  @media only screen and (max-width: 992px) {
-    .offer-content {
-      padding-left: 1.25rem;
-      padding-right: 0.9375rem;
-      padding-top: 3.125rem;
-      padding-bottom: 1.875rem; } }
-  .offer-content h5 {
-    margin-bottom: 1.25rem; }
-  .offer-content .offer-price {
-    margin-right: 3.125rem; }
-
 .offer-title {
   font-size: 1.5rem;
   font-weight: 700;
@@ -1251,10 +1277,7 @@ main.content {
       margin-bottom: 1.25rem; } }
 
 .offer-info-rooms {
-  margin-bottom: 1.25rem; }
-  @media only screen and (max-width: 768px) {
-    .offer-info-rooms {
-      margin-bottom: 0.625rem; } }
+  margin-bottom: 0.625rem; }
   .offer-info-rooms .badge {
     margin-bottom: 1.25rem;
     margin-right: 0.375rem; }
@@ -1278,7 +1301,8 @@ main.content {
   color: #322f31;
   font-size: 1.25rem;
   font-weight: 900;
-  display: inline-block; }
+  display: inline-block;
+  margin-right: 3.125rem; }
   @media only screen and (max-width: 576px) {
     .offer-price {
       margin-bottom: 1.25rem; } }
@@ -1294,7 +1318,8 @@ main.content {
     display: inline-flex;
     align-items: center;
     margin: 0.625rem 0;
-    width: 50%; }
+    width: 50%;
+    padding-right: 15px; }
     @media only screen and (max-width: 576px) {
       .offer-comfort__item {
         width: 100%; } }
@@ -1677,11 +1702,20 @@ main.content {
 
 .complex-description,
 .complex-img {
-  flex-basis: 50%; }
+  flex-basis: 50%;
+  position: relative;
+  width: 50%; }
   @media only screen and (max-width: 768px) {
     .complex-description,
     .complex-img {
-      flex-basis: 100%; } }
+      flex-basis: 100%;
+      width: 100%; } }
+  .complex-description .btn-orange,
+  .complex-img .btn-orange {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%); }
 
 .complex-description {
   padding-right: 5rem; }
@@ -1693,6 +1727,15 @@ main.content {
 .feature-list {
   display: flex;
   flex-wrap: wrap; }
+  .feature-list-location .feature-item {
+    width: calc(100% / 3);
+    padding: 0 0.9375rem; }
+    .feature-list-location .feature-item__img {
+      padding-right: 1.875rem;
+      top: inherit;
+      margin-right: 0; }
+    .feature-list-location .feature-item__text {
+      width: auto; }
 
 .feature-title {
   margin-bottom: 3.75rem; }
@@ -1703,18 +1746,19 @@ main.content {
 .feature-item {
   display: flex;
   align-items: center;
-  margin-bottom: 3.75rem;
+  margin-bottom: 1.875rem;
   width: 40%; }
   @media only screen and (max-width: 768px) {
     .feature-item {
       width: 100%;
-      margin-bottom: 2.5rem; } }
+      margin-bottom: 1.25rem; } }
   .feature-item__img {
     width: 30%;
     text-align: center;
     margin-right: 2.5rem;
     position: relative;
-    top: 0.625rem; }
+    top: 0.625rem;
+    flex-shrink: 0; }
     @media only screen and (max-width: 768px) {
       .feature-item__img {
         margin-right: 1.25rem; } }
@@ -1766,7 +1810,7 @@ main.content {
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    padding-left: calc((100vw - 1170px - 15px ) / 2); }
+    padding-left: calc((100vw - 1170px - 15px) / 2); }
     @media only screen and (max-width: 992px) {
       .home-ideas__content {
         margin-top: 55px; } }
@@ -1980,7 +2024,6 @@ main.content {
   margin-bottom: 4.375rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap; }
   @media only screen and (max-width: 768px) {
     .interesting-item {
@@ -1995,6 +2038,10 @@ main.content {
       .interesting-item__img {
         width: 100%;
         margin-bottom: 1.25rem; } }
+    .interesting-item__img .badge-white {
+      position: absolute;
+      right: 15px;
+      top: 15px; }
     .interesting-item__img img {
       display: block;
       height: 310px;
@@ -2006,13 +2053,13 @@ main.content {
       @media only screen and (max-width: 768px) {
         .interesting-item__img img {
           height: 200px; } }
-    .interesting-item__img figcaption {
-      background-color: #282627;
-      padding: 1rem 1.25rem;
-      color: #ffffff;
-      text-align: center; }
-      .interesting-item__img figcaption span {
-        font-size: 0.875rem; }
+  .interesting-item__description {
+    background-color: #282627;
+    padding: 1rem 1.25rem;
+    color: #ffffff;
+    text-align: center; }
+    .interesting-item__description span {
+      font-size: 0.875rem; }
   .interesting-item__content {
     width: calc(50% - 15px); }
     @media only screen and (max-width: 768px) {
@@ -2023,6 +2070,18 @@ main.content {
       @media only screen and (max-width: 768px) {
         .interesting-item__content .title-h3 {
           margin-bottom: 1.25rem; } }
+  .interesting-item--col {
+    width: calc(50% - 30px); }
+    .interesting-item--col .interesting-item__img {
+      width: 100%; }
+    .interesting-item--col .interesting-item__content {
+      width: 100%;
+      padding-top: 1.875rem; }
+      .interesting-item--col .interesting-item__content .title-h3 {
+        margin-bottom: 1.25rem; }
+    .interesting-item--col .title-h4 {
+      margin-bottom: 1.25rem;
+      font-size: 1.25rem; }
 
 .detailed-info {
   margin-top: 3.75rem; }
@@ -2053,6 +2112,9 @@ main.content {
   @media only screen and (max-width: 768px) {
     .interesting-places .title-h3 {
       margin-bottom: 1.875rem; } }
+
+.interesting-places .title-h2 {
+  margin-bottom: 2.5rem; }
 
 .percent-list {
   display: flex;
@@ -2106,6 +2168,15 @@ main.content {
     .info-list .row .info-list__item {
       width: 100%;
       padding-right: 0; } }
+
+.bottom-hero {
+  display: flex;
+  align-items: center;
+  padding: 45px 0; }
+  .bottom-hero img {
+    margin-right: 2.5rem; }
+  .bottom-hero .title-h3 {
+    margin-right: 5.625rem; }
 
 .more-info {
   padding: 5rem 0; }
@@ -2173,6 +2244,8 @@ main.content {
     @media only screen and (max-width: 768px) {
       .section-about-complex {
         padding: 2.5rem 0 2.5rem; } }
+  .section-pt-6 {
+    padding-top: 3.75rem; }
 
 .btn {
   font-size: 16px;
@@ -2638,8 +2711,8 @@ select {
   transform: translateX(-50%); }
   .tns-nav button {
     display: inline-block;
-    width: 1rem;
-    height: 1rem;
+    width: 0.75rem;
+    height: 0.75rem;
     border-radius: 50%;
     background-color: #e2e2e2;
     cursor: pointer;
@@ -2674,8 +2747,8 @@ select {
   transform: translate(-50%, -50%);
   pointer-events: none; }
   .slider-arrows .slick-arrow {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
