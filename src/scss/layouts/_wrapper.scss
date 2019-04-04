@@ -596,7 +596,8 @@ main {
   }
 
   .offer-title {
-    margin-bottom: (20px);
+    margin-bottom: rem(20px);
+    margin-right: rem(35px);
   }
   .slider-arrows {
     .slick-arrow {
@@ -616,6 +617,19 @@ main {
         }
       }
     }
+  }
+}
+
+.up-guests {
+  margin-bottom: rem(20px);
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: rem(10px);
+  }
+  span {
+    font-size: rem(14px);
+    font-weight: 500;
   }
 }
 
@@ -710,6 +724,7 @@ main {
     margin: rem(10px 0);
     width: 50%;
     padding-right: 15px;
+    font-size: rem(13px);
     @include respond-to(es) {
       width: 100%;
     }
@@ -726,13 +741,16 @@ main {
   padding: rem(10px 15px);
   font-size: rem(14px);
   font-weight: 500;
-  display: inline-block;
+  display: inline-flex;
 
   &-white {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     border-radius: 25px;
     color: $black;
     background-color: $white;
+  }
+  &-img {
+    margin-right: rem(9px);
   }
 }
 
@@ -802,7 +820,7 @@ main {
       content: '';
       position: absolute;
       top: -2px;
-      left: 0;
+      left: 8px;
       background-image: url(../images/svg/checked.svg);
       background-repeat: no-repeat;
       display: inline-block;
@@ -835,16 +853,29 @@ main {
     margin-top: rem(30px);
   }
 
-  h5 {
-    line-height: rem(24px);
-    margin-bottom: rem(15px);
+  &--has-icon {
+    .coworking-item-icon {
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+    .coworking-item__content {
+      padding-left: 115px;
+    }
   }
-
-  p {
-    margin-bottom: rem(50px);
-    font-size: 14px;
-    @include respond-to(es) {
+  &__content {
+    position: relative;
+    h5 {
+      line-height: rem(24px);
       margin-bottom: rem(15px);
+    }
+
+    p {
+      margin-bottom: rem(50px);
+      font-size: 14px;
+      @include respond-to(es) {
+        margin-bottom: rem(15px);
+      }
     }
   }
 }
@@ -1270,6 +1301,10 @@ main {
   h2 {
     margin-bottom: rem(25px);
   }
+  p {
+    font-size: rem(14px);
+    line-height: rem(20px);
+  }
 }
 
 .complex-description,
@@ -1301,6 +1336,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   &-location {
+    margin-bottom: rem(40px);
     .feature-item {
       width: calc(100% / 3);
       padding: rem(0 15px);
@@ -1348,7 +1384,6 @@ main {
   &__text {
     font-weight: 900;
     width: 60%;
-    color: $black;
   }
 }
 
@@ -1721,7 +1756,7 @@ main {
 }
 
 .interesting-item {
-  margin-bottom: rem(70px);
+  margin-bottom: rem(50px);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -1749,7 +1784,7 @@ main {
       top: 15px;
     }
 
-    img {
+    >img {
       display: block;
       height: 310px;
       width: 100%;
@@ -1780,6 +1815,10 @@ main {
       width: 100%;
     }
 
+    p{
+      font-size: rem(14px);
+      line-height: rem(20px);
+    }
     .title-h3 {
       margin-bottom: rem(30px);
       @include respond-to(xs) {
