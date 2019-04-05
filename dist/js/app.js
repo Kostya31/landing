@@ -5,10 +5,10 @@
 
 var app = {
 
-    questionSlider: function questionSlider() {
-        // tiny-slider initialisation
-        var wrapSlider = document.querySelectorAll('.slider-wrap');
-        wrapSlider.forEach(function (el) {
+    // tiny-slider initialisation
+    offerSlider: function offerSlider() {
+        var wrapSliderApart = document.querySelectorAll('.slider-apart, .slider-coworking-room');
+        wrapSliderApart.forEach(function (el) {
             var slider = el.querySelector('.js-slider');
             var controlArrow = el.querySelector('.slider-arrows');
 
@@ -26,13 +26,33 @@ var app = {
             });
         });
     },
+    sliderInterior: function sliderInterior() {
+        var wrapSliderInterior = document.querySelectorAll('.slider-interior');
+        wrapSliderInterior.forEach(function (el) {
+            var slider = el.querySelector('.js-slider');
+            var controlArrow = el.querySelector('.slider-arrows');
+
+            var slider2 = tns({
+                container: slider,
+                items: 4,
+                slideBy: 'page',
+                autoplay: false,
+                "mouseDrag": true,
+                "swipeAngle": false,
+                "speed": 400,
+                gutter: 30,
+                nav: true,
+                controlsContainer: controlArrow,
+                navAsThumbnails: false
+            });
+        });
+    },
 
     mobileNav: function mobileNav() {
         var hamburger = document.querySelector('.hamburger');
 
         hamburger.addEventListener('click', function (e) {
             e.preventDefault();
-            e.stopPropagation();
             toggleMenu();
             // document.querySelector('.switch-lang').classList.remove('open');
         });
@@ -452,7 +472,8 @@ var app = {
     },
 
     init: function init() {
-        app.questionSlider();
+        app.offerSlider();
+        app.sliderInterior();
         app.tabs();
         // app.switchLang();
         app.customSelect();

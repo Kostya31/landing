@@ -22,24 +22,6 @@ main {
   }
 }
 
-.bg-black {
-  background-color: $black;
-}
-
-.bg-cover {
-  background-size: cover;
-  background-position: center;
-}
-
-.bg-silver {
-  background-color: $bg-silver;
-}
-
-.hr-dashed {
-  border: 2px dashed #e5e5e5;
-  margin: rem(40px 0);
-
-}
 
 .overlay {
   position: relative;
@@ -362,6 +344,11 @@ main {
 .our-apart {
   .description {
     display: inline-block;
+
+    p {
+      font-size: rem(14px);
+      line-height: rem(20px);
+    }
   }
 
   &__img {
@@ -394,7 +381,7 @@ main {
 // --------------- offer ----------
 
 .offer-wrap {
-  margin-top: rem(64px);
+  margin-top: rem(20px);
   margin-bottom: rem(50px);
   @include respond-to(xs) {
     margin-top: rem(40px);
@@ -403,11 +390,13 @@ main {
 
   &-apart {
     margin-bottom: 0;
+
     &--col {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      .offer-item-apart:nth-child(even) {
+
+      .offer-item-apart {
         .offer-content {
           padding-right: 30px;
         }
@@ -444,7 +433,8 @@ main {
   //custom offer apart
 
   &-apart {
-    margin-bottom: 30px;
+    margin-top: rem(30px);
+    flex-direction: row;
     @include respond-to(xs) {
       margin-bottom: 0;
     }
@@ -453,34 +443,43 @@ main {
     //  margin-bottom: 0;
     //}
 
-    &:nth-child(even) {
-      flex-direction: row;
 
-      .offer-content {
-        padding-right: calc((100vw - 1170px) / 2 + 15px);
-        padding-left: rem(50px);
-        @include respond-to(md) {
-          padding-right: rem(15px);
-        }
-        @include respond-to(xs) {
-          padding-left: rem(15px);
-        }
+    //&:nth-child(odd) {
+    //  flex-direction: row-reverse;
+    //
+    //  .offer-content {
+    //    padding-left: calc((100vw - 1170px) / 2 + 15px);
+    //    padding-right: rem(50px);
+    //    @include respond-to(md) {
+    //      padding-right: rem(15px);
+    //    }
+    //    @include respond-to(xs) {
+    //      padding-left: rem(15px);
+    //    }
+    //  }
+    //}
+
+    .offer-content {
+
+      @include respond-to(xs) {
+        padding-left: rem(15px);
+        padding-top: rem(20px);
+      }
+
+      h5 {
+        margin-bottom: 15px;
       }
     }
 
     .offer-content {
       width: 50%;
       background-color: $white;
-      padding-left: rem(50px);
-      padding-top: rem(40px);
-      padding-bottom: rem(45px);
-      padding-right: rem(30px);
+      padding: rem(40px) calc((100vw - 1170px) / 2 + 15px) rem(45px) rem(50px);
+      @include respond-to(md) {
+        padding-right: rem(15px);
+      }
       @include respond-to(xs) {
         padding-left: rem(15px);
-        padding-top: rem(20px);
-      }
-      h5 {
-        margin-bottom: 15px;
       }
     }
 
@@ -491,11 +490,11 @@ main {
   }
 
   &--col {
-    flex-direction: column!important;
+    flex-direction: column !important;
     width: calc(50% - 15px);
 
     .slider-wrap {
-      width: 100%!important;
+      width: 100% !important;
       height: 370px;
     }
 
@@ -504,7 +503,7 @@ main {
     }
   }
 
-    //----------- end custom
+  //----------- end custom
 
 
   &-coworking {
@@ -531,26 +530,17 @@ main {
     .offer-content {
       width: 50%;
       display: inline-block;
-      padding-right: calc((100vw - 1170px) / 2 + 15px);
-      padding-left: rem(80px);
-      padding-top: rem(70px);
-      padding-bottom: rem(50px);
+      padding: rem(70px) calc((100vw - 1170px) / 2 + 15px) rem(50px) rem(80px);
       @include respond-to(md) {
         padding-right: rem(15px);
         padding-left: rem(60px);
       }
       @include respond-to(xs) {
         width: 100%;
-        padding-right: rem(15px);
-        padding-left: rem(15px);
-        padding-top: rem(50px);
-        padding-bottom: rem(30px);
+        padding: rem(50px) rem(15px) rem(30px);
       }
       @include respond-to(sm) {
-        padding-left: rem(20px);
-        padding-right: rem(15px);
-        padding-top: rem(50px);
-        padding-bottom: rem(30px);
+        padding: rem(50px) rem(15px) rem(30px) rem(20px);
       }
 
       h5 {
@@ -564,7 +554,6 @@ main {
 
   }
 }
-
 
 
 .sale-label {
@@ -587,6 +576,7 @@ main {
 
 .offer-item-apart {
   background-color: $white;
+
   .slider-wrap {
     width: 50%;
     @include respond-to(xs) {
@@ -599,41 +589,26 @@ main {
     margin-bottom: rem(20px);
     margin-right: rem(35px);
   }
-  .slider-arrows {
-    .slick-arrow {
-      background: $orange-gradient;
-
-      &:hover {
-        background: #322f31;
-      }
-    }
-  }
-
-  .dots-items {
-    li {
-      &.slick-active {
-        .dot {
-          background: $orange-gradient;
-        }
-      }
-    }
-  }
 }
 
 .up-guests {
   margin-bottom: rem(20px);
   display: flex;
   align-items: center;
+
   img {
     margin-right: rem(10px);
   }
+
   span {
     font-size: rem(14px);
     font-weight: 500;
   }
 }
 
-.slider-wrap {
+//----------------------- sliders ---------------
+
+.slider-apart {
   .tns-outer {
     height: 100%;
   }
@@ -646,6 +621,22 @@ main {
     height: 100%;
   }
 }
+
+
+.slider-interior {
+  .tns-ovh {
+    height: 174px;
+  }
+
+  .tns-outer {
+    height: 100%;
+  }
+
+  .tns-inner {
+    height: 100%;
+  }
+}
+
 
 .offer-img {
   background-position: center;
@@ -749,6 +740,7 @@ main {
     color: $black;
     background-color: $white;
   }
+
   &-img {
     margin-right: rem(9px);
   }
@@ -859,12 +851,15 @@ main {
       left: 0;
       right: 0;
     }
+
     .coworking-item__content {
       padding-left: 115px;
     }
   }
+
   &__content {
     position: relative;
+
     h5 {
       line-height: rem(24px);
       margin-bottom: rem(15px);
@@ -1222,22 +1217,6 @@ main {
       }
     }
 
-    .tns-nav {
-      bottom: rem(30px);
-      @include respond-to(xs) {
-        bottom: rem(15px);
-      }
-      @include respond-to(es) {
-        bottom: rem(10px);
-      }
-
-      button {
-        &.tns-nav-active {
-          background: $orange-gradient;
-          background-clip: content-box;
-        }
-      }
-    }
   }
 
   .slider-item {
@@ -1301,6 +1280,7 @@ main {
   h2 {
     margin-bottom: rem(25px);
   }
+
   p {
     font-size: rem(14px);
     line-height: rem(20px);
@@ -1316,6 +1296,7 @@ main {
     flex-basis: 100%;
     width: 100%;
   }
+
   .btn-orange {
     position: absolute;
     bottom: -20px;
@@ -1335,16 +1316,20 @@ main {
 .feature-list {
   display: flex;
   flex-wrap: wrap;
+
   &-location {
     margin-bottom: rem(40px);
+
     .feature-item {
       width: calc(100% / 3);
       padding: rem(0 15px);
-      &__img{
+
+      &__img {
         padding-right: rem(30px);
         top: inherit;
         margin-right: 0;
       }
+
       &__text {
         width: auto;
       }
@@ -1430,6 +1415,20 @@ main {
   &--4-col {
     .feature-item {
       width: calc(100% / 4);
+
+      &__text {
+        width: 70%;
+      }
+    }
+  }
+
+  &--5-col {
+    .feature-item {
+      width: calc(100% / 5);
+
+      &__text {
+        width: 70%;
+      }
     }
   }
 }
@@ -1784,7 +1783,7 @@ main {
       top: 15px;
     }
 
-    >img {
+    > img {
       display: block;
       height: 310px;
       width: 100%;
@@ -1797,6 +1796,7 @@ main {
       }
     }
   }
+
   &__description {
     background-color: #282627;
     padding: rem(16px 20px);
@@ -1815,10 +1815,11 @@ main {
       width: 100%;
     }
 
-    p{
+    p {
       font-size: rem(14px);
       line-height: rem(20px);
     }
+
     .title-h3 {
       margin-bottom: rem(30px);
       @include respond-to(xs) {
@@ -1831,19 +1832,23 @@ main {
 
   &--col {
     width: calc(50% - 30px);
+
     .interesting-item {
-      &__img{
+      &__img {
         width: 100%;
       }
+
       &__content {
         width: 100%;
         padding-top: rem(30px);
+
         .title-h3 {
           margin-bottom: rem(20px);
         }
       }
     }
-    .title-h4{
+
+    .title-h4 {
       margin-bottom: rem(20px);
       font-size: rem(20px);
     }
@@ -1892,6 +1897,7 @@ main {
       margin-bottom: rem(30px);
     }
   }
+
   .title-h2 {
     margin-bottom: rem(40px);
   }
@@ -1966,10 +1972,12 @@ main {
   display: flex;
   align-items: center;
   padding: 45px 0;
+
   img {
     margin-right: rem(40px);
   }
-  .title-h3{
+
+  .title-h3 {
     margin-right: rem(90px);
   }
 }
@@ -2006,5 +2014,156 @@ main {
     margin-bottom: rem(30px);
     font-weight: 400;
     padding-right: 45%;
+  }
+}
+
+// ------------------outside view  -------------------
+
+.another-view {
+  margin-bottom: rem(30px);
+
+  .row {
+    flex-wrap: nowrap;
+  }
+
+  &-content {
+    padding-right: rem(60px);
+    flex-grow: 1;
+    margin-bottom: rem(30px);
+
+    .alert-dark {
+      margin-top: rem(20px);
+    }
+  }
+
+  .offer-item {
+    flex-shrink: 0;
+    width: 63%;
+  }
+
+  .slider-wrap {
+    height: 480px;
+  }
+
+  .title-h2 {
+    margin-bottom: rem(30px);
+  }
+
+  p {
+    font-size: rem(14px);
+    line-height: rem(20px);
+  }
+}
+
+// ------------------ interior-wrap -------------------
+
+.interior-wrap {
+  display: inline-block;
+  width: 100%;
+  margin-top: rem(30px);
+  margin-bottom: rem(60px);
+
+  .title-h3 {
+    margin-bottom: rem(30px);
+  }
+}
+
+//------------------ alert ----------------------
+
+.alert {
+  padding: rem(15px 30px);
+  border-radius: 35px;
+
+  &-dark {
+    background: #e2e2e2;
+  }
+
+  p {
+    font-size: rem(14px);
+    font-weight: 500;
+  }
+}
+
+.contact-us-hero {
+  padding: rem(40px 0 60px);
+  display: flex;
+  &__img {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    flex-shrink: 0;
+    margin-right: rem(75px);
+  }
+  &__content  {
+    .title-h1 {
+      margin-bottom: rem(20px);
+    }
+  }
+  &-description {
+    padding-right: 60%;
+    p{
+      line-height: rem(24px);
+    }
+  }
+}
+
+
+
+// --------------------------- contact-us -------------------
+
+
+.contact-us {
+  &-list {
+    padding: rem(50px 0 100px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  }
+
+  &-item {
+    width: calc(50% - 15px);
+    background: $white;
+    box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.15);
+    padding: rem(30px 30px 50px 30px);
+    display: flex;
+    &__img {
+      width: 100px;
+      height: 100px;
+      display: inline-block;
+      flex-shrink: 0;
+      border-radius: 100%;
+      overflow: hidden;
+      margin-right: rem(25px);
+    }
+
+    &__content {
+      padding-top: rem(25px);
+      .title-h4 {
+        margin-bottom: rem(30px);
+        padding-right: rem(50px);
+      }
+      .btn-success {
+        width: 260px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+
+
+//----------------------- about-us ---------------------
+
+.about-us-hero {
+  padding: rem(60px 0 100px);
+  &__logo{
+    text-align: center;
+    margin-bottom: rem(60px);
+  }
+  &__description {
+    text-align: center;
+    width: 60%;
+    margin: auto;
   }
 }

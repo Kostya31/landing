@@ -56,3 +56,30 @@
     padding-top: rem(60px);
   }
 }
+
+
+.bg-black {
+  background-color: $black;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-silver {
+  background-color: $bg-silver;
+}
+
+.bg-dark {
+  background-color:  #464646;
+}
+
+.hr-dashed {
+  border: 2px dashed #e5e5e5;
+  margin: rem(40px 0);
+}

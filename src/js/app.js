@@ -2,10 +2,11 @@
 
 let app = {
 
-    questionSlider: function () {
-        // tiny-slider initialisation
-        let wrapSlider = document.querySelectorAll('.slider-wrap');
-        wrapSlider.forEach(function (el) {
+
+    // tiny-slider initialisation
+    offerSlider: function () {
+        let wrapSliderApart = document.querySelectorAll('.slider-apart, .slider-coworking-room');
+        wrapSliderApart.forEach(function (el) {
             let slider = el.querySelector('.js-slider');
             let controlArrow = el.querySelector('.slider-arrows');
 
@@ -23,13 +24,34 @@ let app = {
             });
         });
     },
+    sliderInterior: function () {
+        let wrapSliderInterior = document.querySelectorAll('.slider-interior');
+        wrapSliderInterior.forEach(function (el) {
+            let slider = el.querySelector('.js-slider');
+            let controlArrow = el.querySelector('.slider-arrows');
+
+            let slider2 = tns({
+                container: slider,
+                items: 4,
+                slideBy: 'page',
+                autoplay: false,
+                "mouseDrag": true,
+                "swipeAngle": false,
+                "speed": 400,
+                gutter: 30,
+                nav: true,
+                controlsContainer: controlArrow,
+                navAsThumbnails: false,
+            });
+        });
+    },
+
 
     mobileNav: function () {
         let hamburger = document.querySelector('.hamburger');
 
         hamburger.addEventListener('click', function (e) {
             e.preventDefault();
-            e.stopPropagation();
             toggleMenu();
             // document.querySelector('.switch-lang').classList.remove('open');
         });
@@ -345,8 +367,7 @@ let app = {
 
             if (isNaN(val)) {
                 val = 100;
-            }
-            else {
+            } else {
                 let r = 45;
                 let c = Math.PI * (r * 2);
 
@@ -365,7 +386,8 @@ let app = {
 
 
     init: function () {
-        app.questionSlider();
+        app.offerSlider();
+        app.sliderInterior();
         app.tabs();
         // app.switchLang();
         app.customSelect();
