@@ -2,20 +2,23 @@
 
 .our-projects {
   margin-bottom: rem(80px);
-  padding-top: 50px;
-  @include respond-to(sm){
+  padding-top: rem(50px);
+  @include respond-to(sm) {
     margin-bottom: rem(60px);
   }
   @include respond-to(xs) {
     margin-bottom: rem(40px);
+    padding-top: rem(40px);
   }
+
   .title-h2 {
     margin-bottom: rem(45px);
     @include respond-to(xs) {
       margin-bottom: rem(30px);
     }
   }
-  .btn-silver-2{
+
+  .btn-silver-2 {
     background-color: #676466;
   }
 }
@@ -31,6 +34,7 @@
   @include respond-to(es) {
     flex-wrap: wrap;
   }
+
   &__img {
     width: 50%;
     @include respond-to(es) {
@@ -38,6 +42,7 @@
       height: 40vh;
     }
   }
+
   &__content {
     width: 50%;
     padding: rem(35px 45px 60px 45px);
@@ -48,18 +53,21 @@
       width: 100%;
     }
   }
+
   .logo {
     margin-bottom: rem(30px);
     @include respond-to(sm) {
       margin-bottom: rem(20px);
     }
   }
+
   .title-h3 {
     margin-bottom: rem(30px);
     @include respond-to(sm) {
       margin-bottom: rem(20px);
     }
   }
+
   .description {
     margin-bottom: rem(40px);
     font-size: rem(14px);
@@ -75,108 +83,200 @@
 .venture-projects {
   padding: 50px 0 15px;
   color: $black-header;
-  .title-h2{
+
+  .title-h2 {
     margin-bottom: rem(60px);
+    @include respond-to(xs) {
+      margin-bottom: rem(40px);
+    }
   }
+
   &-logo {
     margin-bottom: rem(25px);
   }
+
   &-description {
     font-size: rem(14px);
     padding: 0 25%;
     text-align: center;
     line-height: rem(24px);
     margin-bottom: rem(60px);
+    @include respond-to(xs) {
+      padding: 0 10%;
+    }
+    @include respond-to(xs) {
+      padding: 0 5%;
+    }
   }
 
-
-  &-list{
+  &-list {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
+    @include respond-to(xs) {
+      flex-wrap: wrap;
+      margin-bottom: rem(20px);
+    }
+    @include respond-to(es) {
+      margin-bottom: 0;
+    }
   }
 
-  &-item{
+  &-item {
     padding: 0 50px;
     text-align: center;
     margin-bottom: 20px;
-    &__logo {
+    @include respond-to(sm) {
+      padding: 0 30px;
+    }
+    @include respond-to(xs) {
+      padding: rem(0 15%);
       margin-bottom: rem(30px);
     }
+    @include respond-to(es) {
+      padding: rem(0 5%);
+    }
+
+    &__logo {
+      margin-bottom: rem(30px);
+      @include respond-to(xs) {
+        margin-bottom: rem(20px);
+      }
+    }
+
     &__description {
       font-size: rem(14px);
       line-height: rem(24px);
     }
   }
 
-
-//  -----------------other venture project ---------------
+  //  -----------------other venture project ---------------
 
   &-others {
-    .sub-title{
+    .sub-title {
       margin-bottom: rem(20px);
       font-weight: 500;
     }
+
     &__list {
 
     }
+
     &-item {
       padding-bottom: rem(50px);
       margin-bottom: rem(50px);
       border-bottom: 2px dashed #e8e8e8;
+      @include respond-to(sm) {
+        padding-bottom: rem(40px);
+        margin-bottom: rem(40px);
+      }
+      @include respond-to(xs) {
+        padding-bottom: rem(30px);
+        margin-bottom: rem(30px);
+      }
+
       &__logo {
         text-align: center;
         margin-bottom: rem(30px);
+        @include respond-to(sm) {
+          margin-bottom: rem(20px);
+        }
+        @include respond-to(xs) {
+          margin-bottom: rem(10px);
+        }
       }
+
       &__description {
         padding: 0 26%;
         text-align: center;
         line-height: rem(24px);
         font-size: rem(14px);
+        @include respond-to(xs) {
+          padding: 0 15%;
+        }
+        @include respond-to(es) {
+          padding: 0 5%;
+        }
       }
     }
   }
 }
 
-
 //----------------- estate-projects ----------------
 
 .estate-projects {
   padding-bottom: rem(70px);
+  @include respond-to(xs) {
+    padding-bottom: rem(40px);
+  }
+
   .title-h2 {
     margin-bottom: rem(60px);
+    @include respond-to(xs) {
+      margin-bottom: rem(40px);
+    }
   }
+
   &-list {
 
     display: flex;
     justify-content: space-between;
-    margin-bottom: rem(60px);
+    margin-bottom: rem(30px);
+    @include respond-to(xs) {
+      justify-content: center;
+      margin-bottom: rem(10px);
+      flex-wrap: wrap;
+    }
   }
+
   &-item {
     width: calc(100% / 3 - 30px);
     padding: rem(80px 15px);
     color: $white;
     background-size: cover;
     background-position: center;
+    margin-bottom: rem(30px);
+    @include respond-to(sm) {
+      padding: rem(50px 15px);
+    }
+    @include respond-to(xs) {
+      margin-left: 15px;
+      margin-right: 15px;
+      padding: rem(40px 15px);
+      width: calc(100% / 2 - 30px);
+    }
+    @include respond-to(es) {
+      width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
     &__logo {
       margin-bottom: rem(20px);
-      img{
+
+      img {
         display: block;
         margin: 0 auto;
       }
     }
+
     &__title {
       font-size: rem(28px);
       font-weight: 900;
     }
+
     &__description {
       font-weight: 300;
       margin-top: rem(5px);
       font-size: rem(16px);
       padding: 0 50px;
+      @include respond-to(sm) {
+        padding: 0;
+      }
     }
   }
+
   &-wrap {
     position: relative;
     z-index: 5;

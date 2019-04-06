@@ -140,7 +140,6 @@ let app = {
                     if (fixPlace) {
                         res = res + 500 * placeCount;
                     }
-                    console.log(res);
                     document.querySelector('#jobs .general-price strong span').innerText = res;
                 }
 
@@ -313,7 +312,6 @@ let app = {
         for (let elem of openModal) {
             if (elem.addEventListener) {
                 elem.addEventListener('click', function (e) {
-                    console.log(elem);
                     e.preventDefault();
                     e.stopPropagation();
                     showModal(e)
@@ -408,7 +406,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // }
 
         if (!e.target.closest('.hamburger')) {
-            console.log('ssssssss');
             document.querySelector('.hamburger').classList.remove('is-active');
             document.querySelector('.header-nav').classList.remove('open');
             document.querySelector('html').classList.remove('no-scroll');

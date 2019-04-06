@@ -139,7 +139,6 @@ var app = {
                     if (fixPlace) {
                         res = res + 500 * placeCount;
                     }
-                    console.log(res);
                     document.querySelector('#jobs .general-price strong span').innerText = res;
                 }
 
@@ -339,12 +338,11 @@ var app = {
         var _iteratorError2 = undefined;
 
         try {
-            var _loop = function _loop() {
+            for (var _iterator2 = openModal[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
                 var elem = _step2.value;
 
                 if (elem.addEventListener) {
                     elem.addEventListener('click', function (e) {
-                        console.log(elem);
                         e.preventDefault();
                         e.stopPropagation();
                         showModal(e);
@@ -355,10 +353,6 @@ var app = {
                         showModal(e);
                     });
                 }
-            };
-
-            for (var _iterator2 = openModal[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-                _loop();
             }
         } catch (err) {
             _didIteratorError2 = true;
@@ -494,7 +488,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // }
 
         if (!e.target.closest('.hamburger')) {
-            console.log('ssssssss');
             document.querySelector('.hamburger').classList.remove('is-active');
             document.querySelector('.header-nav').classList.remove('open');
             document.querySelector('html').classList.remove('no-scroll');
@@ -552,10 +545,10 @@ var setTaggedTabActive = function setTaggedTabActive() {
 
     try {
         for (var _iterator5 = tabLinks[Symbol.iterator](), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-            var _elem2 = _step5.value;
+            var elem = _step5.value;
 
 
-            _elem2.addEventListener('click', function (e) {
+            elem.addEventListener('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
                 var _this = e.currentTarget;

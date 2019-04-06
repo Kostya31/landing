@@ -291,6 +291,7 @@ main {
   .description {
     width: 46%;
     display: inline-block;
+    padding-right: rem(40px);
     @include respond-to(xs) {
       width: 100%;
       position: relative;
@@ -353,7 +354,7 @@ main {
 
   &__img {
     float: right;
-    padding-right: 60px;
+    //padding-right: 60px;
     //@include respond-to(es){
     //  position: absolute;
     //  top: 50px;
@@ -399,6 +400,9 @@ main {
       .offer-item-apart {
         .offer-content {
           padding-right: 30px;
+          @include respond-to(sm) {
+            padding: 20px 20px 25px 20px;
+          }
         }
       }
     }
@@ -480,6 +484,7 @@ main {
       }
       @include respond-to(xs) {
         padding-left: rem(15px);
+        width: 100%;
       }
     }
 
@@ -492,7 +497,9 @@ main {
   &--col {
     flex-direction: column !important;
     width: calc(50% - 15px);
-
+    @include respond-to(xs) {
+      width: 100%;
+    }
     .slider-wrap {
       width: 100% !important;
       height: 370px;
@@ -716,9 +723,9 @@ main {
     width: 50%;
     padding-right: 15px;
     font-size: rem(13px);
-    @include respond-to(es) {
-      width: 100%;
-    }
+    //@include respond-to(es) {
+    //  width: 100%;
+    //}
 
     img {
       margin-right: 10px;
@@ -1323,7 +1330,12 @@ main {
     .feature-item {
       width: calc(100% / 3);
       padding: rem(0 15px);
-
+      @include respond-to(xs) {
+        width: calc(100% / 2);
+      }
+      @include respond-to(es) {
+        width: 100%;
+      }
       &__img {
         padding-right: rem(30px);
         top: inherit;
@@ -1379,8 +1391,8 @@ main {
   margin: rem(70px 0 30px);
   flex-wrap: wrap;
   @include respond-to(xs) {
-    flex-direction: column;
-    align-items: center;
+    //flex-direction: column;
+    align-items: flex-start;
     margin: rem(40px 0 40px);
   }
 
@@ -1395,6 +1407,9 @@ main {
       margin-right: 0;
       height: 90px;
       margin-bottom: rem(5px);
+      @include respond-to(es) {
+        height: 65px;
+      }
     }
 
     &__text {
@@ -1415,9 +1430,18 @@ main {
   &--4-col {
     .feature-item {
       width: calc(100% / 4);
-
+      @include respond-to(sm) {
+        width: calc(100% / 3);
+      }
+      @include respond-to(xs) {
+        width: calc(100% / 2);
+      }
       &__text {
         width: 70%;
+        @include respond-to(xs) {
+          width: 100%;
+          padding: 0 10px;
+        }
       }
     }
   }
@@ -1625,7 +1649,7 @@ main {
 //-------------- projects ------------
 
 .projects {
-  padding: rem(40px 25px 70px);
+  padding: rem(40px 0 70px);
   display: flex;
   @include respond-to(md) {
     padding: rem(40px 25px 30px);
@@ -1832,7 +1856,9 @@ main {
 
   &--col {
     width: calc(50% - 30px);
-
+    @include respond-to(es) {
+      width: 100%;
+    }
     .interesting-item {
       &__img {
         width: 100%;
@@ -1972,13 +1998,24 @@ main {
   display: flex;
   align-items: center;
   padding: 45px 0;
-
+  @include respond-to(es) {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+  }
   img {
     margin-right: rem(40px);
+    @include respond-to(es) {
+      margin-right: 0;
+    }
   }
 
   .title-h3 {
     margin-right: rem(90px);
+    @include respond-to(es) {
+      text-align: center;
+      margin: 20px 0;
+    }
   }
 }
 
@@ -1987,6 +2024,9 @@ main {
 
 .more-info {
   padding: rem(80px 0);
+  @include respond-to(xs) {
+    padding: rem(40px 0);
+  }
 
   &-wrap {
     display: flex;
@@ -1998,7 +2038,18 @@ main {
     padding: 0 110px;
     flex-shrink: 0;
     width: calc(140px + 220px);
-
+    @include respond-to(sm) {
+      padding: 0 80px;
+      width: calc(120px + 160px);
+    }
+    @include respond-to(xs) {
+      padding: 0 60px;
+      width: calc(80px + 120px);
+    }
+    @include respond-to(es) {
+      padding: 0 20px 0 0;
+      width: calc(60px + 20px);
+    }
   }
 
   &__title {
@@ -2007,6 +2058,12 @@ main {
     font-weight: 700;
     margin-bottom: rem(15px);
     padding-right: 30%;
+    @include respond-to(sm) {
+      padding-right: 20%;
+    }
+    @include respond-to(xs) {
+      padding-right: 0;
+    }
   }
 
   &__description {
@@ -2014,6 +2071,15 @@ main {
     margin-bottom: rem(30px);
     font-weight: 400;
     padding-right: 45%;
+    @include respond-to(sm) {
+      padding-right: 30%;
+    }
+    @include respond-to(xs) {
+      padding-right: 20%;
+    }
+    @include respond-to(es) {
+      padding-right: 0;
+    }
   }
 }
 
@@ -2087,26 +2153,44 @@ main {
 .contact-us-hero {
   padding: rem(40px 0 60px);
   display: flex;
+
   &__img {
     width: 120px;
     height: 120px;
     display: inline-block;
     flex-shrink: 0;
     margin-right: rem(75px);
+    @include respond-to(sm) {
+      width: 80px;
+      height: 80px;
+      margin-right: rem(50px);
+    }
+    @include respond-to(xs) {
+      width: 60px;
+      height: 60px;
+      margin-right: rem(30px);
+    }
   }
-  &__content  {
+
+  &__content {
     .title-h1 {
       margin-bottom: rem(20px);
     }
   }
+
   &-description {
     padding-right: 60%;
-    p{
+    @include respond-to(sm) {
+      padding-right: 30%;
+    }
+    @include respond-to(xs) {
+      padding-right: 0;
+    }
+    p {
       line-height: rem(24px);
     }
   }
 }
-
 
 
 // --------------------------- contact-us -------------------
@@ -2127,6 +2211,16 @@ main {
     box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.15);
     padding: rem(30px 30px 50px 30px);
     display: flex;
+    @include respond-to(sm) {
+      flex-wrap: wrap;
+    }
+    @include respond-to(es) {
+      width: 100%;
+      margin-bottom: rem(20px);
+      justify-content: center;
+      text-align: center;
+    }
+
     &__img {
       width: 100px;
       height: 100px;
@@ -2135,35 +2229,220 @@ main {
       border-radius: 100%;
       overflow: hidden;
       margin-right: rem(25px);
+      @include respond-to(es) {
+        margin-right: 0;
+      }
     }
 
     &__content {
       padding-top: rem(25px);
+
       .title-h4 {
         margin-bottom: rem(30px);
         padding-right: rem(50px);
+        @include respond-to(md) {
+          padding-right: 0;
+        }
       }
+
       .btn-success {
         width: 260px;
         text-align: center;
+        @include respond-to(xs) {
+          width: 100%;
+        }
       }
     }
   }
 }
-
 
 
 //----------------------- about-us ---------------------
 
 .about-us-hero {
   padding: rem(60px 0 100px);
-  &__logo{
+  @include respond-to(xs) {
+    padding: rem(40px 0 40px);
+  }
+
+  &__logo {
     text-align: center;
     margin-bottom: rem(60px);
+    @include respond-to(xs) {
+      margin-bottom: rem(30px);
+    }
   }
+
   &__description {
     text-align: center;
-    width: 60%;
+    width: 54%;
     margin: auto;
+    @include respond-to(sm) {
+      width: 70%;
+    }
+    @include respond-to(es) {
+      width: 90%;
+    }
   }
 }
+
+.our-development {
+  padding-bottom: rem(30px);
+}
+
+.development {
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: rem(60px);
+    @include respond-to(xs) {
+      margin-top: rem(40px);
+    }
+    @include respond-to(es) {
+      margin-top: rem(30px);
+    }
+  }
+
+  &-item {
+    width: calc(50% - 80px);
+    text-align: center;
+    margin-bottom: rem(50px);
+    @include respond-to(sm) {
+      width: calc(50% - 40px);
+    }
+    @include respond-to(xs) {
+      width: calc(50% - 15px);
+      margin-bottom: rem(40px);
+    }
+    @include respond-to(es) {
+      width: calc(100% - 15px);
+      margin-bottom: rem(30px);
+    }
+    .title-h3 {
+      font-size: rem(22px);
+      margin-bottom: rem(15px);
+    }
+
+    &__img {
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      overflow: hidden;
+      border-radius: 100%;
+      margin-bottom: rem(30px);
+      @include respond-to(xs) {
+        width: 120px;
+        height: 120px;
+        margin-bottom: rem(10px);
+      }
+    }
+
+    &__description {
+      font-size: rem(14px);
+      line-height: rem(20px);
+      color: $black-header;
+      padding: rem(0 40px);
+      @include respond-to(sm) {
+        padding: rem(0 20px);
+      }
+      @include respond-to(xs){
+        padding: rem(0 15px);
+      }
+    }
+  }
+}
+
+
+.our-team {
+  padding-bottom: rem(60px);
+  @include respond-to(xs) {
+    padding-bottom: rem(40px);
+  }
+  @include respond-to(es) {
+    padding-bottom: rem(20px);
+  }
+  &-wrap {
+    margin-top: rem(70px);
+    @include respond-to(xs) {
+      margin-top: rem(40px);
+    }
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  &-item {
+    width: calc(100% / 3);
+    text-align: center;
+    margin-bottom: rem(50px);
+    padding: rem(0 15px);
+    @include respond-to(xs) {
+      width: calc(100% / 2);
+    }
+    @include respond-to(es) {
+      width: 100%;
+      margin-bottom: rem(30px);
+    }
+    &--big{
+      width: 100%;
+      display: flex;
+      padding: rem(0 20%);
+      align-items: center;
+      margin-bottom: rem(60px);
+      @include respond-to(sm) {
+        padding: rem(0 10%);
+      }
+      @include respond-to(xs) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      @include respond-to(es) {
+        padding: 0;
+      }
+      .our-team-item__photo {
+        width: 230px;
+        height: 230px;
+        margin-right: rem(50px);
+        margin-bottom: 0;
+        @include respond-to(xs) {
+          margin-right: rem(0);
+          margin-bottom:  rem(20px);
+        }
+      }
+      .our-team-item__content {
+        text-align: left;
+        @include respond-to(xs){
+          text-align: center;
+        }
+      }
+    }
+    &__photo {
+      margin-bottom: rem(20px);
+      width: 180px;
+      height: 180px;
+      overflow: hidden;
+      display: inline-block;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    &__title {
+      color: $black;
+      font-weight: 700;
+      font-size: rem(22px);
+      margin-bottom: rem(10px);
+    }
+    &__position {
+      font-size: rem(14px);
+      color: $black-header;
+      margin-bottom: rem(15px);
+    }
+    &__description {
+      font-size: rem(14px);
+      line-height: rem(20px);
+    }
+  }
+}
+
+//------------------

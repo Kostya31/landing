@@ -54,6 +54,9 @@
   }
   &-pt-6{
     padding-top: rem(60px);
+    @include respond-to(xs) {
+      padding-top: rem(40px);
+    }
   }
 }
 
