@@ -11,6 +11,7 @@ var app = {
         wrapSliderApart.forEach(function (el) {
             var slider = el.querySelector('.js-slider');
             var controlArrow = el.querySelector('.slider-arrows');
+            var controlDots = el.querySelector('.slider-dots');
 
             var slider2 = tns({
                 container: slider,
@@ -22,8 +23,11 @@ var app = {
                 "speed": 400,
                 nav: true,
                 controlsContainer: controlArrow,
-                navAsThumbnails: true
+                navAsThumbnails: false
+
             });
+            // console.log(slider2.getInfo().navContainer);
+            // controlDots.innerHTML = slider2.getInfo().navContainer;
         });
     },
     sliderInterior: function sliderInterior() {
@@ -43,7 +47,21 @@ var app = {
                 gutter: 30,
                 nav: false,
                 controlsContainer: controlArrow,
-                navAsThumbnails: false
+                navAsThumbnails: false,
+                responsive: {
+                    1200: {
+                        items: 4
+                    },
+                    992: {
+                        items: 3
+                    },
+                    768: {
+                        items: 2
+                    },
+                    576: {
+                        items: 1
+                    }
+                }
             });
         });
     },

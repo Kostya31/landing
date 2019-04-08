@@ -1,9 +1,4 @@
 
-.slider-dots{
-  display: flex;
-  z-index: 50;
-
-}
 
 .tns-nav {
   display: flex;
@@ -37,6 +32,10 @@
   }
 }
 
+.tns-nav-active {
+  background: $orange-gradient;
+}
+
 .dots-items{
   display: flex;
   li{
@@ -61,6 +60,14 @@
   }
 }
 
+.slider-dots{
+  display: flex;
+  z-index: 50;
+  //padding: 10px;
+  //border: 1px solid red;
+  //background: $grey;
+
+}
 
 .dots-items {
   &--orange {

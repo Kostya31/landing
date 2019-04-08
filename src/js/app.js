@@ -9,6 +9,9 @@ let app = {
         wrapSliderApart.forEach(function (el) {
             let slider = el.querySelector('.js-slider');
             let controlArrow = el.querySelector('.slider-arrows');
+            let controlDots = el.querySelector('.slider-dots');
+
+
 
             let slider2 = tns({
                 container: slider,
@@ -20,8 +23,12 @@ let app = {
                 "speed": 400,
                 nav: true,
                 controlsContainer: controlArrow,
-                navAsThumbnails: true,
+                navAsThumbnails: false,
+
             });
+            // console.log(slider2.getInfo().navContainer);
+            // controlDots.innerHTML = slider2.getInfo().navContainer;
+
         });
     },
     sliderInterior: function () {
@@ -42,6 +49,20 @@ let app = {
                 nav: false,
                 controlsContainer: controlArrow,
                 navAsThumbnails: false,
+                responsive: {
+                    1200: {
+                        items: 4
+                    },
+                    992: {
+                        items: 3
+                    },
+                    768: {
+                        items: 2
+                    },
+                    576: {
+                        items: 1
+                    }
+                }
             });
         });
     },

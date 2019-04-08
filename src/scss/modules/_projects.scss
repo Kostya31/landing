@@ -52,6 +52,10 @@
     @include respond-to(es) {
       width: 100%;
     }
+    .btn-violet,
+    .btn-orange {
+      width: 230px;
+    }
   }
 
   .logo {
@@ -71,6 +75,8 @@
   .description {
     margin-bottom: rem(40px);
     font-size: rem(14px);
+    font-weight: 400;
+    line-height: rem(20px);
     @include respond-to(sm) {
       margin-bottom: rem(20px);
     }

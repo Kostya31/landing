@@ -904,7 +904,9 @@ main.content {
 
 .hero-top .description {
   margin-bottom: 2.5rem;
-  padding-right: 27.5rem; }
+  padding-right: 30rem; }
+  .hero-top .description p {
+    line-height: 1.25rem; }
   @media only screen and (max-width: 1199px) {
     .hero-top .description {
       padding-right: 26.25rem; } }
@@ -1042,7 +1044,8 @@ main.content {
       .our-coworking .description {
         width: 100%;
         position: relative;
-        z-index: 10; } }
+        z-index: 10;
+        padding-right: 0; } }
   .our-coworking__img {
     position: absolute;
     right: 8rem;
@@ -1074,7 +1077,8 @@ main.content {
         margin-bottom: 2.5rem; } }
 
 .our-apart .description {
-  display: inline-block; }
+  display: inline-block;
+  color: #322f31; }
   .our-apart .description p {
     font-size: 0.875rem;
     line-height: 1.25rem; }
@@ -1140,13 +1144,13 @@ main.content {
     .offer-item-apart .offer-content {
       width: 50%;
       background-color: #ffffff;
-      padding: 2.5rem calc((100vw - 1170px) / 2 + 15px) 2.8125rem 3.125rem; }
+      padding: 2.5rem calc((100vw - 1170px) / 2 + 15px) 1.5625rem 3.125rem; }
       @media only screen and (max-width: 1199px) {
         .offer-item-apart .offer-content {
-          padding: 1.25rem; } }
+          padding: 1.5625rem 1.5625rem 0.625rem 1.5625rem; } }
       @media only screen and (max-width: 992px) {
         .offer-item-apart .offer-content {
-          padding: 1.5625rem; } }
+          padding: 1.25rem 1.25rem 0.3125rem 1.25rem; } }
       @media only screen and (max-width: 768px) {
         .offer-item-apart .offer-content {
           width: 100%; } }
@@ -1253,6 +1257,9 @@ main.content {
 .slider-interior .tns-inner {
   height: 100%; }
 
+.offer-content .btn-orange {
+  margin-bottom: 1.25rem; }
+
 .offer-img {
   background-position: center;
   background-size: cover;
@@ -1298,16 +1305,14 @@ main.content {
   font-size: 1.25rem;
   font-weight: 900;
   display: inline-block;
-  margin-right: 3.125rem; }
-  @media only screen and (max-width: 576px) {
-    .offer-price {
-      margin-bottom: 1.25rem; } }
+  margin-right: 3.125rem;
+  margin-bottom: 1.25rem; }
 
 .offer-comfort {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 2.5rem; }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1199px) {
     .offer-comfort {
       margin-bottom: 1.25rem; } }
   .offer-comfort__item {
@@ -1435,20 +1440,17 @@ main.content {
   left: 0; }
 
 .location-contacts {
-  padding: 1.875rem 1.875rem 4.375rem 1.875rem;
+  padding: 1.875rem 1.875rem 2.1875rem 1.875rem;
   width: 25rem;
   position: relative; }
   @media only screen and (max-width: 768px) {
     .location-contacts {
       width: 100%;
       padding: 1.25rem; } }
+  .location-contacts.not-info .btn {
+    margin-bottom: 0; }
   .location-contacts h2 {
     margin-bottom: 1.5625rem; }
-  .location-contacts .contacts-item {
-    margin-bottom: 1.875rem; }
-    @media only screen and (max-width: 768px) {
-      .location-contacts .contacts-item:last-child {
-        margin-bottom: 0.3125rem; } }
   .location-contacts p {
     font-size: 14px;
     margin-bottom: 1.875rem; }
@@ -1641,10 +1643,6 @@ main.content {
 
 .slider-wrap {
   position: relative; }
-  .slider-wrap .slider-dots {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%); }
   .slider-wrap .slider-arrows {
     position: absolute;
     top: 50%;
@@ -1706,6 +1704,11 @@ main.content {
     .complex-img {
       flex-basis: 100%;
       width: 100%; } }
+  .complex-description img,
+  .complex-img img {
+    width: 100%;
+    max-height: 340px;
+    object-fit: cover; }
   .complex-description .btn-orange,
   .complex-img .btn-orange {
     position: absolute;
@@ -1734,6 +1737,11 @@ main.content {
       @media only screen and (max-width: 576px) {
         .feature-list-location .feature-item {
           width: 100%; } }
+      .feature-list-location .feature-item--col-2 {
+        width: calc(100% / 2); }
+        @media only screen and (max-width: 768px) {
+          .feature-list-location .feature-item--col-2 {
+            width: 100%; } }
       .feature-list-location .feature-item__img {
         padding-right: 1.875rem;
         top: inherit;
@@ -1786,14 +1794,20 @@ main.content {
         margin-bottom: 2.5rem; } }
     .feature-loft .feature-item__img {
       margin-right: 0;
-      height: 90px;
+      height: 70px;
+      width: 70px;
       margin-bottom: 0.3125rem; }
       @media only screen and (max-width: 576px) {
         .feature-loft .feature-item__img {
           height: 65px; } }
+      .feature-loft .feature-item__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; }
     .feature-loft .feature-item__text {
       text-align: center;
-      width: 50%; }
+      width: 50%;
+      margin-top: 20px; }
       @media only screen and (max-width: 768px) {
         .feature-loft .feature-item__text {
           width: 75%; } }
@@ -1979,7 +1993,7 @@ main.content {
   display: flex; }
   @media only screen and (max-width: 1199px) {
     .projects {
-      padding: 2.5rem 1.5625rem 1.875rem; } }
+      padding: 2.5rem 1.5625rem 2.5rem; } }
   @media only screen and (max-width: 768px) {
     .projects {
       padding: 2.5rem 0 1.25rem; } }
@@ -2086,7 +2100,9 @@ main.content {
     .interesting-item__img .badge-white {
       position: absolute;
       right: 15px;
-      top: 15px; }
+      top: 15px;
+      font-size: 0.8125rem;
+      font-weight: 700; }
     .interesting-item__img > img {
       display: block;
       height: 310px;
@@ -2127,7 +2143,7 @@ main.content {
       width: 100%; }
     .interesting-item--col .interesting-item__content {
       width: 100%;
-      padding-top: 1.875rem; }
+      padding-top: 1.5625rem; }
       .interesting-item--col .interesting-item__content .title-h3 {
         margin-bottom: 1.25rem; }
     .interesting-item--col .title-h4 {
@@ -2249,6 +2265,11 @@ main.content {
   .more-info-wrap {
     display: flex;
     color: #ffffff; }
+    .more-info-wrap .btn {
+      width: 260px; }
+      @media only screen and (max-width: 576px) {
+        .more-info-wrap .btn {
+          width: auto; } }
   .more-info__icon {
     padding: 0 110px;
     flex-shrink: 0;
@@ -2336,6 +2357,11 @@ main.content {
   .interior-wrap .title-h3 {
     margin-bottom: 1.875rem; }
 
+.slider-interior .slider-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; }
+
 .alert {
   padding: 0.9375rem 1.875rem;
   border-radius: 35px; }
@@ -2348,6 +2374,9 @@ main.content {
 .contact-us-hero {
   padding: 2.5rem 0 3.75rem;
   display: flex; }
+  @media only screen and (max-width: 768px) {
+    .contact-us-hero {
+      padding: 2.5rem 0 2.5rem; } }
   .contact-us-hero__img {
     width: 120px;
     height: 120px;
@@ -2378,24 +2407,31 @@ main.content {
       line-height: 1.5rem; }
 
 .contact-us-list {
-  padding: 3.125rem 0 6.25rem;
+  padding: 3.125rem 0 5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between; }
+  @media only screen and (max-width: 768px) {
+    .contact-us-list {
+      padding: 2.5rem 0 1.25rem; } }
 
 .contact-us-item {
   width: calc(50% - 15px);
   background: #ffffff;
   box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.15);
   padding: 1.875rem 1.875rem 3.125rem 1.875rem;
-  display: flex; }
+  display: flex;
+  margin-bottom: 1.25rem; }
   @media only screen and (max-width: 992px) {
     .contact-us-item {
-      flex-wrap: wrap; } }
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      align-items: flex-start;
+      padding: 1.5625rem; } }
   @media only screen and (max-width: 576px) {
     .contact-us-item {
       width: 100%;
-      margin-bottom: 1.25rem;
       justify-content: center;
       text-align: center; } }
   .contact-us-item__img {
@@ -2406,6 +2442,9 @@ main.content {
     border-radius: 100%;
     overflow: hidden;
     margin-right: 1.5625rem; }
+    @media only screen and (max-width: 992px) {
+      .contact-us-item__img {
+        margin-right: 0; } }
     @media only screen and (max-width: 576px) {
       .contact-us-item__img {
         margin-right: 0; } }
@@ -2422,7 +2461,7 @@ main.content {
       text-align: center; }
       @media only screen and (max-width: 768px) {
         .contact-us-item__content .btn-success {
-          width: 100%; } }
+          width: auto; } }
 
 .about-us-hero {
   padding: 3.75rem 0 6.25rem; }
@@ -2624,7 +2663,7 @@ main.content {
       .section-apart {
         padding-top: 2.5rem; } }
   .section-about-complex {
-    padding: 7.5rem 0 5.625rem; }
+    padding: 7.5rem 0 4.375rem; }
     @media only screen and (max-width: 768px) {
       .section-about-complex {
         padding: 2.5rem 0 2.5rem; } }
@@ -2665,7 +2704,8 @@ main.content {
   line-height: 1;
   color: #ffffff;
   white-space: nowrap;
-  background-clip: padding-box; }
+  background-clip: padding-box;
+  text-align: center; }
   .btn--lg {
     padding: 1.1875rem 3.125rem; }
   .btn--sm {
@@ -2985,14 +3025,21 @@ select {
       margin-bottom: 1.875rem; } }
   .tabs__nav--orange {
     border: none;
-    justify-content: center; }
+    justify-content: center;
+    flex-direction: row;
+    padding: 0 15px; }
     .tabs__nav--orange .tabs__link {
       background: #ffffff;
       box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
-      width: 185px;
-      height: 45px;
+      width: auto;
+      margin: 0;
       color: #a2a2a2;
+      padding: 13px 30px;
       font-size: 1rem; }
+      @media only screen and (max-width: 576px) {
+        .tabs__nav--orange .tabs__link {
+          font-size: 0.875rem;
+          padding: 11px 15px; } }
       .tabs__nav--orange .tabs__link:first-child {
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px; }
@@ -3002,8 +3049,6 @@ select {
       .tabs__nav--orange .tabs__link.active {
         background-image: linear-gradient(-90deg, #f47c22 0%, #ffcd02 100%);
         box-shadow: 0 10px 15px 0 rgba(255, 202, 4, 0.2);
-        width: 185px;
-        height: 45px;
         color: #ffffff; }
         .tabs__nav--orange .tabs__link.active:after {
           display: none; }
@@ -3134,10 +3179,6 @@ select {
     top: 0;
     opacity: 1; } }
 
-.slider-dots {
-  display: flex;
-  z-index: 50; }
-
 .tns-nav {
   display: flex;
   justify-content: center;
@@ -3166,6 +3207,9 @@ select {
       background: linear-gradient(90deg, #f47c22 0%, #ffcd02 100%);
       background-clip: content-box; }
 
+.tns-nav-active {
+  background: linear-gradient(90deg, #f47c22 0%, #ffcd02 100%); }
+
 .dots-items {
   display: flex; }
   .dots-items li {
@@ -3182,6 +3226,10 @@ select {
       cursor: pointer; }
       .dots-items li .dot:hover {
         background-color: rgba(226, 226, 226, 0.6); }
+
+.slider-dots {
+  display: flex;
+  z-index: 50; }
 
 .dots-items--orange li.slick-active .dot {
   background: linear-gradient(90deg, #f47c22 0%, #ffcd02 100%); }
@@ -3283,14 +3331,16 @@ select {
 .place-items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 2.8125rem; }
+  justify-content: center;
+  margin-top: 2.8125rem;
+  margin-left: -15px;
+  margin-right: -15px; }
 
 .place-item {
   display: inline-block;
   text-align: center;
-  width: calc(50% - 15px);
-  margin-bottom: 1.875rem;
+  width: calc(50% - 30px);
+  margin: 0 0.9375rem 1.875rem 0.9375rem;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
   border-radius: 12px;
   overflow: hidden;
@@ -3362,7 +3412,8 @@ select {
   font-size: 1.125rem;
   color: #ffffff;
   font-weight: 700;
-  display: inline-block; }
+  display: inline-block;
+  text-align: center; }
 
 .label-red {
   background-color: #ff5e5e;
@@ -3412,6 +3463,9 @@ select {
     @media only screen and (max-width: 576px) {
       .project-item__content {
         width: 100%; } }
+    .project-item__content .btn-violet,
+    .project-item__content .btn-orange {
+      width: 230px; }
   .project-item .logo {
     margin-bottom: 1.875rem; }
     @media only screen and (max-width: 992px) {
@@ -3424,7 +3478,9 @@ select {
         margin-bottom: 1.25rem; } }
   .project-item .description {
     margin-bottom: 2.5rem;
-    font-size: 0.875rem; }
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem; }
     @media only screen and (max-width: 992px) {
       .project-item .description {
         margin-bottom: 1.25rem; } }
@@ -3593,8 +3649,9 @@ select {
   .about-projects .title-h2 {
     margin-bottom: 1.25rem; }
   .about-projects .description {
-    width: 50%;
+    width: 55%;
     text-align: center;
+    color: #322f31;
     margin: 0 auto 1.25rem; }
     @media only screen and (max-width: 992px) {
       .about-projects .description {

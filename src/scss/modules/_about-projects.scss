@@ -10,8 +10,9 @@
     margin-bottom: rem(20px);
   }
   .description {
-    width: 50%;
+    width: 55%;
     text-align: center;
+    color: $black-header;
     margin: 0 auto rem(20px);
     @include respond-to(sm){
       width: 70%;
