@@ -39,7 +39,7 @@ let app = {
                 "swipeAngle": false,
                 "speed": 400,
                 gutter: 30,
-                nav: true,
+                nav: false,
                 controlsContainer: controlArrow,
                 navAsThumbnails: false,
             });

@@ -480,10 +480,12 @@ main {
       background-color: $white;
       padding: rem(40px) calc((100vw - 1170px) / 2 + 15px) rem(45px) rem(50px);
       @include respond-to(md) {
-        padding-right: rem(15px);
+        padding: rem(20px);
+      }
+      @include respond-to(sm) {
+        padding: rem(25px);
       }
       @include respond-to(xs) {
-        padding-left: rem(15px);
         width: 100%;
       }
     }
@@ -1449,13 +1451,41 @@ main {
   &--5-col {
     .feature-item {
       width: calc(100% / 5);
-
+      @include respond-to(sm) {
+        width: calc(100% / 3);
+      }
+      @include respond-to(xs) {
+        width: calc(100% / 2);
+      }
       &__text {
         width: 70%;
+        @include respond-to(xs) {
+          width: 100%;
+          padding: 0 15px;
+        }
+      }
+    }
+  }
+  &--4-col {
+    .feature-item {
+      width: calc(100% / 4);
+      @include respond-to(sm) {
+        width: calc(100% / 3);
+      }
+      @include respond-to(xs) {
+        width: calc(100% / 2);
+      }
+      &__text {
+        width: 70%;
+        @include respond-to(xs) {
+          width: 100%;
+          padding: 0 15px;
+        }
       }
     }
   }
 }
+
 
 //--------------- home page --------------
 
@@ -2090,13 +2120,18 @@ main {
 
   .row {
     flex-wrap: nowrap;
+    @include respond-to(xs) {
+      flex-wrap: wrap;
+    }
   }
 
   &-content {
     padding-right: rem(60px);
     flex-grow: 1;
     margin-bottom: rem(30px);
-
+    @include respond-to(xs) {
+      padding-right: 0;
+    }
     .alert-dark {
       margin-top: rem(20px);
     }
@@ -2105,10 +2140,19 @@ main {
   .offer-item {
     flex-shrink: 0;
     width: 63%;
+    @include respond-to(sm) {
+      width: 55%;
+    }
+    @include respond-to(xs) {
+      width: 100%;
+    }
   }
 
   .slider-wrap {
     height: 480px;
+    @include respond-to(xs) {
+      height: 35vh;
+    }
   }
 
   .title-h2 {
