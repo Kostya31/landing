@@ -854,6 +854,8 @@ main.content {
 .sub-title {
   font-weight: 900;
   margin-bottom: 0.625rem; }
+  .sub-title + h2 {
+    margin-bottom: 40px; }
 
 .text-gradient-violet {
   background: linear-gradient(90deg, #9d1ebb 0%, #e756bd 100%);
@@ -1026,18 +1028,21 @@ main.content {
 
 .our-coworking {
   position: relative;
-  margin-bottom: 10.625rem; }
+  margin-bottom: 10.625rem;
+  display: flex;
+  flex-wrap: wrap; }
   @media only screen and (max-width: 768px) {
     .our-coworking {
       margin-bottom: 2.5rem; } }
   .our-coworking h2 {
-    margin-bottom: 1.625rem; }
+    margin-bottom: 1.625rem;
+    width: 100%; }
     @media only screen and (max-width: 768px) {
       .our-coworking h2 {
         position: relative;
         z-index: 10; } }
   .our-coworking .description {
-    width: 46%;
+    width: 48%;
     display: inline-block;
     padding-right: 2.5rem; }
     @media only screen and (max-width: 768px) {
@@ -1084,15 +1089,16 @@ main.content {
     line-height: 1.25rem; }
 
 .our-apart__img {
-  float: right; }
+  width: 52%;
+  padding-right: 30px;
+  text-align: center; }
+  .our-apart__img svg {
+    width: 100%; }
   @media only screen and (max-width: 768px) {
     .our-apart__img {
-      float: none;
-      text-align: center;
-      margin-top: 1.875rem; } }
-  @media only screen and (max-width: 768px) {
-    .our-apart__img svg {
-      width: 100%; } }
+      width: 100%;
+      margin-top: 1.25rem;
+      padding-right: 0; } }
 
 .offer-wrap {
   margin-top: 1.25rem;
@@ -1106,12 +1112,13 @@ main.content {
     .offer-wrap-apart--col {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between; }
+      justify-content: space-between;
+      margin-top: -30px; }
       .offer-wrap-apart--col .offer-item-apart .offer-content {
         padding-right: 30px; }
         @media only screen and (max-width: 992px) {
           .offer-wrap-apart--col .offer-item-apart .offer-content {
-            padding: 20px 20px 25px 20px; } }
+            padding: 1.25rem 1.25rem 0.3125rem 1.25rem; } }
   .offer-wrap-coworking .btn-violet {
     position: absolute;
     right: calc(50% - 115px);
@@ -1150,7 +1157,7 @@ main.content {
           padding: 1.5625rem 1.5625rem 0.625rem 1.5625rem; } }
       @media only screen and (max-width: 992px) {
         .offer-item-apart .offer-content {
-          padding: 1.25rem 1.25rem 0.3125rem 1.25rem; } }
+          padding: 1.25rem 1.25rem 0.625rem 1.25rem; } }
       @media only screen and (max-width: 768px) {
         .offer-item-apart .offer-content {
           width: 100%; } }
@@ -1296,8 +1303,6 @@ main.content {
   .offer-price-wrap .offer-price {
     margin-bottom: 0.9375rem;
     font-size: 1.125rem; }
-  .offer-price-wrap .sale-label {
-    margin-bottom: 0.9375rem; }
 
 .offer-price {
   text-shadow: 0 10px 15px rgba(255, 202, 4, 0.2);
@@ -1780,7 +1785,7 @@ main.content {
 
 .feature-loft {
   display: flex;
-  margin: 4.375rem 0 1.875rem;
+  margin: 3.75rem 0 3.75rem;
   flex-wrap: wrap; }
   @media only screen and (max-width: 768px) {
     .feature-loft {
@@ -1808,11 +1813,17 @@ main.content {
       text-align: center;
       width: 50%;
       margin-top: 20px; }
-      @media only screen and (max-width: 768px) {
+      @media only screen and (max-width: 992px) {
         .feature-loft .feature-item__text {
           width: 75%; } }
+      @media only screen and (max-width: 768px) {
+        .feature-loft .feature-item__text {
+          width: 90%; } }
   .feature-loft--3-col .feature-item {
     width: calc(100% / 3); }
+    @media only screen and (max-width: 768px) {
+      .feature-loft--3-col .feature-item {
+        width: 100%; } }
   .feature-loft--4-col .feature-item {
     width: calc(100% / 4); }
     @media only screen and (max-width: 992px) {
@@ -2314,7 +2325,7 @@ main.content {
         padding-right: 0; } }
 
 .another-view {
-  margin-bottom: 1.875rem; }
+  margin-bottom: 3.75rem; }
   .another-view .row {
     flex-wrap: nowrap; }
     @media only screen and (max-width: 768px) {
@@ -3027,7 +3038,8 @@ select {
     border: none;
     justify-content: center;
     flex-direction: row;
-    padding: 0 15px; }
+    padding: 0 15px;
+    margin-bottom: 3.125rem; }
     .tabs__nav--orange .tabs__link {
       background: #ffffff;
       box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);

@@ -42,6 +42,9 @@ main {
 .sub-title {
   font-weight: 900;
   margin-bottom: rem(10px);
+  +h2 {
+    margin-bottom: 40px;
+  }
 }
 
 .text-gradient-violet {
@@ -279,12 +282,15 @@ main {
 .our-coworking {
   position: relative;
   margin-bottom: rem(170px);
+  display: flex;
+  flex-wrap: wrap;
   @include respond-to(xs) {
     margin-bottom: rem(40px);
   }
 
   h2 {
     margin-bottom: rem(26px);
+    width: 100%;
     @include respond-to(xs) {
       position: relative;
       z-index: 10;
@@ -292,7 +298,7 @@ main {
   }
 
   .description {
-    width: 46%;
+    width: 48%;
     display: inline-block;
     padding-right: rem(40px);
     @include respond-to(xs) {
@@ -357,28 +363,17 @@ main {
   }
 
   &__img {
-    float: right;
-    //padding-right: 60px;
-    //@include respond-to(es){
-    //  position: absolute;
-    //  top: 50px;
-    //  right: 0;
-    //  left: 0;
-    //  svg {
-    //    opacity: 0.3;
-    //    width: 100%;
-    //  }
-    //}
-    @include respond-to(xs) {
-      float: none;
-      text-align: center;
-      margin-top: rem(30px);
-    }
-
+    //float: right;
+    width: 52%;
+    padding-right: 30px;
+    text-align: center;
     svg {
-      @include respond-to(xs) {
-        width: 100%;
-      }
+      width: 100%;
+    }
+    @include respond-to(xs) {
+      width: 100%;
+      margin-top: rem(20px);
+      padding-right: 0;
     }
   }
 }
@@ -400,12 +395,12 @@ main {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-
+      margin-top: -30px;
       .offer-item-apart {
         .offer-content {
           padding-right: 30px;
           @include respond-to(sm) {
-            padding: 20px 20px 25px 20px;
+            padding: rem(20px 20px 5px 20px);
           }
         }
       }
@@ -487,7 +482,7 @@ main {
         padding: rem(25px 25px 10px 25px);
       }
       @include respond-to(sm) {
-        padding: rem(20px 20px 5px 20px);
+        padding: rem(20px 20px 10px 20px);
       }
       @include respond-to(xs) {
         width: 100%;
@@ -702,9 +697,9 @@ main {
     font-size: rem(18px);
   }
 
-  .sale-label {
-    margin-bottom: rem(15px);
-  }
+  //.sale-label {
+  //  margin-bottom: rem(15px);
+  //}
 }
 
 .offer-price {
@@ -1412,7 +1407,7 @@ main {
 
 .feature-loft {
   display: flex;
-  margin: rem(70px 0 30px);
+  margin: rem(60px 0 60px);
   flex-wrap: wrap;
   @include respond-to(xs) {
     //flex-direction: column;
@@ -1446,8 +1441,11 @@ main {
       text-align: center;
       width: 50%;
       margin-top: 20px;
-      @include respond-to(xs) {
+      @include respond-to(sm) {
         width: 75%;
+      }
+      @include respond-to(xs) {
+        width: 90%;
       }
     }
   }
@@ -1455,6 +1453,9 @@ main {
   &--3-col {
     .feature-item {
       width: calc(100% / 3);
+      @include respond-to(xs) {
+        width: 100%;
+      }
     }
   }
 
@@ -2152,7 +2153,7 @@ main {
 // ------------------outside view  -------------------
 
 .another-view {
-  margin-bottom: rem(30px);
+  margin-bottom: rem(60px);
 
   .row {
     flex-wrap: nowrap;
