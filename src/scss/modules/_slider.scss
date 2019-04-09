@@ -165,8 +165,14 @@
 .slider-interior {
   .slider-prev {
     left: -17px;
+    @include respond-to(md) {
+      left:0;
+    }
   }
   .slider-next {
     right: -17px;
+    @include respond-to(md) {
+      right: 0;
+    }
   }
 }

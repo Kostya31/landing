@@ -56,10 +56,10 @@ var app = {
                         items: 3
                     },
                     768: {
-                        items: 2
+                        items: 3
                     },
-                    576: {
-                        items: 1
+                    320: {
+                        items: 2
                     }
                 }
             });
@@ -108,6 +108,7 @@ var app = {
                 var periodVal = void 0,
                     placeCount = void 0,
                     fixPlace = void 0,
+                    fixPlaceValue = void 0,
                     periodCount = void 0;
                 updateValues();
 
@@ -116,6 +117,7 @@ var app = {
                     periodVal = periodRadio.value;
                     placeCount = document.querySelector('.form-control-place__number').innerText;
                     fixPlace = document.querySelector('.checkbox-group .form-control').checked;
+                    fixPlaceValue = document.querySelector('.checkbox-group .form-control').value;
                     periodCount = document.querySelector('#select-' + periodRadio.getAttribute('data-name') + ' select').value;
                     calculate();
                 }
@@ -154,9 +156,13 @@ var app = {
 
                 function calculate() {
                     var res = periodVal * placeCount * periodCount;
+
                     if (fixPlace) {
-                        res = res + 500 * placeCount;
+                        res = res + fixPlaceValue * placeCount;
                     }
+
+                    console.log(periodVal, placeCount, periodCount);
+
                     document.querySelector('#jobs .general-price strong span').innerText = res;
                 }
 

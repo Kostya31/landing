@@ -343,9 +343,9 @@ main {
   }
 
   &.our-apart {
-    margin-bottom: rem(70px);
+    margin-bottom: rem(50px);
     @include respond-to(xs) {
-      margin-bottom: rem(40px);
+      margin-bottom: rem(30px);
     }
   }
 }
