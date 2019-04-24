@@ -365,10 +365,11 @@ var app = {
             for (var _iterator2 = openModal[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
                 var elem = _step2.value;
 
+
                 if (elem.addEventListener) {
                     elem.addEventListener('click', function (e) {
+                        console.log('ssssssss');
                         e.preventDefault();
-                        e.stopPropagation();
                         showModal(e);
                     });
                 } else if (elem.attachEvent) {
@@ -489,6 +490,14 @@ var app = {
         }
     },
 
+    maps: function maps() {
+        var myMap = new ymaps.Map('map', {
+            center: [55.76, 37.64],
+            controls: ['geolocationControl'],
+            zoom: 10
+        });
+    },
+
     init: function init() {
         app.offerSlider();
         app.sliderInterior();
@@ -499,6 +508,7 @@ var app = {
         app.mobileNav();
         app.formCalculate();
         app.percentSvg();
+        // app.maps();
     }
 };
 

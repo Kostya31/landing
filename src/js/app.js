@@ -337,10 +337,11 @@ let app = {
 
 
         for (let elem of openModal) {
+
             if (elem.addEventListener) {
                 elem.addEventListener('click', function (e) {
+                    console.log('ssssssss');
                     e.preventDefault();
-                    e.stopPropagation();
                     showModal(e)
                 });
             } else if (elem.attachEvent) {
@@ -410,6 +411,14 @@ let app = {
     },
 
 
+    maps: function () {
+        let myMap = new ymaps.Map('map', {
+            center: [55.76, 37.64],
+            controls: ['geolocationControl'],
+            zoom: 10
+        });
+    },
+
     init: function () {
         app.offerSlider();
         app.sliderInterior();
@@ -420,6 +429,7 @@ let app = {
         app.mobileNav();
         app.formCalculate();
         app.percentSvg();
+        // app.maps();
     }
 };
 

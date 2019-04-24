@@ -1,38 +1,265 @@
-{% extends "layouts/_app.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name=”viewport” user-scalable=no;” />
+    <meta name=”viewport” user-scalable=false;” />
+    <meta name=”viewport” user-scalable=0” />
+    <meta name="HandheldFriendly" content="true">
+    <title>Landing</title>
 
+    <!-- Styles -->
+    <link href="./css/app.css" rel="stylesheet">
+</head>
+<body>
 
-{% block content %}
+<div class="wrapper">
+    <header class="header header--home">
+        <div class="container">
+            <div class="header-wrap">
+                <a href="/" class="header-logo">
+                    <img src="../images/svg/stangher-logo-main.svg" alt="logo">
+                </a>
+<!--                <div class="switch-lang">-->
+<!--                    <span  class="switch-lang__item active">-->
+<!--                        <img src="../images/svg/ru.svg" class="switch-lang__flag" alt="lang">-->
+<!--                        <span class="switch-lang__name upper">рус</span>-->
+<!--                    </span>-->
+<!--                    <div class="switch-lang__drop">-->
+<!--                        <button class="switch-lang__item">-->
+<!--                            <img src="../images/svg/ru.svg" class="switch-lang__flag" alt="lang">-->
+<!--                            <span class="switch-lang__name upper">укр</span>-->
+<!--                        </button>-->
+<!--                        <button class="switch-lang__item">-->
+<!--                            <img src="../images/svg/ru.svg" class="switch-lang__flag" alt="lang">-->
+<!--                            <span class="switch-lang__name upper">укр</span>-->
+<!--                        </button>-->
+<!--                        <button class="switch-lang__item">-->
+<!--                            <img src="../images/svg/ru.svg" class="switch-lang__flag" alt="lang">-->
+<!--                            <span class="switch-lang__name upper">укр</span>-->
+<!--                        </button>-->
+<!--                    </div>-->
 
-<div class="container">
-    <ul>
-        <li><a href="home.html">home</a></li>
-        <li><a href="about-project.html">about-project</a></li>
-        <li><a href="locations.html">locations</a></li>
-        <li><a href="projects.html">projects</a></li>
-        <li><a href="contact-us.html">contact-us</a></li>
-        <li><a href="about-us.html">about-us</a></li>
-<!--        <li><a href="modals.html">modals</a></li>-->
-        <li>
-            <hr>
-        </li>
-        <li><a href="coworking-moscow.html">coworking-moscow</a></li>
-        <li><a href="coworking-lviv.html">coworking-lviv</a></li>
-        <li>
-            <hr>
-        </li>
-        <li><a href="apartments-moscow.html">apartments-moscow</a></li>
-        <li><a href="apartments-loft-moscow.html">apartments-loft-moscow</a></li>
-        <li><a href="apartments-chisinau.html">apartments-chisinau</a></li>
-        <li><a href="apartments-lviv.html">apartments-lviv</a></li>
-        <li><a href="guest-house-chisinau.html">guest-house-chisinau</a></li>
-        <li><a href="guest-house-alicante.html">guest-house-alicante</a></li>
-        <li><a href="guest-house-pattaya.html">guest-house-pattaya</a></li>
-        <li>
-            <hr>
-        </li>
-    </ul>
+<!--                </div>-->
+                <nav class="header-nav">
+                    <a href="projects.html">Наши проекты</a>
+                    <a href="locations.html">Локации</a>
+                    <a href="#">О нас</a>
+                    <a href="#">Связаться с нами</a>
+                    <a href="#">Блог</a>
+                </nav>
+                <button type="button" class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="section home-ideas">
+            <div class="home-ideas__content" style="background-image: url(../images/svg/home-pattern-bg.svg)">
+                <div class="container">
+                    <h1 class="title-h1">Good ideas for <br>
+                        new expirience in <br>
+                        Work & Living traveling</h1>
+                    <a href="#our-places" class="btn btn-silver-2 btn--lg">Check our places</a>
+                </div>
+            </div>
+            <div class="home-ideas__img">
+                <img src="../images/svg/home-hero-bg.svg" alt="home">
+            </div>
+        </div>
+
+        <div class="section stangher-ideas ideas-path-img" >
+            <div class="stangher-ideas__img">
+                <img src="../images/svg/home-stangher-ideas.svg" alt="ideas">
+            </div>
+            <div class="container">
+                <div class="stangher-ideas-content">
+                    <h2 class="title-h2">StanGher ideas</h2>
+                    <div class="description">
+                        <p>The goal of StanGher is to create new good ideas and projects around the world for pleasant communication, meetings, work and expirience sharing beetwen interesting people in interesting places.</p>
+                        <br>
+                        <p>We are fully open for ideas and exicited for new guests in our community!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <div class="our-places" id="our-places">
+                    <h2 class="center">Our places</h2>
+                    <div class="description">We explore more and more interesting places.
+                        And we want to share it you to have pleasant time with
+                        nice people in nicest places around the world.
+                        Check it out!</div>
+                    {% include 'modules/_our-place.html' %}
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <div class="about-projects">
+                    <h2 class="title-h2 center">About projects</h2>
+                    <div class="description">Our projects are design to be pleasant and get as much comfort as posible for average or expirienced travellers. Our spaces are perfect for meetings, teamwork, recreation and tourism. In our places you will find it convenient to work, meet new people, and spend your time with pleasure.</div>
+                    <div class="about-project-list">
+                        <div class="about-project__item">
+                            <div class="about-project__img">
+                                <img src="../images/svg/travel-explore.svg" alt="about-projects">
+                            </div>
+                            <div class="about-project__content">
+                                <h4>Travel and explore</h4>
+                                <p>Discover new places and meet new people! We whant you to check out
+                                    new opportunities of different places. Our projects helps to get as much
+                                    comfort for travelling and explore events.</p>
+                            </div>
+
+                        </div>
+                        <div class="about-project__item">
+                            <div class="about-project__img">
+                                <img src="../images/svg/work-share.svg" alt="about-projects">
+                            </div>
+                            <div class="about-project__content">
+                                <h4>Work and share</h4>
+                                <p>Our projects is the best place to work and meet new people. We give to our guests a pleasant time to improve their work</p>
+                            </div>
+                        </div>
+                        <div class="about-project__item">
+                            <div class="about-project__img">
+                                <img src="../images/svg/live-relax.svg" alt="about-projects">
+                            </div>
+                            <div class="about-project__content">
+                                <h4>Live and relax</h4>
+                                <p>Our projects are designed for maximum comfort for our guests. you will always be comfortable to spend time with us.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <div class="our-projects">
+                    <h2 class="title-h2 center">Our projects</h2>
+                    <div class="project-items">
+                        <div class="project-item">
+                            <div class="project-item__img bg-cover" style="background-image: url(../images/project-1.jpg)"></div>
+                            <div class="project-item__content bg-black">
+                                <div class="logo"><img src="../images/svg/stangher-coworking-logo.svg" alt="logo"></div>
+                                <h3 class="title-h3">Best replacement for
+                                    boring and cramped offices</h3>
+                                <p class="description">Here you can get useful contacts, exchange professional experience, find excellent opportunities for cooperation, and also enjoy your work time pleasantly and productively.</p>
+                                <a href="#" class="btn btn--lg btn-violet">Learn more</a>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-item__img bg-cover" style="background-image: url(../images/project-2.jpg)"></div>
+                            <div class="project-item__content bg-silver">
+                                <div class="logo"><img src="../images/svg/stangher-aparts-riverdale-logo.svg" alt="logo"></div>
+                                <h3 class="title-h3">Best replacement for
+                                    boring and cramped offices</h3>
+                                <p class="description">Here you can get useful contacts, exchange professional experience, find excellent opportunities for cooperation, and also enjoy your work time pleasantly and productively.</p>
+                                <a href="#" class="btn btn--lg btn-orange">Learn more</a>
+                            </div>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-item__img bg-cover" style="background-image: url(../images/project-3.jpg)"></div>
+                            <div class="project-item__content bg-silver">
+                                <div class="logo"><img src="../images/svg/stangher-aparts-loftclub-logo.svg" alt="logo"></div>
+                                <h3 class="title-h3">Best replacement for
+                                    boring and cramped offices</h3>
+                                <p class="description">Here you can get useful contacts, exchange professional experience, find excellent opportunities for cooperation, and also enjoy your work time pleasantly and productively.</p>
+                                <a href="#" class="btn btn--lg btn-orange">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-row center">
+                        <a href="#" class="btn btn-silver-2 btn--lg">All projects</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer bg-black">
+        <div class="container">
+            <div class="footer-top">
+                <div class="col-logo">
+                    <div class="footer-logo">
+                        <a class="footer-logo" href="#"><img src="../images/svg/stangher-footer-logo.svg" alt="logo"></a>
+                    </div>
+                    <div class="footer-copyright">
+                        © 2018 StanGher <br>
+                        Все права защищены
+                    </div>
+                </div>
+                <nav class="footer-nav">
+                    <a href="projects.html">Наши обьекты</a>
+                    <a href="locations.html">Локации</a>
+                    <a href="projects.html">О проекте</a>
+                    <a href="#locations">Обратная связь</a>
+                    <a href="#">Акселератор и венчурный фонд</a>
+                </nav>
+                <div class="subscribe">
+                    <div class="subscribe-item subscribe-social">
+                        <p>Мы в социальных сетях</p>
+                        <div class="social-link">
+                            <a href="#">
+                                <img src="../images/svg/Facebook.svg" alt="Facebook">
+                            </a>
+                            <a href="#">
+                                <img src="../images/svg/VK.svg" alt="vkontakte">
+                            </a>
+                            <a href="#">
+                                <img src="../images/svg/Instagram.svg" alt="instagram">
+                            </a>
+                            <a href="#">
+                                <img src="../images/svg/Twitter.svg" alt="twitter">
+                            </a>
+                            <a href="#">
+                                <img src="../images/svg/Flickr.svg" alt="Flickr">
+                            </a>
+                            <a href="#">
+                                <img src="../images/svg/Foursquare.svg" alt="Foursquare">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="subscribe-item">
+                        <p>Подпишись на наши новости!</p>
+                        <form action="#" method="#" class="form-subscribe">
+                            <div class="form-group">
+                                <input type="email" autocomplete="off" placeholder="Ваш email…" class="form-control" name="subscribe">
+                            </div>
+                            <button type="submit"><img src="../images/svg/paper-plane.svg" alt="#"></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <nav>
+                    <a href="#">Карта сайта</a>
+                    <a href="#">Согласие на обработку данных</a>
+                    <a href="#">Политика конфиденциальности</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
 </div>
 
-{% endblock %}
+<script src="./js/app.js" defer></script>
+<!-- Scripts -->
+</body>
+</html>
+
+
+
 
 

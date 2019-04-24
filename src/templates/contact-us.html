@@ -35,7 +35,7 @@
                         For more information about
                         StanGher opportunities
                     </h4>
-                    <a href="#" class="btn btn--lg btn-success">Write us here</a>
+                    <a href="#" class="btn btn--lg btn-success js-open-modal" data-target="contactsModal">Write us here</a>
                 </div>
             </div>
             <div class="contact-us-item">
@@ -47,12 +47,16 @@
                         For work or partnership
                         relations
                     </h4>
-                    <a href="#" class="btn btn--lg btn-success">Write us here</a>
+                    <a href="#" class="btn btn--lg btn-success js-open-modal" data-target="feedbackModal">Write us here</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+{%include "modals/contacts.html" %}
+{%include "modals/feedback.html" %}
 
 
 {% endblock %}

@@ -11,22 +11,25 @@ textarea, input{
     -webkit-appearance: none;
     &:focus {
       border: 1px solid $grey;
-    }
-    &.is-invalid {
-      border: 1px solid $red;
-      .invalid-feedback{
-        display: block;
-      }
+      //box-shadow: none;
     }
   }
 }
 .invalid-feedback{
   display: none;
+  color: $red;
+  font-size: rem(12px);
+  margin-top: rem(8px);
+  padding-left: rem(20px);
 }
+//.is-invalid {
+//  border: 1px solid $red;
+//}
 
 textarea{
   font-size: rem(14px);
   font-family: $gotham;
+  resize: none;
   &.form-control{
     height: 135px;
     border-radius: 23px;
@@ -41,6 +44,14 @@ textarea{
     margin-bottom: rem(8px);
     padding-left: rem(20px);
     text-align: left;
+  }
+  &.is-invalid {
+    .form-control {
+      border: 1px solid $red;
+    }
+    .invalid-feedback {
+      display: block;
+    }
   }
 }
 

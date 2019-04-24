@@ -71,8 +71,7 @@
 //
 
 .modal {
-  animation-name: animatetop;
-  animation-duration: 0.4s;
+
   .close {
     cursor: pointer;
     position: absolute;
@@ -132,13 +131,15 @@
     }
   }
   &-open{
-    position: fixed;
     height: 100vh;
   }
   &.show {
     display: block;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
   }
   &-backdrop {
+    transition: opacity 0.4s linear;
     &.show {
       overflow: hidden;
       height: 100vh;

@@ -44,8 +44,8 @@
                 <nav class="header-nav">
                     <a href="projects.html">Наши проекты</a>
                     <a href="locations.html">Локации</a>
-                    <a href="#">О нас</a>
-                    <a href="#">Связаться с нами</a>
+                    <a href="about-us.html">О нас</a>
+                    <a href="contact-us.html">Связаться с нами</a>
                     <a href="#">Блог</a>
                 </nav>
                 <button type="button" class="hamburger">
@@ -214,27 +214,61 @@
 <div class="section section-more-info section-bg" style="background-image: url(../images/write-bg.jpg)">
     <div class="container">
         <div class="more-info">
-            <div class="more-info-wrap">
-                <div class="col-icon">
-                    <div class="more-info__icon">
-                        <img src="../images/svg/email.svg" alt="mail">
+    <div class="more-info-wrap">
+        <div class="col-icon">
+            <div class="more-info__icon">
+                <img src="../images/svg/email.svg" alt="mail">
+            </div>
+        </div>
+        <div class="col-info">
+            <div class="more-info__title">
+                Need more information or have
+                something to say or offer?
+            </div>
+            <div class="more-info__description">
+                Contact us, we will be very happy to talk with you or
+                provide useful information
+            </div>
+            <a href="#" class="btn btn--lg btn-success js-open-modal" data-target="contactsModal">Write us</a>
+        </div>
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="modal fade" id="contactsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title center text-black">Ваши контакты</h4>
+                <p class="modal-description center text-black">Оставьте ваши контакты и наш
+                    менеджер свяжется с вами</p>
+                <button type="button" class="close js-close-modal" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="#" action="#" id="contacts-form">
+                    <div class="form-group">
+                        <label class="form-group__label">Ваше имя:</label>
+                        <input type="text" required re placeholder="Укажите ваше имя…" class="form-control">
                     </div>
-                </div>
-                <div class="col-info">
-                    <div class="more-info__title">
-                        Need more information or have
-                        something to say or offer?
+                    <div class="form-group">
+                        <label class="form-group__label">Контактный телефон:</label>
+                        <input type="tel" required re placeholder="+7…" class="form-control">
                     </div>
-                    <div class="more-info__description">
-                        Contact us, we will be very happy to talk with you or
-                        provide useful information
+                    <div class="form-group">
+                        <label class="form-group__label">Ваш email:</label>
+                        <input type="email" required placeholder="Укажите ваш email…" class="form-control">
                     </div>
-                    <a href="#" class="btn btn--lg btn-success">Write us</a>
-                </div>
+                    <button type="submit" class="btn btn-violet btn--lg">Отправить</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
+
 
 
     </main>
@@ -254,9 +288,9 @@
                 <nav class="footer-nav">
                     <a href="projects.html">Наши обьекты</a>
                     <a href="locations.html">Локации</a>
-                    <a href="projects.html">О проекте</a>
-                    <a href="#locations">Обратная связь</a>
-                    <a href="#">Акселератор и венчурный фонд</a>
+                    <a href="about-us.html">О проекте</a>
+                    <a href="contact-us.html">Обратная связь</a>
+                    <a href="projects.html">Акселератор и венчурный фонд</a>
                 </nav>
                 <div class="subscribe">
                     <div class="subscribe-item subscribe-social">
