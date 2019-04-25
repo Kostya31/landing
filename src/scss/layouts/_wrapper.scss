@@ -1931,6 +1931,10 @@ main {
     p {
       font-size: rem(14px);
       line-height: rem(20px);
+      margin-bottom: rem(8px);
+      &:last-child{
+        margin-bottom: 0;
+      }
     }
 
     .title-h3 {
