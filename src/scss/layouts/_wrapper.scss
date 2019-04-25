@@ -1549,7 +1549,7 @@ main {
   margin-top: -55px;
   @include respond-to(xs) {
     flex-direction: column-reverse;
-    margin-top: -55px;
+    margin-top: 0;
   }
 
   &__content {

@@ -527,6 +527,7 @@ video {
       left: 0;
       z-index: 100;
       right: 0;
+      background: #ffffff;
       box-shadow: 0 0 6px rgba(40, 38, 39, 0.7); } }
   .header-wrap {
     height: 55px;
@@ -1897,7 +1898,7 @@ main.content {
   @media only screen and (max-width: 768px) {
     .home-ideas {
       flex-direction: column-reverse;
-      margin-top: -55px; } }
+      margin-top: 0; } }
   .home-ideas__content {
     width: 50%;
     background-position: bottom left;
