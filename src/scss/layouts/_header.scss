@@ -1,7 +1,8 @@
 
 .header {
-  background: $white;
+  background: transparent;
   flex: 0 0 auto;
+  z-index: 100;
   @include respond-to(xs) {
     position: fixed;
     top: 0;

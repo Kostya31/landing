@@ -7,6 +7,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: $white;
 
 }
 
@@ -15,7 +16,6 @@ main {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
     @include respond-to(xs) {
       padding-top: rem(55px);
     }
@@ -1546,6 +1546,7 @@ main {
 
 .home-ideas {
   display: flex;
+  margin-top: -55px;
   @include respond-to(xs) {
     flex-direction: column-reverse;
     margin-top: -55px;
