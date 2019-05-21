@@ -130,21 +130,6 @@
       margin-bottom: rem(20px);
     }
   }
-  &-open{
-    height: 100vh;
-  }
-  &.show {
-    display: block;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-  }
-  &-backdrop {
-    transition: opacity 0.4s linear;
-    &.show {
-      overflow: hidden;
-      height: 100vh;
-    }
-  }
 }
 
 // --------------custom bootstrap ------------
@@ -177,9 +162,4 @@
       }
     }
   }
-}
-
-@keyframes animatetop {
-  from {top: -300px; opacity: 0}
-  to {top: 0; opacity: 1}
 }

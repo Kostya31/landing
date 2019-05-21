@@ -3225,20 +3225,6 @@ select {
     .modal-img {
       margin-bottom: 1.25rem; } }
 
-.modal-open {
-  height: 100vh; }
-
-.modal.show {
-  display: block;
-  animation-name: animatetop;
-  animation-duration: 0.4s; }
-
-.modal-backdrop {
-  transition: opacity 0.4s linear; }
-  .modal-backdrop.show {
-    overflow: hidden;
-    height: 100vh; }
-
 .modal-header {
   flex-wrap: wrap; }
 
@@ -3257,14 +3243,6 @@ select {
     display: block;
     margin: 0 auto;
     width: 40%; } }
-
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0; }
-  to {
-    top: 0;
-    opacity: 1; } }
 
 .tns-nav {
   display: flex;

@@ -1,5 +1,8 @@
 // import { tns } from "./node_modules/tiny-slider/src/tiny-slider"
 
+const bsc = require('bootstrap.native/dist/bootstrap-native-v4');
+
+
 let app = {
 
 
@@ -330,61 +333,21 @@ let app = {
         document.addEventListener("click", closeAllSelect);
 
     },
+
     modal: function () {
-        let openModal = document.querySelectorAll('.js-open-modal');
-        let closeModal = Array.from(document.querySelectorAll('.js-close-modal'));
-        let overlay = '<div class="modal-backdrop fade show js-close-modal"></div>';
 
+        let btnOpenModal = document.querySelectorAll('.js-open-modal');
 
-        for (let elem of openModal) {
-
-            if (elem.addEventListener) {
-                elem.addEventListener('click', function (e) {
-                    console.log('ssssssss');
-                    e.preventDefault();
-                    showModal(e)
-                });
-            } else if (elem.attachEvent) {
-                elem.attachEvent('onclick', function (e) {
-                    e.preventDefault();
-                    showModal(e)
-                });
-            }
-        }
-
-        for (let elem of closeModal) {
-            elem.addEventListener('click', function (e) {
-                hideModal(e);
-            });
-        }
-
-
-        function showModal(e) {
-            let targetElem = e.currentTarget;
-
-            let currentId = targetElem.getAttribute('data-target');
-
-            document.body.classList.add('modal-open');
-            document.body.insertAdjacentHTML("beforeEnd", overlay);
-            document.getElementById(currentId).classList.add('show');
-
-            document.querySelector('.modal.show').addEventListener('click', e => {
-                if (e.target.classList.contains('modal')) {
-                    hideModal(e);
-                }
-            });
-
-        }
-
-        function hideModal(e) {
-            e.preventDefault();
-            document.body.classList.remove('modal-open');
-            document.querySelector('.modal-backdrop').remove();
-
-            e.target.closest('.modal').classList.remove('show');
-
-
-        }
+        btnOpenModal.forEach( function (el) {
+            el.addEventListener('click', function (e) {
+                e.preventDefault();
+                console.log('sss');
+                let id = this.getAttribute('href').replace('#','');
+                let myModal = document.getElementById(id);
+                let myModalInstance = new bsc.Modal(myModal);
+                myModalInstance.show();
+            })
+        });
     },
     percentSvg: function () {
         let svgElement = document.querySelectorAll('.circle-box');
@@ -601,12 +564,3 @@ function isMobile() {
     }
     return false;
 }
-
-
-
-import Vue from 'vue';
-
-
-const vue = new Vue({
-    el: '#app'
-});
