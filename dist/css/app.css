@@ -2111,7 +2111,7 @@ main.content {
   .about-project .title-h2 {
     margin-bottom: 1.875rem; }
   .about-project .description {
-    width: 75%;
+    width: 80%;
     margin-bottom: 1.875rem; }
     @media only screen and (max-width: 992px) {
       .about-project .description {
