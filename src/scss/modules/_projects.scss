@@ -1,13 +1,13 @@
 //---------------our-project -------------
 
 .our-projects {
-  margin-bottom: rem(80px);
+  margin-bottom: rem(50px);
   padding-top: rem(50px);
   @include respond-to(sm) {
-    margin-bottom: rem(60px);
+    margin-bottom: rem(30px);
   }
   @include respond-to(xs) {
-    margin-bottom: rem(40px);
+    margin-bottom: rem(20px);
     padding-top: rem(40px);
   }
 
@@ -52,6 +52,7 @@
     @include respond-to(es) {
       width: 100%;
     }
+
     .btn-violet,
     .btn-orange {
       width: 230px;
@@ -229,6 +230,8 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: rem(30px);
+    margin-left: -15px;
+    margin-right: -15px;
     @include respond-to(xs) {
       justify-content: center;
       margin-bottom: rem(10px);
@@ -236,26 +239,49 @@
     }
   }
 
-  &-item {
-    width: calc(100% / 3 - 30px);
-    padding: rem(80px 15px);
-    color: $white;
-    background-size: cover;
-    background-position: center;
+  &-wrap {
+    width: calc(100% / 3);
+    display: flex;
+    overflow: hidden;
     margin-bottom: rem(30px);
-    @include respond-to(sm) {
-      padding: rem(50px 15px);
-    }
+    margin-left: 15px;
+    margin-right: 15px;
     @include respond-to(xs) {
-      margin-left: 15px;
-      margin-right: 15px;
-      padding: rem(40px 15px);
       width: calc(100% / 2 - 30px);
     }
     @include respond-to(es) {
       width: 100%;
-      margin-left: 0;
-      margin-right: 0;
+      margin-bottom: rem(15px);
+    }
+  }
+
+  &-item {
+    padding: rem(80px 15px);
+    color: $white;
+    display: block;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s linear, background-color 1s ease-in-out;
+    @include respond-to(md) {
+      padding: rem(50px 15px);
+    }
+    @include respond-to(xs) {
+
+      padding: rem(40px 15px);
+
+    }
+    @include respond-to(es) {
+      width: 100%;
+    }
+    &:hover {
+      transform: scale(1.05);
+      max-height: 320px;
+      overflow: hidden;
+
+      &:before {
+        background-color: rgba(50, 47, 49, 0.3)
+      }
     }
 
     &__logo {
@@ -283,7 +309,7 @@
     }
   }
 
-  &-wrap {
+  &-info {
     position: relative;
     z-index: 5;
     text-align: center;

@@ -35,7 +35,7 @@ main {
     bottom: 0;
     z-index: 2;
     background-color: rgba(#322f31, 0.8);
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
   }
 }
 
@@ -1839,20 +1839,50 @@ main {
 //------------- about project -------------
 
 .about-project {
-  padding-top: rem(40px);
-  padding-bottom: rem(50px);
+  padding-top: rem(30px);
+  padding-bottom: rem(20px);
   @include respond-to(xs) {
-    padding-bottom: rem(40px);
+    padding-bottom: rem(10px);
   }
 
   .title-h1 {
     margin-bottom: rem(30px);
   }
+  .title-h2 {
+    margin-bottom: rem(30px);
+  }
 
   .description {
     width: 75%;
+    margin-bottom: rem(30px);
     @include respond-to(sm) {
       width: 100%;
+    }
+    p {
+      margin-bottom: rem(15px);
+    }
+  }
+  ul {
+    margin-bottom: 15px;
+    .li-title {
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 18px;
+      padding-left: 0;
+      &:before{
+        display: none;
+      }
+    }
+    li{
+      padding-left: 15px;
+      margin: 4px 0;
+      position: relative;
+      &:before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        top: 1px;
+      }
     }
   }
 }
@@ -1874,7 +1904,6 @@ main {
     flex-direction: column;
     margin-bottom: rem(30px);
   }
-
   &:nth-child(even) {
     flex-direction: row-reverse;
   }
@@ -2043,6 +2072,13 @@ main {
 }
 
 .info-list {
+  padding-bottom: 50px;
+  @include respond-to(sm) {
+    padding-bottom: 40px;
+  }
+  @include respond-to(xs) {
+    padding-bottom: 30px;
+  }
   &__title {
     font-weight: 900;
     margin-bottom: rem(30px);
@@ -2073,6 +2109,11 @@ main {
     position: relative;
     @include respond-to(es) {
       padding-left: rem(60px);
+    }
+  }
+  &__description {
+    p {
+      margin-bottom: 15px;
     }
   }
 

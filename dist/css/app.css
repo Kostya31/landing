@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .modal-open {
   overflow: hidden; }
 
@@ -870,7 +871,7 @@ main.content {
     bottom: 0;
     z-index: 2;
     background-color: rgba(50, 47, 49, 0.8);
-    transition: background-color 0.2s ease-in-out; }
+    transition: background-color 0.4s ease-in-out; }
 
 .sub-title {
   font-weight: 900;
@@ -2100,18 +2101,41 @@ main.content {
         margin-right: 1.875rem; } }
 
 .about-project {
-  padding-top: 2.5rem;
-  padding-bottom: 3.125rem; }
+  padding-top: 1.875rem;
+  padding-bottom: 1.25rem; }
   @media only screen and (max-width: 768px) {
     .about-project {
-      padding-bottom: 2.5rem; } }
+      padding-bottom: 0.625rem; } }
   .about-project .title-h1 {
     margin-bottom: 1.875rem; }
+  .about-project .title-h2 {
+    margin-bottom: 1.875rem; }
   .about-project .description {
-    width: 75%; }
+    width: 75%;
+    margin-bottom: 1.875rem; }
     @media only screen and (max-width: 992px) {
       .about-project .description {
         width: 100%; } }
+    .about-project .description p {
+      margin-bottom: 0.9375rem; }
+  .about-project ul {
+    margin-bottom: 15px; }
+    .about-project ul .li-title {
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 18px;
+      padding-left: 0; }
+      .about-project ul .li-title:before {
+        display: none; }
+    .about-project ul li {
+      padding-left: 15px;
+      margin: 4px 0;
+      position: relative; }
+      .about-project ul li:before {
+        content: '•';
+        position: absolute;
+        left: 0;
+        top: 1px; }
 
 .traveling .title-h2 {
   margin-bottom: 1.875rem; }
@@ -2239,42 +2263,50 @@ main.content {
 .percent-text {
   margin-top: 0.625rem; }
 
-.info-list__title {
-  font-weight: 900;
-  margin-bottom: 1.875rem;
-  margin-top: 3.125rem;
-  position: relative; }
-  .info-list__title:before {
-    content: '';
-    background-image: url(../images/svg/checked-2.svg);
-    width: 40px;
-    height: 40px;
-    display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: absolute;
-    top: -6px;
-    left: -60px; }
-    @media only screen and (max-width: 576px) {
-      .info-list__title:before {
-        top: 50%;
-        transform: translateY(-50%);
-        left: -60px; } }
-
-.info-list__item {
-  padding-left: 5rem;
-  position: relative; }
-  @media only screen and (max-width: 576px) {
-    .info-list__item {
-      padding-left: 3.75rem; } }
-
-.info-list .row .info-list__item {
-  width: 50%;
-  padding-right: 5rem; }
+.info-list {
+  padding-bottom: 50px; }
+  @media only screen and (max-width: 992px) {
+    .info-list {
+      padding-bottom: 40px; } }
   @media only screen and (max-width: 768px) {
-    .info-list .row .info-list__item {
-      width: 100%;
-      padding-right: 0; } }
+    .info-list {
+      padding-bottom: 30px; } }
+  .info-list__title {
+    font-weight: 900;
+    margin-bottom: 1.875rem;
+    margin-top: 3.125rem;
+    position: relative; }
+    .info-list__title:before {
+      content: '';
+      background-image: url(../images/svg/checked-2.svg);
+      width: 40px;
+      height: 40px;
+      display: inline-block;
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: -6px;
+      left: -60px; }
+      @media only screen and (max-width: 576px) {
+        .info-list__title:before {
+          top: 50%;
+          transform: translateY(-50%);
+          left: -60px; } }
+  .info-list__item {
+    padding-left: 5rem;
+    position: relative; }
+    @media only screen and (max-width: 576px) {
+      .info-list__item {
+        padding-left: 3.75rem; } }
+  .info-list__description p {
+    margin-bottom: 15px; }
+  .info-list .row .info-list__item {
+    width: 50%;
+    padding-right: 5rem; }
+    @media only screen and (max-width: 768px) {
+      .info-list .row .info-list__item {
+        width: 100%;
+        padding-right: 0; } }
 
 .bottom-hero {
   display: flex;
@@ -3483,14 +3515,14 @@ select {
   width: 160px; }
 
 .our-projects {
-  margin-bottom: 5rem;
+  margin-bottom: 3.125rem;
   padding-top: 3.125rem; }
   @media only screen and (max-width: 992px) {
     .our-projects {
-      margin-bottom: 3.75rem; } }
+      margin-bottom: 1.875rem; } }
   @media only screen and (max-width: 768px) {
     .our-projects {
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.25rem;
       padding-top: 2.5rem; } }
   .our-projects .title-h2 {
     margin-bottom: 2.8125rem; }
@@ -3652,33 +3684,51 @@ select {
   .estate-projects-list {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.875rem; }
+    margin-bottom: 1.875rem;
+    margin-left: -15px;
+    margin-right: -15px; }
     @media only screen and (max-width: 768px) {
       .estate-projects-list {
         justify-content: center;
         margin-bottom: 0.625rem;
         flex-wrap: wrap; } }
+  .estate-projects-wrap {
+    width: calc(100% / 3);
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 1.875rem;
+    margin-left: 15px;
+    margin-right: 15px; }
+    @media only screen and (max-width: 768px) {
+      .estate-projects-wrap {
+        width: calc(100% / 2 - 30px); } }
+    @media only screen and (max-width: 576px) {
+      .estate-projects-wrap {
+        width: 100%;
+        margin-bottom: 0.9375rem; } }
   .estate-projects-item {
-    width: calc(100% / 3 - 30px);
     padding: 5rem 0.9375rem;
     color: #ffffff;
+    display: block;
+    width: 100%;
     background-size: cover;
     background-position: center;
-    margin-bottom: 1.875rem; }
-    @media only screen and (max-width: 992px) {
+    transition: transform 0.5s linear, background-color 1s ease-in-out; }
+    @media only screen and (max-width: 1199px) {
       .estate-projects-item {
         padding: 3.125rem 0.9375rem; } }
     @media only screen and (max-width: 768px) {
       .estate-projects-item {
-        margin-left: 15px;
-        margin-right: 15px;
-        padding: 2.5rem 0.9375rem;
-        width: calc(100% / 2 - 30px); } }
+        padding: 2.5rem 0.9375rem; } }
     @media only screen and (max-width: 576px) {
       .estate-projects-item {
-        width: 100%;
-        margin-left: 0;
-        margin-right: 0; } }
+        width: 100%; } }
+    .estate-projects-item:hover {
+      transform: scale(1.05);
+      max-height: 320px;
+      overflow: hidden; }
+      .estate-projects-item:hover:before {
+        background-color: rgba(50, 47, 49, 0.3); }
     .estate-projects-item__logo {
       margin-bottom: 1.25rem; }
       .estate-projects-item__logo img {
@@ -3695,7 +3745,7 @@ select {
       @media only screen and (max-width: 992px) {
         .estate-projects-item__description {
           padding: 0; } }
-  .estate-projects-wrap {
+  .estate-projects-info {
     position: relative;
     z-index: 5;
     text-align: center; }

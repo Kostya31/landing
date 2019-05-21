@@ -40,6 +40,7 @@
     "jquery": "^3.3.1",
     "natives": "^1.1.6",
     "popper.js": "^1.14.3",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "vue": "^2.6.10"
   }
 }
