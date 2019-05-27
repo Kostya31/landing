@@ -443,6 +443,10 @@ a[href^=tel] {
   font-weight: 700;
   color: #282627; }
 
+sup {
+  vertical-align: super !important;
+  font-size: smaller !important; }
+
 .text-white {
   color: #ffffff !important; }
 
