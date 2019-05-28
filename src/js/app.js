@@ -2,6 +2,8 @@
 
 const bsc = require('bootstrap.native/dist/bootstrap-native-v4');
 
+import Pluralize from 'pluralize';
+
 
 let app = {
 
@@ -130,7 +132,7 @@ let app = {
 
 
                 document.querySelector('.quantity-up').addEventListener('click', function () {
-                    let text = 'мест';
+                    let text = 'place';
                     let count = increment(document.querySelector('.form-control-place__number').innerText);
                     if (count >= 2) {
                         document.querySelector('.quantity-down').classList.remove('disabled')
@@ -142,14 +144,14 @@ let app = {
                     document.getElementById('count-place').setAttribute('value', count);
 
                     document.querySelector('.form-control-place__number').innerText = count;
-                    document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
+                    document.querySelector('.form-control-place__text').innerText = Pluralize(text, count);
                     updateValues();
                 });
 
                 document.querySelector('.quantity-down').addEventListener('click', function () {
-                    let text = 'мест';
+                    let text = 'place';
                     let count = decrement(document.querySelector('.form-control-place__number').innerText);
-                    if (count == 1) {
+                    if (count === 1) {
                         document.querySelector('.quantity-down').classList.add('disabled')
                     }
                     if (count <= 39) {
@@ -157,7 +159,7 @@ let app = {
                     }
                     document.getElementById('count-place').setAttribute('value', count);
                     document.querySelector('.form-control-place__number').innerText = count;
-                    document.querySelector('.form-control-place__text').innerText = text + pluralizeRus(count, ['о', 'а', '']);
+                    document.querySelector('.form-control-place__text').innerText = Pluralize(text, count);
                     updateValues();
                 });
 
@@ -483,13 +485,13 @@ let setTaggedTabActive = function () {
 };
 
 
-function pluralizeRus(n, forms) {
-    return n % 10 == 1 && n % 100 != 11
-        ? forms[0]
-        : (n % 10 >= 2 && n % 10 <= 4
-        && (n % 100 < 10
-            || n % 100 >= 20) ? forms[1] : forms[2]);
-}
+// function pluralizeRus(n, forms) {
+//     return n % 10 == 1 && n % 100 != 11
+//         ? forms[0]
+//         : (n % 10 >= 2 && n % 10 <= 4
+//         && (n % 100 < 10
+//             || n % 100 >= 20) ? forms[1] : forms[2]);
+// }
 
 function increment(value) {
     value++;

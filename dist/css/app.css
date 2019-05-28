@@ -2910,7 +2910,8 @@ input[type=radio] {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
     width: 1.125rem;
     height: 1.125rem;
-    border-radius: 100%; }
+    border-radius: 100%;
+    transition: border 0.3s linear; }
   .radio-text:after {
     content: '';
     position: absolute;
@@ -2923,6 +2924,8 @@ input[type=radio] {
     width: 0.75rem;
     height: 0.75rem;
     border-radius: 100%; }
+  .radio-text:hover:before {
+    border: 1px solid #a020bc; }
 
 .checkbox-group {
   margin: 0.9375rem 0; }
@@ -2957,7 +2960,8 @@ input[type=checkbox] {
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
     width: 1.125rem;
     height: 1.125rem;
-    border-radius: 3px; }
+    border-radius: 3px;
+    transition: border 0.3s linear; }
   .checkbox-text:after {
     content: '';
     position: absolute;
@@ -2972,6 +2976,8 @@ input[type=checkbox] {
     width: 0.75rem;
     height: 0.5625rem;
     border-radius: 100%; }
+  .checkbox-text:hover:before {
+    border: 1px solid #a020bc; }
 
 .quantity-button {
   width: 35px;

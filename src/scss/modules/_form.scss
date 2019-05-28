@@ -110,6 +110,7 @@ input[type=radio] {
     width: rem(18px);
     height: rem(18px);
     border-radius: 100%;
+    transition: border 0.3s linear;
   }
   &:after {
     content: '';
@@ -123,6 +124,11 @@ input[type=radio] {
     width: rem(12px);
     height: rem(12px);
     border-radius: 100%;
+  }
+  &:hover {
+    &:before {
+      border: 1px solid #a020bc;
+    }
   }
 }
 
@@ -167,6 +173,7 @@ input[type=checkbox] {
     width: rem(18px);
     height: rem(18px);
     border-radius: 3px;
+    transition: border 0.3s linear;
   }
   &:after {
     content: '';
@@ -182,6 +189,11 @@ input[type=checkbox] {
     width: rem(12px);
     height: rem(9px);
     border-radius: 100%;
+  }
+  &:hover {
+    &:before {
+      border: 1px solid #a020bc;
+    }
   }
 }
 
