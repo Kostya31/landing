@@ -1678,7 +1678,8 @@ main.content {
 
 .slider-wrap {
   position: relative;
-  cursor: grab; }
+  cursor: grab;
+  user-select: none; }
   .slider-wrap .slider-arrows {
     position: absolute;
     top: 50%;

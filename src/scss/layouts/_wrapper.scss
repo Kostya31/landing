@@ -1229,6 +1229,7 @@ main {
 .slider-wrap {
   position: relative;
   cursor: grab;
+  user-select: none;
   //.slider-dots {
   //  position: absolute;
   //  left: 50%;
