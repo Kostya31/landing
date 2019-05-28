@@ -42,7 +42,7 @@
   }
 
   &-apart {
-    padding-top: rem(120px);
+    padding-top: rem(100px);
     @include respond-to(md) {
       padding-top: rem(60px);
     }

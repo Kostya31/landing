@@ -1677,7 +1677,8 @@ main.content {
   display: inline-block; }
 
 .slider-wrap {
-  position: relative; }
+  position: relative;
+  cursor: grab; }
   .slider-wrap .slider-arrows {
     position: absolute;
     top: 50%;
@@ -2733,7 +2734,7 @@ main.content {
     .section-map .controller {
       display: none !important; }
   .section-apart {
-    padding-top: 7.5rem; }
+    padding-top: 6.25rem; }
     @media only screen and (max-width: 1199px) {
       .section-apart {
         padding-top: 3.75rem; } }
