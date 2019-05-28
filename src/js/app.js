@@ -471,7 +471,7 @@ let setTaggedTabActive = function () {
 
             for (let i of tabLinks) {
                 i.classList.remove('active');
-            }w
+            }
             _this.classList.add('active');
 
             for (let item of tabContent) {

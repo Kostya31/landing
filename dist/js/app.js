@@ -3007,7 +3007,6 @@ var setTaggedTabActive = function setTaggedTabActive() {
                     }
                 }
 
-                w;
                 _this.classList.add('active');
 
                 var _iteratorNormalCompletion5 = true;
