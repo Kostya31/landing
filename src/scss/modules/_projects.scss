@@ -56,11 +56,13 @@
     .btn-violet,
     .btn-orange {
       width: 230px;
+      margin-right: 15px;
     }
   }
 
   .logo {
     margin-bottom: rem(30px);
+    line-height: 1.1;
     @include respond-to(sm) {
       margin-bottom: rem(20px);
     }
@@ -81,6 +83,18 @@
     @include respond-to(sm) {
       margin-bottom: rem(20px);
     }
+  }
+}
+.logo-main {
+  font-size: 28px;
+  font-weight: 900;
+}
+.logo-text {
+  color: #636466;
+  font-size: 18px;
+  font-weight: 900;
+  &--l-grey {
+    color: #c6c8cc;
   }
 }
 
@@ -209,6 +223,7 @@
     }
   }
 }
+
 
 //----------------- estate-projects ----------------
 

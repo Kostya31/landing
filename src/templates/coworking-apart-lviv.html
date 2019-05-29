@@ -1,110 +1,98 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1 , maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-    <meta name=”viewport” user-scalable=no;” />
-    <meta name=”viewport” user-scalable=false;” />
-    <meta name=”viewport” user-scalable=0” />
-    <meta name="HandheldFriendly" content="true">
-    <title>Landing</title>
+{% extends "layouts/_app.html" %}
 
-    <!-- Styles -->
-    <link href="./css/app.css" rel="stylesheet">
-</head>
-<body>
 
-<div class="wrapper">
+{% block content %}
 
-    <header class="header">
-    <div class="container">
-        <div class="header-wrap">
-            <a href="/" class="header-logo">
-                <img src="../images/svg/stangher-logo-main.svg" alt="logo">
-            </a>
-            <!--<div class="switch-lang">-->
-            <!--<span  class="switch-lang__item active">-->
-            <!--<img src="../images/svg/ru.svg" class="switch-lang__flag" alt="lang">-->
-            <!--<span class="switch-lang__name upper">рус</span>-->
-            <!--</span>-->
-            <!--<div class="switch-lang__drop">-->
-            <!--<form action="">-->
-            <!--<button type="submit" data-lang="us" class="switch-lang__item">-->
-            <!--<img src="../images/svg/flag-us.svg" class="switch-lang__flag" alt="lang">-->
-            <!--<span class="switch-lang__name upper">US</span>-->
-            <!--</button>-->
-            <!--<button type="submit" data-lang="ua" class="switch-lang__item">-->
-            <!--<img src="../images/svg/flag-ukraine.svg" class="switch-lang__flag" alt="lang">-->
-            <!--<span class="switch-lang__name upper">укр</span>-->
-            <!--</button>-->
-            <!--</form>-->
-            <!--</div>-->
-
-            <!--</div>-->
-            <nav class="header-nav">
-                <a href="projects.html">Our projects</a>
-                <a href="locations.html">Locations</a>
-                <a href="about-us.html">About us</a>
-                <a href="contact-us.html">Contact us</a>
-<!--                <a href="#">Blog</a>-->
-            </nav>
-            <button type="button" class="hamburger">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-        </div>
-    </div>
-</header>
-
-    <main class="content">
-        
-<div class="section hero-top section-bg bg-black" style="background-image: url(../images/forum-coworking-bg.jpg)">
+<div class="section hero-top section-bg bg-silver" style="background-image: url(../images/forum-aparts-bg.jpg)">
     <div class="container">
         <div class="hero-info">
-            <div class="hero-logo"><img src="../images/svg/stangher-coworking-logo-lviv.svg" alt="logo"></div>
-            <div class="contacts-item">
-                <span class="contacts-label">Info Line:</span>
-                <div class="contacts-text has-icon">
-                    <img src="../images/svg/phone-pink.svg" alt="phone">
-                    <a href="tel:+380 (57) 111-11-11" class="contacts-telephone">+380 (57) 111-11-11</a>
+            <div class="hero-logo">
+                <div class="logo">
+                    <span class="logo-main text-black">StanGher</span><br>
+                    <span class="logo-text">
+                                <span class="text-gradient-orange">Coworking & Apartments </span> <br>
+                                <span>@ Lviv, Ukraine</span>
+                            </span>
                 </div>
             </div>
             <div class="contacts-item">
-                <span class="contacts-label">Location:</span>
+                <span class="contacts-label text-black">Info line:</span>
                 <div class="contacts-text has-icon">
-                    <img src="../images/svg/pin-pink.svg" alt="location">
-                    <p class="contacts-address">Prospect Svobodi - -, Lviv, Ukraine</p>
+                    <img src="../images/svg/phone-orange.svg" alt="phone">
+                    <a class="contacts-telephone" href="tel:+380 (57) 111-11-11">+380 (57) 111-11-11</a>
+                </div>
+            </div>
+            <div class="contacts-item">
+                <span class="contacts-label text-black">Location:</span>
+                <div class="contacts-text has-icon">
+                    <img src="../images/svg/pin-orange.svg" alt="location">
+                    <p class="text-black contacts-address">Prospect Svobodi - -, Lviv, Ukraine</p>
                 </div>
             </div>
         </div>
-        <h1>Change your work environment <br>
-            to a cozy and pleasant atmosphere</h1>
+        <span class="label-status label-status--red">in progress</span>
+        <h1>Сoworking and offices,
+            10 luxury apartments, coffee point <br>
+            and comercial spaces at one cozy place</h1>
         <div class="description">
-            <p>Change the atmosphere to a pleasant and comfortable working mood!
-                Here you can get useful contacts, share and get a professional experience,
-                find excellent opportunities for cooperation, and also enjoy your work time pleasantly and productively.
-            </p>
-            <br>
-            <p>Come to us and see for yourself!</p>
+            <p>A new architectural project in the city center.
+                We offer you to stay in a comfortable apartment and feel at home while being away on a business trip or
+                at vacation.</p>
         </div>
-        <p class="text-gradient-violet">We offer a free trial day!</p>
         <div class="row-btn">
-            <a href="#booking-wrap" class="btn btn--lg btn-violet">Book me</a>
-            <a href="#about-us" class="btn btn--lg btn-silver">Lear more</a>
+<!--            <a href="#we-offer" class="btn btn&#45;&#45;lg btn-orange">Choose apartment</a>-->
+            <a href="#about-us" class="btn btn--lg btn-silver-2">Lear more</a>
         </div>
     </div>
 </div>
 
-<div class="section bg-black section-coworking" id="about-us">
+<div class="section">
+    <div class="container">
+        <div class="another-view">
+            <div class="row v-center">
+                <div class="another-view-content">
+                    <h2 class="title-h2">Outside view</h2>
+                    <p>The residential complex includes 4 houses of different heights, each of which has its own advantages and magnificent views from the windows and loggias/balconies.</p> <br>
+                    <p>The view from the window pleases the eye! The view opens onto the beautiful historic architecture of the city center.</p>
+                    <br>
+                    <p>This object is one of the best examples of housing construction. You deserve this level of housing, because it is the comfort of a new generation.</p>
+                </div>
+                <div class="offer-item offer-item-apart offer-item--col">
+                    <div class="slider-wrap slider-apart">
+                        <div class="offer-slider js-slider">
+                            <div class="offer-img slider-item" style="background-image: url(../images/forum-apart-outside.png)"></div>
+                        </div>
+                        <div class="slider-arrows">
+                            <button class="slider-prev slider-arrow slider-arrow--orange  "></button>
+                            <button class="slider-next slider-arrow slider-arrow--orange slider-arrows--orange  "></button>
+                        </div>
+                        <div class="slider-dots slider-dots--orange">
+                            <ul class="dots-items">
+                                <li class="dot-item"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--------------------------------------->
+
+<div class="section bg-black section-coworking" id="about-us-coworking">
     <div class="container">
         <div class="our-coworking">
-            <h2 class="title-h2">About our coworking</h2>
+            <div class="title">
+                <h2 class="title-h2 text-gradient-violet">Coworking and offices</h2>
+            </div>
             <div class="description">
                 <p>StanGher Coworking is a spacious space where everything disposes to productive work and contributes to finding the right and effective solutions.</p>
                 <br>
                 <p>The whole space is divided into coworking and recreation areas. At your disposal will be not only a workplace, but also soft sofas, board games, a library, a mini-kitchen and a general pleasant atmosphere of the interior.</p>
+                <br>
+                <p>We also offer VIP office spaces for teams who want to work in more private atmosphere</p>
             </div>
             <div class="our-coworking__img">
                 <svg width="406px" height="350px" viewBox="0 0 406 350" version="1.1"
@@ -235,161 +223,71 @@
                 </svg>
             </div>
         </div>
-        <p class="center sub-title" id="our-projects"><span class="text-gradient-violet upper">WE OFFER</span></p>
-        <h2 class="title-h2 center">А cozy and pleasant working mood and atmosphere</h2>
-    </div>
-    <div class="offer-wrap offer-wrap-coworking">
-        <div class="offer-item offer-item-coworking">
-            <div class="offer-img" style="background-image: url(../images/1.jpg);"></div>
-            <div class="offer-content offer-content-coworking">
-                <div class="workplace has-number">
-                    <span class="">24</span>
-                    <strong>working places</strong>
-                    <p>in openspace divided into
-                        several work areas</p>
+        <div class="coworking-places">
+            <div class="coworking-place">
+                <div class="coworking-place-content">
+                    <h3 class="title-h3">Coworking spaces</h3>
+                    <span class="sub-title">in openspace divided into several work areas</span>
+                    <ul class="icon-list">
+                        <li>with a comfortable workspace and
+                            ergonomic chairs</li>
+                        <li>with optionally equipped 2 monitors for
+                            comfortable and productive work</li>
+                        <li>with the availability of all necessary accessories
+                            and adapters to connect the necessary periphery
+                            and availability of office equipment for
+                            printing, scanning and photocopying</li>
+                    </ul>
                 </div>
-                <ul class="offer-info-list">
-                    <li>with a comfortable workspace and
-                        ergonomic chairs
-                    </li>
-                    <li>with optionally equipped 2 monitors for
-                        comfortable and productive work
-                    </li>
-                    <li>with the availability of all necessary accessories
-                        and adapters to connect the necessary periphery
-                        and availability of office equipment for
-                        printing, scanning and photocopying
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="offer-item offer-item-coworking">
-            <div class="offer-img" style="background-image: url(../images/2.jpg);"></div>
-            <div class="offer-content offer-content-coworking">
-                <div class="workplace has-number">
-                    <span>3</span><strong>meeting rooms</strong>
-                    <p>for briefs, meetups
-                        or more secluded work</p>
-                </div>
-                <ul class="offer-info-list">
-                    <li>with a calm, secluded setting for
-                        discuss common objectives and strategies
-                    </li>
-                    <li>with flipcharts, boards and all other stuff
-                    </li>
-                    <li>with the availability of all necessary accessories
-                        and adapters to connect the necessary
-                        periphery
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="offer-item offer-item-coworking">
-            <div class="offer-img" style="background-image: url(../images/3.jpg);"></div>
-            <div class="offer-content offer-content-coworking">
-                <div class="workplace has-number">
-                    <span>2</span><strong>rest areas</strong>
-                    <p>for a break from work for
-                        communication</p>
-                </div>
-                <ul class="offer-info-list">
-                    <li>with soft sofas and armchairs, tables for comfortable
-                        get-togethers during a break from work
-                    </li>
-                    <li>with a mini library with different thematic
-                        books: about design, sales and psychology
-                    </li>
-                    <li>with a cool art gallery of contemporary artists
-                        avant-garde
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="offer-item offer-item-coworking">
-            <div class="offer-img" style="background-image: url(../images/4.jpg);"></div>
-            <div class="offer-content offer-content-coworking">
-                <div class="workplace">
-                    <strong>Kitchen and dining</strong>
-                    <p>for a snack break among
-                        working day</p>
-                </div>
-                <ul class="offer-info-list">
-                    <li>with coffee and tea with cookies - for this you
-                        can charge on us 😉
-                    </li>
-                    <li>with fully equipped equipment for
-                        quick snacks and pauses for a cup of coffee
-                    </li>
-                    <li>with comfortable seating so that you can
-                        had a chat with each other during the break
-                    </li>
-                </ul>
-            </div>
-            <a href="#booking-wrap" class="btn btn--lg btn-violet">Book a workplace</a>
-        </div>
-    </div>
-    <div class="container">
-        <h2>Our coworking are also have…</h2>
-        <div class="coworking-wrap">
-            <div class="coworking-item coworking-item--has-icon">
-                <div class="coworking-item__content">
-                    <div class="coworking-item-icon">
-                        <img src="../images/svg/workplace.svg" alt="#">
-                    </div>
-                    <h5>High speed internet <br>
-                        and comfortable workplace</h5>
-                    <p>We take all the technical points. <br>
-                        on yourself don't worry and just <br>
-                        focus on your tasks</p>
-                </div>
-                <div class="coworking-item__img">
-                    <img src="../images/5.jpg" alt="coworking">
+                <div class="coworking-place-images">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
                 </div>
             </div>
-            <div class="coworking-item coworking-item--has-icon">
-                <div class="coworking-item__content">
-                    <div class="coworking-item-icon">
-                        <img src="../images/svg/interior.svg" alt="#">
-                    </div>
-                    <h5>Pleasant and <br>
-                        stylish interior</h5>
-                    <p>Comfortable and beautiful interior <br>
-                        with quality and ergonomic <br>
-                        furniture for comfortable work</p>
+            <div class="coworking-place">
+                <div class="coworking-place-content">
+                    <h3 class="title-h3">Meeting rooms and
+                        VIP offices</h3>
+                    <span class="sub-title">for briefs, meetups or more secluded work</span>
+                    <ul class="icon-list">
+                        <li>with a calm, secluded setting for
+                            discuss common objectives and strategies</li>
+                        <li>with flipcharts, boards, screens and all
+                            other stuff for productive work</li>
+                        <li>with the availability of all necessary accessories
+                            and adapters to connect the periphery</li>
+                    </ul>
                 </div>
-                <div class="coworking-item__img">
-                    <img src="../images/5.jpg" alt="coworking">
-                </div>
-            </div>
-            <div class="coworking-item coworking-item--has-icon">
-                <div class="coworking-item__content">
-                    <div class="coworking-item-icon">
-                        <img src="../images/svg/meeting.svg" alt="#">
-                    </div>
-                    <h5>Working and friendly <br>
-                        collaboration atmosphere</h5>
-                    <p>Our guests are always friendly to each other. <br>
-                        to a friend. Here you can share your experiences, <br>
-                        get good advice from mates and even get <br>
-                        opportunity to work on the project together</p>
-                </div>
-                <div class="coworking-item__img">
-                    <img src="../images/5.jpg" alt="coworking">
+                <div class="coworking-place-images">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
                 </div>
             </div>
-            <div class="coworking-item coworking-item--has-icon">
-                <div class="coworking-item__content">
-                    <div class="coworking-item-icon">
-                        <img src="../images/svg/shield.svg" alt="#">
-                    </div>
-                    <h5>Safety and security <br>
-                        you and your things</h5>
-                    <p>Openspace is equipped with video surveillance <br>
-                        and well guarded. Also for your personal items <br>
-                        offered saveboxes for safe storage</p>
+            <div class="coworking-place">
+                <div class="coworking-place-content">
+                    <h3 class="title-h3">Rest areas and public places</h3>
+                    <span class="sub-title">for a break from work for communication</span>
+                    <ul class="icon-list">
+                        <li>with soft sofas and armchairs, tables for comfortable
+                            get-togethers during a break from work</li>
+                        <li>with a mini library with different thematic
+                            books: about design, sales and psychology</li>
+                        <li>with a cool art gallery of contemporary artists
+                            avant-garde</li>
+                    </ul>
                 </div>
-                <div class="coworking-item__img">
-                    <img src="../images/5.jpg" alt="coworking">
+                <div class="coworking-place-images">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
                 </div>
             </div>
         </div>
@@ -397,18 +295,164 @@
 </div>
 
 
+<div class="section">
+    <div class="container">
+        <div class="our-coworking our-apart" id="about-us-aprts">
+            <div class="title">
+                <h2 class="text-gradient-orange">About Apartments</h2>
+            </div>
+            <div class="description">
+                <p>Our apartment is located in a calm and cozy private complex in the historical center of the city.</p>
+                <br>
+                <p>We offer cozy apartments with all the necessary equipment with a high level of comfort. The apartments are located in private territory only for residents, a spacious green backyard, private parking, a mini park where there is a year-round occupation for adults and children.</p>
+            </div>
+            <div class="our-apart__img">
+                <img src="../images/svg/loft-vector.svg" alt="apartments-loft">
+            </div>
+        </div>
+        <div class="apart-places">
+            <div class="apart-place">
+                <div class="apart-place-content">
+                    <h3 class="title-h3">Interior and layouts</h3>
+                    <p>Our layouts and interiors are spacious and comfortable for a pleasant stay and will be comfortable even for the most demanding traveler.</p>
+                    <p>In our interior everything is designed with the understanding of comfort, comfort and elegance of living spaces.</p>
+                </div>
+                <div class="apart-place-images apart-place-interior">
+                    <div class="masonry masonry--v">
+                        <figure class="masonry-brick masonry-brick--v">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-1.jpg" alt="aparts">
+                        </figure>
+                        <figure class="masonry-brick masonry-brick--v">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-2.jpg" alt="aparts">
+                        </figure>
+                        <figure class="masonry-brick masonry-brick--v">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-3.jpg" alt="aparts">
+                        </figure>
+                        <figure class="masonry-brick masonry-brick--v">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-4.jpg" alt="aparts">
+                        </figure>
+                        <figure class="masonry-brick masonry-brick--v">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-5.jpg" alt="aparts">
+                        </figure>
+                        <figure class="masonry-brick masonry-brick--v">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-6.jpg" alt="aparts">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="apart-place">
+                <div class="apart-place-content">
+                    <h3 class="title-h3">Style and comfort</h3>
+                    <p>Our apartments are decorated and designed in the latest design trends. We combined comfort and design ideas to create an atmosphere of relaxation, beauty and style and functionality of the living space.</p>
+                </div>
+                <div class="apart-place-images apart-place-comfort">
+                    <div class="masonry masonry--h">
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-7.jpg" alt="aparts">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-8.jpg" alt="aparts">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-9.jpg" alt="aparts">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-10.jpg" alt="aparts">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-11.jpg" alt="aparts">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-12.jpg" alt="aparts">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/aparts-13.jpg" alt="aparts">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="apart-place">
+                <div class="apart-place-content">
+                    <h3 class="title-h3">Comercial and public spaces</h3>
+                    <p>Our project also has comfortable and pleasantly located
+                        commercial spaces.</p>
+                    <p>There can be nice cafes, bars, small shops and many other commercial activities for complete convenience and
+                        infrastructure development.</p>
+                </div>
+                <div class="apart-place-images">
+                    <div class="masonry masonry--h">
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-1.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-2.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick masonry-brick-3  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-3.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-4.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-5.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-6.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-7.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-8.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-9.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-10.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-11.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-12.jpg" alt="">
+                        </figure>
+                        <figure class="masonry-brick  ">
+                            <img class="masonry-img" src="../images/apartamets/lviv/comercial-13.jpg" alt="">
+                        </figure>
+                    </div>
 
-<div class="section section-about-complex bg-black">
+                </div>
+            </div>
+            <div class="our-coworking our-apart">
+                <div class="title">
+                    <h2 class="title-h2">Comercial and public spaces</h2>
+                </div>
+                <div class="description">
+                    <p>Our project also has comfortable and pleasantly located
+                        commercial spaces.</p>
+                    <br>
+                    <p>There can be nice cafes, bars, small shops and many other commercial activities for complete convenience and
+                        infrastructure development.</p>
+                </div>
+                <div class="our-apart__img">
+                    <img src="../images/svg/comercial.svg" alt="apartments-loft">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="section section-about-complex bg-white">
     <div class="container">
         <div class="about-complex">
             <div class="complex-description">
                 <h2>About location</h2>
-                <p>Our Coworking is located in the private complex in heart of the city. The building is located in a
-                    pleasant sector with a beatiful view of historical old arhitecture and cozy streets and parks.
+                <p>Our Coworking & apartmets is located in the private complex in heart of the city. The building is located in a pleasant sector with a beatiful view of historical old arhitecture and cozy streets and parks.
                 </p>
                 <br>
-                <p>In this place it will be convenient to stay and spend time, as well as to get to any point of the
-                    city in the shortest possible time.</p>
+                <p>In this place it will be convenient to stay and spend time, as well as to get to any point of the city in the shortest possible time.</p>
             </div>
             <div class="complex-img">
                 <img src="../images/forum-location.png" alt="complex">
@@ -418,33 +462,33 @@
 
         <h2 class="feature-title title-h2">Location features</h2>
         <div class="feature-list feature-list-location">
-            <div class="feature-item text-white">
+            <div class="feature-item">
                 <div class="feature-item__img"><img src="../images/svg/nice-weather.svg" alt="feature-img"></div>
                 <div class="feature-item__text">Habitual European climate
                 </div>
             </div>
-            <div class="feature-item text-white">
+            <div class="feature-item">
                 <div class="feature-item__img"><img src="../images/svg/handshake.svg" alt="feature-img"></div>
                 <div class="feature-item__text">Business oportunities
                 </div>
             </div>
-            <div class="feature-item text-white">
+            <div class="feature-item">
                 <div class="feature-item__img"><img src="../images/svg/cultural.svg" alt="feature-img"></div>
                 <div class="feature-item__text">Сultural attractions
                 </div>
             </div>
-            <div class="feature-item text-white">
+            <div class="feature-item">
                 <div class="feature-item__img"><img src="../images/svg/infrastructure.svg" alt="feature-img"></div>
                 <div class="feature-item__text">Infrastructure spaces near
                 </div>
             </div>
-            <div class="feature-item text-white">
+            <div class="feature-item">
                 <div class="feature-item__img"><img src="../images/svg/shopping.svg" alt="feature-img"></div>
                 <div class="feature-item__text">Shopping and
                     restaurants
                 </div>
             </div>
-            <div class="feature-item text-white">
+            <div class="feature-item">
                 <div class="feature-item__img"><img src="../images/svg/column.svg" alt="feature-img"></div>
                 <div class="feature-item__text">Historical arhitecture
                     and monuments
@@ -1049,78 +1093,6 @@
     </div>
 </div>
 
+{% endblock %}
 
-    </main>
 
-    <footer class="footer bg-black">
-    <div class="container">
-        <div class="footer-top">
-            <div class="col-logo">
-                <div class="footer-logo">
-                    <a class="footer-logo" href="/"><img src="../images/svg/stangher-footer-logo.svg" alt="logo"></a>
-                </div>
-                <div class="footer-copyright">
-                    © 2018 StanGher <br>
-                    All rights reserved
-                </div>
-            </div>
-            <nav class="footer-nav">
-                <a href="projects.html">Our projects</a>
-                <a href="locations.html">Locations</a>
-                <a href="about-us.html">About us</a>
-                <a href="contact-us.html">Contact us</a>
-                <a href="projects.html">Accelerator and venture fund</a>
-            </nav>
-            <div class="subscribe">
-                <div class="subscribe-item subscribe-social">
-                    <p>We are in social networks</p>
-                    <div class="social-link">
-                        <a href="#">
-                            <img src="../images/svg/Facebook.svg" alt="Facebook">
-                        </a>
-                        <a href="#">
-                            <img src="../images/svg/VK.svg" alt="vkontakte">
-                        </a>
-                        <a href="#">
-                            <img src="../images/svg/Instagram.svg" alt="instagram">
-                        </a>
-                        <a href="#">
-                            <img src="../images/svg/Twitter.svg" alt="twitter">
-                        </a>
-                        <a href="#">
-                            <img src="../images/svg/Flickr.svg" alt="Flickr">
-                        </a>
-                        <a href="#">
-                            <img src="../images/svg/Foursquare.svg" alt="Foursquare">
-                        </a>
-                    </div>
-                </div>
-                <div class="subscribe-item">
-                    <p>Subscribe to our newsletter!</p>
-                    <form action="#" method="#" class="form-subscribe">
-                        <div class="form-group">
-                            <input type="email" autocomplete="off" placeholder="Your email…" class="form-control" name="subscribe">
-                        </div>
-                        <button type="submit"><img src="../images/svg/paper-plane.svg" alt="#"></button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <nav>
-                <a href="#">Site map</a>
-                <a href="#">Consent to data processing</a>
-                <a href="#">Privacy policy</a>
-            </nav>
-        </div>
-    </div>
-</footer>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>
-<script src="./js/app.js" defer></script>
-
-<!-- Scripts -->
-</body>
-</html>

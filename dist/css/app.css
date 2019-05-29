@@ -408,7 +408,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-black {
   color: #282627; }
-  .bg-black p, .bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black h5, .bg-black h6 {
+  .bg-black p, .bg-black span, .bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black h5, .bg-black h6 {
     color: #ffffff; }
   .bg-black a[href^=tel] {
     font-size: 0.875rem;
@@ -924,6 +924,12 @@ main.content {
     .hero-top .hero-info {
       margin-bottom: 0.625rem; } }
 
+.hero-top .label-status {
+  margin-bottom: 20px; }
+  @media only screen and (max-width: 768px) {
+    .hero-top .label-status {
+      margin-bottom: 15px; } }
+
 .hero-top h1 {
   margin-bottom: 2.5rem; }
   @media only screen and (max-width: 576px) {
@@ -1060,13 +1066,15 @@ main.content {
   @media only screen and (max-width: 768px) {
     .our-coworking {
       margin-bottom: 2.5rem; } }
-  .our-coworking h2 {
+  .our-coworking .title {
     margin-bottom: 1.625rem;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      .our-coworking h2 {
+      .our-coworking .title {
         position: relative;
         z-index: 10; } }
+    .our-coworking .title h2 {
+      display: inline-block; }
   .our-coworking .description {
     width: 48%;
     display: inline-block;
@@ -1272,6 +1280,31 @@ main.content {
     font-size: 0.875rem;
     font-weight: 500; }
 
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-gap: 10px;
+  grid-auto-rows: minmax(180px, auto);
+  grid-auto-flow: dense; }
+
+.masonry-brick {
+  padding: 1rem;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #929796;
+  background-color: #333;
+  border-radius: 5px; }
+
+.masonry-brick-3 {
+  grid-column-end: span 3;
+  grid-row-end: span 4; }
+
+.apart-place {
+  margin-right: -20px; }
+  .apart-place-images {
+    width: 100%; }
+
 .slider-apart .tns-outer {
   height: 100%; }
 
@@ -1411,14 +1444,14 @@ main.content {
   .workplace p {
     margin-bottom: 2.1875rem; }
 
-.offer-info-list li {
+.icon-list li {
   margin-bottom: 1.375rem;
   position: relative;
   padding-left: 5.375rem; }
   @media only screen and (max-width: 576px) {
-    .offer-info-list li {
+    .icon-list li {
       padding-left: 4.375rem; } }
-  .offer-info-list li:before {
+  .icon-list li:before {
     content: '';
     position: absolute;
     top: -2px;
@@ -3445,11 +3478,11 @@ select {
     .place-item:hover:before {
       content: '';
       background-color: rgba(50, 47, 49, 0.45); }
-  .place-item--in-progress {
+  .place-item--disabled {
     box-shadow: none;
     cursor: default;
     pointer-events: none; }
-    .place-item--in-progress:after {
+    .place-item--disabled:after {
       content: '';
       background: inherit;
       filter: grayscale(100%);
@@ -3459,7 +3492,7 @@ select {
       right: 0;
       bottom: 0;
       z-index: 0; }
-    .place-item--in-progress.overlay:before {
+    .place-item--disabled.overlay:before {
       background-color: rgba(114, 114, 114, 0.8); }
   .place-item .label-status {
     position: absolute;
@@ -3497,12 +3530,14 @@ select {
   color: #ffffff;
   font-weight: 700;
   display: inline-block;
-  text-align: center; }
-
-.label-red {
-  background-color: #ff5e5e;
-  padding: 0.5625rem 0.625rem;
-  width: 160px; }
+  text-align: center;
+  padding: 0.5625rem 0.625rem; }
+  .label-status--red {
+    background-color: #ff5e5e;
+    width: 160px; }
+  .label-status--green {
+    background-color: #6ecb74;
+    width: 160px; }
 
 .our-projects {
   margin-bottom: 3.125rem;
@@ -3549,9 +3584,11 @@ select {
         width: 100%; } }
     .project-item__content .btn-violet,
     .project-item__content .btn-orange {
-      width: 230px; }
+      width: 230px;
+      margin-right: 15px; }
   .project-item .logo {
-    margin-bottom: 1.875rem; }
+    margin-bottom: 1.875rem;
+    line-height: 1.1; }
     @media only screen and (max-width: 992px) {
       .project-item .logo {
         margin-bottom: 1.25rem; } }
@@ -3568,6 +3605,17 @@ select {
     @media only screen and (max-width: 992px) {
       .project-item .description {
         margin-bottom: 1.25rem; } }
+
+.logo-main {
+  font-size: 28px;
+  font-weight: 900; }
+
+.logo-text {
+  color: #636466;
+  font-size: 18px;
+  font-weight: 900; }
+  .logo-text--l-grey {
+    color: #c6c8cc; }
 
 .venture-projects {
   padding: 50px 0 15px;
