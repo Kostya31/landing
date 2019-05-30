@@ -170,6 +170,7 @@ main {
 
 .hero-info {
   display: flex;
+  align-items: flex-end;
   @include respond-to(xs) {
     flex-direction: column;
   }
@@ -320,6 +321,10 @@ main {
       position: relative;
       z-index: 10;
       padding-right: 0;
+    }
+    p{
+      font-size: 14px;
+      line-height: 1.25rem;
     }
   }
 
@@ -496,7 +501,7 @@ main {
     .offer-content {
       width: 50%;
       background-color: $white;
-      padding: rem(40px) calc((100vw - 1170px) / 2 + 15px) rem(25px) rem(50px);
+      padding: rem(40px) calc((100vw - 1170px) / 2 + 15px) rem(40px) rem(50px);
       @include respond-to(md) {
         padding: rem(25px 25px 10px 25px);
       }
@@ -637,48 +642,95 @@ main {
 
 // -------------------  masonry  ---------------
 
-//.masonry {
-//  display: flex;
-//  flex-flow: row wrap;
-//  width: 100%;
-//
-//  &-img {
-//    object-fit: cover;
-//    width: 100%;
-//    height: 100%;
-//  }
-//
-//  &--h {
-//    margin-left: -20px;
-//    flex-flow: row wrap;
-//
-//  }
-//}
-
-
-
 .masonry {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  grid-gap: 10px;
-  grid-auto-rows: minmax(180px, auto);
-  grid-auto-flow: dense;
-}
-.masonry {
-  &-brick{
-    padding: 1rem;
-    font-size: 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-    color: #929796;
-    background-color: #333;
-    border-radius: 5px;
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -20px;
+
+  &-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
   }
-  &-brick-3 {
-    grid-column-end: span 3;
-    grid-row-end: span 4;
+
+}
+
+.masonry-brick {
+  //flex: auto;
+  height: 220px;
+  min-width: 150px;
+  margin: 0 0 20px 20px;
+  display: inline-block;
+  @include respond-to(sm) {
+    width: calc(100% / 3 - 20px);
+  }
+  @include respond-to(xs) {
+    width: auto;
+  }
+  @include respond-to(es) {
+    width: calc(50% - 20px);
+  }
+  //&:nth-child(4n+1) {
+  //  width: 250px;
+  //}
+  //&:nth-child(4n+1):nth-child(4n+2) {
+  //  width: 325px;
+  //}
+  //&:nth-child(4n+1):nth-child(4n+3) {
+  //  width: 180px;
+  //}
+  //&:nth-child(4n+1):nth-child(4n+4) {
+  //  width: 380px;
+  //}
+}
+
+//---------------- coworking place ------------
+
+
+.coworking-place {
+  display: flex;
+  margin-bottom: 80px;
+  @include respond-to(xs) {
+    flex-wrap: wrap;
+  }
+  &:last-child {
+    margin-bottom: 20px;
+    @include respond-to(xs) {
+      margin-bottom: 0;
+    }
+  }
+  &-content {
+    width: 45%;
+    flex-shrink: 0;
+    padding-right: 60px;
+    @include respond-to(xs) {
+      width: 100%;
+      padding-right: 0;
+    }
+    .title-h2 {
+      margin-bottom: 15px;
+    }
+
+    .sub-title {
+      margin-bottom: 20px;
+      display: inline-block;
+      font-weight: 400;
+    }
+    .list-icon {
+      margin-top: 50px;
+      @include respond-to(xs) {
+        margin-top: 20px;
+        padding-bottom: 20px;
+      }
+      li{
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 300;
+      }
+    }
   }
 }
+
 
 //----------------- apart places -------------
 
@@ -687,7 +739,31 @@ main {
 }
 
 .apart-place {
-  margin-right: -20px;
+  margin-bottom: 50px;
+  @include respond-to(xs) {
+    margin-bottom: 30px;
+  }
+  &-content {
+    margin-bottom: 40px;
+    @include respond-to(xs) {
+      margin-bottom: 20px;
+    }
+    .title-h2 {
+      margin-bottom: 25px;
+    }
+
+    .description {
+      padding-right: 40%;
+      @include respond-to(xs) {
+        padding-right: 0;
+      }
+      p {
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 1.25rem;
+      }
+    }
+  }
 
   &-images {
     width: 100%;
@@ -698,12 +774,41 @@ main {
   //  -------------- interior --------------
 
   &-interior {
-
   }
+
 }
 
 
+// ------------------------ banner ------------
 
+.banner {
+  &-interested {
+    width: 77%;
+    margin: 0 auto 80px;
+    text-align: center;
+    padding: 40px;
+    background-color: $white;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    @include respond-to(xs) {
+      width: 90%;
+      padding: 30px;
+      margin-bottom: 50px;
+    }
+    .title-h2 {
+      margin-bottom: 20px;
+    }
+    .description {
+      margin-bottom: 25px;
+      padding: 0 20%;
+      font-size: 14px;
+      line-height: 1.25rem;
+      @include respond-to(xs) {
+        padding: 0;
+      }
+    }
+  }
+}
 
 //----------------------- sliders ---------------
 
@@ -901,7 +1006,7 @@ main {
   }
 }
 
-.icon-list {
+.list-icon {
   li {
     margin-bottom: rem(22px);
     position: relative;

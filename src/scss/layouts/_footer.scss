@@ -1,10 +1,10 @@
 .footer {
   flex: 0 0 auto;
   &-top {
-    padding: rem(60px 0 32px 0);
-    border-bottom: 1px solid #4a4a4a;
+    padding: rem(30px 0 10px 0);
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
     @include respond-to(sm) {
       justify-content: space-around;
     }
@@ -15,8 +15,10 @@
 
     nav {
       display: flex;
-      flex-direction: column;
-      padding-left: rem(150px);
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-left: rem(120px);
+      align-items: flex-start;
       flex-shrink: 0;
       @include respond-to(md) {
         padding-left: rem(85px);
@@ -25,22 +27,28 @@
         padding-left: rem(40px);
       }
       @include respond-to(xs) {
-        width: 50%;
+        //width: 50%;
         padding-left: 0;
         margin-bottom: rem(15px);
       }
       @include respond-to(es) {
         padding-left: rem(0);
-        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
       }
       a {
         font-size: rem(13px);
         color: $white;
         margin-bottom: rem(20px);
+        text-align: center;
         display: inline-block;
         transition: color 0.2s linear;
+        width: 50%;
         &:hover {
           color: $violet-2;
+        }
+        @include respond-to(es) {
+          width: 50%;
         }
       }
     }
@@ -65,9 +73,6 @@
     text-align: center;
     margin-top: rem(20px);
 
-    @include respond-to(xs) {
-      text-align: left;
-    }
     @include respond-to(es) {
       margin-top: rem(10px);
       text-align: center;
@@ -76,6 +81,7 @@
 
   &-bottom {
     padding: rem(20px 0);
+    border-top: 1px solid #4a4a4a;
     nav {
       display: flex;
       @include respond-to(es) {
@@ -111,14 +117,15 @@
   }
   @include respond-to(xs) {
     padding-left: 0;
-    width: 100%;
-    order: 1;
+    //width: 100%;
+    //order: 1;
     margin-bottom: 20px;
   }
   @include respond-to(es) {
     padding-left: 0;
     margin-bottom: rem(30px);
     width: 100%;
+    order: 1;
   }
 }
 
@@ -132,11 +139,12 @@
   }
   @include respond-to(xs){
     padding-left: 0;
-    width: 50%;
+    //width: 50%;
   }
   @include respond-to(es) {
     padding-left: 0;
     width: 100%;
+    text-align: center;
   }
 
   &-social {
@@ -187,6 +195,10 @@
 
 .social-link {
   display: flex;
+  justify-content: center;
+  @include respond-to(es) {
+    justify-content: center;
+  }
   a {
     display: block;
     margin-right: rem(15px);

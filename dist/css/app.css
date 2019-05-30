@@ -408,7 +408,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .bg-black {
   color: #282627; }
-  .bg-black p, .bg-black span, .bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black h5, .bg-black h6 {
+  .bg-black p, .bg-black h1, .bg-black h2, .bg-black h3, .bg-black h4, .bg-black h5, .bg-black h6 {
     color: #ffffff; }
   .bg-black a[href^=tel] {
     font-size: 0.875rem;
@@ -686,10 +686,10 @@ video {
 .footer {
   flex: 0 0 auto; }
   .footer-top {
-    padding: 3.75rem 0 2rem 0;
-    border-bottom: 1px solid #4a4a4a;
+    padding: 1.875rem 0 0.625rem 0;
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    align-items: flex-start; }
     @media only screen and (max-width: 992px) {
       .footer-top {
         justify-content: space-around; } }
@@ -698,8 +698,10 @@ video {
         padding: 1.875rem 0 0.3125rem 0; } }
     .footer-top nav {
       display: flex;
-      flex-direction: column;
-      padding-left: 9.375rem;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding-left: 7.5rem;
+      align-items: flex-start;
       flex-shrink: 0; }
       @media only screen and (max-width: 1199px) {
         .footer-top nav {
@@ -709,21 +711,26 @@ video {
           padding-left: 2.5rem; } }
       @media only screen and (max-width: 768px) {
         .footer-top nav {
-          width: 50%;
           padding-left: 0;
           margin-bottom: 0.9375rem; } }
       @media only screen and (max-width: 576px) {
         .footer-top nav {
           padding-left: 0;
-          width: 100%; } }
+          flex-direction: row;
+          flex-wrap: wrap; } }
       .footer-top nav a {
         font-size: 0.8125rem;
         color: #ffffff;
         margin-bottom: 1.25rem;
+        text-align: center;
         display: inline-block;
-        transition: color 0.2s linear; }
+        transition: color 0.2s linear;
+        width: 50%; }
         .footer-top nav a:hover {
           color: #b02dbc; }
+        @media only screen and (max-width: 576px) {
+          .footer-top nav a {
+            width: 50%; } }
   .footer-logo {
     text-align: center; }
     .footer-logo a {
@@ -739,15 +746,13 @@ video {
     color: #d5d5d5;
     text-align: center;
     margin-top: 1.25rem; }
-    @media only screen and (max-width: 768px) {
-      .footer-copyright {
-        text-align: left; } }
     @media only screen and (max-width: 576px) {
       .footer-copyright {
         margin-top: 0.625rem;
         text-align: center; } }
   .footer-bottom {
-    padding: 1.25rem 0; }
+    padding: 1.25rem 0;
+    border-top: 1px solid #4a4a4a; }
     .footer-bottom nav {
       display: flex; }
       @media only screen and (max-width: 576px) {
@@ -779,14 +784,13 @@ video {
   @media only screen and (max-width: 768px) {
     .col-logo {
       padding-left: 0;
-      width: 100%;
-      order: 1;
       margin-bottom: 20px; } }
   @media only screen and (max-width: 576px) {
     .col-logo {
       padding-left: 0;
       margin-bottom: 1.875rem;
-      width: 100%; } }
+      width: 100%;
+      order: 1; } }
 
 .subscribe {
   padding-left: 7.5rem; }
@@ -798,12 +802,12 @@ video {
       padding-left: 2.5rem; } }
   @media only screen and (max-width: 768px) {
     .subscribe {
-      padding-left: 0;
-      width: 50%; } }
+      padding-left: 0; } }
   @media only screen and (max-width: 576px) {
     .subscribe {
       padding-left: 0;
-      width: 100%; } }
+      width: 100%;
+      text-align: center; } }
   .subscribe-social {
     margin-bottom: 1.5625rem; }
   .subscribe-item p {
@@ -842,7 +846,11 @@ video {
       background-color: rgba(40, 38, 39, 0.7); }
 
 .social-link {
-  display: flex; }
+  display: flex;
+  justify-content: center; }
+  @media only screen and (max-width: 576px) {
+    .social-link {
+      justify-content: center; } }
   .social-link a {
     display: block;
     margin-right: 0.9375rem; }
@@ -976,7 +984,8 @@ main.content {
   margin-bottom: 0; }
 
 .hero-info {
-  display: flex; }
+  display: flex;
+  align-items: flex-end; }
   @media only screen and (max-width: 768px) {
     .hero-info {
       flex-direction: column; } }
@@ -1085,6 +1094,9 @@ main.content {
         position: relative;
         z-index: 10;
         padding-right: 0; } }
+    .our-coworking .description p {
+      font-size: 14px;
+      line-height: 1.25rem; }
   .our-coworking__img {
     position: absolute;
     right: 8rem;
@@ -1185,7 +1197,7 @@ main.content {
     .offer-item-apart .offer-content {
       width: 50%;
       background-color: #ffffff;
-      padding: 2.5rem calc((100vw - 1170px) / 2 + 15px) 1.5625rem 3.125rem; }
+      padding: 2.5rem calc((100vw - 1170px) / 2 + 15px) 2.5rem 3.125rem; }
       @media only screen and (max-width: 1199px) {
         .offer-item-apart .offer-content {
           padding: 1.5625rem 1.5625rem 0.625rem 1.5625rem; } }
@@ -1281,29 +1293,112 @@ main.content {
     font-weight: 500; }
 
 .masonry {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  grid-gap: 10px;
-  grid-auto-rows: minmax(180px, auto);
-  grid-auto-flow: dense; }
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -20px; }
+  .masonry-img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%; }
 
 .masonry-brick {
-  padding: 1rem;
-  font-size: 14px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #929796;
-  background-color: #333;
-  border-radius: 5px; }
+  height: 220px;
+  min-width: 150px;
+  margin: 0 0 20px 20px;
+  display: inline-block; }
+  @media only screen and (max-width: 992px) {
+    .masonry-brick {
+      width: calc(100% / 3 - 20px); } }
+  @media only screen and (max-width: 768px) {
+    .masonry-brick {
+      width: auto; } }
+  @media only screen and (max-width: 576px) {
+    .masonry-brick {
+      width: calc(50% - 20px); } }
 
-.masonry-brick-3 {
-  grid-column-end: span 3;
-  grid-row-end: span 4; }
+.coworking-place {
+  display: flex;
+  margin-bottom: 80px; }
+  @media only screen and (max-width: 768px) {
+    .coworking-place {
+      flex-wrap: wrap; } }
+  .coworking-place:last-child {
+    margin-bottom: 20px; }
+    @media only screen and (max-width: 768px) {
+      .coworking-place:last-child {
+        margin-bottom: 0; } }
+  .coworking-place-content {
+    width: 45%;
+    flex-shrink: 0;
+    padding-right: 60px; }
+    @media only screen and (max-width: 768px) {
+      .coworking-place-content {
+        width: 100%;
+        padding-right: 0; } }
+    .coworking-place-content .title-h2 {
+      margin-bottom: 15px; }
+    .coworking-place-content .sub-title {
+      margin-bottom: 20px;
+      display: inline-block;
+      font-weight: 400; }
+    .coworking-place-content .list-icon {
+      margin-top: 50px; }
+      @media only screen and (max-width: 768px) {
+        .coworking-place-content .list-icon {
+          margin-top: 20px;
+          padding-bottom: 20px; } }
+      .coworking-place-content .list-icon li {
+        font-size: 14px;
+        line-height: 1.4;
+        font-weight: 300; }
 
 .apart-place {
-  margin-right: -20px; }
+  margin-bottom: 50px; }
+  @media only screen and (max-width: 768px) {
+    .apart-place {
+      margin-bottom: 30px; } }
+  .apart-place-content {
+    margin-bottom: 40px; }
+    @media only screen and (max-width: 768px) {
+      .apart-place-content {
+        margin-bottom: 20px; } }
+    .apart-place-content .title-h2 {
+      margin-bottom: 25px; }
+    .apart-place-content .description {
+      padding-right: 40%; }
+      @media only screen and (max-width: 768px) {
+        .apart-place-content .description {
+          padding-right: 0; } }
+      .apart-place-content .description p {
+        margin-bottom: 10px;
+        font-size: 14px;
+        line-height: 1.25rem; }
   .apart-place-images {
     width: 100%; }
+
+.banner-interested {
+  width: 77%;
+  margin: 0 auto 80px;
+  text-align: center;
+  padding: 40px;
+  background-color: #ffffff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 16px; }
+  @media only screen and (max-width: 768px) {
+    .banner-interested {
+      width: 90%;
+      padding: 30px;
+      margin-bottom: 50px; } }
+  .banner-interested .title-h2 {
+    margin-bottom: 20px; }
+  .banner-interested .description {
+    margin-bottom: 25px;
+    padding: 0 20%;
+    font-size: 14px;
+    line-height: 1.25rem; }
+    @media only screen and (max-width: 768px) {
+      .banner-interested .description {
+        padding: 0; } }
 
 .slider-apart .tns-outer {
   height: 100%; }
@@ -1444,14 +1539,14 @@ main.content {
   .workplace p {
     margin-bottom: 2.1875rem; }
 
-.icon-list li {
+.list-icon li {
   margin-bottom: 1.375rem;
   position: relative;
   padding-left: 5.375rem; }
   @media only screen and (max-width: 576px) {
-    .icon-list li {
+    .list-icon li {
       padding-left: 4.375rem; } }
-  .icon-list li:before {
+  .list-icon li:before {
     content: '';
     position: absolute;
     top: -2px;
@@ -3485,7 +3580,6 @@ select {
     .place-item--disabled:after {
       content: '';
       background: inherit;
-      filter: grayscale(100%);
       position: absolute;
       left: 0;
       top: 0;
