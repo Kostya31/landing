@@ -2632,8 +2632,6 @@ var app = {
                         res = res + fixPlaceValue * placeCount;
                     }
 
-                    console.log(periodVal, placeCount, periodCount);
-
                     document.querySelector('#jobs .general-price strong span').innerText = res;
                 }
 

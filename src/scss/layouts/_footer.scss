@@ -5,6 +5,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: space-evenly;
     @include respond-to(sm) {
       justify-content: space-around;
     }
@@ -15,7 +16,7 @@
 
     nav {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       flex-wrap: wrap;
       padding-left: rem(120px);
       align-items: flex-start;
@@ -40,15 +41,15 @@
         font-size: rem(13px);
         color: $white;
         margin-bottom: rem(20px);
-        text-align: center;
         display: inline-block;
         transition: color 0.2s linear;
-        width: 50%;
+        text-align: left;
         &:hover {
           color: $violet-2;
         }
         @include respond-to(es) {
           width: 50%;
+          text-align: center;
         }
       }
     }
@@ -195,7 +196,6 @@
 
 .social-link {
   display: flex;
-  justify-content: center;
   @include respond-to(es) {
     justify-content: center;
   }
