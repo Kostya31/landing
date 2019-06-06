@@ -3685,6 +3685,8 @@ select {
     .project-item__content .btn-orange {
       width: 230px;
       margin-right: 15px; }
+    .project-item__content .label-status {
+      margin-top: 20px; }
   .project-item .logo {
     margin-bottom: 1.875rem;
     line-height: 1.1; }
